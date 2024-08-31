@@ -4,9 +4,9 @@ Echo. #####################################################################
 Echo. #                       IN THE NAME OF ALLAH                        #
 Echo. # ELASTIC AND INELASTIC ANLYSIS OF SDOF STRUCTURE RESPONSE SPECTRUM #
 Echo. #                       OUTPUT OF ANALYSIS:                         #
-Echo. #                     PICK GROUND DISPLACEMENT (mm)                 #
-Echo. #                     PICK GROUND VELOCITY     (mm/s)               #
-Echo. #                     PICK GROUND ACCELARATION (mm/s2)              #
+Echo. #                     PEACK GROUND DISPLACEMENT (mm)                 #
+Echo. #                     PEACK GROUND VELOCITY     (mm/s)               #
+Echo. #                     PEACK GROUND ACCELARATION (mm/s2)              #
 Echo. #####################################################################
 Echo.
 Echo.
