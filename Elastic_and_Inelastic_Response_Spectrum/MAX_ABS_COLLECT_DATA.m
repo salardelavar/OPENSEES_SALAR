@@ -35,15 +35,15 @@ figure(1)
 p1=plot(PERIOD,MaxAbsCol_D);grid on;set(p1,'LineWidth',3);
 %legend('PICK GROUND DISPLACEMENT','Nonlinear Analysis','Location','NorthEastOutside');
 xlabel('PERIOD (t)');ylabel('PGD (mm)');
-title(['MAX. PICK GROUND DISPLACEMENT : ',num2str(max(MaxAbsCol_D)),' mm'],'color','b');
+title(['MAX. PEACK GROUND DISPLACEMENT : ',num2str(max(MaxAbsCol_D)),' mm'],'color','b');
 figure(2)
 p1=plot(PERIOD,MaxAbsCol_V);grid on;set(p1,'LineWidth',3);
 xlabel('PERIOD (t)');ylabel('PGV (mm)');
-title(['MAX. PICK GROUND VELOCITY : ',num2str(max(MaxAbsCol_V)),' mm/s'],'color','b');
+title(['MAX. PEACK GROUND VELOCITY : ',num2str(max(MaxAbsCol_V)),' mm/s'],'color','b');
 figure(3)
 p1=plot(PERIOD,MaxAbsCol_A);grid on;set(p1,'LineWidth',3);
 xlabel('PERIOD (t)');ylabel('PGA (mm/s^2)');
-title(['MAX. PICK GROUND ACCELARATION : ',num2str(max(MaxAbsCol_A)),' mm/s^2'],'color','b');
+title(['MAX. PEACK GROUND ACCELARATION : ',num2str(max(MaxAbsCol_A)),' mm/s^2'],'color','b');
 %% Write Output
 fileID=fopen('TOT_D.txt', 'w');
 fprintf(fileID,'%f\n',MaxAbsCol_D);
