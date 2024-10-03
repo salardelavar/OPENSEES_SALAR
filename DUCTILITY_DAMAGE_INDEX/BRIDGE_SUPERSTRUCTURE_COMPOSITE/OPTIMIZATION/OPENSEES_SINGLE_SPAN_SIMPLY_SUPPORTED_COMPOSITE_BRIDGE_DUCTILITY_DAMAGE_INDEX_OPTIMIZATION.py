@@ -14,7 +14,7 @@
 #          #                                    [7] Differential Evolution Algorithm Method                     #
 #          #                                    [8] Artificial Neural Networks Algorithm Method                 #
 #          #----------------------------------------------------------------------------------------------------#
-#          #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR QASHQAI                             #
+#          #                     THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #          #                               EMAIL: salar.d.ghashghaei@gmail.com                                  #
 #          ######################################################################################################
 
