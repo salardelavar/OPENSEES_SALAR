@@ -25,10 +25,10 @@ import numpy as np
 import openseespy.opensees as op
 import opsvis as opsv
 import matplotlib.pyplot as plt
-
+# #######################################
 # to create a directory at specified path with name "Data"
 os.mkdir('C:\\OPENSEESPY_SALAR')
-
+# #######################################
 FOLDER_NAME = 'COMPOSITE_BRIDGE_OPTIMIZATION'
 dir = f"C:\\OPENSEESPY_SALAR\\{FOLDER_NAME}\\"
 if not os.path.exists(dir):
@@ -48,10 +48,10 @@ def DELETE_FOLDER_CONTANTS(folder_path):
    
 FOLDER_PATH = f'C:\\OPENSEESPY_SALAR\\{FOLDER_NAME}'  # Specify the folder path
 #DELETE_FOLDER_CONTANTS(FOLDER_PATH)  
-
+# #######################################
 # OUTPUT DATA ADDRESS:
 SALAR_DIR = f'C://OPENSEESPY_SALAR//{FOLDER_NAME}//';
-
+# #######################################
 def HISROGRAM_BOXPLOT(X, HISTO_COLOR, LABEL):
     import numpy as np
     import matplotlib.pyplot as plt
@@ -1836,7 +1836,6 @@ print(f"Current time (HH:MM:SS): {current_time}\n\n")
 
 # ####################################################
 
-```python
 ### ---------------------------------------------------------------------------------
 ###   Composite Bridge Superstructure Structure Ductility Damage Index Optimization
 ###                     Differential Evolution Algorithm Method
