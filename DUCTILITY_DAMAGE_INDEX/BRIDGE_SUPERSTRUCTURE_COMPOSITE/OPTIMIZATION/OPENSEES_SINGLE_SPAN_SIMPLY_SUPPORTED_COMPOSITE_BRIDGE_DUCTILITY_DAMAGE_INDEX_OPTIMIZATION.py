@@ -4,7 +4,7 @@
 #          #               RUNNING MOMENT-CURVATURE, PUSHOVER AND DYNAMIC ANALYSIS FOR CALCULATE                #
 #          #                               OPTIMUM STRUCTURAL DUCTILIY DAMAGE INEX                              #
 #          #----------------------------------------------------------------------------------------------------#
-#          #                                   EIGHT OPTIMIZAION ALOGORITHM METHOD:                             #
+#          #                                  EIGHT OPTIMIZAION ALOGORITHMS METHOD:                             #
 #          #                                    [1] Newton-Raphson Method                                       #
 #          #                                    [2] Genetic Algorithm Method                                    #
 #          #                                    [3] Firefly Algorithm Method                                    #
