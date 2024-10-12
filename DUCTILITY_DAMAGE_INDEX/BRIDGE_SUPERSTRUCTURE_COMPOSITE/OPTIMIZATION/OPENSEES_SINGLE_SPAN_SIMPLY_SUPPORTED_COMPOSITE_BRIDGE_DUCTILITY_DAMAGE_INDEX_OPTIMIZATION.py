@@ -1241,7 +1241,6 @@ while (RESIDUAL > TOLERANCE):
     F = DI - TARGET_DI
     print('F: ', F)
     print(f'Demand Disp: {demand_disp:.5f} - Current Ductility Damage Index: {DI:.5f}')
-    break
     # Xmin -------------------
     XMIN = X - ESP 
     PUSHOVER_ANALYSIS(Length, SideWalk_z, SideWalk_y, SideWalk_C, Deck_z, Deck_y,
