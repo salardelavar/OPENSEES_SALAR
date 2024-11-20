@@ -1,6 +1,6 @@
 #          #####################################################################################
 #          #                                  IN THE NAME OF ALLAH                             #
-#          #                           FREE VIBRATION ANAYSIS OF ELASTIC SPRING                #
+#          #                          FREE VIBRATION ANALYSIS OF ELASTIC SPRING                #
 #          #-----------------------------------------------------------------------------------#
 #          #              THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)           #
 #          #                       EMAIL: salar.d.ghashghaei@gmail.com                         #
