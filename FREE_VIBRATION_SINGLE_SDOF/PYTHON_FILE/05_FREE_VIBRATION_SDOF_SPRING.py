@@ -1,6 +1,6 @@
 #          #####################################################################################
 #          #                                  IN THE NAME OF ALLAH                             #
-#          #       FREE VIBRATION ANAYSIS OF INELASTIC SPRING WITH RECTANGULAR LOADING         #
+#          #      FREE VIBRATION ANALYSIS OF INELASTIC SPRING WITH RECTANGULAR LOADING         #
 #          #-----------------------------------------------------------------------------------#
 #          #              THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)           #
 #          #                       EMAIL: salar.d.ghashghaei@gmail.com                         #
