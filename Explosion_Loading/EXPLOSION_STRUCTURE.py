@@ -61,7 +61,7 @@ t0 = 0.1  # Positive phase duration (s)
 A = 1.3   # Wave decay coefficient
 
 dt = 0.001  # Time step (s)
-impact_duration = 2.0  # Total duration of water impact (s)
+impact_duration = 2.0  # Total duration of explosion impact (s)loading 
 duration = 10.0  # Total simulation duration (s)
 
 def explosion_time_series(impact_duration, dt, P0, t0, A):
