@@ -1,33 +1,33 @@
-"""
-### IN THE NAME OF ALLAH ###
-
-Title:
-Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Explosion Loading Using OpenSeesPy
-
-Target:
-This code simulates the dynamic response of a single-degree-of-freedom (SDOF) structural system subjected to explosion-induced loading.
- It achieves the following:
-
-1. Define Explosion Loading:
-   - Implements the Friedlander equation to model pressure-time history from an explosive event.
-   - Plots the explosion pressure profile over time.
-
-2. Structural Model:
-   - Models the SDOF system in OpenSeesPy with a linear elastic spring (stiffness `k`), mass `m`, and damping ratio.
-   - Applies the explosion-induced time-dependent loading to the mass node.
-
-3. Dynamic Analysis:
-   - Simulates the time history response using the Newmark method for transient analysis.
-   - Tracks system responses, including displacement, velocity, acceleration, and base reactions.
-
-4. Visualization:
-   - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
-
-This simulation is useful for structural engineers studying the effects of blast loads on structures, aiding in the design and assessment of resilient systems.
-
-THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI 
-
-"""
+###########################################################################################################
+#                                                 IN THE NAME OF ALLAH                                    #
+#---------------------------------------------------------------------------------------------------------#
+#                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
+#                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
+###########################################################################################################
+#
+# Title:
+# Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Explosion Loading Using OpenSeesPy
+#
+# Target:
+# This code simulates the dynamic response of a single-degree-of-freedom (SDOF) structural system subjected to explosion-induced loading.
+# It achieves the following:
+#
+# 1. Define Explosion Loading:
+#    - Implements the Friedlander equation to model pressure-time history from an explosive event.
+#    - Plots the explosion pressure profile over time.
+#
+# 2. Structural Model:
+#    - Models the SDOF system in OpenSeesPy with a linear elastic spring (stiffness `k`), mass `m`, and damping ratio.
+#    - Applies the explosion-induced time-dependent loading to the mass node.
+#
+# 3. Dynamic Analysis:
+#    - Simulates the time history response using the Newmark method for transient analysis.
+#    - Tracks system responses, including displacement, velocity, acceleration, and base reactions.
+#
+# 4. Visualization:
+#    - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
+#
+# This simulation is useful for structural engineers studying the effects of blast loads on structures, aiding in the design and assessment of resilient systems.
 import openseespy.opensees as ops
 import numpy as np
 import matplotlib.pyplot as plt
