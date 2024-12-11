@@ -1,21 +1,34 @@
-"""
-### IN THE NAME OF ALLAH ###
-
-Title:
-Dynamic Analysis of a Structural System Under Combined Water Impact and Seismic Loading Using OpenSeesPy
-
-Target:
-This code aims to simulate and analyze the dynamic response of a simple structural system subjected to:
-
-1. Water Impact Loading: Generated using a sinusoidal and cosine-based pressure time series to model water wave impact.
-2. Seismic Loading: Applied as ground accelerations in both X and Y directions using predefined seismic time histories.
-
-The analysis is conducted in OpenSeesPy, a finite element framework, to compute the structure's displacement, velocity, acceleration, 
-and base reactions over time. The results are visualized using Matplotlib to interpret the system's dynamic behavior under these combined loads.
- This setup is particularly relevant for designing and evaluating marine or coastal structures exposed to both hydrodynamic and seismic forces.
- 
-THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI 
-"""
+###########################################################################################################
+#                                                 IN THE NAME OF ALLAH                                    #
+#---------------------------------------------------------------------------------------------------------# 
+#                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
+#                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
+###########################################################################################################
+#
+# Title:  
+# Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Water Impact Loading Using OpenSeesPy
+#
+# Target:  
+# This code models and analyzes the dynamic response of an SDOF structural system under time-varying water impact pressure.
+# The objectives include:  
+#
+# 1. Water Impact Pressure Time Series Generation:  
+#    - Implements a flexible waveform generator for water pressure loading, supporting sine, cosine, combined sine+cosine, triangle, and square waveforms.  
+#    - Visualizes the generated water impact pressure time series.
+#
+# 2. Structural Model Development:  
+#    - Constructs an SDOF system in OpenSeesPy with specified stiffness (`k`), mass (`m`), and damping ratio.  
+#    - Applies the water pressure as a dynamic load to the system.  
+#
+# 3. Dynamic Analysis:  
+#    - Conducts transient analysis using the Newmark integration method.  
+#    - Monitors key responses, including displacement, velocity, acceleration, and base reaction forces over time.  
+#
+# 4. Visualization:  
+#    - Provides time-history plots for displacement, velocity, acceleration, and base reaction forces to understand the structural response to water impact loading.
+#
+# This simulation aids engineers and researchers in evaluating the structural resilience of systems subjected to varying water impact pressures,
+# applicable in contexts such as wave impact, fluid-structure interactions, and coastal engineering scenarios.
 
 import openseespy.opensees as ops
 import numpy as np
