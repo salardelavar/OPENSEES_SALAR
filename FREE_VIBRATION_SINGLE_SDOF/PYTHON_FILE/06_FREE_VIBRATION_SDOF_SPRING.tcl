@@ -99,8 +99,8 @@ proc perform_analysis {damping output_file} {
     if {$damping} {
         set omega1 [expr sqrt($::k / $::m)]
         set omega2 [expr 2.0 * $omega1]
-        set a0 [expr $::damping_ratio * (2.0 * $omega1 * $omega2) / ($omega1 + $omega2)]
-        set a1 [expr $::damping_ratio * 2.0 / ($omega1 + $omega2)]
+        set a0 [expr $damping_ratio * (2.0 * $omega1 * $omega2) / ($omega1 + $omega2)]
+        set a1 [expr $damping_ratio * 2.0 / ($omega1 + $omega2)]
         rayleigh $a0 $a1 0.0 0.0
     }
 
