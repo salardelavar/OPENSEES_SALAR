@@ -42,20 +42,20 @@ proc perform_analysis {damping output_file} {
 
     # Define nodes
     node 1 0.0 0.0
-    node 2 $::L 0.0
+    node 2 $L 0.0
 
     # Fixities
     fix 1 1 1 1
     fix 2 0 1 1
 
     # Mass
-    mass 2 $::m 0.0 0.0
+    mass 2 $m 0.0 0.0
 
     # Material
-    uniaxialMaterial ReinforcingSteel 1 $::fy $::Es $::fu $::Esh $::esh $::esu
+    uniaxialMaterial ReinforcingSteel 1 $fy $Es $fu $Esh $esh $esu
 
     # Truss element
-    element Truss 1 1 2 $::A 1
+    element Truss 1 1 2 $A 1
 
     # Apply initial static displacement
     timeSeries Linear 1
@@ -67,7 +67,7 @@ proc perform_analysis {damping output_file} {
     system BandGeneral
     algorithm Linear
     test NormDispIncr 1.0e-8 10
-    integrator DisplacementControl 2 1 $::u0
+    integrator DisplacementControl 2 1 $u0
     analysis Static
     analyze 1
     loadConst -time 0.0
@@ -97,7 +97,7 @@ proc perform_analysis {damping output_file} {
 
     # Apply Rayleigh damping if required
     if {$damping} {
-        set omega1 [expr sqrt($::k / $::m)]
+        set omega1 [expr sqrt($k / $m)]
         set omega2 [expr 2.0 * $omega1]
         set a0 [expr $damping_ratio * (2.0 * $omega1 * $omega2) / ($omega1 + $omega2)]
         set a1 [expr $damping_ratio * 2.0 / ($omega1 + $omega2)]
@@ -110,8 +110,8 @@ proc perform_analysis {damping output_file} {
 
     # Perform transient analysis and store results
     set current_time 0.0
-    while {$current_time < $::duration} {
-        set stable [analyze 1 $::dt]
+    while {$current_time < $duration} {
+        set stable [analyze 1 $dt]
         if {$stable != 0} {
             break
         }
@@ -119,7 +119,7 @@ proc perform_analysis {damping output_file} {
         set disp [nodeDisp 2 1]
         set vel [nodeVel 2 1]
         set accel [nodeAccel 2 1]
-        set spring_force [expr -1.0 * $::k * $disp]
+        set spring_force [expr -1.0 * $k * $disp]
 
         # Write results to the file
         puts $fid "$current_time\t$disp\t$vel\t$accel\t$spring_force"
