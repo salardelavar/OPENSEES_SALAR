@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                                 IN THE NAME OF ALLAH                                    #
 #                       RECTANGULAR FOUNDATION INTERACTION WITH SPRING-SUPPORTED SOIL                     #
-#                    WITH FINITE DIFFERENCE METHOD (FDM) AND FINIE ELEMENT METHOD (FEM)                   #
+#                    WITH FINITE DIFFERENCE METHOD (FDM) AND FINITE ELEMENT METHOD (FEM)                  #
 #                                               BOUNDARY CONITIONS: FIX                                   #
 #---------------------------------------------------------------------------------------------------------#
 # This Python code models the interaction between a rectangular foundation and soil using a finite        #
