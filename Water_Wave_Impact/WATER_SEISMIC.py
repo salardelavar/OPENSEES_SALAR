@@ -131,8 +131,10 @@ while stable == 0 and current_time < duration:
     velocity_y.append(ops.nodeVel(2, 2))
     acceleration_x.append(ops.nodeAccel(2, 1))
     acceleration_y.append(ops.nodeAccel(2, 2))
-    base_reaction_x.append(ops.nodeResponse(1, 1, 6))  # Reaction force in x-direction
-    base_reaction_y.append(ops.nodeResponse(1, 2, 6))  # Reaction force in y-direction
+    base_reaction_x.append(-k * displacement_x[-1])  # Reaction force in x-direction
+    base_reaction_y.append(-k * displacement_y[-1])  # Reaction force in y-direction
+    #base_reaction_x.append(ops.nodeResponse(1, 1, 6))  # Reaction force in x-direction
+    #base_reaction_y.append(ops.nodeResponse(1, 2, 6))  # Reaction force in y-direction
 
 # Plot results
 plt.figure(figsize=(18, 28))
