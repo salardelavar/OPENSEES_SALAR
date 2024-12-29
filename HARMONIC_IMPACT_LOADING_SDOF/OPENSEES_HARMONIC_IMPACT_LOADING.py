@@ -77,9 +77,9 @@ ops.pattern('Plain', 1, 1)
 ops.load(2, 1.0)  # Apply load to moving node
 
 # Analysis setup
-ops.constraints('Transformation')
-ops.numberer('RCM')
-ops.system('UmfPack')
+ops.constraints('Plain')
+ops.numberer('Plain')
+ops.system('BandGeneral')
 ops.test('NormDispIncr', 1.0e-8, 10)
 ops.integrator('Newmark', 0.5, 0.25)
 ops.algorithm('Newton')
