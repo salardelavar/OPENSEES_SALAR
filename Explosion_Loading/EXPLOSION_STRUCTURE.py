@@ -28,8 +28,6 @@
 #
 # 4. Visualization:
 #    - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
-#
-# This simulation is useful for structural engineers studying the effects of blast loads on structures, aiding in the design and assessment of resilient systems.
 import openseespy.opensees as ops
 import numpy as np
 import matplotlib.pyplot as plt
