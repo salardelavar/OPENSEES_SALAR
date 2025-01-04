@@ -40,12 +40,12 @@ MAX_ITERATIONS = 5000 # convergence iteration for test
 TOLERANCE = 1.0e-10   # convergence tolerance for test
 
 # Truss Length
-L1i = np.sqrt((XY3i[0] - XY1i[0])**2 + (XY3i[1] - XY1i[1])**2)
-L2i = np.sqrt((XY3i[0] - XY2i[0])**2 + (XY3i[1] - XY2i[1])**2)
+L1i = np.sqrt((XY3i[0] - XY1i[0])**2 + (XY3i[1] - XY1i[1])**2) # Length of element 1
+L2i = np.sqrt((XY3i[0] - XY2i[0])**2 + (XY3i[1] - XY2i[1])**2) # Length of element 2
 
 # Axial Rigidity
-EA1 = E * A1  # [kN]
-EA2 = E * A2  # [kN]
+EA1 = E * A1  # [kN] Axial Rigidity of Element 1
+EA2 = E * A2  # [kN] Axial Rigidity of Element 2
 u = np.zeros((1,))  # Initial guess value
 
 # Initialize storage for results
