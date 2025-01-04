@@ -1,12 +1,11 @@
 ###########################################################################################################
 #                                                 IN THE NAME OF ALLAH                                    #
+#                    DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM                #
+#                               SUBJECTED TO EXPLOSION LOADING USING OPENSEES                             #
 #---------------------------------------------------------------------------------------------------------#
 #                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
-#
-# Title:
-# Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Explosion Loading Using OpenSeesPy
 #
 # Target:
 # This code simulates the dynamic response of a single-degree-of-freedom (SDOF) structural system subjected to explosion-induced loading.
