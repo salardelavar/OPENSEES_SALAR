@@ -116,14 +116,14 @@ for i in range(Nsteps):
         it += 1
 
         if it == MAX_ITERATIONS:
-            print(f"             {i}                      {it}")
+            print(f"             {i+1}                      {it}")
             print("    ## Trial iterations reached to Ultimate .The solution for this step is not converged ##")
             break
 
         u += du
 
     if it < MAX_ITERATIONS:
-        print(f"             {i}                      {it}")
+        print(f"             {i+1}                      {it}")
 
     # Store results
     lanX1L1.append(lanX1)
