@@ -68,98 +68,98 @@ print("            Increments               Iterations   ")
 print("--------------------------------------------------")
 # Gradually increase the applied displacement
 for i in range(Nsteps):
-    up = D5 * i
-    XY1 = XY1i.copy()
-    XY2 = XY2i.copy()
-    XY3 = XY3i + np.array([up, u[0]])
+    up = D5 * i  # Incremental displacement for each step
+    XY1 = XY1i.copy()  # Copy initial coordinates of point 1
+    XY2 = XY2i.copy()  # Copy initial coordinates of point 2
+    XY3 = XY3i + np.array([up, u[0]])  # Update coordinates of point 3
 
     # Compute lengths and direction cosines
-    L1 = np.sqrt((XY3[0] - XY1[0])**2 + (XY3[1] - XY1[1])**2)
-    L2 = np.sqrt((XY3[0] - XY2[0])**2 + (XY3[1] - XY2[1])**2)
-    lanX1, lanY1 = (XY3[0] - XY1[0]) / L1, (XY3[1] - XY1[1]) / L1
-    lanX2, lanY2 = (XY3[0] - XY2[0]) / L2, (XY3[1] - XY2[1]) / L2
+    L1 = np.sqrt((XY3[0] - XY1[0])2 + (XY3[1] - XY1[1])2)  # Length of element 1
+    L2 = np.sqrt((XY3[0] - XY2[0])2 + (XY3[1] - XY2[1])2)  # Length of element 2
+    lanX1, lanY1 = (XY3[0] - XY1[0]) / L1, (XY3[1] - XY1[1]) / L1  # Direction cosines for element 1
+    lanX2, lanY2 = (XY3[0] - XY2[0]) / L2, (XY3[1] - XY2[1]) / L2  # Direction cosines for element 2
 
     # Element stiffness
-    G1 = EA1 / L1
-    G2 = EA2 / L2
+    G1 = EA1 / L1  # Stiffness of element 1
+    G2 = EA2 / L2  # Stiffness of element 2
 
     # Assemble global stiffness matrix
     Kp = np.array([
-        [G1 * lanX1**2 + G2 * lanX2**2, G1 * lanX1 * lanY1 + G2 * lanX2 * lanY2],
-        [G1 * lanX1 * lanY1 + G2 * lanX2 * lanY2, G1 * lanY1**2 + G2 * lanY2**2]
+        [G1 * lanX12 + G2 * lanX22, G1 * lanX1 * lanY1 + G2 * lanX2 * lanY2],
+        [G1 * lanX1 * lanY1 + G2 * lanX2 * lanY2, G1 * lanY12 + G2 * lanY22]
     ])
-    Fii = Kp[:, 0] * up
-    Kini = G1 * lanY1**2 + G2 * lanY2**2
+    Fii = Kp[:, 0] * up  # Internal force vector
+    Kini = G1 * lanY12 + G2 * lanY22  # Initial stiffness
 
     # Define the applied load
-    Fi = np.array([P5, P6])
-    F = Fi - Fii
-    F = np.array([F[1]])
+    Fi = np.array([P5, P6])  # External load vector
+    F = Fi - Fii  # Net force vector
+    F = np.array([F[1]])  # Select relevant component of force
+
     # Iterative Newton-Raphson method
     it = 0
-    residual = 100
+    residual = 100  # Initial residual
     while residual > TOLERANCE:
         # Update lengths and direction cosines
-        L1 = np.sqrt((XY3[0] - XY1[0])**2 + (XY3[1] - XY1[1])**2)
-        L2 = np.sqrt((XY3[0] - XY2[0])**2 + (XY3[1] - XY2[1])**2)
-        lanX1, lanY1 = (XY3[0] - XY1[0]) / L1, (XY3[1] - XY1[1]) / L1
-        lanX2, lanY2 = (XY3[0] - XY2[0]) / L2, (XY3[1] - XY2[1]) / L2
+        L1 = np.sqrt((XY3[0] - XY1[0])2 + (XY3[1] - XY1[1])2)  # Length of element 1
+        L2 = np.sqrt((XY3[0] - XY2[0])2 + (XY3[1] - XY2[1])2)  # Length of element 2
+        lanX1, lanY1 = (XY3[0] - XY1[0]) / L1, (XY3[1] - XY1[1]) / L1  # Direction cosines for element 1
+        lanX2, lanY2 = (XY3[0] - XY2[0]) / L2, (XY3[1] - XY2[1]) / L2  # Direction cosines for element 2
 
-        G1 = EA1 / L1
-        G2 = EA2 / L2
-        K = G1 * lanY1**2 + G2 * lanY2**2
-        f = K * u - F
+        G1 = EA1 / L1  # Stiffness of element 1
+        G2 = EA2 / L2  # Stiffness of element 2
+        K = G1 * lanY12 + G2 * lanY22  # Updated stiffness
+        f = K * u - F  # Force imbalance
 
         # Calculate du and update residual
-        du = -f / Kini
-        residual = np.max(np.abs(du))
-        it += 1
+        du = -f / Kini  # Displacement increment
+        residual = np.max(np.abs(du))  # Update residual
+        it += 1  # Increment iteration counter
 
         if it == MAX_ITERATIONS:
             print(f"             {i+1}                      {it}")
             print("    ## Trial iterations reached to Ultimate .The solution for this step is not converged ##")
             break
 
-        u += du
+        u += du  # Update displacement
 
     if it < MAX_ITERATIONS:
         print(f"             {i+1}                      {it}")
 
     # Store results
-    lanX1L1.append(lanX1)
-    lanY1L1.append(lanY1)
-    lanX2L1.append(lanX2)
-    lanY2L1.append(lanY2)
-    DU2.append(residual)
-    I2.append(i)
-    IT2.append(it)
-    XY3ox2.append(XY3[0])
-    XY3oy2.append(XY3[1])
+    lanX1L1.append(lanX1)  # Store direction cosine for element 1
+    lanY1L1.append(lanY1)  # Store direction cosine for element 1
+    lanX2L1.append(lanX2)  # Store direction cosine for element 2
+    lanY2L1.append(lanY2)  # Store direction cosine for element 2
+    DU2.append(residual)  # Store residuals
+    I2.append(i)  # Store step index
+    IT2.append(it)  # Store iteration count
+    XY3ox2.append(XY3[0])  # Store X-coordinate of point 3
+    XY3oy2.append(XY3[1])  # Store Y-coordinate of point 3
 
-    es1 = (L1 - L1i) / L1i
-    es2 = (L2 - L2i) / L2i
-    ess1o2.append(es1)
-    ess2o2.append(es2)
-    LL1.append(L1)
-    LL2.append(L2)
+    es1 = (L1 - L1i) / L1i  # Strain in element 1
+    es2 = (L2 - L2i) / L2i  # Strain in element 2
+    ess1o2.append(es1)  # Store strain for element 1
+    ess2o2.append(es2)  # Store strain for element 2
+    LL1.append(L1)  # Store length of element 1
+    LL2.append(L2)  # Store length of element 2
 
     # Internal element forces
-    INT_L_f1.append(-EA1 * es1 * lanX1)
-    INT_L_f2.append(-EA2 * es2 * lanX2)
-    INT_L_f1y.append(-EA1 * es1 * lanY1)
-    INT_L_f2y.append(-EA2 * es2 * lanY2)
-    TBSL1.append(INT_L_f1[-1] + INT_L_f2[-1])
+    INT_L_f1.append(-EA1 * es1 * lanX1)  # Internal force for element 1
+    INT_L_f2.append(-EA2 * es2 * lanX2)  # Internal force for element 2
+    INT_L_f1y.append(-EA1 * es1 * lanY1)  # Internal force for element 1 in Y direction
+    INT_L_f2y.append(-EA2 * es2 * lanY2)  # Internal force for element 2 in Y direction
+    TBSL1.append(INT_L_f1[-1] + INT_L_f2[-1])  # Total base shear
 
-    U1L.append(up)
-    U2L.append(u[0])
-
-    if abs(up) >= D5max:
+    U1L.append(up)  # Store displacement increment
+    U2L.append(u[0])  # Store displacement
+	if abs(up) >= D5max:
         print("      ## Displacement at [DOF (5)] reached to Ultimate Displacement ##")
         break
 
 # Convert results to arrays
-D1 = np.array(U1L)# X-displacement [DOF 5]
-F1 = np.array(TBSL1)
+D1 = np.array(U1L)  # X-displacement [DOF 5]
+F1 = np.array(TBSL1)  # Forces in Base-Reaction
 
 #-----------------------------------------------------
 
