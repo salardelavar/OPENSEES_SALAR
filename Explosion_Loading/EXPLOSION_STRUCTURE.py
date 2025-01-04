@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                                 IN THE NAME OF ALLAH                                    #
 #                    DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM                #
-#                               SUBJECTED TO EXPLOSION LOADING USING OPENSEES                             #
+#                             SUBJECTED TO EXPLOSION IMPACT LOADING USING OPENSEES                        #
 #---------------------------------------------------------------------------------------------------------#
 #                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
