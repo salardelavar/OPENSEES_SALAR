@@ -23,9 +23,9 @@ Key steps include:
 import numpy as np
 import time as ti
 
-# Define parameters (units: mm, N)
-P5 = 0                       # [N] External Load [DOF (5)]
-P6 = 0                       # [N] External Load [DOF (6)]
+# Define parameters (units: mm, kN)
+P5 = 0                       # [kN] External Load [DOF (5)]
+P6 = 0                       # [kN] External Load [DOF (6)]
 D5 = -1                      # [mm] Initial displacement [DOF (5)] Incremental Displacement
 D5max = 1000                 # [mm] Maximum displacement [DOF (5)]
 XY1i = np.array([0, 0])      # [x y] Point 1 Coordinate
@@ -33,7 +33,7 @@ XY2i = np.array([0, 500])    # [x y] Point 2 Coordinate
 XY3i = np.array([500, 250])  # [x y] Point 3 Coordinate
 A1 = np.pi * (50**2) / 4     # [mm^2] Cross Section Area for Element 1
 A2 = np.pi * (50**2) / 4     # [mm^2] Cross Section Area for Element 2
-E = 200                      # [N/mm^2] Modulus of elasticity 
+E = 200                      # [kN/mm^2] Modulus of elasticity 
 Nsteps =  int(np.abs(D5max / D5))# Number of steps for calculation
 
 MAX_ITERATIONS = 5000 # convergence iteration for test
