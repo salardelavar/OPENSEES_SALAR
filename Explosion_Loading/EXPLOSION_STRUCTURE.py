@@ -3,6 +3,9 @@
 #                    DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM                #
 #                             SUBJECTED TO EXPLOSION IMPACT LOADING USING OPENSEES                        #
 #---------------------------------------------------------------------------------------------------------#
+#        THIS SIMULATION IS USEFUL FOR STRUCTURAL ENGINEERS STUDYING THE EFFECTS OF BLAST LOADS ON        #
+#                   STRUCTURES, AIDING IN THE DESIGN AND ASSESSMENT OF RESILIENT SYSTEMS                  #
+#---------------------------------------------------------------------------------------------------------#
 #                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
