@@ -28,8 +28,6 @@
 #
 # 4. Visualization:
 #    - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
-#
-# This simulation is useful for structural engineers studying the effects of blast loads on structures, aiding in the design and assessment of resilient systems.
 
 # Define parameters for the Friedlander equation
 set P0 1.0e5               ;# Peak pressure (Pa)
