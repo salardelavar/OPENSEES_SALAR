@@ -1,8 +1,10 @@
 ###################################################################
 #                   >> IN THE NAME OF ALLAH <<                    #
 #  PUSHOVER ANALYSIS OF TRUSS SUBJECTED TO LATERAL DISPLACEMENT   #
-# CHECKING THE ANALYSIS BY DISPLACEMENT - LARGE DISPLACEMENT      #
-#           VERIFIED BY ABAQUS, SEISMOSTRUCT, OPENSEES            #
+#           CHECKING THE ANALYSIS BY DISPLACEMENT CONTROL         #
+#-----------------------------------------------------------------#
+#           LARGE DISPLACEMENT (GEOMETRIC NONLINEARITY)           #
+#    THIS EXAMPLE VERIFIED BY ABAQUS, SEISMOSTRUCT, OPENSEES      #
 #-----------------------------------------------------------------#
 #  THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)  #
 #              E-MAIL: SALAR.D.GHASHGHAEI@GMAIL.COM               #
