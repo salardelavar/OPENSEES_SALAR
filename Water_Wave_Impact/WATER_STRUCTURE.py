@@ -1,12 +1,11 @@
 ###########################################################################################################
 #                                                 IN THE NAME OF ALLAH                                    #
+#            DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM SUBJECTED              #
+#                                   TO WATER IMPACT LOADING USING OPENSEES                                #
 #---------------------------------------------------------------------------------------------------------# 
 #                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
-#
-# Title:  
-# Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Water Impact Loading Using OpenSeesPy
 #
 # Target:  
 # This code models and analyzes the dynamic response of an SDOF structural system under time-varying water impact pressure.
