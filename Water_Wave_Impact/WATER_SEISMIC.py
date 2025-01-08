@@ -1,11 +1,10 @@
-###########################################################################################################
-#                                                 IN THE NAME OF ALLAH                                    #
-#---------------------------------------------------------------------------------------------------------#
-#                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
-#                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
-###########################################################################################################
-# Title:
-# Dynamic Analysis of a Structural System Under Combined Water Impact and Seismic Loading Using OpenSeesPy
+#############################################################################################################
+#                                                 IN THE NAME OF ALLAH                                      #
+#  DYNAMIC ANALYSIS OF A STRUCTURAL SYSTEM UNDER COMBINED WATER IMPACT AND SEISMIC LOADING USING OPENSEES   #
+#-----------------------------------------------------------------------------------------------------------#
+#                                     THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
+#                                            EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
+#############################################################################################################
 # 
 # Target:
 # This code aims to simulate and analyze the dynamic response of a simple structural system subjected to:
