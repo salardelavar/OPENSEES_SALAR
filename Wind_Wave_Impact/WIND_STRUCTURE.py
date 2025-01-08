@@ -8,10 +8,6 @@
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
 #
-# Title:  
-# Dynamic Response Analysis of a Single-Degree-of-Freedom (SDOF) System Subjected to Wind Impact Loading Using OpenSeesPy
-# Generate a combined time series of turbulent wind pressure, gust loads, and random fluctuations.
-#
 # Target:  
 # This code models and analyzes the dynamic response of an SDOF structural system under time-varying wind impact pressure.
 # The objectives include:  
