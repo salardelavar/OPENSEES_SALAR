@@ -317,8 +317,8 @@ ops.analysis('Static')
 
 # Output Data
 ops.recorder('Node', '-file', f"DTH_PUSH.txt",'-time', '-node', 3, '-dof', 1,2, 'disp')        # Displacement Time History Node 3
-ops.recorder('Node', '-file', f"BTH_PUSH_01.txt",'-time', '-node', 1, '-dof', 1,2, 'reaction') # Base Shear Time History Node 1
-ops.recorder('Node', '-file', f"BTH_PUSH_02.txt",'-time', '-node', 2, '-dof', 1,2, 'reaction') # Base Shear Time History Node 2
+ops.recorder('Node', '-file', f"BTH_PUSH_01.txt",'-time', '-node', 1, '-dof', 1,2, 'reaction') # Base Reaction Time History Node 1
+ops.recorder('Node', '-file', f"BTH_PUSH_02.txt",'-time', '-node', 2, '-dof', 1,2, 'reaction') # Base Reaction Time History Node 2
 
 # Results storage
 displacements = []
