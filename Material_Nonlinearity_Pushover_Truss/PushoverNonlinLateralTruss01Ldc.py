@@ -8,6 +8,17 @@
 #  THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)  #
 #              E-MAIL: SALAR.D.GHASHGHAEI@GMAIL.COM               #
 ###################################################################
+"""
+This Python code performs a pushover analysis of a truss subjected to lateral displacement
+ using both custom calculations and the OpenSees library.
+ 
+Key steps include:
+1. Parameter Initialization: Sets geometry, material properties, and simulation parameters.
+2. Custom Calculation: Uses Newton-Raphson iterations to calculate displacement and force responses for truss members based on incremental displacement.
+3. OpenSees Modeling: Creates a finite element model, applies boundary conditions, loads, and performs displacement-controlled analysis.
+4. Post-processing: Reads displacements and forces from results files and Excel sheets for verified data.
+5. Plotting Results: Compares Python and OpenSees results to validate the analysis.
+"""
 
 import numpy as np
 import time as ti
