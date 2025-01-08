@@ -16,7 +16,7 @@ Key steps include:
 1. Parameter Initialization: Sets geometry, material properties, and simulation parameters.
 2. Custom Calculation: Uses Newton-Raphson iterations to calculate displacement and force responses for truss members based on incremental displacement.
 3. OpenSees Modeling: Creates a finite element model, applies boundary conditions, loads, and performs displacement-controlled analysis.
-4. Post-processing: Reads displacements and forces from results files and Excel sheets for verified data.
+4. Post-processing: Reads displacements and forces from results files.
 5. Plotting Results: Compares Python and OpenSees results to validate the analysis.
 """
 
