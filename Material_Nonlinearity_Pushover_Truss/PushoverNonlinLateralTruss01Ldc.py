@@ -38,10 +38,10 @@ Nsteps =  int(np.abs(D5max / D5))# Number of steps for calculation
 
 # Steel Section Properties
 fy = 0.24       # [kN/mm^2] Yield strength of steel section
+fu = 1.5 * fy   # [kN/mm^2] Ultimate strength of steel section
 Es = 200        # [kN/mm^2] Modulus of elasticity of steel section
-fu = 1.5 * fy   # Ultimate steel stress
-ey = fy / Es    # Yield steel strain
-esu = 0.35      # Ultimate steel strain
+ey = fy / Es    # [mm/mm] Yield steel strain
+esu = 0.35      # [mm/mm] Ultimate steel strain
 
 Esh = (fu - fy) / (esu - ey)  # Strain hardening modulus
 b = Esh / Es                  # Strain hardening ratio
