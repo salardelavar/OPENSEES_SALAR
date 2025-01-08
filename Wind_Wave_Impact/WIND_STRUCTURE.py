@@ -1,5 +1,8 @@
 ###########################################################################################################
 #                                                 IN THE NAME OF ALLAH                                    #
+#         DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM SUBJECTED                 #
+#             TO WIND IMPACT LOADING USING OPENSEES GENERATE A COMBINED TIME SERIES OF                    #
+#                     TURBULENT WIND PRESSURE, GUST LOADS, AND RANDOM FLUCTUATIONS                        #
 #---------------------------------------------------------------------------------------------------------# 
 #                         THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                   #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
