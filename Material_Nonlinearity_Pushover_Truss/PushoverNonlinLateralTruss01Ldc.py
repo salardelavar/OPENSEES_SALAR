@@ -384,8 +384,8 @@ import matplotlib.pyplot as plt
 
 # Plot Y-displacement (D5) vs Base Reaction (kN)
 plt.figure(figsize=(10, 5))
-plt.plot(U5N, TBS5N, label='Python', color='black')
-plt.plot(dispP, forces, label='OpenSees', color='r', linestyle='--')
+plt.plot(U5N, TBS5N, label='Python', color='black', linewidth=4)
+plt.plot(dispP, forces, label='OpenSees', color='r', linestyle='--', linewidth=4)
 plt.xlabel('X-Displacement (mm) [DOF 5]')
 plt.ylabel('Base Reaction (kN) [DOF 1] + [DOF 3]')
 plt.title('X-Displacement vs X-Base Reaction')
