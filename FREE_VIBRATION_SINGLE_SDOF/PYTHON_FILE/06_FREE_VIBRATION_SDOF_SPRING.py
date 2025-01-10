@@ -66,8 +66,8 @@ def perform_analysis(damping=False):
     ops.pattern('Plain', 1, 1)
     ops.load(2, 1.0, 0, 0)
 
-    ops.constraints('Transformation')
-    ops.numberer('RCM')
+    ops.constraints('Plain')
+    ops.numberer('Plain')
     ops.system('BandGeneral')
     ops.algorithm('Linear')
     ops.test('NormDispIncr', 1.0e-8, 10)
@@ -88,8 +88,8 @@ def perform_analysis(damping=False):
     ops.load(2, 1.0, 0, 0)
 
     # Dynamic analysis
-    ops.constraints('Transformation')
-    ops.numberer('RCM')
+    ops.constraints('Plain')
+    ops.numberer('Plain')
     ops.system('UmfPack')
     ops.test('NormDispIncr', 1.0e-8, 10)
     ops.integrator('Newmark', 0.5, 0.25)
