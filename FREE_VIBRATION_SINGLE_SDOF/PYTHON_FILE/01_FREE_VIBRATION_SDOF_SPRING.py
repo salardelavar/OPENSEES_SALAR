@@ -68,8 +68,8 @@ def perform_analysis(damping=False):
     ops.system('UmfPack')
 
     # Dynamic analysis
-    ops.constraints('Transformation')
-    ops.numberer('RCM')
+    ops.constraints('Plain')
+    ops.numberer('Plain')
     ops.system('UmfPack')
     ops.test('NormDispIncr', 1.0e-8, 10)
     ops.integrator('Newmark', 0.5, 0.25)
