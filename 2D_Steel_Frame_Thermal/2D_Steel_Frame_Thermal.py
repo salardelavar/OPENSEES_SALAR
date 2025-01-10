@@ -1,6 +1,6 @@
 ####################################################################################
 #                              IN THE NAME OF ALLAH                                #
-#        THERMAL AND STRUCTURAL ANALYSIS OF A 2D STEEL FRAME USING OPENSEES        #
+#     THERMAL LOADING STRUCTURAL ANALYSIS OF A 2D STEEL FRAME USING OPENSEES       #
 #----------------------------------------------------------------------------------#
 # In all the beams of the floors, the extended load due to the dead load has been  #
 # applied, and only in the beams of the first floor, the load due to the heat of   #
