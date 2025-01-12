@@ -282,7 +282,7 @@ print(f'\nTotal time (s): {totaltime:.4f} \n\n')
 #--------------------------------------------------------------------
 
 # Define a function to plot the frame shapes
-def plot_frame(deformed_scale=1.0):
+def PLOT_FRAME(deformed_scale=1.0):
     fig, ax = plt.subplots(figsize=(20, 16))
 
     # Extract node coordinates
@@ -324,7 +324,7 @@ def plot_frame(deformed_scale=1.0):
     plt.show()
     
 # Plot frame shapes
-plot_frame(deformed_scale=10)  # Adjust scale factor as needed
+PLOT_FRAME(deformed_scale=10)  # Adjust scale factor as needed
 
 #--------------------------------------------------------------------
 
