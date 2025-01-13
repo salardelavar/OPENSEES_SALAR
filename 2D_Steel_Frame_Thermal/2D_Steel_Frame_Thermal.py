@@ -361,6 +361,8 @@ base03_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_03', 3) # Reading base reaction from T
 base04_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_04', 3) # Reading base reaction from Text file - NODE 4
 base05_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_05', 3) # Reading base reaction from Text file - NODE 5
 BASES_MOMENT = base01_Z + base02_Z + base03_Z + base04_Z + base05_Z
+
+ops.wipe()
 #--------------------------------------------------------------------
 
 # Plot results
