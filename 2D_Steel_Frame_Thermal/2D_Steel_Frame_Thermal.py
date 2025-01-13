@@ -49,7 +49,8 @@ num_bays = 4              # Number of Bays
 MAX_ITERATIONS = 10000    # Convergence iteration for test
 TOLERANCE = 1.0e-10       # Convergence tolerance for test
 
-Nstep = 100     # Number of incremental steps
+Nstep = 100                 # Number of incremental steps
+Incr_Temp = 0.005           # Incremental temperature step
 #--------------------------------------------------------------------
 # Define model
 ops.model('basic', '-ndm', 2, '-ndf', 3)
@@ -245,13 +246,12 @@ for ele_id in beam_id:
     
 #--------------------------------------------------------------------
 # Define analysis
-incrtemp = 0.01
 ops.system('BandGeneral')
 ops.constraints('Plain')
 ops.numberer('Plain')
 ops.test('NormDispIncr', TOLERANCE, MAX_ITERATIONS, 1)
 ops.algorithm('Newton')
-ops.integrator('LoadControl', incrtemp)
+ops.integrator('LoadControl', Incr_Temp)
 ops.analysis('Static')
 #--------------------------------------------------------------------
 # Output Data
