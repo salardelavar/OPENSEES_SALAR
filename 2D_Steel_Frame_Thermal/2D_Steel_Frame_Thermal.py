@@ -29,7 +29,6 @@ Key points:
 starttime = TI.process_time()
 
 # Define parameters (units: mm, kN)
-# Node coordinates
 story_height = 3000.0  # [mm] Height of each story
 bay_width = 7000.0     # [mm] Width of each bay
 # Define material (Steel01Thermal)
@@ -55,6 +54,7 @@ Nstep = 100     # Number of incremental steps
 # Define model
 ops.model('basic', '-ndm', 2, '-ndf', 3)
 ops.wipe()
+# Node coordinates
 node_id = 1
 for i in range(num_stories + 1):  # Including ground level
     for j in range(num_bays + 1):  # Including leftmost column
