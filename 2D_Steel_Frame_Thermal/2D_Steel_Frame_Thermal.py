@@ -166,11 +166,11 @@ def R_RECTANGULAR_CONCRETE_SECTION(secTag):
     # Define a rectangular concrete section using fibers.
     B = 400       # [mm] Width of the rectangular section
     H = 500       # [mm] Height of the rectangular section
-    NUM_B = 100   # Number of fibers along the width of the section
-    NUM_H = 100   # Number of fibers along the height of the section
+    NUM_B = 10   # Number of fibers along the width of the section
+    NUM_H = 10   # Number of fibers along the height of the section
     secTag = 1    # Section tag identifier
     matTag = 1    # Material tag for the concrete
-    ops.section('Fiber', secTag)
+    ops.section('FiberThermal', secTag)
     # Create fibers for the entire section
     for i in range(NUM_B):
         for j in range(NUM_H):
@@ -182,7 +182,7 @@ def R_RECTANGULAR_CONCRETE_SECTION(secTag):
             # Add the fiber to the section
             ops.fiber(x_loc, y_loc, fiber_area, matTag)
 
-    return H    
+    return H  
 #--------------------------------------------------------------------
 secTag = 1
 Depth = I_SECTION(secTag)
