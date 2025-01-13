@@ -99,9 +99,9 @@ ConcreteECThermal is derived by modification of the existing concrete material
 """
 #ops.uniaxialMaterial('ConcreteECThermal', matTag02, fcp, epsc0, fpcu, epsU, lamda, ft, Ets) # Concrete hardening Material with thermal effect
 #--------------------------------------------------------------------
-
+#----------------------------------------------
 # Concrete Thermal Fiber Section without Rebars 
-
+#----------------------------------------------
 def R_RECTANGULAR_CONCRETE_SECTION(secTag, B, H, NUM_B, NUM_H, matTag):
     #matTag = 1    # Material tag for the concrete
     ops.section('FiberThermal', secTag)
@@ -117,9 +117,9 @@ def R_RECTANGULAR_CONCRETE_SECTION(secTag, B, H, NUM_B, NUM_H, matTag):
             ops.fiber(x_loc, y_loc, fiber_area, matTag)
 
     return H
-    
+#----------------------------------------------    
 # Concrete Thermal Fiber Section with Rebars 
- 
+#---------------------------------------------- 
 def R_RECTANGULAR_CONCRETE_SECTION_REBAR(secTag, B, H, NUM_B, NUM_H, matTag_concrete, matTag_steel):
     # Define the concrete section using fibers
     ops.section('FiberThermal', secTag)
