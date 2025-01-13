@@ -50,7 +50,7 @@ MAX_ITERATIONS = 10000    # Convergence iteration for test
 TOLERANCE = 1.0e-10       # Convergence tolerance for test
 
 Nstep = 100                 # Number of incremental steps
-Incr_Temp = 0.005           # Incremental temperature step
+Incr_Temp = 0.01            # Incremental temperature step
 #--------------------------------------------------------------------
 # Define model
 ops.model('basic', '-ndm', 2, '-ndf', 3)
