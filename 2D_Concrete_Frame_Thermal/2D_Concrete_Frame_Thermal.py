@@ -103,7 +103,7 @@ ConcreteECThermal is derived by modification of the existing concrete material
 # Concrete Thermal Fiber Section without Rebars 
 
 def R_RECTANGULAR_CONCRETE_SECTION(secTag, B, H, NUM_B, NUM_H, matTag):
-    matTag = 1    # Material tag for the concrete
+    #matTag = 1    # Material tag for the concrete
     ops.section('FiberThermal', secTag)
     # Create fibers for the entire section
     for i in range(NUM_B):
@@ -121,21 +121,16 @@ def R_RECTANGULAR_CONCRETE_SECTION(secTag, B, H, NUM_B, NUM_H, matTag):
 # Concrete Thermal Fiber Section with Rebars 
  
 def R_RECTANGULAR_CONCRETE_SECTION_REBAR(secTag, B, H, NUM_B, NUM_H, matTag_concrete, matTag_steel):
-    import openseespy.opensees as ops
-
     # Define the concrete section using fibers
     ops.section('FiberThermal', secTag)
-
     # Create concrete fibers for the rectangular section
     for i in range(NUM_B):
         for j in range(NUM_H):
             # Calculate the x and y location of the fiber centroid
             x_loc = -B / 2 + (i + 0.5) * (B / NUM_B)
             y_loc = -H / 2 + (j + 0.5) * (H / NUM_H)
-
             # Define the fiber area
             fiber_area = (B / NUM_B) * (H / NUM_H)
-
             # Add the concrete fiber to the section
             ops.fiber(x_loc, y_loc, fiber_area, matTag_concrete)
 
@@ -158,7 +153,6 @@ def R_RECTANGULAR_CONCRETE_SECTION_REBAR(secTag, B, H, NUM_B, NUM_H, matTag_conc
 
         # Add first rebar in the layer
         ops.fiber(x_loc_1, y_loc, rebar_area, matTag_steel)
-
         # Add second rebar in the layer
         ops.fiber(x_loc_2, y_loc, rebar_area, matTag_steel)
 
