@@ -16,9 +16,9 @@ import openseespy.opensees as ops
 from Analysis_Function import ANALYSIS
 
 """
-Models and analyzes a 2D oncrete frame subjected to thermal and distributed loads using OpenSees. 
+Models and analyzes a 2D concrete frame subjected to thermal and distributed loads using OpenSees. 
 Key points:  
-1. Model Definition: The 2D frame has specified node coordinates for stories and bays, with fixed supports at the base. Material properties for concrete (with thermal effects) and section geometries (I-section, circular, and rectangular tubes) are defined using fiber elements.  
+1. Model Definition: The 2D frame has specified node coordinates for stories and bays, with fixed supports at the base. Material properties for concrete (with thermal effects) and section geometries are defined using fiber elements.  
 2. Element and Load Setup: Beam-column elements with corotational geometric transformation and Lobatto beam integration are created. Distributed loads are applied to beams, and a thermal gradient is applied to the first story beams.  
 3. Analysis Setup: The analysis uses static load control with thermal increments, and the Newton-Raphson algorithm ensures convergence. Convergence tolerances and maximum iterations are defined.  
 4. Output and Post-processing: Displacements, reactions, and deformations are recorded during the analysis. Data is extracted from output files for plotting base reactions (axial, shear, moment) and node displacements against temperature or applied load.  
