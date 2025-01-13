@@ -54,6 +54,7 @@ Nstep = 100     # Number of incremental steps
 #--------------------------------------------------------------------
 # Define model
 ops.model('basic', '-ndm', 2, '-ndf', 3)
+ops.wipe()
 node_id = 1
 for i in range(num_stories + 1):  # Including ground level
     for j in range(num_bays + 1):  # Including leftmost column
@@ -360,7 +361,6 @@ base03_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_03', 3) # Reading base reaction from T
 base04_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_04', 3) # Reading base reaction from Text file - NODE 4
 base05_Z = OUTPUT_SECOND_COLUMN('BTH_PUSH_05', 3) # Reading base reaction from Text file - NODE 5
 BASES_MOMENT = base01_Z + base02_Z + base03_Z + base04_Z + base05_Z
-
 #--------------------------------------------------------------------
 
 # Plot results
