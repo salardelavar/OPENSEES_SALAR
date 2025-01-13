@@ -142,10 +142,10 @@ def R_RECTANGULAR_CONCRETE_SECTION_REBAR(secTag, B, H, NUM_B, NUM_H, matTag_conc
     # Add steel rebars (6 layers, 2 rebars per layer)
     rebar_diameter = 20  # [mm], example diameter of the rebar
     rebar_area = 3.14159 * (rebar_diameter / 2) ** 2  # Calculate rebar cross-sectional area
-
+    # Rebar Layers (You can exclude the rebar layers to enhance the simulation of beams or columns)
     rebar_positions = [
-        -H / 2 + H / 8,  # First layer
-        -H / 2 + H / 4,  # Second layer
+        -H / 2 + H / 8,      # First layer
+        -H / 2 + H / 4,      # Second layer
         -H / 2 + 3 * H / 8,  # Third layer
         -H / 2 + 5 * H / 8,  # Fourth layer
         -H / 2 + 3 * H / 4,  # Fifth layer
