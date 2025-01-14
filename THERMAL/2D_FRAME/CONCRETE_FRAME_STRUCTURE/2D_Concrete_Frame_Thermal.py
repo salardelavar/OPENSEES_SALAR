@@ -222,7 +222,7 @@ for ele_id in beam_id:
 
 # Apply thermal load to all elements
 #for ele_id in range(1, element_id):
-#    ops.eleLoad('-ele', ele_id, '-type', '-beamThermal', Thermal, -0.01, Thermal, DD)
+#    ops.eleLoad('-ele', ele_id, '-type', '-beamThermal', Thermal, -DD, Thermal, DD)
 
 # Apply thermal load only to the identified beam elements
 DD = 0.5 * Depth
