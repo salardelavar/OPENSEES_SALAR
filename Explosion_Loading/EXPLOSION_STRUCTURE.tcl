@@ -30,16 +30,16 @@
 #    - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
 
 # Define parameters for the Friedlander equation
-set P0 1.0e5               ;# Peak pressure (Pa)
-set t0 0.1                ;# Positive phase duration (s)
+set P0 1.0e5              ;# [Pa] Peak pressure
+set t0 0.1                ;# [s] Positive phase duration
 set A 1.3                 ;# Wave decay coefficient
-set dt 0.001              ;# Time step (s)
-set impact_duration 2.0   ;# Total duration of explosion impact (s)
-set duration 10.0         ;# Total simulation duration (s)
+set dt 0.001              ;# [s] Time step
+set impact_duration 2.0   ;# [s] Total duration of explosion impact
+set duration 10.0         ;# [s] Total simulation duration
 
 # Define structure parameters
-set k 1.0e6               ;# Stiffness of the structure (N/m)
-set m 1000.0              ;# Mass of the structure (kg)
+set k 1.0e6               ;# [N/m] Stiffness of the structure
+set m 1000.0              ;# [kg] Mass of the structure
 set damping_ratio 0.05    ;# Damping ratio
 
 # Generate Friedlander explosion pressure time series
