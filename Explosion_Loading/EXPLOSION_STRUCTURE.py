@@ -28,6 +28,7 @@
 #
 # 4. Visualization:
 #    - Generates plots for displacement, velocity, acceleration, and base reactions to evaluate the impact of the explosion loading on the structure.
+
 import openseespy.opensees as ops
 import numpy as np
 import matplotlib.pyplot as plt
