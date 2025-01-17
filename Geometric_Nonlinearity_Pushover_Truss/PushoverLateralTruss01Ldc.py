@@ -114,7 +114,7 @@ for i in range(Nsteps):
         f = K * u - F  # Force imbalance
 
         # Calculate du and update residual
-        du = -f / Kini  # Displacement increment
+        du = f / Kini  # Displacement increment
         residual = np.max(np.abs(du))  # Update residual
         it += 1  # Increment iteration counter
 
@@ -123,7 +123,7 @@ for i in range(Nsteps):
             print("    ## Trial iterations reached to Ultimate .The solution for this step is not converged ##")
             break
 
-        u += du  # Update displacement
+        u -= du  # Update displacement
 
     if it < MAX_ITERATIONS:
         print(f"             {i+1}                      {it}")
