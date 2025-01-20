@@ -40,7 +40,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 import time as ti
 from SALAR_MATH import BETA_PDF, HISROGRAM_BOXPLOT
-
+#-------------------------------------------------------------------------------------------
 # Kanai-Tajimi model differential equations
 def kanai_tajimi_model(Y, t, omega_g, zeta_g, white_noise, dt):
     x, v = Y
@@ -52,7 +52,7 @@ def kanai_tajimi_model(Y, t, omega_g, zeta_g, white_noise, dt):
 # Kanai-Tajimi Power Spectral Density function
 def kanai_tajimi_psd(omega, omega_g, zeta_g, S_0):
     return S_0 * (1 + (2 * zeta_g * omega / omega_g)**2) / ((1 - (omega / omega_g)**2)**2 + (2 * zeta_g * omega / omega_g)**2)
-
+#-------------------------------------------------------------------------------------------
 # Time settings
 t_max = 10                  # Total time for simulation (s)
 NUM_SIM = 6000             # Total number for simulation
@@ -67,17 +67,16 @@ s_0 = BETA_PDF(0.9, 1.1, 1, 1, NUM_SIM)    # Intensity of the ground motion
 #  Z and W are variables that play a role in defining the natural frequency of the ground (𝜔𝑔) and, by extension, influence the earthquake simulation         
 ZZ = BETA_PDF(1.8, 2.2,1, 1, NUM_SIM)      #Constant Value
 WW = BETA_PDF(2.3, 2.7,1, 1, NUM_SIM)      #Variable Value 
-
+#-------------------------------------------------------------------------------------------
 HISROGRAM_BOXPLOT(ZETA_G, HISTO_COLOR='blue', LABEL='Damping ratio of the ground')
 HISROGRAM_BOXPLOT(s_0, HISTO_COLOR='purple', LABEL='Velocity')
 HISROGRAM_BOXPLOT(ZZ, HISTO_COLOR='green', LABEL='Constant Value')
 HISROGRAM_BOXPLOT(WW, HISTO_COLOR='gold', LABEL='Variable Value')
-                  
-TIME = np.arange(dt, t_max, dt)
-
+#-------------------------------------------------------------------------------------------                  
 # Analysis Durations:
 starttime = ti.process_time()
-    
+
+TIME = np.arange(dt, t_max, dt)
 for I in range(NUM_SIM):
     # Define the Kanai-Tajimi model parameters
     Z = ZZ[I]
@@ -90,23 +89,16 @@ for I in range(NUM_SIM):
     psd = kanai_tajimi_psd(omega, omega_g, zeta_g, S_0)
     # Find the psd
     max_psd = np.max(np.abs(psd))
-    
     # White noise generation
     white_noise = BETA_PDF(-np.sqrt(s_0[I]), np.sqrt(s_0[I]), 0.5, 0.5, len(TIME))
-
-
     # Initial conditions
     Y0 = [0, 0]
-
     # Solve the differential equations
     sol = odeint(kanai_tajimi_model, Y0, TIME, args=(omega_g, zeta_g, white_noise, dt))
-
     # Extract the ground acceleration time history
     ground_acceleration = sol[:, 1]
-
     # Find the maximum absolute ground acceleration
     max_ground_acceleration = np.max(np.abs(ground_acceleration))
-
     # Print ground acceleration to a text file
     with open(f'Ground_Acceleration_{I+1}.txt', 'w') as file:
         new_ground_acceleration = ground_acceleration[1:]
@@ -118,3 +110,4 @@ for I in range(NUM_SIM):
     
 totaltime = ti.process_time() - starttime
 print(f'\nTotal time (s): {totaltime:.4f} \n\n')   
+#-------------------------------------------------------------------------------------------
