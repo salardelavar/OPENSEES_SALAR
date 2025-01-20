@@ -60,7 +60,7 @@ dt = 0.01                   # Time step (s)
 # Define the frequency range for the simulation
 freq = np.linspace(dt, t_max, 1000)
 # The selection of alpha and beta coefficients in the beta probability distribution is crucial.
-#  In uncertainty analysis, careful consideration must also be given to the numerical interval (maximum and minimum) and the alpha and beta coefficients.
+# In uncertainty analysis, careful consideration must also be given to the numerical interval (maximum and minimum) and the alpha and beta coefficients.
 ZETA_G = BETA_PDF(0.5, 0.7, 1, 1, NUM_SIM) # Damping ratio of the ground
 s_0 = BETA_PDF(0.9, 1.1, 1, 1, NUM_SIM)    # Intensity of the ground motion
 # Define the Kanai-Tajimi model parameters ground motion  
