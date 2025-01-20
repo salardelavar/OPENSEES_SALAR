@@ -7,7 +7,7 @@
    # With Uncertainty Conditions Using Probability Distribution Function #
    # Monte-Carlo Method                                                  #
    #---------------------------------------------------------------------#
-   #            THIS PROGRAM WRITTEN BY SALAR DELAVAR QASHQAI            #
+   #     THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)      #
    #                 EMAIL: salar.d.ghashghaei@gmail.com                 #
    #######################################################################
 
@@ -55,7 +55,7 @@ def kanai_tajimi_psd(omega, omega_g, zeta_g, S_0):
 
 # Time settings
 t_max = 10                  # Total time for simulation (s)
-NUM_SIM = 20000             # Total number for simulation
+NUM_SIM = 6000             # Total number for simulation
 dt = 0.01                   # Time step (s)
 # Define the frequency range for the simulation
 freq = np.linspace(dt, t_max, 1000)
