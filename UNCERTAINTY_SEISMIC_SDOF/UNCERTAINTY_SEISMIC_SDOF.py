@@ -72,6 +72,8 @@ import matplotlib.pyplot as plt
 import SALAR_MATH as S01
 import Analysis_Function as S02
 
+# The selection of alpha and beta coefficients in the beta probability distribution is crucial.
+# In uncertainty analysis, careful consideration must also be given to the numerical interval (maximum and minimum) and the alpha and beta coefficients.
 #------------------------------------------------------------------------------------------------
 # Define parameters (units: m, N)
 NUM_SIM = 6000                                   # Total number for simulation
