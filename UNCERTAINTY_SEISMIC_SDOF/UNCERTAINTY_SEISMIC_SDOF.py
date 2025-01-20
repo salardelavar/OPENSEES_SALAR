@@ -227,7 +227,7 @@ data = {
     'max_acceleration': max_acceleration,
     'mass': M,
     'Stiffness': K,
-    'Damping ratio': DR,
+    'Damping_Ratio': DR,
 }
 
 # Convert to DataFrame
