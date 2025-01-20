@@ -222,10 +222,10 @@ This code predicts the seismic safety of a structure using simulation data by tr
 import pandas as pd
 
 data = {
-    'max_displacement': max_displacement,
-    'max_velocity': max_velocity,
-    'max_acceleration': max_acceleration,
-    'mass': M,
+    'Max_displacement': max_displacement,
+    'Max_velocity': max_velocity,
+    'Max_acceleration': max_acceleration,
+    'Mass': M,
     'Stiffness': K,
     'Damping_Ratio': DR,
 }
