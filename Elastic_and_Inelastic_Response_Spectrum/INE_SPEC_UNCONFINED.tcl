@@ -104,7 +104,7 @@ element nonlinearBeamColumn 1 1 2 $numIntgrPts $ColSecTag $ColTransfTag;	# self-
 
 # Define RECORDERS ========================================================
 recorder EnvelopeNode -file SPECTRUM/INE_SPEC_UNCONFINED/DFree_$i.txt -time -node 2 -dof 1 disp;			# displacements of free nodes
-recorder EnvelopeNode -file SPECTRUM/INE_SPEC_UNCONFINED/VFree_$i.txt -time -node 2 -dof 1 vel;			# vel of free nodes
+recorder EnvelopeNode -file SPECTRUM/INE_SPEC_UNCONFINED/VFree_$i.txt -time -node 2 -dof 1 vel;			        # vel of free nodes
 recorder EnvelopeNode -file SPECTRUM/INE_SPEC_UNCONFINED/AFree_$i.txt -time -node 2 -dof 1 accel;			# accel of free nodes
 recorder EnvelopeNode -file SPECTRUM/INE_SPEC_UNCONFINED/RBase_$i.txt -time -node 1 -dof 1 reaction;			# support reaction
 # define GRAVITY ========================================================
