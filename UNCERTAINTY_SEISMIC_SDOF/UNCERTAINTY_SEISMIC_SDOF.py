@@ -99,7 +99,7 @@ S01.HISROGRAM_BOXPLOT(K, HISTO_COLOR='brown', LABEL='Spring Stiffness')
 S01.HISROGRAM_BOXPLOT(M, HISTO_COLOR='yellow', LABEL='Mass')
 S01.HISROGRAM_BOXPLOT(DR, HISTO_COLOR='cyan', LABEL='Damping Ratio')
 #------------------------------------------------------------------------------------------------
-### OPENSEES FUNCTION
+### OpenSees Function
 def ANALYSIS_SDOF(i):
     # Initialize OpenSees model
     ops.wipe()
@@ -116,9 +116,9 @@ def ANALYSIS_SDOF(i):
     # Define mass
     ops.mass(2, M[i])
         
-    # Natural frequency (rad/s)
+    # Natural frequency [rad/s]
     wn = (K[i] / M[i]) ** 0.5
-    # Damping coefficient (Ns/m)
+    # Damping coefficient [Ns/m]
     C = 2 * wn * M[i] * DR[i]
         
     # Define material properties
@@ -181,7 +181,6 @@ max_base_reaction = []
 # NUM_SIM is the number of simulations
 for i in range(NUM_SIM):
     print('STEP: ', i + 1)
-    #KANAI_TAJIMI(i)
     time, displacement, velocity, acceleration, base_reaction = ANALYSIS_SDOF(i)
     # Calculate and store the max absolute values
     max_time.append(np.max(np.abs(time)))
