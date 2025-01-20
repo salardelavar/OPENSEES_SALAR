@@ -167,7 +167,8 @@ def ANALYSIS_SDOF(i):
         
     ops.wipe()
     return time, displacement, velocity, acceleration, base_reaction
-
+    
+#------------------------------------------------------------------------------------------------
 # Analysis Durations:
 starttime = ti.process_time()
 
@@ -204,10 +205,9 @@ S01.HISROGRAM_BOXPLOT(max_velocity, HISTO_COLOR='purple', LABEL='Velocity')
 S01.HISROGRAM_BOXPLOT(max_acceleration, HISTO_COLOR='green', LABEL='Acceleration')
 S01.HISROGRAM_BOXPLOT(max_base_reaction, HISTO_COLOR='gold', LABEL='Base Reaction')
 #------------------------------------------------------------------------------------------------
-####################################
 # PLOT THE TIME-HISTORY
 S01.plot_time_history(time, displacement, velocity, acceleration, base_reaction)
-####################################
+#------------------------------------------------------------------------------------------------
 
 """
 This code predicts the seismic safety of a structure using simulation data by training a Random Forest Classifier to
@@ -233,19 +233,19 @@ data = {
 df = pd.DataFrame(data)
 #print(df)
 S01.RANDOM_FOREST(df)
-####################################
+#------------------------------------------------------------------------------------------------
 # PLOT HEATMAP FOR CORRELATION 
 S01.PLOT_HEATMAP(df)
-####################################
+#------------------------------------------------------------------------------------------------
 # MULTIPLE REGRESSION MODEL
 S01.Multiple_Regression(df) 
-####################################
+#------------------------------------------------------------------------------------------------
 # MACHINE LEARNING: LONG SHORT-TREM MEMERY (LSTM) METHOD
 x = max_displacement 
 y = max_acceleration 
 XLABEL = 'Max Displacement'
 YLABEL = 'Max Acceleration'
 S01.PREDICT_LSTM(x, y, look_back = 3000, ITERATION = 1000, XLABEL, YLABEL)
-####################################
+#------------------------------------------------------------------------------------------------
 # PERFORM RELIABILITY ANALYSIS FOR BASE REACTION AND ELEMENT CAPACITY
 S01.Reliability_Analysis(max_base_reaction, num_sim=NUM_SIM, mean_capacity=1.5e6, std_dev_capacity=2.5e5)
