@@ -80,7 +80,7 @@ import MARKOV_CHAIN as S03
 # In uncertainty analysis, careful consideration must also be given to the numerical interval (maximum and minimum) and the alpha and beta coefficients.
 #------------------------------------------------------------------------------------------------
 # Define parameters (units: m, N)
-NUM_SIM = 60                                   # Total number for simulation
+NUM_SIM = 6000                                   # Total number for simulation
 Ea = S01.BETA_PDF(2.0e3, 2.1e3, 1, 2, NUM_SIM)   # [N/m^2] Spring material Elastic modulus
 AREA = S01.BETA_PDF(0.01, 0.012, 1, 2, NUM_SIM)  # [m^2] Spring Section Area
 LENGTH = S01.BETA_PDF(9.9, 10.1, 2, 1, NUM_SIM)  # [m] Spring Length
