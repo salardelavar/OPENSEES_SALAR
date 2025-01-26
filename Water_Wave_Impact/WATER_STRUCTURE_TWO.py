@@ -174,7 +174,8 @@ while stable == 0 and current_time < duration:
     displacement.append(ops.nodeDisp(2, 1))
     velocity.append(ops.nodeVel(2, 1))
     acceleration.append(ops.nodeAccel(2, 1))
-    base_reaction.append(-k * displacement[-1])  # Reaction force
+    base_reaction.append(-ops.eleResponse(1, 'force')[0])  # Reaction force
+    #base_reaction.append(-k * displacement[-1])  # Reaction force
     #base_reaction.append(ops.nodeResponse(1, 1, 6))  # Reaction force
 
 # Plot results
