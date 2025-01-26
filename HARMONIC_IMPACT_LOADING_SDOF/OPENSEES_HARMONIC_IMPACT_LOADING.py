@@ -98,7 +98,8 @@ for step in range(num_steps):
     disp = ops.nodeDisp(2, 1)
     vel = ops.nodeVel(2, 1)
     accel = ops.nodeAccel(2, 1)
-    reaction = -stiffness * disp  # Base reaction
+    #reaction = -stiffness * disp  # Base reaction
+    reaction = -ops.eleResponse(1, 'force')[0]  # Reaction force
 
     time_history_displacement.append(disp)
     time_history_velocity.append(vel)
