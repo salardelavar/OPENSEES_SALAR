@@ -102,6 +102,7 @@ def perform_analysis(damping=False):
         ops.rayleigh(a0, a1, 0, 0)
 
     ops.analysis('Transient')
+    ops.reactions('-dynamic', '-rayleigh')
 
     # Perform transient analysis and store results
     time = []
@@ -120,7 +121,8 @@ def perform_analysis(damping=False):
         displacement.append(ops.nodeDisp(2, 1))
         velocity.append(ops.nodeVel(2, 1))
         acceleration.append(ops.nodeAccel(2, 1))
-        spring_force.append(-ops.eleResponse(1, 'force')[0])
+        #spring_force.append(-ops.eleResponse(1, 'force')[0])
+        spring_force.append(ops.nodeReaction(2, 1))
 
     return time, displacement, velocity, acceleration, spring_force
 
