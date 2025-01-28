@@ -99,9 +99,8 @@ def simulate_structure(load_level):
     ops.analysis('Static')
     ops.analyze(1)
 
-    # Get displacement at node 2
-    displacement = ops.nodeDisp(2, 1)
-    base_reaction = -ops.eleResponse(1, 'force')[0]
+    displacement = ops.nodeDisp(2, 1)               # Displacement at node 2
+    base_reaction = -ops.eleResponse(1, 'force')[0] # Base reation at node 1
     
     return displacement, base_reaction
 #---------------------------------------------------------------------------------
