@@ -3,7 +3,6 @@
    #                            IN THE NAME OF ALLAH                     #
    # Using the Kanai-Tajimi model involves simulating a non-stationary   #
    # stochastic process to represent earthquake ground motion            #
-   # Nonlinear Dynamic Analysis on Concrete Confined Section Column      #
    # With Uncertainty Conditions Using Probability Distribution Function #
    # Monte-Carlo Method                                                  #
    #---------------------------------------------------------------------#
