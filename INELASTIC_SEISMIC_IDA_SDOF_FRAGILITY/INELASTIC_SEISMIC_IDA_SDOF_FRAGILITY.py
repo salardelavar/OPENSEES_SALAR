@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                                          IN THE NAME OF ALLAH                                           #
-#                   FRAGILITY ANALYSIS BASED ON INCREMENTAL DYNAMIC ANALYSIS (IDA)                        #
+#                   FRAGILITY CURVES BASED ON INCREMENTAL DYNAMIC ANALYSIS (IDA)                        #
 #                               OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM                               #
 #---------------------------------------------------------------------------------------------------------#
 # This program performs Incremental Dynamic Analysis (IDA) on a Single-Degree-of-Freedom (SDOF) system    #
