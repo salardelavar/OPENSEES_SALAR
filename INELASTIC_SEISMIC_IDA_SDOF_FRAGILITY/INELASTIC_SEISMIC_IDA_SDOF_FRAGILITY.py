@@ -32,7 +32,6 @@ from scipy.stats import lognorm
 
 #------------------------------------------------------------------------------------------------
 # Define parameters (units: m, N)
-NUM_SIM = 1    # Total number for seismic simulation
 J_MAX = 50     # Incremental Dynamic Analysis number for simulation
 AREA = 0.0055  # [m^2] Spring Section Area
 LENGTH = 10.1  # [m] Spring Length
@@ -152,8 +151,8 @@ max_velocity = []
 max_acceleration = []
 max_base_reaction = []
 max_DI = []
-# NUM_SIM is the number of simulations
 
+# IDA ANALYSIS
 for j in range(J_MAX):
     time, displacement, velocity, acceleration, base_reaction, DI = ANALYSIS_IDA_SDOF(j, J_MAX)
     # Calculate and store the max absolute values
