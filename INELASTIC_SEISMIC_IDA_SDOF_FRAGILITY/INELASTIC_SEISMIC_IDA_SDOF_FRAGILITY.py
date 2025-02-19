@@ -327,7 +327,7 @@ plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1)
 plt.plot(time, acceleration, lw=1, color='black')
 plt.xlabel('Time (s)')
-plt.ylabel('Absolute Acceleration (g)')
+plt.ylabel('Acceleration (g)')
 plt.title('Structural Response\nGround Motion')
 plt.grid(True)
     
