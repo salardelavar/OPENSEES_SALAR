@@ -301,6 +301,7 @@ def FRAGILITY_PROBABILITY(damage_states, im_values):
 # Fragility Assessment
 # ----------------------------
 # Define damage states per FEMA P-58
+# INFO LINK: https://www.fema.gov/sites/default/files/documents/fema_p-58-2-se_volume2_implementation.pdf
 damage_params = {
 'DS1_Slight': (0.15, 0.4),    # Median PGA=0.15g, β=0.4
 'DS2_Moderate': (0.30, 0.5),
@@ -315,7 +316,7 @@ probabilities = {
     'DS3': [0.0, 0.0, 0.01, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 0.95]
 }
 """  
-im_values = max_acceleration#np.linspace(0.05, 2.0, 100)
+im_values = max_acceleration
 probabilities = FRAGILITY_PROBABILITY(damage_params, im_values) 
 # ----------------------------
 # Visualization
