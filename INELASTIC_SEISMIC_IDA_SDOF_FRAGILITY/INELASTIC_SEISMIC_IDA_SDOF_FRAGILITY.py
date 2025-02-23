@@ -57,7 +57,8 @@ def ANALYSIS_IDA_SDOF(j, J_MAX):
     # Initialize OpenSees model
     ops.wipe()
     ops.model('basic', '-ndm', 1, '-ndf', 1)
-    GMfact = 2*9.81* ((j+1) / J_MAX) # [m/s^2] standard acceleration of gravity or standard acceleration 
+    # We will adjust gravity in increments of J_MAX, ranging from near zero to 2g
+    GMfact = 2 * 9.81 * ((j+1) / J_MAX) # [m/s^2] standard acceleration of gravity or standard acceleration 
         
     # Define nodes
     ops.node(1, 0.0)  # Fixed base
