@@ -56,7 +56,7 @@ for i in range(N+1):
     ops.node(i+1, x, y)
 #------------------------------------------------------------------------------------------------
 # Define boundary conditions for simply supported column
-ops.fix(1, 1, 1, 1)    # Bottom node: fix u_x, u_y, free theta
+ops.fix(1, 1, 1, 1)    # Bottom node: fix u_x, u_y, theta
 ops.fix(N+1, 1, 0, 0)  # Top node: fix u_x, free u_y, free theta
 #------------------------------------------------------------------------------------------------
 # Define a plain load pattern (for static analysis)
