@@ -1,6 +1,7 @@
 ###########################################################################################################
 #                                         IN THE NAME OF ALLAH                                            #
 #       SIMULATION OF THE POST-BUCKLING BEHAVIOR OF A SIMPLY SUPPORTED COLUMN USING OPENSEES              #
+#                             CONSIDERING THE NONLINEARITY OF GEOMETRIC                                   #
 #---------------------------------------------------------------------------------------------------------#
 # IT MODELS A 2D ELASTIC BEAM-COLUMN WITH AN INITIAL IMPERFECTION AND APPLIES AN AXIAL COMPRESSIVE        #
 # LOAD TO ANALYZE LARGE DISPLACEMENTS.                                                                    #
