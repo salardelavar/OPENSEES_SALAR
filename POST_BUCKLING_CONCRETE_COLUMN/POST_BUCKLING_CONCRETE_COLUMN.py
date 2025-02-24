@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                         IN THE NAME OF ALLAH                                            #
 #  SIMULATION OF THE POST-BUCKLING BEHAVIOR OF A SIMPLY SUPPORTED CONFINED CONCRETE COLUMN USING OPENSEES #
-#                     CONSIDERING THE NONLINEARITY OF GEOMETRIC AND MATERIAL PROPERTIES                   #
+#                        CONSIDERING THE GEOMETRIC AND MATERIAL PROPERTIES NONLINEARITY                   #
 #---------------------------------------------------------------------------------------------------------#
 # IT MODELS A 2D ELASTIC BEAM-COLUMN WITH AN INITIAL IMPERFECTION AND APPLIES AN AXIAL COMPRESSIVE        #
 # LOAD TO ANALYZE LARGE DISPLACEMENTS.                                                                    #
