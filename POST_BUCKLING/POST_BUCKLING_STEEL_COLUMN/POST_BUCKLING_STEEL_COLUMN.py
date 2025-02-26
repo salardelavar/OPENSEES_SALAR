@@ -72,7 +72,7 @@ ops.fix(N+1, 1, 0, 0)  # Top node: fix u_x, free u_y, free theta
 #------------------------------------------------------------------------------------------------
 # Materials (STEEL MATERIAL NONLINEARITY)
 matTag = 1
-ops.uniaxialMaterial('Steel01', matTag, fy, Es, b) # Steel with bilinear kinematic hardening Material with thermaal effect
+ops.uniaxialMaterial('Steel01', matTag, fy, Es, b) # Steel with bilinear kinematic hardening Material
 #------------------------------------------------------------------------------------------------
 # Create the Double I section section
 Depth, Ele_Mass = S01.DOUBLE_I_SECTION(secTag, matTag, PLOT=True, DENSITY=DENSITY_STEEL)
