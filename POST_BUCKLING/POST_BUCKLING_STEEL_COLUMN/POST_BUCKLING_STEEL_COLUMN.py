@@ -30,6 +30,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import STEEL_FIBER_SECTION as S01
 import ANALYSIS_FUNCTION as S02
+import time as TI
 
 # Define parameters (units: m, N)
 # Define model parameters
@@ -110,6 +111,9 @@ axial_load = []  # Axial compressive load (reaction force)
 #total_steps = int(np.abs(1/disp_inc))  # Number of analysis steps
 total_steps = 10000
 
+# Analysis Durations:
+starttime = TI.process_time()
+
 for step in range(total_steps):
     OK = ops.analyze(1)  # Perform one analysis step
     S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)  # CHECK THE ANALYSIS
@@ -119,6 +123,10 @@ for step in range(total_steps):
     print(f'STEP {step+1} DONE')
 else:
     print('Analysis completed successfully')
+
+# Analysis Durations:
+starttime = TI.process_time()
+
 #------------------------------------------------------------------------------------------------    
 # Plot axial load vs. axial displacement
 plt.figure(figsize=(8, 6))
