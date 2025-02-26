@@ -97,7 +97,7 @@ ops.fix(N+1, 1, 0, 0)  # Top node: fix u_x, free u_y, free theta
 #------------------------------------------------------------------------------------------------
 # Materials (STEEL MATERIAL NONLINEARITY)
 matTag01 = 1
-ops.uniaxialMaterial('Steel01', matTag01, fy, Es, b) # Steel with bilinear kinematic hardening Material with thermaal effect
+ops.uniaxialMaterial('Steel01', matTag01, fy, Es, b) # Steel with bilinear kinematic hardening Material
 #------------------------------------------------------------------------------------------------
 # Materials (CONCRETE MATERIAL NONLINEARITY)
 matTag02 = 2
