@@ -156,7 +156,7 @@ MAX_MOM = []
 starttime = TI.time()
 
 # Number of Monte Carlo iterations
-NUM_INCREMENT = 50
+NUM_INCREMENT = 5000
 
 # Perform Monte Carlo simulation
 for II in range(NUM_INCREMENT):
