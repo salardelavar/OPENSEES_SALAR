@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                          IN THE NAME OF ALLAH                                           #
 #           FRAGILITY ANALYSIS BASED ON ACCELERATION AND STRUCTURAL DUCTILITY DAMAGE INDEX WITH           #
-#                        DYNAMIC ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM                     #
+#         RESPONSE SPECTRUM BASED ON DYNAMIC ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM         #
 #---------------------------------------------------------------------------------------------------------#
 # This program performs Dynamic Analysis on a Single-Degree-of-Freedom (SDOF) system                      #
 # subjected to seismic ground motions. The analysis evaluates the structural response under varying       #
@@ -252,7 +252,7 @@ DATA_TOTAL = {
 # Convert to DataFrame
 results_df = pd.DataFrame(DATA_TOTAL)
 # Export the DataFrame to an Excel file
-results_df.to_excel('INELASTIC_SEISMIC_IDA_SDOF_FRAGILITY_RESULTS.xlsx', index=False)
+results_df.to_excel('INELASTIC_SEISMIC_RESPONSE_SDOF_FRAGILITY_RESULTS.xlsx', index=False)
 #------------------------------------------------------------------------------------------------  
 XLABEL = 'Displacement'
 YLABEL = 'Base Reaction'
