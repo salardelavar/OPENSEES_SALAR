@@ -51,7 +51,7 @@ def BILNEAR_CURVE(Cur, Mom, SLOPE_NODE):
     print(f' Plastic Flextural Rigidity :             {Plastic_EI:.2f}')
     print(f' Tangent Flextural Rigidity :             {Tangent_EI:.2f}')
     print(f' Section Ductility Ratio :                {Ductility_Rito:.2f}')
-    print(f' Section Over Stregth Factor:             {Over_Stregth_Factor:.2f}')
+    print(f' Section Over Strength Factor:            {Over_Stregth_Factor:.2f}')
     print('+--------------------------------------------------------------------+')
     """
     """
@@ -411,7 +411,7 @@ HISROGRAM_BOXPLOT_MATPLOTLIB(X, HISTO_COLOR, LABEL)
 # --------------------------------------------------------------------------------------------------
 X = OVER_STRENGTH
 HISTO_COLOR = 'lightblue'
-LABEL = 'Section Over Stregth Factor'
+LABEL = 'Section Over Strength Factor'
 HISROGRAM_BOXPLOT_MATPLOTLIB(X, HISTO_COLOR, LABEL)
 # --------------------------------------------------------------------------------------------------
 
