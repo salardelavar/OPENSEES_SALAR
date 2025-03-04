@@ -32,7 +32,7 @@ from scipy.stats import norm
 
 #------------------------------------------------------------------------------------------------
 # Define parameters (units: m, N)
-J_MAX = 100      # Incremental Dynamic Analysis steps for the simulation
+J_MAX = 100      # Steps for the simulation
 #------------------------------------------------------------------------------------------------
 # Define  Steel Material Properties (Steel01)
 fy = 0.41                     # [N] Yield force of structure
