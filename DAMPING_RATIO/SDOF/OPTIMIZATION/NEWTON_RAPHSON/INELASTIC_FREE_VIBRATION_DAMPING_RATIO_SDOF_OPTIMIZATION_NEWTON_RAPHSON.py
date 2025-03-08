@@ -3,11 +3,6 @@
 # DAMPING RATIO OPTIMIZATION BASED ON FREE-VIBRATION ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM #
 #                                      NEWTON-RAPHSON THEORY METHOD                                       #
 #---------------------------------------------------------------------------------------------------------#
-###########################################################################################################
-#                                          IN THE NAME OF ALLAH                                           #
-# DAMPING RATIO OPTIMIZATION BASED ON FREE-VIBRATION ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM #
-#                                      NEWTON-RAPHSON THEORY METHOD                                       #
-#---------------------------------------------------------------------------------------------------------#
 #                                                                                                         #
 # FACTORS INFLUENCING DAMPING IN STRUCTURES:                                                              #
 #                                                                                                         #
