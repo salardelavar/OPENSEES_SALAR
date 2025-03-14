@@ -1,10 +1,10 @@
-##############################################################################################################
-#                                                   IN THE NAME OF ALLAH                                     #
-# MOMENT-CURVATURE ANALYSIS OF STEEL BOLTED CONNECTION SECTION IN UNCERTAINITY CONDITIONS MONTE-CARLO METHOD #
-#------------------------------------------------------------------------------------------------------------#
-#                             THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
-#                                      EMAIL: salar.d.ghashghaei@gmail.com                                   #
-############################################################################################################## 
+######################################################################################################################
+#                                                       IN THE NAME OF ALLAH                                         #
+# PROBABILISTIC MOMENT-CURVATURE ANALYSIS OF STEEL-BOLTED CONNECTIONS UNDER UNCERTAINTY USING MONTE CARLO SIMULATION #
+#--------------------------------------------------------------------------------------------------------------------#
+#                                   THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                       #
+#                                             EMAIL: salar.d.ghashghaei@gmail.com                                    #
+###################################################################################################################### 
 # STEEL CONNCETION IMAGE IS GOTTEN FROM THIS PAPER:
 # Paper Author: Jayarajan Puttatt  
 # Email: puttatt1@gmail.com  
