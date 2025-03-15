@@ -1,6 +1,7 @@
 ######################################################################################################################
 #                                                       IN THE NAME OF ALLAH                                         #
-# PROBABILISTIC MOMENT-CURVATURE ANALYSIS OF STEEL-BOLTED CONNECTIONS UNDER UNCERTAINTY USING MONTE CARLO SIMULATION #
+#           PROBABILISTIC MOMENT-CURVATURE ANALYSIS OF STEEL-BOLTED SIMPLY SUPPORTED CONNECTIONS UNDER               #
+#                                        UNCERTAINTY USING MONTE CARLO SIMULATION                                    #
 #--------------------------------------------------------------------------------------------------------------------#
 #                                   THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                       #
 #                                             EMAIL: salar.d.ghashghaei@gmail.com                                    #
