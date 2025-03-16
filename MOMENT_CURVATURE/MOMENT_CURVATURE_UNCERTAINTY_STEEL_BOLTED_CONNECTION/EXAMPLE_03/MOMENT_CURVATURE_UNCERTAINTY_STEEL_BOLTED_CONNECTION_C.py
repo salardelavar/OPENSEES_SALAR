@@ -385,7 +385,7 @@ DATA_TOTAL = {
 # Convert to DataFrame
 results_df = pd.DataFrame(DATA_TOTAL)
 # Export the DataFrame to an Excel file
-results_df.to_excel('MOMENT_CURVAURE_UNCERTAINTY_STEEL_BOLTED_CONNECTION_C_RESULTS.xlsx', index=False)
+results_df.to_excel('MOMENT_CURVATURE_UNCERTAINTY_STEEL_BOLTED_CONNECTION_C_RESULTS.xlsx', index=False)
 #------------------------------------------------------------------------------------------------  
 # ------------------------------------------
 #  Plot Moment-Cuvature Section Analysis
