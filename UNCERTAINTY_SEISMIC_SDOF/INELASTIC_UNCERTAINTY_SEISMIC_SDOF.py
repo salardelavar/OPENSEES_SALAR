@@ -237,7 +237,7 @@ print("Velocity:", max_velocity[-1])
 print("Acceleration:", max_acceleration[-1])
 print("Base Reaction:", max_base_reaction[-1])
 print("Ductility Damage Index:", max_DI[-1])
-print("Period :", max_T)
+print("Period :", max_T[-1])
 #------------------------------------------------------------------------------------------------
 S01.HISROGRAM_BOXPLOT(max_displacement, HISTO_COLOR='blue', LABEL='Displacement')
 S01.HISROGRAM_BOXPLOT(max_velocity, HISTO_COLOR='purple', LABEL='Velocity')
