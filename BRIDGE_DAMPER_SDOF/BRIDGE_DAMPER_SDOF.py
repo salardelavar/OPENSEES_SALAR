@@ -65,13 +65,13 @@ import ANALYSIS_FUNCTION as S02
 #------------------------------------------------------------------------------------------------
 # Define parameters (units: mm, N)
 # Define  Steel Material Properties for Brace Element
-Ms = 1000.0  # Mass Ms (kg)
-Mb = 500.0   # Mass Mb (kg)
-ks = 1e6     # Stiffness ks (N/mm)
-Cs = 1e4     # Damping coefficient Cs (N-s/mm)
+Ms = 1000.0  # [kg] Mass Ms
+Mb = 500.0   # [kg] Mass Mb
+ks = 1e6     # [N/mm] Stiffness ks
+Cs = 1e4     # [N-s/mm] Damping coefficient Cs
 kb = 5e5     # Stiffness kb (N/m)
-Cb = 5e3     # Damping coefficient Cb (N-s/mm)
-Cd = 15e3    # Damping coefficient Cd (N-s/mm)
+Cb = 5e3     # [N-s/mm] Damping coefficient Cb
+Cd = 15e3    # [N-s/mm] Damping coefficient Cd
 
 DR = 0.02    # Damping Ratio
 u0 = 0.1     # [mm] Initial displacement applied to the node 3
