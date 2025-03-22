@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                         IN THE NAME OF ALLAH                                            #
 #                    DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF)                       #
-#                                ELASTIC STRUCTURE UNDER FREE-VIBRATION                                   #
+#                     VISCOUS DAMPERS WITH ELASTIC STRUCTURE UNDER FREE-VIBRATION                         #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
@@ -69,7 +69,7 @@ Ms = 1000.0  # [kg] Mass Ms
 Mb = 500.0   # [kg] Mass Mb
 ks = 1e6     # [N/mm] Stiffness ks
 Cs = 1e4     # [N-s/mm] Damping coefficient Cs
-kb = 5e5     # Stiffness kb (N/m)
+kb = 5e5     # [N/m] Stiffness kb
 Cb = 5e3     # [N-s/mm] Damping coefficient Cb
 Cd = 15e3    # [N-s/mm] Damping coefficient Cd
 
