@@ -201,6 +201,14 @@ time, displacement, velocity, acceleration, base_reaction, PERIOD, STIFF = ANALY
 totaltime = ti.process_time() - starttime
 print(f'\nTotal time (s): {totaltime:.4f} \n\n') 
 #------------------------------------------------------------------------------------------------
+plt.figure(1, figsize=(8, 6))
+plt.plot(displacement, base_reaction, color='black', linewidth=2)
+plt.xlabel('Displacement [mm]')
+plt.ylabel('Base Reaction [N]')
+plt.title(f'Result for Base Reaction vs Displacement - MAX. ABS: {np.max(np.abs(displacement)):.3f}')
+plt.grid()
+plt.show()
+#------------------------------------------------------------------------------------------------
 # Compute the Cumulative Maximum Absolute Value of Last Analysis Data
 def MAX_ABS(X):
     import numpy as np
