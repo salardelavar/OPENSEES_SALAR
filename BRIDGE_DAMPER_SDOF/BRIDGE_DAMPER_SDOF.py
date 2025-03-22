@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                         IN THE NAME OF ALLAH                                            #
-#                    DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF)                       #
-#                     VISCOUS DAMPERS WITH ELASTIC STRUCTURE UNDER FREE-VIBRATION                         #
+#  DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM WITH VISCOUS DAMPING AND ELASTIC #
+#                               STRUCTURE UNDER FREE VIBRATION CONDITIONS                                 #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
