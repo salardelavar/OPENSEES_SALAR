@@ -90,7 +90,7 @@ Es = S01.BETA_PDF(2.0e5, 2.1e5, 1, 2, NUM_SIM) * Ae           # [N/mm] Spring St
 ey = fy / Es                                                  # [mm] Yield Displacement
 esu = S01.BETA_PDF(0.00001, 0.000012, 1, 2, NUM_SIM) * Ae     # [mm] Ultimate Displacement
 Esh = (fu - fy) / (esu - ey)                                  # [N/mm] Displacement Hardening Modulus
-b = Esh / Es                                                  # Displacement Hardening Ratio
+b = Esh / Es                                                  # brace Displacement Hardening Ratio
 
 # Define  Steel Material Properties for Weld Element
 LW = S01.BETA_PDF(420, 450, 1, 2, NUM_SIM)                    # [mm] Weld Total Length 
@@ -101,7 +101,7 @@ EsW = S01.BETA_PDF(2.0e5, 2.1e5, 1, 2, NUM_SIM) * AeW * LW    # [N/mm] Spring St
 eyW = fyW / EsW                                               # [mm] Yield Displacement
 esuW = S01.BETA_PDF(0.55, 0.65, 1, 2, NUM_SIM) * AeW          # [mm] Ultimate Displacement
 EshW = (fuW - fyW) / (esuW - eyW)                             # [N/mm] Displacement Hardening Modulus
-bW = EshW / EsW                                               # Displacement Hardening Ratio
+bW = EshW / EsW                                               # Weld Displacement Hardening Ratio
 
 M = S01.BETA_PDF(50000.0, 55000.0, 2, 1, NUM_SIM)             # [kg] Mass of the Structure
 DR = S01.BETA_PDF(0.02, 0.025, 1, 1, NUM_SIM)                 # Damping Ratio
