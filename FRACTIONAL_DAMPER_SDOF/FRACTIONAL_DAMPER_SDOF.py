@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                         IN THE NAME OF ALLAH                                            #
 #      DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM WITH FRACTIONAL DAMPING      #
-#                               AND ELASTIC STRUCTURE UNDER SEISMIC ACCELERATION                          #
+#                             AND INELASTIC STRUCTURE UNDER SEISMIC ACCELERATION                          #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
