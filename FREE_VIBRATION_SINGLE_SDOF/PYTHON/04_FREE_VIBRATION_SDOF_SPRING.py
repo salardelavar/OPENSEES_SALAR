@@ -96,9 +96,8 @@ def perform_analysis(damping=False):
         # Calculate Rayleigh damping factors
         Lambda01 = ops.eigen('-fullGenLapack', 1) # eigenvalue mode 1
         omega1 = np.power(max(Lambda01), 0.5)
-        omega2 = 2 * omega1  # Just an assumption for two modes
-        a0 = damping_ratio * (2 * omega1 * omega2) / (omega1 + omega2)
-        a1 = damping_ratio * 2 / (omega1 + omega2)
+        a0 =  (2 * damping_ratio * omega1) / omega1
+        a1 = (2 * damping_ratio) / omega1
         # Apply Rayleigh damping
         ops.rayleigh(a0, a1, 0, 0)
 
