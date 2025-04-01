@@ -77,7 +77,7 @@ def ANALYSIS_IDA_SDOF(j, J_MAX):
     """
     MatTag = 1
     KP = np.array([[fy , ey], [fu, esu], [0.2*fu, 1.1*esu], [0.1*fu , 1.2*esu]])           # TENSION STRESS-STRAIN RELATION
-    KN = np.array([[-fy , -ey], [-fu, -esu], [-0.2*fu, -1.05*esu], [-0.0*fu, -1.1*esu])    # COMPRESSION STRESS-STRAIN RELATION
+    KN = np.array([[-fy , -ey], [-fu, -esu], [-0.2*fu, -1.05*esu], [-0.0*fu, -1.1*esu]])    # COMPRESSION STRESS-STRAIN RELATION
     ops.uniaxialMaterial('HystereticSM', MatTag, '-posEnv', *KP.flatten(), '-negEnv', *KN.flatten(), '-pinch', 1, 1, '-damage', 0.1, 0.01, '-beta', 0,'-defoLimitStates', ey[i], -ey[i], esu[i], -esu[i], '-forceLimitStates', fy[i], -fy[i], fu[i], -fu[i])# ,'printInput'
     #INFO LINK: https://opensees.github.io/OpenSeesDocumentation/user/manual/material/uniaxialMaterials/HystereticSM.html
     """
