@@ -1,5 +1,5 @@
 ######################################################################################################################
-#                                                       IN THE NAME OF ALLAH                                         #
+#                                               IN THE NAME OF ALLAH                                                 #
 # PROBABILISTIC MOMENT-CURVATURE ANALYSIS OF STEEL-WELDED CONNECTIONS UNDER UNCERTAINTY USING MONTE CARLO SIMULATION #
 #--------------------------------------------------------------------------------------------------------------------#
 # THIS CODE PERFORMS A PROBABILISTIC MOMENT-CURVATURE ANALYSIS OF STEEL-WELDED CONNECTIONS UNDER MATERIAL            #
