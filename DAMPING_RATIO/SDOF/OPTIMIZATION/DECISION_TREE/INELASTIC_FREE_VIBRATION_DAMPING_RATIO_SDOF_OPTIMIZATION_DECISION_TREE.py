@@ -60,8 +60,8 @@ b = Esh / KE                  # Displacement hardening ratio
 M = 80                        # [kg] Mass of the structure
 KP = FU/DU                    # [N/m] Spring plastic stiffness
 
-u0 = 0.5                      # [m] Initial displacement applied to the node
-DR = 0.01                     # Intial Guess for Damping ratio
+u0 = 0.005                     # [m] Initial displacement applied to the node
+DR = 0.01                      # Intial Guess for Damping ratio
 #C = 50.0                      # Intial Guess Damping coefficient (N/(m/s)^alpha)
 #alpha = 1.0                   # Velocity exponent (linear damper)
 
