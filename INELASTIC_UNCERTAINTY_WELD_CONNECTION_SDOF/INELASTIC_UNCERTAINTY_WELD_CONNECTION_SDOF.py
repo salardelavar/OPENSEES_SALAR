@@ -197,7 +197,6 @@ def ANALYSIS_SDOF(i):
     #uniaxialMaterial MultiLinear $matTag $u1 $f1 $u2 $f2 $u3 $f3 $u4 $f4
     kh = np.array([[ey[i], fy[i]], [esu[i], fu[i]], [1.1*esu[i], 0.2*fu[i]], [1.2*esu[i], 0.1*fu[i]]])
     ops.uniaxialMaterial('MultiLinear', MatTag02, *kh.flatten()) # Horizontal spring for brace
-
     """
     MatTag02 = 2
     pinchX = 0.8           # Pinching factor in X direction
