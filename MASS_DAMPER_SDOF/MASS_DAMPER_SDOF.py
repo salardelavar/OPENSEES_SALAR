@@ -93,8 +93,8 @@ if NONLINER == 'True' and np.abs(u0) > DY:
 MAX_ITERATIONS = 1000000   # Convergence iteration limit
 MAX_TOLERANCE = 1.0e-10    # Convergence tolerance
 #------------------------------------------------------------------------------------------------
+# %% Perform dynamic response analysis of an SDOF system with an active mass damper
 def ANALYSIS_SDOF_AMD():
-    """Perform dynamic response analysis of an SDOF system with an active mass damper."""
     # Initialize OpenSees model
     ops.wipe()
     ops.model('basic', '-ndm', 1, '-ndf', 1)
