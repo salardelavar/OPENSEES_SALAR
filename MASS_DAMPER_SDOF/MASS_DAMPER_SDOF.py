@@ -7,7 +7,7 @@
 #                                      EMAIL: salar.d.ghashghaei@gmail.com                                #
 ###########################################################################################################
 """ 
-Performs a dynamic response analysis of a single-degree-of-freedom (SDOF) system equipped with an
+Dynamic response analysis of a single-degree-of-freedom (SDOF) system equipped with an
  active mass damper (AMD) under free vibration conditions.
  The system includes an elastic structure with inherent viscous damping, enhanced by an AMD
  that actively controls vibrations using velocity feedback. The analysis leverages computational
