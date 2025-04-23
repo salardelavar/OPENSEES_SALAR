@@ -80,7 +80,7 @@ dt = 0.01        # [s] Time step
 K_control = 1e4  # [N-s/mm] Control gain for AMD (tunable parameter)
 
 # FOR NONLINEAR STRUCTURES
-NONLINER = 'False' # 'True' active Nonlinear Behaviour for main Strucure Spring
+NONLINER = 'False' # 'True' -> Active Nonlinear Behaviour for main Strucure (Spring)
 DY = 0.001         # [mm] Yield Displacement
 FY = 110.0         # [N] Yield Force
 DU = 3.200         # [mm] Ultimate Displacement
