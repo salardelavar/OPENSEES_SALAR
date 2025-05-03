@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                                             IN THE NAME OF ALLAH                                        #
-#    REVERSED CYCLIC PUSHOVER ANALYSIS OF SINGLE DEGREE OF FREEDOM (SDOF) REINFORCED CONCRETE SECTIONS    #
+#     REVERSED CYCLIC PUSHOVER ANALYSIS OF SINGLE DEGREE OF FREEDOM (SDOF) REINFORCED CONCRETE SECTION    #
 #            WITH PLATES EVALUATING STRAIN HARDENING AND ULTIMATE STRAIN CRITERIA USING OPENSEES          #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
