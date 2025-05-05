@@ -229,7 +229,7 @@ def CYCLIC_ANALYSIS(LENGTH, b, h, cover, Es, fy, As, ECU, CYCL, NUM, STEEL_KIND)
         M = ops.nodeReaction(1, 3) # MOMENT BASE REACTION
         #print(rot, M)
         disp_X = ops.nodeDisp(2, 1) # LATERAL DISPLACEMENT IN X FOR NODE 2
-        disp_Y = ops.nodeDisp(2, 1) # LATERAL DISPLACEMENT IN Y FOR NODE 2
+        disp_Y = ops.nodeDisp(2, 2) # LATERAL DISPLACEMENT IN Y FOR NODE 2
         rot = ops.nodeDisp(2, 3)    # ROTATION IN Z FOR NODE 2
         FORCE_S.append(S)
         FORCE_A.append(A)
