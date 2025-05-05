@@ -7,7 +7,7 @@
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
 ###########################################################################################################
 """
-1. Generates user-defined cyclic curvature histories (linear or polynomial growth)
+1. Generates user-defined cyclic displacement or load histories (linear or polynomial growth)
  and plots the loading signal.
  
 2. Defines confined (core) and unconfined (cover) concrete via `Concrete01`,
