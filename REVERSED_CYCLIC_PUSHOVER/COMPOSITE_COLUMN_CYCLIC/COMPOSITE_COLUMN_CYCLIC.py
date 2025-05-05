@@ -34,7 +34,7 @@ rotation at the free node as the controlled DOF.
 9. Aggregates all results into a pandas DataFrame and exports them to `COMPOSITE_CYCLIC_RESULTS.xlsx`
  for post-processing.
  
-10. Offers a modular, extensible framework for advanced cyclic SDOF RC section studies,
+10. Offers a modular, extensible framework for advanced cyclic column RC section studies,
  capturing confinement, pinching, and degradation effects.
 
 """
