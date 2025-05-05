@@ -159,7 +159,7 @@ def CYCLIC_ANALYSIS(LENGTH, b, h, cover, Es, fy, As, ECU, CYCL, NUM, STEEL_KIND,
     # Nodes
     ops.node(1, 0.0, 0.0)
     ops.node(2, 0.0, LENGTH)
-    ops.fix(1, 1, -1, 1)
+    ops.fix(1, 1, 1, 1)
 
     secTag = 10
     coreTag = 1
