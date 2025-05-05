@@ -196,7 +196,7 @@ def CYCLIC_ANALYSIS(LENGTH_COL, LENGTH_BM, Es, fy, esu, CYCL, NUM, STEEL_KIND):
         ops.reactions()
         S = ops.nodeReaction(1, 1) + ops.nodeReaction(2, 1) # SHEAR BASE REACTION
         A = ops.nodeReaction(1, 2) + ops.nodeReaction(2, 2) # AXIAL BASE REACTION
-        M = ops.nodeReaction(1, 3) + ops.nodeReaction(2, 3)# MOMENT BASE REACTION
+        M = ops.nodeReaction(1, 3) + ops.nodeReaction(2, 3) # MOMENT BASE REACTION
         #print(rot, M)
         disp_X = ops.nodeDisp(3, 1) # LATERAL DISPLACEMENT IN X FOR NODE 3
         disp_Y = ops.nodeDisp(3, 2) # LATERAL DISPLACEMENT IN Y FOR NODE 3
