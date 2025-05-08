@@ -32,7 +32,7 @@ def PLOT_2D_FRAME(deformed_scale=1.0):
                 
     # Annotate nodes with their tags
     for node, (x, y) in node_coords.items():
-        ux, uy = ops.nodeDisp(node)  # Displacement at node
+        ux, uy, _ = ops.nodeDisp(node)  # Displacement at node
         ax.text(x, y, f"{node}", color='blue', fontsize=12, ha='center', label='Node Tags' if node == 1 else "")  # Undeformed
         ax.text(x + deformed_scale * ux, y + deformed_scale * uy, f"{node}", color='purple', fontsize=12, ha='center')  # Deformed            
 
