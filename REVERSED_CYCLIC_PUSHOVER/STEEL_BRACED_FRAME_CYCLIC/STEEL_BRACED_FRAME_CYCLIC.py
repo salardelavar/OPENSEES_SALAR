@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                                             IN THE NAME OF ALLAH                                        #
-#                    REVERSED CYCLIC PUSHOVER ANALYSIS OF STEEL BRACED FRAME SECTION                      #
+#                       REVERSED CYCLIC PUSHOVER ANALYSIS OF STEEL BRACED FRAME                           #
 #               EVALUATING STRAIN HARDENING AND ULTIMATE STRAIN CRITERIA USING OPENSEES                   #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
