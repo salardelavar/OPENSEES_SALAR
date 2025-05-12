@@ -314,14 +314,14 @@ def SECTION_ANALYSIS(axial, shear, moment, DR, STRAIN_ULT, DOF):
             OK = op.analyze(1)
             ANALYSIS(OK, 1, TOLERANCE, MAX_ITERATIONS)
             strain = -op.nodeDisp(2,1)
-            m = ops.nodeReaction(2, 3) # AXIAL FORCE
+            m = ops.nodeReaction(1, 3) # AXIAL FORCE
             cur = ops.nodeDisp(2, 3)   # STRAIN
             #print(f'ITERTION {it+1} STRAIN {strain} DONE')
         if DOF == 3:
             OK = op.analyze(1)
             ANALYSIS(OK, 1, TOLERANCE, MAX_ITERATIONS)
             strain = op.nodeDisp(2,1) - Depth/2 * op.nodeDisp(2,3)
-            m = ops.nodeReaction(2, 3) # MOMENT FORCE
+            m = ops.nodeReaction(1, 3) # MOMENT FORCE
             cur = ops.nodeDisp(2, 3)   # CURVATURE
             #print(f'ITERTION {it+1} STRAIN {strain} DONE')
         it += 1 # update iterations 
