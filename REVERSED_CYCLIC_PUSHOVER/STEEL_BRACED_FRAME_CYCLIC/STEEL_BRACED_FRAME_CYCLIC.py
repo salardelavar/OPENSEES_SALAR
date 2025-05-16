@@ -118,7 +118,7 @@ TIME, AMP = CYCLIC_LOADING(num_cycles, samples_per_cycle, MAX_VALUE, EXPO=True, 
 # ------------------------------------------
 # STEEL
 # Reinforcing steel
-fy = 400          # [N/mm²] Steel Rebar Yield Strength   
+fy = 240          # [N/mm²] Steel Yield Strength   
 Es = 2e5          # [N/mm²] Modulus of Elasticity
 ey = fy/Es        # [mm/mm] Steel Yield Strain
 fu = 1.1818*fy    # [N/mm²] Steel Ultimate Strength
