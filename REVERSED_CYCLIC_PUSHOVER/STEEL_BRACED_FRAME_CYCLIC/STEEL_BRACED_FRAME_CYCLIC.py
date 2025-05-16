@@ -116,8 +116,7 @@ TIME, AMP = CYCLIC_LOADING(num_cycles, samples_per_cycle, MAX_VALUE, EXPO=True, 
 # Define materials for nonlinear columns
 # Define parameters (units: mm, N)
 # ------------------------------------------
-# STEEL
-# Reinforcing steel
+# STEEL SECTION
 fy = 240          # [N/mm²] Steel Yield Strength   
 Es = 2e5          # [N/mm²] Modulus of Elasticity
 ey = fy/Es        # [mm/mm] Steel Yield Strain
