@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                                             IN THE NAME OF ALLAH                                        #
-#                     REVERSED CYCLIC PUSHOVER ANALYSIS OF STEEL GABLE FRAME SECTION                      #
-#               EVALUATING STRAIN HARDENING AND ULTIMATE STRAIN CRITERIA USING OPENSEES                   #
+#                     REVERSED CYCLIC PUSHOVER ANALYSIS OF INDUSTRIAL STEEL GABLE FRAME                   #
+#                   EVALUATING STRAIN HARDENING AND ULTIMATE STRAIN CRITERIA USING OPENSEES               #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
