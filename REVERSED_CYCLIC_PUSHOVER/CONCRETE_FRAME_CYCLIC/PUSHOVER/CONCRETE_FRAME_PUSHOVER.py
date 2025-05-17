@@ -382,7 +382,7 @@ LEGEND02 = 'Bilinear Fitted'
 TITLE = f'Last Data of BaseAxial-Displacement Analysis - Ductility Ratio: {X[2]/X[1]:.4f} - Over Strength Factor: {Y[2]/Y[1]:.4f}'
 COLOR = 'black'
 BC.PLOT_2D(np.abs(DISP_Y), np.abs(FORCE_A), X, Y, _, _, XLABEL, YLABEL, TITLE, LEGEND01, LEGEND02, _, COLOR='black', Z=2) 
-print(f'\t\t Ductility Ratio: {YY[2]/YY[1]:.4f}')
+#print(f'\t\t Ductility Ratio: {Y[2]/Y[1]:.4f}')
 
 # Calculate Over Strength Coefficient (Ω0)
 Omega_0 = Y[2] / Y[1]
