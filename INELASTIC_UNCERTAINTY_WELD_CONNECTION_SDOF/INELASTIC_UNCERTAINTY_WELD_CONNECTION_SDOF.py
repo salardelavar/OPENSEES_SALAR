@@ -119,7 +119,7 @@ print('Period of Plastic Structure: ', T_PLASTIC)
 # Calculate Over Strength Coefficient (Ω0)
 Omega_0 = fuW / fyW
 # Calculate Displacement Ductility Ratio (μ)
-mu = EsW / eyW
+mu = esuW / eyW
 # Calculate Ductility Coefficient (Rμ)
 R_mu = (2 * mu - 1) ** 0.5 / mu ** 0.5
 # Calculate Structural Behavior Coefficient (R)
