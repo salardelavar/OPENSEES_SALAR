@@ -51,7 +51,7 @@ dt = 0.01        # [s] Time step
 # Calculate Over Strength Coefficient (Ω0)
 Omega_0 = fu / fy
 # Calculate Displacement Ductility Ratio (μ)
-mu = Es / ey
+mu = esu / ey
 # Calculate Ductility Coefficient (Rμ)
 R_mu = (2 * mu - 1) ** 0.5 / mu ** 0.5
 # Calculate Structural Behavior Coefficient (R)
