@@ -414,7 +414,7 @@ XLABEL = 'Curvature'
 YLABEL = 'Moment'
 LEGEND01 = 'Curve'
 LEGEND02 = 'Bilinear Fitted'
-TITLE = f'Last Data of Moment-Curvature Analysis - Ductility Ratio: {yyc[2]/yyc[1]:.4f} - Over Strength Factor: {xxc[2]/xxc[1]:.4f}'
+TITLE = f'Last Data of Moment-Curvature Analysis - Ductility Ratio: {xxc[2]/xxc[1]:.4f} - Over Strength Factor: {yyc[2]/yyc[1]:.4f}'
 COLOR = 'black'
 PLOT_2D(Curvatures, -Moments, xxc, yyc, _, _, XLABEL, YLABEL, TITLE, LEGEND01, LEGEND02, _, COLOR='black', Z=2) 
 print(f'\t\t Ductility Ratio: {yyc[2]/yyc[1]:.4f}')
