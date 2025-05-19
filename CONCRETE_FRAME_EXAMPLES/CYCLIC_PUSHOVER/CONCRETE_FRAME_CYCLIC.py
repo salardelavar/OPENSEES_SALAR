@@ -229,7 +229,6 @@ def CYCLIC_ANALYSIS(LENGTH_COL, LENGTH_BM, CYCL, NUM, STEEL_KIND):
     # Total steps per half-cycle
     steps = NUM
 
-    # Use displacement control on rotational dof (dof 3 at node 2)
     ops.constraints('Plain')
     ops.numberer('Plain')
     ops.system('BandGeneral')
