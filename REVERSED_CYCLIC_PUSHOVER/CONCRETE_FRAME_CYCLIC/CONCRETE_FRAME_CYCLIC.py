@@ -265,7 +265,7 @@ def CYCLIC_ANALYSIS(LENGTH_COL, LENGTH_BM, CYCL, NUM, STEEL_KIND):
 FORCE_S, FORCE_A, MOMENT, DISP_X, DISP_Y, ROT, KA, KS, KI, STEP = CYCLIC_ANALYSIS(LENGTH_COL, LENGTH_BM, CYCL=AMP, NUM=len(AMP), STEEL_KIND=1)
 # WITH HARDENING AND ULTIMATE STRAIN
 FORCE_S02, FORCE_A02, MOMENT02, DISP_X02, DISP_Y02, ROT02, KA02, KS02, KI02, STEP02  = CYCLIC_ANALYSIS(LENGTH_COL, LENGTH_BM, CYCL=AMP, NUM=len(AMP), STEEL_KIND=2)
-
+#%%------------------------------------------------------------------------------
 plt.figure(1, figsize=(12, 8))
 plt.plot(MOMENT, FORCE_A, color='black')
 plt.plot(MOMENT02, FORCE_A02, color='cyan', linestyle='--', linewidth=2)
