@@ -155,7 +155,6 @@ def PUSHOVER_ANALYSIS(LENGTH_COL, LENGTH_BM, DMAX, DINCR, STEEL_KIND):
     # Total steps per half-cycle
     steps = int(np.abs(DMAX)/np.abs(DINCR))
 
-    # Use displacement control on rotational dof (dof 3 at node 2)
     ops.constraints('Plain')
     ops.numberer('Plain')
     ops.system('BandGeneral')
