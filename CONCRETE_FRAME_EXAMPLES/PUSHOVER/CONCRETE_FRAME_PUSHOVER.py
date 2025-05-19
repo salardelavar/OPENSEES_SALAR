@@ -106,10 +106,6 @@ def PUSHOVER_ANALYSIS(LENGTH_COL, LENGTH_BM, DMAX, DINCR, STEEL_KIND):
     coreTag = 1
     coverTag = 2
     steelTag = 3
-    steelPlateTag = 4
-    numBarsTop, barAreaTop = 5, np.pi *(18**2)/4
-    numBarsBot, barAreaBot = 5, np.pi *(20**2)/4
-    numBarsIntTot, barAreaInt = 4, np.pi *(5**2)/4
     
     if STEEL_KIND == 1:# WITHOUT HARDENING AND ULTIMATE STRAIN
         ops.uniaxialMaterial('Steel01', steelTag, fy, Es, 0.0) 
