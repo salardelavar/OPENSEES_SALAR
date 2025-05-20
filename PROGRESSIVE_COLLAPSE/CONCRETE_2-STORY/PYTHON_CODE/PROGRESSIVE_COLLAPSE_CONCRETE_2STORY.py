@@ -57,6 +57,7 @@ In workflow, the combination of fiber section definitions, corotational beam–c
  Interpreting capacity curves and post-peak degradation provides insights on member detailing and
  overall frame robustness under accidental collapse scenarios.
 
+ I Really appreciate  Dr.Barham Ali for his best constructive suggestions and sending some real damaged concrete frame structure pictures
 """
 #%%-----------------------------------------------------------------------------------
 # wikipedia: Progressive collapse
