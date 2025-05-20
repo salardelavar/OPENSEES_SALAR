@@ -58,6 +58,7 @@ In workflow, the combination of fiber section definitions, corotational beam–c
  overall frame robustness under accidental collapse scenarios.
 
  I Really appreciate  Dr.Barham Ali for his best constructive suggestions and sending some real damaged concrete frame structure pictures
+Dr.Barham Ali Email: 'barham.haydar@tiu.edu.iq'
 """
 #%%-----------------------------------------------------------------------------------
 # wikipedia: Progressive collapse
