@@ -252,7 +252,9 @@ def PUSHOVER_ANALYSIS(DIAc, LENGTH_COL, LENGTH_BM, DMAX, DINCR, STEEL_KIND, CONC
     # Calculate Displacement Ductility Ratio (μ)
     mu = X[2] / X[1]
     # Calculate Ductility Coefficient (Rμ)
-    R_mu = (2 * mu - 1) ** 0.5 / mu ** 0.5
+    #R_mu = (2 * mu - 1) ** 0.5
+    #R_mu = 1
+    R_mu = mu
     # Calculate Structural Behavior Coefficient (R)
     R = Omega_0 * R_mu
     """
