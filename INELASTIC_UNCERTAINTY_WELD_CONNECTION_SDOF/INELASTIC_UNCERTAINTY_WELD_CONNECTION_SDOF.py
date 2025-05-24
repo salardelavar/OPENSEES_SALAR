@@ -121,7 +121,7 @@ Omega_0 = fuW / fyW
 # Calculate Displacement Ductility Ratio (μ)
 mu = esuW / eyW
 # Calculate Ductility Coefficient (Rμ)
-R_mu = (2 * mu - 1) ** 0.5 / mu ** 0.5
+R_mu = mu
 # Calculate Structural Behavior Coefficient (R)
 R = Omega_0 * R_mu
 print(f'Over Strength Coefficient (Ω0):      {Omega_0[-1]:.2f}')
