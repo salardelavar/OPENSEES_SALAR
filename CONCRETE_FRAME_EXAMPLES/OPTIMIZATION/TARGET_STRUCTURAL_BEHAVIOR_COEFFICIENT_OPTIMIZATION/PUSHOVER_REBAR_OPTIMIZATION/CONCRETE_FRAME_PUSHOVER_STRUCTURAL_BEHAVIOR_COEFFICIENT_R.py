@@ -54,7 +54,7 @@ if CONCRETE_KIND == 1:
     fcUU = -2           # [N/mm²] Concrete Compressive Ultimate Strength
     ecuU = -0.008       # [mm/mm] Concrete Compressive Ultimate Strain
     # Core concrete (confined)
-    Kfc = 1.5;			# ratio of confined to unconfined concrete strength - COLUMN
+    Kfc = 1.5;			# ratio of confined to unconfined concrete strength
     fcC = Kfc*fcU;      # [N/mm²] Concrete Compressive Strength
     ec0C = -0.0045      # [mm/mm] Concrete Compressive Strain
     fcUC = -21          # [N/mm²] Concrete Compressive Ultimate Strength
@@ -69,8 +69,8 @@ if CONCRETE_KIND == 2:
     eps2U = -0.012;			# [mm/mm] strain at ultimate stress
     Lambda = 0.1;			# ratio between unloading slope at $eps2 and initial slope $Ec
     # Core concrete (confined)
-    Kfc = 1.5;			# ratio of confined to unconfined concrete strength - COLUMN
-    fc1C = Kfc*fcU;		# [N/mm²] CONFINED concrete (mander model), maximum stress - COLUMN
+    Kfc = 1.5;			# ratio of confined to unconfined concrete strength
+    fc1C = Kfc*fcU;		# [N/mm²] CONFINED concrete (mander model), maximum stress
     Ec = 4700 * np.sqrt(-fcU) # [N/mm^2] Concrete Elastic Modulus
     eps1C = 2*fc1C/Ec;	# [mm/mm] strain at maximum stress 
     fc2C = 0.2*fc1C;	# [N/mm²] ultimate stress
