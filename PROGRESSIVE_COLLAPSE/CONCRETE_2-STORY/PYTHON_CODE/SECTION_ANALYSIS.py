@@ -112,7 +112,7 @@ def BILNEAR_CURVE(Cur, Mom, SLOPE_NODE):
     # PUSHOVER ANALYSIS
     print('+==========================+')
     print('=   Analysis curve fitted =')
-    print('     Disp       Baser Shear')
+    print('     Disp       Base Shear ')
     print('----------------------------')
     print(np.column_stack((X.T, Y.T)))
     print('+==========================+')
