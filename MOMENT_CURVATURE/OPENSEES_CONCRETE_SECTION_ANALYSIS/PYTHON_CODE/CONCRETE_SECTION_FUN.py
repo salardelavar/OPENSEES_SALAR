@@ -12,7 +12,7 @@ def CONCRETE_SECTION(Bcol, Hcol, Bbeam, Hbeam, cover, Rebabr_D, nFibCoverZ, nFib
     SECTION_TAG_02 = 2 # Concrete Beam Section Tag
     
     fc = -35 # [N/mm^2] Nominal concrete compressive strength
-    Ec = 4700 * np.sqrt(-fc) # [N/mm^2] Concrete Elastic Modulus (the term in sqr root needs to be in psi
+    Ec = 4700 * np.sqrt(-fc) # [N/mm^2] Concrete Elastic Modulus
 
     # confined concrete
     Kfc = 1.3;			# ratio of confined to unconfined concrete strength - COLUMN
