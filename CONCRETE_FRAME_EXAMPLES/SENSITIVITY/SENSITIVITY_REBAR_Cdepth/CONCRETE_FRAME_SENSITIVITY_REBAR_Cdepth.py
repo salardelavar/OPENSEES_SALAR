@@ -102,7 +102,7 @@ def PUSHOVER_ANALYSIS(DIAc, Hc, LENGTH_COL, LENGTH_BM, DMAX, DINCR, STEEL_KIND, 
         
     if CONCRETE_KIND == 2:
         # Cover concrete (unconfined)
-        fc1U = fcU;			    # [N/mm²] UNCONFINED concrete (todeschini parabolic model), maximum stress
+        fc1U = fcU;			    # [N/mm²] UNCONFINED concrete maximum stress
         eps1U = -0.0025;		# [mm/mm] strain at maximum strength of unconfined concrete
         fc2U = 0.2*fc1U;		# [N/mm²] ultimate stress
         eps2U = -0.012;			# [mm/mm] strain at ultimate stress
