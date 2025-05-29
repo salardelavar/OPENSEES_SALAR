@@ -6,7 +6,7 @@
 #                                      EMAIL: salar.d.ghashghaei@gmail.com                                #
 ###########################################################################################################
 """
- Model and analyze a 2D elastic steel frame under gravity and cyclic lateral loads.
+ Model and analyze a 2D elastic concrete frame under gravity and cyclic lateral loads.
  It defines a simple frame with beam-column elements, material and geometric properties,
  and load patterns. Two separate analyses are performed: gravity loading and cyclic
  lateral loading, recording displacements and internal forces at each step.
