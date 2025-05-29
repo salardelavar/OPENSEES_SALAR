@@ -67,9 +67,9 @@ ops.geomTransf('Corotational', 1)
 # Create elements
 # Note: Corrected duplicate element tag (1 was used twice in original)
 # element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-mass $massDens> <-cMass>
-ops.element('elasticBeamColumn', 1, 1, 3, AREAc, Ea, IZc, 1)
-ops.element('elasticBeamColumn', 2, 2, 4, AREAc, Ea, IZc, 1)
-ops.element('elasticBeamColumn', 3, 3, 4, AREAb, Ea, IZb, 1)
+ops.element('elasticBeamColumn', 1, 1, 3, AREAc, Ea, IZc, 1) # Column 01
+ops.element('elasticBeamColumn', 2, 2, 4, AREAc, Ea, IZc, 1) # Column 02
+ops.element('elasticBeamColumn', 3, 3, 4, AREAb, Ea, IZb, 1) # Beam 01
 
 # Create a load pattern
 ops.timeSeries('Linear', 1)
