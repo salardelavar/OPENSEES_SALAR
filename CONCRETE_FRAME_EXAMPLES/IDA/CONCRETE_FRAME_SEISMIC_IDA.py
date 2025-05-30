@@ -1,10 +1,10 @@
-######################################################################################################################
-#                                               IN THE NAME OF ALLAH                                                 #
-#                 INCREMENTAL DYNAMIC SEISMIC ANALYSIS OF CONCRETE FRAME USING OPENSEES                              #
-#--------------------------------------------------------------------------------------------------------------------#
-#                              THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                            #
-#                                       EMAIL: salar.d.ghashghaei@gmail.com                                          #
-######################################################################################################################
+############################################################################
+#                      IN THE NAME OF ALLAH                                #
+#  INCREMENTAL DYNAMIC SEISMIC ANALYSIS OF CONCRETE FRAME USING OPENSEES   #
+#--------------------------------------------------------------------------#
+#       THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)         #
+#                 EMAIL: salar.d.ghashghaei@gmail.com                      #
+############################################################################
 """
 1. Objective: The study evaluates the incremental dynamic response of a concrete frame under 
 seismic conditions, comparing two steel material models:  
