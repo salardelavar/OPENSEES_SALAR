@@ -236,11 +236,11 @@ def SEISMIC_ANALYSIS(LENGTH_COL, LENGTH_BM, STEEL_KIND):
         # Define load patterns
         # pattern UniformExcitation $patternTag $dof -accel $tsTag <-vel0 $vel0> <-fact $cFact>
         ops.pattern('UniformExcitation', SEISMIC_TAG_01, 1, '-accel', SEISMIC_TAG_01, '-vel0', iv0_X, '-fact', SSF_X) # SEISMIC-X
-    if SEI == 'Z':
+    if SEI == 'Y':
         SEISMIC_TAG_02 = 200
         ops.timeSeries('Path', SEISMIC_TAG_02, '-dt', dt, '-filePath', 'Ground_Acceleration_Y.txt', '-factor', GMfact) # SEISMIC-Z
         ops.pattern('UniformExcitation', SEISMIC_TAG_02, 2, '-accel', SEISMIC_TAG_02, '-vel0', iv0_Y, '-fact', SSF_Y) 
-    if SEI == 'XZ':
+    if SEI == 'XY':
         SEISMIC_TAG_01 = 100
         ops.timeSeries('Path', SEISMIC_TAG_01, '-dt', dt, '-filePath', 'Ground_Acceleration_X.txt', '-factor', GMfact, '-startTime', st_iv0) # SEISMIC-X
         # Define load patterns
