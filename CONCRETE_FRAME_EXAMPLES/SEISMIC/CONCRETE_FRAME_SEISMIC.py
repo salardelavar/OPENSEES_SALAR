@@ -313,8 +313,8 @@ FORCE_S, FORCE_A, MOMENT, DISP_X, DISP_Y, ROT, KA, KS, KI, time, velocity_X, vel
 DATA02 = SEISMIC_ANALYSIS(LENGTH_COL, LENGTH_BM, STEEL_KIND=2)
 FORCE_S02, FORCE_A02, MOMENT02, DISP_X02, DISP_Y02, ROT02, KA02, KS02, KI02, time02, velocity_X02, velocity_Y02, acceleration_X02, acceleration_Y02, PERIOD_012, PERIOD_022, delta02 = DATA02
 
-print("WITHOUT HARDENING AND ULTIMATE STRAIN: \n Period 01: {PERIOD_01:.4e}  - Period 02: {PERIOD_02:.4e}")
-print("WITH HARDENING AND ULTIMATE STRAIN: \n Period 01: {PERIOD_012:.4e}  - Period 02: {PERIOD_022:.4e}")
+print(f"WITHOUT HARDENING AND ULTIMATE STRAIN: \n Period 01: {PERIOD_01:.4e}  - Period 02: {PERIOD_02:.4e}")
+print(f"WITH HARDENING AND ULTIMATE STRAIN: \n Period 01: {PERIOD_012:.4e}  - Period 02: {PERIOD_022:.4e}")
 
 totaltime = TI.process_time() - starttime
 print(f'\nTotal time (s): {totaltime:.4f} \n\n') 
