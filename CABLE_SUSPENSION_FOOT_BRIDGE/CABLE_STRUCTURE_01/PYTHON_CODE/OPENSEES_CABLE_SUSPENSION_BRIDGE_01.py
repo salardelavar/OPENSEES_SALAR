@@ -275,7 +275,7 @@ def PUSHOVER_ANALYSIS(LINEAR, L, H1, arc_depth, E_cable, Cable_Dia_01, Cable_Dia
     # Define load pattern with displacement at the middle span
     ops.timeSeries('Linear', 1)
     ops.pattern('Plain', 1, 1)
-    ops.load(mid_node, 0.0, -1)  # Apply a horizontal load at node
+    ops.load(mid_node, 0.0, -1)  # Apply a vertical load at node
     n_steps = int(np.abs(MAX_DISP / disp_incr))  # Analysis Steps
     
     # Define analysis parameters
@@ -425,7 +425,8 @@ def FREE_VIBRATION_ANALYSIS(damping, damping_ratio, LINEAR, duration, dt, TOTAL_
     # Define load pattern with displacement at the middle span
     ops.timeSeries('Linear', 1)
     ops.pattern('Plain', 1, 1)
-    ops.load(mid_node, 0.0, -1)  # Apply a horizontal load at node
+    ops.load(mid_node, 0.0, -1)  # Apply a vertical load at node
+    
     ops.constraints('Transformation')
     ops.numberer('RCM')
     ops.system('BandGeneral')
