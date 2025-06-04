@@ -72,7 +72,7 @@ Special thanks to Mr. Tanweer Malik for his constructive comments and the provis
 ------------------------------------------------------------------------------------------------------------
 """
 #%%------------------------------------------------------------------
-# IMAGES:
+# IMAGES: Stress-ribbon bridges over Fish Creek in Calgary Canada
 'https://www.linkedin.com/feed/update/urn:li:activity:7335009044237099008/?commentUrn=urn%3Ali%3Acomment%3A(ugcPost%3A7335009043448549378%2C7335229164502892544)&dashCommentUrn=urn%3Ali%3Afsd_comment%3A(7335229164502892544%2Curn%3Ali%3AugcPost%3A7335009043448549378)&dashReplyUrn=urn%3Ali%3Afsd_comment%3A(7335237538938347520%2Curn%3Ali%3AugcPost%3A7335009043448549378)&replyUrn=urn%3Ali%3Acomment%3A(ugcPost%3A7335009043448549378%2C7335237538938347520)'    
 # PAPER:
 'https://www.pci.org/PCI_Docs/Publications/PCI%20Journal/1987/May-June/Precast%20Stress%20Ribbon%20Pedestrian%20Bridges%20in%20Czechoslovakia.pdf'
