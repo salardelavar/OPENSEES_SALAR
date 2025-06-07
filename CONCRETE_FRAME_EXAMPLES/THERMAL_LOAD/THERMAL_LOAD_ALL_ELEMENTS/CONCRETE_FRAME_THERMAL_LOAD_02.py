@@ -1,6 +1,7 @@
 ################################################################################################################
 #                                                  IN THE NAME OF ALLAH                                        #
 #                                  THERMAL ANALYSIS OF CONCRETE FRAME USING OPENSEES                           #
+#                                         APPLY THERMAL LOAD ON ALL ELEMENTS                                   #
 #--------------------------------------------------------------------------------------------------------------#
 #                             THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                       #
 #                                        EMAIL: salar.d.ghashghaei@gmail.com                                   #
