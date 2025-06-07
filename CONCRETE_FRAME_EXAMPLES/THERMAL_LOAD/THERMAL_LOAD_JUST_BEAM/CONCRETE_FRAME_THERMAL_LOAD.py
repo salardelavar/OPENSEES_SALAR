@@ -499,7 +499,7 @@ DATA_TOTAL = {
 # Convert to DataFrame
 results_df = pd.DataFrame(DATA_TOTAL)
 # Export the DataFrame to an Excel file
-#results_df.to_excel('CONCRETE_FRAME_THERMAL_LOAD_RESULTS.xlsx', index=False) 
+results_df.to_excel('CONCRETE_FRAME_THERMAL_LOAD_RESULTS.xlsx', index=False) 
 #%%------------------------------------------------------------------------------
 
     
