@@ -1,6 +1,6 @@
 ######################################################################################################################
 #                                               IN THE NAME OF ALLAH                                                 #
-#                 STRUCTURAL DUCTILITY DAMAGE INDEX ANALYSIS OF CONCRETE FRAME USING OPENSEES                        #
+#                  ASSESSMENTS OF THE STRUCTURAL DUCTILITY DAMAGE INDEX OF CONCRETE FRAME USING OPENSEES             #
 #--------------------------------------------------------------------------------------------------------------------#
 #                              THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                            #
 #                                       EMAIL: salar.d.ghashghaei@gmail.com                                          #
