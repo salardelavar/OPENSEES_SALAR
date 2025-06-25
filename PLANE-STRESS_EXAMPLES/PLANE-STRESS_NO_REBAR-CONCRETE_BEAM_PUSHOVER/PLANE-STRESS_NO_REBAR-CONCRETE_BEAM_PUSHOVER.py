@@ -1,14 +1,14 @@
 ######################################################################################################################
-#                                               IN THE NAME OF ALLAH                                                 #
-#        NONLINEAR PLANE-STRESS PUSHOVER ANALYSIS OF A REINFORCED CONCRETE BEAM WITHOUT REBARS USING OPENSEES        #
+#                                                    IN THE NAME OF ALLAH                                            #
+#             NONLINEAR PLANE-STRESS PUSHOVER ANALYSIS OF A CONCRETE BEAM WITHOUT REBARS USING OPENSEES              #
 #--------------------------------------------------------------------------------------------------------------------#
 #                              THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                            #
 #                                       EMAIL: salar.d.ghashghaei@gmail.com                                          #
 ######################################################################################################################
 """
-Nonlinear Plane-stress Pushover Analysis of a Reinforced Concrete Beam without rebars Using OpenSeesPy
+Nonlinear Plane-stress Pushover Analysis of a Concrete Beam without rebars Using OpenSeesPy
 
-This script performs an advanced nonlinear pushover analysis of a simply supported reinforced concrete (RC)
+This script performs an advanced nonlinear pushover analysis of a simply supported concrete
  beam using OpenSeesPy, incorporating a 2D plane stress model with damage mechanics.
  The beam has dimensions of 4800 mm (length) × 600 mm (height) × 400 mm (thickness)
  and is discretized into a 20×15 triangular mesh using `tri31` elements.
