@@ -478,8 +478,8 @@ def DYNAMIC_ANALYSIS(hw_COL, tw_COL,tf_COL, bf_COL, hw_BEAM, tw_BEAM, tf_BEAM, b
     # Apply Rayleigh damping
     op.rayleigh(a0, a1, 0, 0)   # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
     #op.rayleigh(0, 0, 2 * DR * Omega01, 0) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
-    PERIOD_01 = np.pi / Omega01 # Structure First Period
-    PERIOD_02 = np.pi / Omega02 # Structure Second Period
+    PERIOD_01 = (np.pi * 2) / Omega01 # Structure First Period
+    PERIOD_02 = (np.pi * 2) / Omega02 # Structure Second Period
     print('Structure First Period:  ', PERIOD_01)
     print('Structure Second Period: ', PERIOD_02) 
     
