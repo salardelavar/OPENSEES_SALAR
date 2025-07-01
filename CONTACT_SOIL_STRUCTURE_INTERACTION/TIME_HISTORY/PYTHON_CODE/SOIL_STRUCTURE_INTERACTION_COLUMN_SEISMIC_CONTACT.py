@@ -715,8 +715,8 @@ print(f"Exact Solution - Damped Structure: {solution[0]:.8e}")
 # %% Plot 2D Frame Shapes
 S04.PLOT_2D_FRAME(deformed_scale=10)  # Adjust scale factor as needed
 #%%------------------------------------------------   
-# Print out the state of nodes 3 and 4
-ops.printModel("node",2, 4)
+# Print out the state of nodes 1 and 2
+ops.printModel("node", 1, 2)
 # Print out the state of element 1
 ops.printModel("ele", 1)
 # Print the Model
