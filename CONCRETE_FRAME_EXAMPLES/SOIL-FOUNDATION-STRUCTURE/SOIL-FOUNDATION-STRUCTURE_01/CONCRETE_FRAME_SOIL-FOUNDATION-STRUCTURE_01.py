@@ -432,8 +432,8 @@ def PD_ANALYSIS(STEEL_KIND, ANA_KIND, SPRING_KIND):
         # Natural logarithm
         delta = np.log(peaks[:-1] / peaks[1:])    
         
-    #ops.wipe()  
-    return FORCE_S, FORCE_A, MOMENT, DISP_X, DISP_Y, ROT, KA, KS, KI, time, velocity_X, velocity_Y, acceleration_X, acceleration_Y, PERIOD_01, PERIOD_02, delta
+        #ops.wipe()  
+        return FORCE_S, FORCE_A, MOMENT, DISP_X, DISP_Y, ROT, KA, KS, KI, time, velocity_X, velocity_Y, acceleration_X, acceleration_Y, PERIOD_01, PERIOD_02, delta
 
 
 #%%------------------------------------------------------------------------------
