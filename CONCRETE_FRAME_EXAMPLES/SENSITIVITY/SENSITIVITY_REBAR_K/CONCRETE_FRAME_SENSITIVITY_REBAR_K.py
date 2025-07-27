@@ -43,7 +43,7 @@ import PLOT_2D as S04
 # ------------------------------------------
 # STEEL
 # Reinforcing steel
-fy = 400          # [N/mm²] Steel Rebar Yield Strength   
+fy = 4000         # [N/mm²] Steel Rebar Yield Strength   
 Es = 2e5          # [N/mm²] Modulus of Elasticity
 ey = fy/Es        # [mm/mm] Steel Rebar Yield Strain
 fu = 1.1818*fy    # [N/mm²] Steel Rebar Ultimate Strength
