@@ -131,7 +131,7 @@ ecuUi = -0.008       # [mm/mm] Concrete Compressive Ultimate Strain
  
 # STEEL
 # Reinforcing steel
-fyi = 400          # [N/mm²] Steel Rebar Yield Strength   
+fyi = 4000         # [N/mm²] Steel Rebar Yield Strength   
 Esi = 2e5          # [N/mm²] Modulus of Elasticity
 eyi = fyi/Esi      # [mm/mm] Steel Rebar Yield Strain
 fui = 1.1818*fyi   # [N/mm²] Steel Rebar Ultimate Strength
