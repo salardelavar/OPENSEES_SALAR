@@ -1,9 +1,9 @@
 #######################################################################################
-#                                    IN THE NAME OF ALLAH                             #
-#                             UNCERTAINTY ANALYSIS OF RC FRAMES                       #
-#               A PROBABILISTIC SEISMIC ASSESSMENT FRAMEWORK USING OPENSEES           #
+#            >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<         #
+# PROBABILISTIC SEISMIC ASSESSMENT OF RC FRAMES VIA DISTRIBUTED PLASTICITY MODELING   #
+#        AND MACHINE LEARNING-BASED UNCERTAINTY QUANTIFICATION USING OPENSEES         #
 #-------------------------------------------------------------------------------------#
-#                         Developed by: Salar Delavar Ghashghaei (Qashqai)            #
+#                          DEVELOPED BY SALAR DELAVAR GHASHGHAEI (QASHQAI)            #
 #                              Email: salar.d.ghashghaei@gmail.com                    #
 #######################################################################################
 """
@@ -153,14 +153,15 @@ coverBi = 50              # [mm] Concrete Section Cover
 DIAbi = 18                # [mm] # Rebar Size Diameter
 AsBi = np.pi*(DIAbi**2)/4 # [mm²] Area of Rebar
 
+#%% DEFINE PARAMEETRS FOR NONLINEAR DYNAMIC ANALYSIS
 LENGTH_COLi = 3000        # [mm] Column Length 
 LENGTH_BMi = 7000         # [mm] Beam Length 
 
 #%%--------------------------------------------------------
-
+#%% DEFINE PARAMETERS FOR NONLINEAR DYNAMIC ANALYSIS
 GMfact = 9810    # standard acceleration of gravity or standard acceleration
-SSF_X = 0.0001   # Seismic Acceleration Scale Factor in X Direction
-SSF_Y = 0.0001   # Seismic Acceleration Scale Factor in Y Direction
+SSF_X = 0.00001  # Seismic Acceleration Scale Factor in X Direction
+SSF_Y = 0.00001  # Seismic Acceleration Scale Factor in Y Direction
 iv0_X = 0.00005  # [mm/s] Initial velocity applied to the node  in X Direction
 iv0_Y = 0.00005  # [mm/s] Initial velocity applied to the node  in Y Direction
 st_iv0 = 0.0     # [s] Initial velocity applied starting time
@@ -169,17 +170,18 @@ DRi = 0.05       # Intial Guess for Damping ratio
 duration = 15.0  # [s] Total simulation duration
 dt = 0.01        # [s] Time step
 MASSi = 12000    # [kg] Mass on the each column
-
-DMAX = 100       # [mm] Maximum Displacement
+#%%--------------------------------------------------------
+#%% DEFINE PARAMETERS FOR NONLINEAR STATIC ANALYSIS 
+DMAX = 400       # [mm] Maximum Displacement
 DINCR = 0.05     # [mm] Increment Displacement
-
-# Define Analysis Properties
+#%%--------------------------------------------------------
+#%% DEFINE ANALYSIS PROPERTIES
 MAX_ITERATIONS = 20000     # Convergence iteration for test
-MAX_TOLERANCE = 1.0e-8    # Convergence tolerance for test
+MAX_TOLERANCE = 1.0e-8     # Convergence tolerance for test
 #STEEL_KIND: 1 -> WITHOUT HARDENING AND ULTIMATE STRAIN
 #STEEL_KIND: 2 -> WITH HARDENING AND ULTIMATE STRAIN
-
-# Set random seed for reproducibility
+#%%--------------------------------------------------------
+#%% RANDOM SEED FOR REPRODUCIBILITY
 num_samples = 100 # Number of Samples
 ERROR_RATIO = 0.1 # 10 % Error for uncertainty
 
@@ -482,8 +484,8 @@ def PD_ANALYSIS(J, STEEL_KIND, ANA_KIND):
         # Apply Rayleigh damping
         ops.rayleigh(a0, a1, 0, 0)   # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
         #ops.rayleigh(0, 0, 2 * DR[J] * Omega01, 0) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
-        PERIOD_01 = (np.pi * 2) / Omega01 # Structure First Period
-        PERIOD_02 = (np.pi * 2) / Omega02 # Structure Second Period
+        PERIOD_01 = (2*np.pi) / Omega01 # Structure First Period
+        PERIOD_02 = (2*np.pi) / Omega02 # Structure Second Period
         #print('Structure First Period:  ', PERIOD_01)
         #print('Structure Second Period: ', PERIOD_02) 
         
@@ -828,7 +830,7 @@ plt.plot(ROTd, MOMENTd, color='pink', linewidth=2)
 #plt.scatter(ROTp, MOMENTp, color='red', linewidth=2)
 #plt.scatter(ROTd, MOMENTd, color='pink', linewidth=2)
 plt.title('MOMENT-ROTATION DIAGRAM')
-plt.ylabel('Moment [kN.mm]')
+plt.ylabel('Moment [N.mm]')
 plt.xlabel('Rotation [rad]')
 plt.legend(['PUSHOVER', 'DYNAMIC'])
 
