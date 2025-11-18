@@ -100,7 +100,9 @@ pinchX = 0.4           # Pinching factor in X direction
 pinchY = 0.2           # Pinching factor in Y direction
 damage1 = 0.0          # Damage due to ductility
 damage2 = 0.0          # Damage due to energy
-beta = 0.1             # Stiffness degradation parameter
+beta = 0.1             # Stiffness degradation 
+
+# MOMENT-CURVATURE RELATION FOR STEEL SECTION
 ops.uniaxialMaterial('Hysteretic', ColMatTagFlex, MY, FiY, MU, FiSU, 0.23*MU, 1.13*FiSU, -MY, -FiY, -MU, -FiSU, -0.23*MU, -1.07*FiSU, pinchX, pinchY, damage1, damage2, beta)
 # INFO LINK: https://opensees.berkeley.edu/wiki/index.php/Hysteretic_Material
 #------------------------------------------------------------------------------------------------
