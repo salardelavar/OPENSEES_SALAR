@@ -1175,8 +1175,8 @@ SLOPE_NODE = 10
 DATA = BC.BILNEAR_CURVE(XX, YY, SLOPE_NODE)
 X, Y, Elastic_ST, Plastic_ST, Tangent_ST, Ductility_Rito, Over_Strength_Factor = DATA
 
-XLABEL = 'Displacement in X [mm]'
-YLABEL = 'Base-Axial Reaction [N]'
+XLABEL = 'Displacement Y [mm]'
+YLABEL = 'Base-shear Reaction [N]'
 LEGEND01 = 'Curve'
 LEGEND02 = 'Bilinear Fitted'
 LEGEND03 = 'Undefined'
@@ -1211,7 +1211,7 @@ SLOPE_NODE = 10
 DATA = BC.BILNEAR_CURVE(XX, YY, SLOPE_NODE)
 X, Y, Elastic_ST, Plastic_ST, Tangent_ST, Ductility_Rito, Over_Strength_Factor = DATA
 
-XLABEL = 'Displacement in Y [mm]'
+XLABEL = 'Displacement in X [mm]'
 YLABEL = 'Base-Axial Reaction [N]'
 LEGEND01 = 'Curve'
 LEGEND02 = 'Bilinear Fitted'
@@ -1306,3 +1306,4 @@ op.printModel("ele", 1, 2 , 3)
 #printModel()
 op.printModel("-JSON", "-file", "SINGLE_SPAN_SIMPLY_SUPPORTED_COMPOSITE_BRIDGE.json")
 #%%-------------------------------------------------------------------------------
+
