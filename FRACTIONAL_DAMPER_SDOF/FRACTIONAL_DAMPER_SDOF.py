@@ -100,7 +100,7 @@ a1 = (damping_ratio * 2) / Omega01 # c = a1 * k : Stiffness-proportional damping
 # Apply Rayleigh damping
 ops.rayleigh(a0, a1, 0, 0)# INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
 #ops.rayleigh(0, 0, 2 * DR * Omega01, 0) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/reyleigh.html
-PERIOD = np.pi / Omega01   # Structure Period  
+PERIOD = (2 * np.pi) / Omega01   # Structure Period  
 print(f'Structure Period: {PERIOD:.4f}')
 #------------------------------------------------------------------------------------------------
 # Record results
@@ -156,4 +156,5 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
 #------------------------------------------------------------------------------------------------
