@@ -3,7 +3,7 @@
 #       SIMULATION OF THE POST-BUCKLING BEHAVIOR OF A SIMPLY SUPPORTED COLUMN USING OPENSEES              #
 #                                CONSIDERING THE GEOMETRIC NONLINEARITY                                   #
 #---------------------------------------------------------------------------------------------------------#
-# IT MODELS A 2D ELASTIC BEAM-COLUMN WITH AN INITIAL IMPERFECTION AND APPLIES AN AXIAL COMPRESSIVE        #
+# IT MODELS A 2D INELASTIC BEAM-COLUMN WITH AN INITIAL IMPERFECTION AND APPLIES AN AXIAL COMPRESSIVE      #
 # LOAD TO ANALYZE LARGE DISPLACEMENTS.                                                                    #
 # 1. MODEL SETUP: A COLUMN OF LENGTH L IS DEFINED WITH N ELEMENTS, INCORPORATING A SMALL INITIAL          #
 # IMPERFECTION (HALF-SINE WAVE).                                                                          #
