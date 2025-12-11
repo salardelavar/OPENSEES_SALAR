@@ -162,7 +162,7 @@ from scipy.stats import norm
 #%%------------------------------------------------------------------------------------------------
 # Define parameters (units: m, N)
 NUM_PERIOD = 100                                # Total number for Period in each simulation
-NUM_SEISMIC = 1                                # Total number for seismic simulation
+NUM_SEISMIC = 20                                # Total number for seismic simulation
 #%%------------------------------------------------------------------------------------------------
 # Define  Structural Properties
 FY = 85000.0                                     # [N] Yield Force of Structure
@@ -934,4 +934,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
