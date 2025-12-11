@@ -366,7 +366,7 @@ def ANALYSIS_MDOF(i, mSTRUCTURE):
             acceleration_stru.append(ops.nodeAccel(3, 1) + gm_accels[step]) # Structure Acceleration and Seismic Acceleration
         else:
             acceleration_stru.append(ops.nodeAccel(3, 1))                 # Structure Acceleration
-        base_reaction.append(-ops.eleResponse(2, 'force')[0])             # Reaction force
+        base_reaction.append(-ops.eleResponse(3, 'force')[0])             # Reaction force
         DI.append(100*(displacement_stru[-1] - DY) / (DSU - DY))          # [%] Structural Ductility Damage Index 
         stiffness.append(np.abs(base_reaction[-1]/displacement_stru[-1])) # [N/m] Stiffness
         # IN EACH STEP STRUCTURAL PERIOD WILL BE CALCULATED
@@ -934,4 +934,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
