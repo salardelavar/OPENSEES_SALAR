@@ -39,7 +39,7 @@ M = 1          # [N.mm] Moment Load
 L = 3000       # [mm] Column length
 N = 100        # Number of elements
 dy = L / N     # Element length
-ε = 0.001 * L  # [m] Imperfection amplitude
+ε = 0.001 * L  # [mm] Imperfection amplitude
 #MODE_NUM = 2   # Mode Shape Number
 #%%------------------------------------------------------------------------------------------------
 total_steps = 9200
@@ -346,4 +346,5 @@ with pd.ExcelWriter("MULTI-MODE-POST_BUCKLING_STEEL_COLUMN_SEMI-RIGID_NONLINEAR_
     df4 = create_df(axial_disp_04, rotation_04, lateral_disp_04,
                     axial_load_04, shear_load_04, moment_load_04)
     df4.to_excel(writer, sheet_name="Mode_4", index=False)
+
 #%%------------------------------------------------------------------------------------------------
