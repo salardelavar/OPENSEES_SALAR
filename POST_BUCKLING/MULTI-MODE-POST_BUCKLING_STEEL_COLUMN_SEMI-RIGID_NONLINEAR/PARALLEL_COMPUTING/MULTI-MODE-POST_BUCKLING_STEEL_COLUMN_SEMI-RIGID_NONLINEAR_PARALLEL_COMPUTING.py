@@ -23,7 +23,7 @@
 # RESPONSE OF THE COLUMN.                                                                                 #
 #---------------------------------------------------------------------------------------------------------#
 # PARALLEL PROCESSING MEANS RUNNING SEVERAL TASKS AT THE SAME TIME INSTEAD OF ONE AFTER ANOTHER.          #
-# IN CODE, EACH MODE OF POST-BUCKLING ANALYSIS WAS CALCULATED IN SEQUENCE,                                #
+# IN THE CODE, EACH MODE OF POST-BUCKLING ANALYSIS WAS CALCULATED IN SEQUENCE,                            #
 # SO THE CPU WORKED ON ONLY ONE MODE AT ANY MOMENT. IN THE REWRITTEN VERSION, THE JOBLIB LIBRARY ALLOWS   #
 # ALL FOUR MODES TO RUN SIMULTANEOUSLY ON DIFFERENT CPU CORES. EACH CORE PROCESSES ONE MODE INDEPENDENTLY,#
 # SO THE TOTAL COMPUTATION TIME BECOMES MUCH SHORTER.                                                     #
@@ -360,3 +360,4 @@ with pd.ExcelWriter("MULTI-MODE-POST_BUCKLING_STEEL_COLUMN_SEMI-RIGID_NONLINEAR_
         df = create_df(i)
 
         df.to_excel(writer, sheet_name=f"Mode_{i+1}", index=False)
+
