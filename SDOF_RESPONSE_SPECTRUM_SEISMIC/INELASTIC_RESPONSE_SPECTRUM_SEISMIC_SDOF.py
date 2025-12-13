@@ -74,76 +74,6 @@ Ductility Damage Index (DDI) — implementation (concept):
      DI <= 0   : elastic (no damage)
      0 < DI < 1: inelastic damage (serviceability/repairable)
      DI >= 1   : demand reaches or exceeds ultimate capacity (collapse or unacceptable damage)
-
-Conclusions:
- - For inelastic SDOF studies, including pinching and degradation in the hysteretic model can change predicted peak responses, residual displacements, and damage indices significantly.
- - Use HYSTERETIC-type models for damage-sensitive or collapse-prone scenarios, and calibrate degradation parameters using test data where possible.
-Objective:
-The study evaluates the dynamic response of a single-degree-of-freedom (SDOF) inelastic system under seismic excitation,
-comparing two hysteretic models for the restoring force:
- - HYSTERETICSM (multi-linear / pinching / stiffness degradation including ultimate strain)
-
-Model setup:
- - SDOF properties: mass (m), initial stiffness (k), yield displacement (Dy), ultimate displacement (Du), viscous damping (xi).
- - Hysteresis models: HYSTERETICSM (pinching, stiffness degradation, strength decay).
- - Damping: Rayleigh (or equivalent viscous) damping specified by target damping ratio xi for the fundamental mode.
-
-Dynamic response:
- - Natural period T = 2*pi*sqrt(m/k) computed from linearized stiffness.
- - Time-history integration produces displacement, velocity, acceleration and base reaction histories.
- - HYSTERETIC model shows faster decay of amplitude and larger energy dissipation due to pinching and degradation.
-
-Force–displacement behavior:
- - BILINEAR: symmetric hysteresis loops with stable post-yield stiffness; residual displacements are primarily due to plastic offset.
- - HYSTERETIC: pinched loops, reduced unloading/reloading stiffness, strength decay and larger residuals; captures cumulative damage effects.
-
-Stiffness and strength evolution:
- - Effective lateral stiffness reduces during the excitation for both models but degrades faster with HYSTERETIC due to damage mechanisms.
- - Strength deterioration (reduced peak restoring force) in HYSTERETIC leads to reduced re-centering and larger residuals.
-
-Damping estimation:
- - Use logarithmic decrement or energy-based measures from free vibration or post-event cycles.
- - HYSTERETIC typically yields higher equivalent damping (greater energy dissipation) compared with BILINEAR for the same displacement amplitude.
-
-Peak responses:
- - Peak displacement: often lower for HYSTERETIC in early cycles because of softening, but long-term residual displacement may be higher.
- - Peak base shear (reaction): decays faster in HYSTERETIC due to strength loss; BILINEAR sustains higher peak restoring forces for the same drift until hardening or limiting criteria apply.
-
-Visualization:
- - Plot time histories (disp, vel, acc), hysteresis loops (force vs disp), and envelope curves to compare models.
- - Response spectra for displacement, velocity, and acceleration can be constructed from peak responses across parameter sweeps (e.g., varying T or post-yield stiffness).
-
-Implications for seismic assessment:
- - BILINEAR: simple and computationally efficient; may overestimate resilience for severe cyclic demands because it omits degradation.
- - HYSTERETIC: captures important degradation mechanisms (pinching, stiffness/strength loss, ultimate strain) and is recommended for collapse assessment and detailed damage estimation.
- - Model selection should match the performance objective: serviceability checks might use simpler models; collapse and damage-sensitive studies require degraded hysteretic models calibrated with experiment.
-
-Data export and post-processing:
- - Store peak and time-history results (displacement, velocity, acceleration, base reaction) to CSV/Excel for parametric studies.
- - Compute and plot response spectra (disp/vel/acc/reaction) from the stored peak values.
-
-Ductility Damage Index (DDI) — implementation (concept):
- - After identifying yield displacement Dy and ultimate displacement Du from the capacity model:
-   Dd = max(|disp_time_history|)  # maximum absolute dynamic displacement demand
-   DI = (Dd - Dy) / (Du - Dy)      # Ductility Damage Index in the direction of interest
-   Interpretation:
-     DI <= 0   : elastic (no damage)
-     0 < DI < 1: inelastic damage (serviceability/repairable)
-     DI >= 1   : demand reaches or exceeds ultimate capacity (collapse or unacceptable damage)
----------------------------------------------
-RECOMMENDATIONS FOR PRACTICE:
-
-1. For serviceability assessment: Elastic analysis may suffice for DI < 20%
-2. For life safety evaluation: Nonlinear analysis with degradation essential
-3. For collapse prevention: Advanced hysteretic models with ultimate criteria required
-4. For design optimization: Response spectrum analysis across period range recommended
-
-LIMITATIONS AND FUTURE ENHANCEMENTS:
-
-1. Current model: SDOF system only (extend to MDOF)
-2. Material calibration: Laboratory test data needed for parameters
-3. Ground motions: Site-specific spectra recommended
-4. Validation: Experimental correlation required for confidence
 """
 #%%------------------------------------------------------------------------------------------------
 import openseespy.opensees as ops
@@ -845,4 +775,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
