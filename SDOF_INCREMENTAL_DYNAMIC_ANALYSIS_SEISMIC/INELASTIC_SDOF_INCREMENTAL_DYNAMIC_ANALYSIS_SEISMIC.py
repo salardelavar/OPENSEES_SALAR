@@ -41,7 +41,7 @@ ANALYTICAL FEATURES:
 - Real-time structural health monitoring metrics
 - Statistical characterization of seismic demands
 - Machine learning-based damage prediction
------------------------------------
+----------------------------------
 Model setup:
  - SDOF properties: mass (m), initial stiffness (k), yield displacement (Dy), ultimate displacement (Du), viscous damping (xi).
  - Hysteresis models: HYSTERETICSM (pinching, stiffness degradation, strength decay).
@@ -796,3 +796,4 @@ S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
 
 """
+
