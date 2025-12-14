@@ -38,7 +38,7 @@
 # IN THE CORRECT ORDER. THIS MAKES THE ANALYSIS MORE EFFICIENT WITHOUT CHANGING THE ENGINEERING RESULTS.  #
 #                                                                                                         #
 # PARALLEL PROCESSING IS ESPECIALLY HELPFUL IN STRUCTURAL ENGINEERING SIMULATIONS WHERE EACH ANALYSIS     #
-# REQUIRES HEAVY NUMERICAL CALCULATION, SUCH AS NONLINEAR POST-BUCKLING. BY USING ALL AVAILABLE CPU POWER,#
+# REQUIRES HEAVY NUMERICAL CALCULATION. BY USING ALL AVAILABLE CPU POWER,                                 #
 # YOU FINISH THE WORK FASTER AND CAN TEST MORE CASES OR MORE MODELS IN THE SAME AMOUNT OF TIME.           #
 #---------------------------------------------------------------------------------------------------------#
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
@@ -489,3 +489,4 @@ PLOT_2D(7, "Standard Acceleration of Gravity [m/s²]", "Structural Stiffness [N/
     
 
 #%%------------------------------------------------------------------------------------------------
+
