@@ -8,7 +8,6 @@
 #                          THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
 ###########################################################################################################
-
 """
 This code implements a comprehensive nonlinear dynamic analysis framework for
 performance-based earthquake engineering assessment of single-degree-of-freedom
@@ -865,4 +864,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
