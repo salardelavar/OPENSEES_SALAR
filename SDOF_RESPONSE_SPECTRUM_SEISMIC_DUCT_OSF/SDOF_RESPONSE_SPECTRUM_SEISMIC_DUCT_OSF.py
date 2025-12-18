@@ -81,8 +81,16 @@ Conclusions:
  - Use HYSTERETIC-type models for damage-sensitive or collapse-prone scenarios, and calibrate degradation parameters using test data where possible.
 --------------------------------
 Constant Structural Ductility Ratio
-In seismic engineering, the structural ductility ratio (often denoted as μ) refers to the ability of a structure to undergo inelastic (plastic) deformations without collapsing during an earthquake. It is defined as the ratio of the maximum displacement (Δ_max) to the yield displacement (Δ_yield), i.e., μ = Δ_max / Δ_yield. This measures how much a structure can "stretch" beyond its elastic limit while dissipating energy through yielding, which helps prevent brittle failure. Ductile structures (e.g., those with μ > 5–6) can survive strong ground motions by deforming significantly, reducing the need for overly stiff designs.
-A "constant structural ductility ratio" typically relates to constant ductility response spectra. In these spectra, the ductility ratio μ is held constant across different structural periods (T), and the required strength (e.g., pseudoacceleration or force) is plotted against the period to achieve that specific ductility demand. This approach contrasts with elastic response spectra, where no inelastic behavior is assumed. Constant ductility spectra are used to derive ductility reduction factors (Rμ or Rd), which adjust the elastic response spectrum downward to account for energy dissipation through ductility, making designs more economical. They are particularly useful in performance-based seismic design to ensure ductility supply exceeds demand, often calibrated using methods like Newmark-Hall for different period ranges (short: T < 0.2 s; intermediate: 0.2–0.5 s; long: T > 1 s)
+In seismic engineering, the structural ductility ratio (often denoted as μ) refers to the ability of a structure to undergo inelastic (plastic)
+deformations without collapsing during an earthquake. It is defined as the ratio of the maximum displacement (Δ_max) to the yield displacement (Δ_yield),
+i.e., μ = Δ_max / Δ_yield. This measures how much a structure can "stretch" beyond its elastic limit while dissipating energy through yielding, which helps
+prevent brittle failure. Ductile structures (e.g., those with μ > 5–6) can survive strong ground motions by deforming significantly, reducing the need for overly stiff designs.
+A "constant structural ductility ratio" typically relates to constant ductility response spectra. In these spectra, the ductility ratio μ is held constant
+across different structural periods (T), and the required strength (e.g., pseudoacceleration or force) is plotted against the period to achieve that specific
+ductility demand. This approach contrasts with elastic response spectra, where no inelastic behavior is assumed. Constant ductility spectra are used to derive
+ductility reduction factors (Rμ or Rd), which adjust the elastic response spectrum downward to account for energy dissipation through ductility, making designs
+more economical. They are particularly useful in performance-based seismic design to ensure ductility supply exceeds demand, often calibrated using methods
+like Newmark-Hall for different period ranges (short: T < 0.2 s; intermediate: 0.2–0.5 s; long: T > 1 s)
 """
 #%%------------------------------------------------------------------------------------------------
 import openseespy.opensees as ops
@@ -866,3 +874,4 @@ S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
 
 """
+
