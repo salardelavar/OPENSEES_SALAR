@@ -366,7 +366,7 @@ for j in range(NUM_SIM):
         max_velocity.append(np.max(np.abs(velocity)))
         max_acceleration.append(np.max(np.abs(acceleration)))
         max_base_reaction.append(np.max(np.abs(base_reaction)))
-        max_DI.append(np.max(np.abs(DI)))
+        max_DI.append(np.max(DI))
         max_K.append(np.max(np.abs(stiffness)))
         DAMPING_RATIO.append(damping_ratio)
         max_duct.append(duct[j])
@@ -911,4 +911,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
