@@ -469,7 +469,7 @@ for j in range(NUM_SEISMIC):
         max_velocity_stru.append(np.max(np.abs(velocity_stru)))
         max_acceleration_stru.append(np.max(np.abs(acceleration_stru)))
         max_base_reaction.append(np.max(np.abs(base_reaction)))
-        max_DI.append(np.max(np.abs(DI)))
+        max_DI.append(np.max(DI))
         max_K.append(np.max(np.abs(stiffness)))
         DAMPING_RATIO.append(damping_ratio)
         max_SDF.append(np.max(np.abs(SDF)))
@@ -983,4 +983,5 @@ DATA = max_DI # If not using a file, replace None with a NumPy array of data
 
 S03.MARKOV_CHAIN(FILE_TF, file_path, DATA)
 #------------------------------------------------------------------------------------------------
+
 """
