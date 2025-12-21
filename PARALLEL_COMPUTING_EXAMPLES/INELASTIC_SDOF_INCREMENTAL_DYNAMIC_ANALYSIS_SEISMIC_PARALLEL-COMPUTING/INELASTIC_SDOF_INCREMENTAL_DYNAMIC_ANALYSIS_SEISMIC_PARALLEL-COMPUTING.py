@@ -338,7 +338,7 @@ def run_single_analysis(j, i, mi, GMfact, NUM_G):
         "vel":   np.max(np.abs(velocity)),
         "acc":   np.max(np.abs(acceleration)),
         "react": np.max(np.abs(base_reaction)),
-        "DI":    np.clip(np.max(np.abs(DI)), 0.0, 100.0),
+        "DI":    np.clip(np.max(DI), 0.0, 100.0),
         "K":     np.max(np.abs(stiffness)),
         "G":     gi,
         "damp":  damping_ratio,
@@ -489,4 +489,5 @@ PLOT_2D(7, "Standard Acceleration of Gravity [m/s²]", "Structural Stiffness [N/
     
 
 #%%------------------------------------------------------------------------------------------------
+
 
