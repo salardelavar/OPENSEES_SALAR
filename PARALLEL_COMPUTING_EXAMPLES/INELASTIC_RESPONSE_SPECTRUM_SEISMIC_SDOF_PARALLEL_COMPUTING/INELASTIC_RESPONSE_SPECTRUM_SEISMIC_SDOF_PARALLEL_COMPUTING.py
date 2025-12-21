@@ -323,7 +323,7 @@ def RUN_ONE_SEISMIC(j, NUM_PERIOD, mi):
         max_acc.append(np.max(np.abs(acc)))
         max_reac.append(np.max(np.abs(base_reac)))
 
-        di_val = np.clip(np.max(np.abs(DI)), 0.0, 100.0)
+        di_val = np.clip(np.max(DI), 0.0, 100.0)
         max_DI.append(di_val)
 
         max_T.append(PERIOD)
@@ -483,4 +483,5 @@ pd.DataFrame([DATA_TOTAL]).to_excel(
 print("\nALL TASKS FINISHED SUCCESSFULLY")
 
 #%%------------------------------------------------------------------------------------------------  
+
 
