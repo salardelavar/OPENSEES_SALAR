@@ -1,6 +1,6 @@
 ######################################################################################################################
 #                          >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                          #
-#            COMPARATIVE PUSHOVER ANALYSIS OF A MDOF STRUCTURE: ELASTIC VS INELASTIC RESPONSE USING OPENSEES         #
+#            COMPARATIVE PUSHOVER ANALYSIS OF A SDOF STRUCTURE: ELASTIC VS INELASTIC RESPONSE USING OPENSEES         #
 #--------------------------------------------------------------------------------------------------------------------#
 #     NONLINEAR STATIC PUSHOVER ASSESSMENT: DISPLACEMENT-BASED EQUIVALENT SDOF FORMULATION FOR ELASTIC AND INELASTIC #
 #                                   MDOF STRUCTURAL RESPONSE SIMULATION VIA OPENSEES PLATFORM                        #
@@ -461,3 +461,4 @@ ops.printModel("ele", 1)
 #printModel()
 ops.printModel("-JSON", "-file", "PUSHOVER_SDOF.json")
 #%%-------------------------------------------------------------------------------
+
