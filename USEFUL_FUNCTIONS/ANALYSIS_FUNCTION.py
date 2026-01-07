@@ -33,9 +33,10 @@ def ANALYSIS(OK, INCREMENT, TOLERANCE, MAX_ITERAIONS):
                 OK = op.analyze(INCREMENT)                            
                 print(test[i], algorithm[j], OK)   
                 if OK == 0:
-                    print('\nThe nalysis did not converge at this step!!!\n')
+                    print('\nThe analysis did not converge at this step!!!\n')
                     break
             else:
                 continue
 				
   
+
