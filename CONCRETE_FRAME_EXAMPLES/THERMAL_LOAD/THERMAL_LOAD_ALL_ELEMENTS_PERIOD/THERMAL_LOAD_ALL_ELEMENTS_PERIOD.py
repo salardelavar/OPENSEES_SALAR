@@ -1,5 +1,5 @@
 ################################################################################################################
-#                       >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                        #
+#                      >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                        #
 #                                  THERMAL ANALYSIS OF CONCRETE FRAME USING OPENSEES                           #
 #               EVALUATION OF THE STRUCTURAL PERIOD DURING THERMAL LOAD APPLIED TO ALL ELEMENTS                #
 #--------------------------------------------------------------------------------------------------------------#
@@ -505,4 +505,5 @@ results_df.to_excel('THERMAL_LOAD_ALL_ELEMENTS_PERIOD_RESULTS.xlsx', index=False
 #%%------------------------------------------------------------------------------
 
     
+
 
