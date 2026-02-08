@@ -15,3 +15,4 @@ def CUMULATIVE_DISSIPATED_ENERGY_FUN(disp, force):
     plt.ylabel(TITLE)
     plt.grid(True)
     plt.show()
+    return cum_energy
