@@ -1,4 +1,4 @@
-def CUMULATIVE_DISSIPATED_ENERGY_FUN(disp, force):
+def CUMULATIVE_DISSIPATED_ENERGY_FUN(disp, force, TITLE, COLOR):
     import numpy as np
     import matplotlib.pyplot as plt
     disp = np.array(disp)
@@ -16,3 +16,4 @@ def CUMULATIVE_DISSIPATED_ENERGY_FUN(disp, force):
     plt.grid(True)
     plt.show()
     return cum_energy
+
