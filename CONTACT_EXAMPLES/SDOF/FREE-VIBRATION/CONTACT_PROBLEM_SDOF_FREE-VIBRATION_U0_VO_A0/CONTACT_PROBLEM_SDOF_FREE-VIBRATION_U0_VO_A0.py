@@ -155,7 +155,7 @@ def FREE_VIBRATION_SDOF(IA, IU, IV, SPRING_TYPE, u0, v0, a0, duration, dt, GAP_D
     ops.system('BandGeneral')
     ops.test('NormDispIncr', MAX_TOLERANCE, MAX_ITERATIONS) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/normDispIncr.html
     #ops.integrator('CentralDifference')  # JUST FOR LINEAR ANALYSIS - INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/centralDifference.html
-    alpha=0.5; beta=0.5;
+    alpha=0.5; beta=0.25;
     ops.integrator('Newmark', alpha, beta) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/newmark.html
     #alpha=2/3;gamma=1.5-alpha; gamma=1.5-alpha;beta=(2-alpha)**2/4;
     #ops.integrator('HHT', alpha, gamma, beta) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/hht.html
@@ -441,3 +441,4 @@ with pd.ExcelWriter("CONTACT_PROBLEM_SDOF_FREE-VIBRATION_U0_VO_A0_OUTPUT.xlsx", 
     df1 = create_df(dispE, dispI, velE, velI, accelE, accelI, reactionE, reactionI, diE, diI)
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)
 #%%------------------------------------------------------------------------------------------------
+
