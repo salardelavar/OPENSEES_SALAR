@@ -1081,7 +1081,7 @@ L = 43000.0           # [mm] Bridge Length
 H = 4000.0            # [mm] Bridge Height
 A_chord = 2*2009.0    # [mm^2] Section Area for chord elements - 2 x IPE160
 A_diag  = 2*2040.0    # [mm^2] Section Area for diagonal elements - 2 x UNP140
-TOTAL_MASS = 50.0     # [kg] Total Mass of Structure
+TOTAL_MASS = 0.0      # [kg] Total Mass of Structure
 #%%----------------------------------------------------
 # STATIC ANALYSIS
 #ELE_TYPE = 'Truss'      # MATERIAL NONLINEARITY
@@ -1384,4 +1384,5 @@ plt.legend([f'PERIOD - MIN VALUES: Min: {np.min(PERIOD_MIN_SEI):.3f} (s) - Mean:
 plt.show()
 
 S01.PLOT_2D_FRAME_TRUSS(deformed_scale=1.0)
+
 #%%----------------------------------------------------
