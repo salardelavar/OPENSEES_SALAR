@@ -43,8 +43,11 @@ The code continuously records element axial forces, stresses, strains,
  and risk-informed asset management decisions.
 """
 #%%----------------------------------------------------
+# WIKIPEDIA: Truss bridge
+'https://en.wikipedia.org/w/index.php?title=Truss_bridge'
 # INFO LINK: https://usbridge.com/bridges/thru-truss/
 # INFO LINK: https://www.aisc.org/modern-steel/news/sssba-aisi-aga-to-host-short-span-bridge-webinar-may-11/
+#%%----------------------------------------------------
 import numpy as np
 import openseespy.opensees as ops
 import matplotlib.pyplot as plt 
@@ -1427,4 +1430,5 @@ plt.legend([f'PERIOD - MIN VALUES: Min: {np.min(PERIOD_MIN_SEI):.3f} (s) - Mean:
 plt.show()
 
 S01.PLOT_2D_FRAME_TRUSS(deformed_scale=1.0)
+
 #%%----------------------------------------------------
