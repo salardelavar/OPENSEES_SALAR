@@ -248,7 +248,7 @@ def EXTERNAL_TIME_DEPENDENT_LOAD_MDOF(SPRING_TYPE, duration, dt):
     # Create a 2D model with 3 DOF per node
     ops.model('Basic', '-ndm', 2, '-ndf', 3)
     
-    L = 100.0 # [m] Element Length
+    L = 0.1 # [m] Element Length
     
     # Add nodes
     ops.node(1, 0.0, 0.0)
@@ -546,3 +546,4 @@ with pd.ExcelWriter("MDF_SEISMOMETER_OUTPUT.xlsx", engine='openpyxl') as writer:
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)    
 
 #%%------------------------------------------------------------------------------------------------
+
