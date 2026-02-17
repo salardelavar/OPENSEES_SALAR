@@ -299,7 +299,7 @@ def EXTERNAL_TIME_DEPENDENT_LOAD_MDOF(SPRING_TYPE, duration, dt):
     ops.system('BandGeneral')#  'Umfpack'
     ops.test('NormDispIncr', MAX_TOLERANCE, MAX_ITERATIONS) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/normDispIncr.html
     #ops.integrator('CentralDifference')  # JUST FOR LINEAR ANALYSIS - INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/centralDifference.html
-    alpha=0.5; beta=0.5;
+    alpha=0.5; beta=0.25;
     ops.integrator('Newmark', alpha, beta) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/newmark.html
     #alpha=2/3;gamma=1.5-alpha; gamma=1.5-alpha;beta=(2-alpha)**2/4;
     #ops.integrator('HHT', alpha, gamma, beta) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/hht.html
@@ -544,4 +544,5 @@ with pd.ExcelWriter("MDF_SEISMOMETER_OUTPUT.xlsx", engine='openpyxl') as writer:
     
     df1 = create_df(dispE, dispI, velE, velI, accelE, accelI, reactionE, reactionI, FDe, FDi, FIe, FIi, FSe, FSi)
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)    
+
 #%%------------------------------------------------------------------------------------------------
