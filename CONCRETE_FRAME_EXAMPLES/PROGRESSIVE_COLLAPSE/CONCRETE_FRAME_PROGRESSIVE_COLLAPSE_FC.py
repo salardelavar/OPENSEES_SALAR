@@ -106,7 +106,7 @@ ecuU = -0.008       # [mm/mm] Concrete Compressive Ultimate Strain
  
 # STEEL
 # Reinforcing steel
-fy = 4000           # [N/mm²] Steel Rebar Yield Strength   
+fy = 400            # [N/mm²] Steel Rebar Yield Strength   
 Es = 2e5            # [N/mm²] Modulus of Elasticity
 ey = fy/Es          # [mm/mm] Steel Rebar Yield Strain
 fu = 1.1818*fy      # [N/mm²] Steel Rebar Ultimate Strength
@@ -277,6 +277,8 @@ def PUSHOVER_ANALYSIS(LENGTH_COL, LENGTH_BM, F_MAX, F_INCR, STEEL_KIND):
             ops.remove('sp', 6)       # REMOVE NODE 6
             ops.remove('sp', 7)       # REMOVE NODE 7
             # LINK INFO: https://openseespydoc.readthedocs.io/en/stable/src/remove.html
+            ops.domainChange()    # update the solver without element
+            # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/domainChange.html
             ops.integrator('LoadControl', -F_INCR) # SO, AFTER THE COLUMN COLLAPSES, WE APPLY A VERTICAL DISPLACEMENT INCREMENT
             delete_element = True 
             S = ops.nodeReaction(1, 1) + ops.nodeReaction(2, 1) # SHEAR BASE REACTION
@@ -535,3 +537,4 @@ ops.printModel("-JSON", "-file", "CONCRETE_FRAME_PROGRESSIVE_COLLAPSE.json")
 #%%------------------------------------------------------------------------------ 
 
     
+
