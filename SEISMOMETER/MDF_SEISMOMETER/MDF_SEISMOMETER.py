@@ -86,7 +86,7 @@ Ksh = (FU - FY) / (DSU - DY)      # [N/m] Displacement Hardening Modulus
 Kp = FU / DSU                     # [N/m] Spring Plastic Stiffness
 b = Ksh / Ke                      # Displacement Hardening Ratio
 
-M = 1.0                           # [kg] Mass
+M = 0.01                          # [kg] Mass
 zi = 0.05                         # Damping ratio
 duration = 20.0                   # [s] Analysis duration
 dt = 0.001                        # [s] Time step
@@ -546,4 +546,5 @@ with pd.ExcelWriter("MDF_SEISMOMETER_OUTPUT.xlsx", engine='openpyxl') as writer:
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)    
 
 #%%------------------------------------------------------------------------------------------------
+
 
