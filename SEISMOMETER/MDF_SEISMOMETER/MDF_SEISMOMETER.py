@@ -269,11 +269,11 @@ def EXTERNAL_TIME_DEPENDENT_LOAD_MDOF(SPRING_TYPE, duration, dt):
     ops.fix(11, 1, 1, 1)
         
     # Elastic Element
-    B = 5.0                # [mm] Element Section Width
-    H = 5.0                # [mm] Element Section Height
+    B = 0.05               # [m] Element Section Width
+    H = 0.05               # [m] Element Section Height
     AREA = B*H             # [mm^2] Element Section Area
     Iz = B*(H**3) / 12
-    Es = 200000            # [N/mm^2] Element Young's Modulus
+    Es = 200000            # [N/m^2] Element Young's Modulus
     
     # Geometric transformation
     transfTag = 1
@@ -546,5 +546,6 @@ with pd.ExcelWriter("MDF_SEISMOMETER_OUTPUT.xlsx", engine='openpyxl') as writer:
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)    
 
 #%%------------------------------------------------------------------------------------------------
+
 
 
