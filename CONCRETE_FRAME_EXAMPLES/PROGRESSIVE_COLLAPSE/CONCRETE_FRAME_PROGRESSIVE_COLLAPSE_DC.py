@@ -305,6 +305,8 @@ def PUSHOVER_ANALYSIS(LENGTH_COL, LENGTH_BM, D_MAX, D_INCR, STEEL_KIND):
             ops.remove('sp', 12)     # REMOVE NODE 12
             ops.remove('sp', 13)     # REMOVE NODE 13
             # LINK INFO: https://openseespydoc.readthedocs.io/en/stable/src/remove.html
+            ops.domainChange()    # update the solver without element
+            # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/domainChange.html
             delete_element = True 
             ops.integrator('DisplacementControl', 4, 2, -D_INCR) # SO, AFTER THE COLUMN COLLAPSES, WE APPLY A VERTICAL DISPLACEMENT INCREMENT
             S = ops.nodeReaction(1, 1) + ops.nodeReaction(2, 1) # SHEAR BASE REACTION
@@ -568,3 +570,4 @@ ops.printModel("-JSON", "-file", "CONCRETE_FRAME_PROGRESSIVE_COLLAPSE.json")
 #%%------------------------------------------------------------------------------ 
 
     
+
