@@ -299,7 +299,9 @@ for step in range(n_steps):
     if abs(dispY) == abs(Collapse_Disp) and not delete_element: # DISPLACEMENT CONTROL FOR COLUMN 3 AND DELETE ELEMENT
         print(f"Displacement exceeds {Collapse_Disp} mm. Removing element 5 at step {step + 1}.") 
         ops.remove('element', 3) # REMOVE ELEMENT
-        ops.remove('sp', 4) # REMOVE FIX SUPPORT
+        ops.remove('sp', 4)      # REMOVE FIX SUPPORT
+        ops.domainChange()       # update the solver without element
+        # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/domainChange.html
         delete_element = True 
         S = ops.nodeReaction(1, 1) + ops.nodeReaction(7, 1) # SHEAR BASE REACTION
         A = ops.nodeReaction(1, 2) + ops.nodeReaction(7, 2) # AXIAL BASE REACTION
@@ -477,5 +479,6 @@ results_df = pd.DataFrame(DATA_TOTAL)
 # Export the DataFrame to an Excel file
 results_df.to_excel('PROGRESSIVE_COLLAPSE_CONCRETE_2STORY_RESULTS.xlsx', index=False) 
 #%%-----------------------------------------------------------------------------------
+
 
 
