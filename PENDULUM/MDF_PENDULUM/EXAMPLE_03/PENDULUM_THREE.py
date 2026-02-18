@@ -22,6 +22,8 @@ This code performs nonlinear time history analysis of a 2D double pendulum
  https://portwooddigital.com/2025/09/08/double-inverted-pendulum/    
 """
 #%%-----------------------------------------------------------------------------
+# WIKIPEDIA:
+'https://en.wikipedia.org/wiki/Pendulum'
 # YOUUBE: Simple Pendulum
 'https://www.youtube.com/watch?v=fnvGVsxPuLs'
 # YOUTUBE: Everything You Need To Know About Pendulums: Physics Help Room
@@ -638,4 +640,5 @@ with pd.ExcelWriter("MDOF_PENDULUM_THREE_OUTPUT.xlsx", engine='openpyxl') as wri
     
     df1 = create_df(dispX_02E, dispX_02I, velX_02E, velX_02I, accelX_02E, accelX_02I, reactionXE, reactionXI, FDXe, FDXi, FIXe, FIXi, FSXe, FSXi)
     df1.to_excel(writer, sheet_name="OUTPUT", index=False)    
+
 #%%------------------------------------------------------------------------------------------------
