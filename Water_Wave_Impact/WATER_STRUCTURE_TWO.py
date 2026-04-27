@@ -4,7 +4,7 @@
 #    TO WATER IMPACT LOADING USING OPENSEES GENERATE A COMBINED TIME SERIES OF WATER IMPACT PRESSURE,     #
 #                                  STORM WAVES, FOG LOADS, AND RANDOM WAVES                               #
 #---------------------------------------------------------------------------------------------------------# 
-#                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
+#                             THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)               #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
 #
