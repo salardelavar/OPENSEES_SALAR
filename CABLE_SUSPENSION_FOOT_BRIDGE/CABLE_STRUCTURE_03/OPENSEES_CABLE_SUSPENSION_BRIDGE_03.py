@@ -237,7 +237,7 @@ def ANALYSIS(OK, INCREMENT, TOLERANCE, MAX_ITERAIONS):
 #%%------------------------------------------------------------------
 #          ############################################################################################
 #          #                                          IN THE NAME OF ALLAH                            #
-#          #                         PUSHOVER ANALYSIS OF CABLE SUSPENSION BRIDGE 02                  #
+#          #                         PUSHOVER ANALYSIS OF CABLE SUSPENSION BRIDGE 03                  #
 #          #------------------------------------------------------------------------------------------#
 #          #                  THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)              #
 #          #                            EMAIL: salar.d.ghashghaei@gmail.com                           #
@@ -375,7 +375,7 @@ S04.PLOT_2D_FRAME_TRUSS(deformed_scale=10)  # Adjust scale factor as needed
 #%%------------------------------------------------------------------
 #          ############################################################################################
 #          #                                          IN THE NAME OF ALLAH                            #
-#          #                     FREE VIBRATION ANALYSIS OF CABLE SUSPENSION BRIDGE 02                #
+#          #                     FREE VIBRATION ANALYSIS OF CABLE SUSPENSION BRIDGE 03                #
 #          #------------------------------------------------------------------------------------------#
 #          #                  THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)              #
 #          #                            EMAIL: salar.d.ghashghaei@gmail.com                           #
