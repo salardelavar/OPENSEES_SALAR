@@ -3,7 +3,7 @@
 #            DYNAMIC RESPONSE ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM SUBJECTED              #
 #                                   TO WATER IMPACT LOADING USING OPENSEES                                #
 #---------------------------------------------------------------------------------------------------------# 
-#                                   THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI                   #
+#                             THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)               #
 #                                          EMAIL: SALAR.D.GHASHGHAEI@GMAIL.COM                            #
 ###########################################################################################################
 #
