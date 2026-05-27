@@ -1,5 +1,4 @@
 EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED PUSHOVER ANALYSIS:
-
 Change MDOF to SDOF System with Displacement Based Design Concept.
 
 A displacement-based pushover transformation,
