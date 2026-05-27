@@ -21,5 +21,5 @@ def GRAVITY_ANALYSIS_FUN(NstepGravity, MAX_TOLERANCE, MAX_ITERATIONS):
     # INFO LINK: https://openseespydoc.readthedocs.io/en/stable/src/analysis.html
     OK = ops.analyze(NstepGravity) # apply gravity
     # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/analyze.html
-    #S02.ANALYSIS(OK, NstepGravity, MAX_TOLERANCE, MAX_ITERATIONS) # CHECK THE ANALYSIS
+    S02.ANALYSIS(OK, NstepGravity, MAX_TOLERANCE, MAX_ITERATIONS) # CHECK THE ANALYSIS
     print('Graviy Analysis Done.')
