@@ -14,8 +14,10 @@ In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:
 (5) [STATIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Static Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt) 
 
 (6) [DYNAMIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Dynamic Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt)  
+
 (7) [FREE-VIBRATION] : Free-vibration with initial conditions extracting damping ratios
  via logarithmic decrement
+ 
 (8) [SEISMIC] : Multi-directional seismic excitation with Rayleigh damping (3% ratio)
 
 Please note that the content may not be entirely free of errors or inaccuracies.
