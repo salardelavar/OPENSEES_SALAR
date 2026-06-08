@@ -1,4 +1,4 @@
-On This Page, There Are Python and OpenSees codes, which are written by Salar Delavar Ghashghaei (Qashqai).
+On This Page, There Are Python and OpenSees scripts, which are written by Salar Delavar Ghashghaei (Qashqai).
 
 In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:    
 (1) [PERIOD] : Structural Period
