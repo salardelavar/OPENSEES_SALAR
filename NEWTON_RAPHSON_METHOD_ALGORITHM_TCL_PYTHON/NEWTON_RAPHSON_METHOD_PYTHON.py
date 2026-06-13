@@ -62,7 +62,7 @@ while (RESIDUAL > TOLERANCE):
         X =- DX # update X
         break;
     if RESIDUAL < TOLERANCE:
-        print(f'\t\t Optimum X:  {X:.4f}')
+        print(f'\t\t Optimum X:                       {X:.4f}')
         print(f'\t\t Iteration Counts:                {IT}')
         print(f'\t\t Convergence Residual:            {RESIDUAL:.10e}')
     #print(X)
