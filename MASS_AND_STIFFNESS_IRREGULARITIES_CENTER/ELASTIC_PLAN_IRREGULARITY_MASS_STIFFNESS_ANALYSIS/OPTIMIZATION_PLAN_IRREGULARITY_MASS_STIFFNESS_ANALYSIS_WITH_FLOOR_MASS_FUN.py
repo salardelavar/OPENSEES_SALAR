@@ -5,7 +5,7 @@
 #     THIS PYTHON SCRIPT WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)       #
 # ############################################################################
 """
-The code performs an optimisation to align the centre of rigidity (CR) with the centre of mass (CM) by tuning a wall thickness parameter T.
+The code performs an optimization to align the centre of rigidity (CR) with the centre of mass (CM) by tuning a wall thickness parameter T.
 A custom analysis function computes CR, CM and stiffness for a one‑storey structure (12 columns, 4 shear walls, 5 floor masses), using T to set the four wall thicknesses with fixed offsets.
 The Newton‑Raphson root‑finder then drives the x‑eccentricity (x_CR – x_CM) to zero by varying T.
 Starting from an initial guess X = 100, each iteration calls the analysis three times – at X, X–ESP and X+ESP – to approximate the derivative of the eccentricity function via central finite differences.
