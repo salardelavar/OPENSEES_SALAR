@@ -90,7 +90,7 @@ OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI)
    with hardening), where the restoring force R depends sensitively on
    Fy through the yield surface.
 
-4. Root‑Finding via Newton–Raphson – The residual g(Fy) = EDCI(Fy)-0.50
+4. Root‑Finding via Newton–Raphson – The residual g(Fy) = EDCI(Fy)-0.20
    is driven to zero using a secant‑like Newton iteration, where the
    Jacobian g'(Fy) is approximated by central finite differences
    [g(Fy+ε) - g(Fy-ε)]/(2ε), with ε tuned to balance truncation and
