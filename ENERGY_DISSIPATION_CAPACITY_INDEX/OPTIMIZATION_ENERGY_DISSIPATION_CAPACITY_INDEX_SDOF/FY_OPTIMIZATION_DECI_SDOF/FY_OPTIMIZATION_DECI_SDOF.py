@@ -73,9 +73,9 @@ It is especially used in performance‑based seismic evaluation and retrofit des
 OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI)
 -----------------------------------------------------------------
 1. Problem Formulation – We invert the conventional design process:
-   instead of checking a given yield strength Fy, we find the *minimum*
+   instead of checking a given yield strength Fy, we find the 'minimum'
    Fy that makes the structure's hysteretic energy dissipation under
-   a specific earthquake exactly equal to a target fraction (50%) of
+   a specific earthquake exactly equal to a target fraction (20%) of
    its maximum dissipation capacity measured from a full cyclic test.
 
 2. Energy‑Based Performance Metric – The Energy Dissipation Capacity
