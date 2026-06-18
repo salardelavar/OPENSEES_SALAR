@@ -969,7 +969,7 @@ totaltime = TI.process_time() - starttime
 print(f'\nTotal time (s): {totaltime:.4f} \n\n')
 
 exit()
-FY = X
+DSU = X
 #%%----------------------------------------------------
 # PERIOD ANALYSIS
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
