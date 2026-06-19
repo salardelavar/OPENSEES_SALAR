@@ -933,7 +933,7 @@ def OPTIMIZE_FY():
             X -= DX
             IT += 1
 
-            print(f'IT: {IT} - RESIDUAL: {RESIDUAL:.6e} - YIELD SRENGTH: {X:.6e}')
+            print(f'IT: {IT} - RESIDUAL: {RESIDUAL:.6e} - YIELD STRENGTH: {X:.6e}')
             
             if RESIDUAL < TOLERANCE:
                 print(f'\t\t Optimum Yield Strength:           {X:.4f}')
