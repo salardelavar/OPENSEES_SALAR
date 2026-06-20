@@ -100,7 +100,7 @@ import RAYLEIGH_DAMPING_FUN as S06
 import BILINEAR_CURVE as S07
 import OPENSEEES_HYSTERETICSM_FORCE_DISP_FUN as S08
 #%%----------------------------------------------------
-def MDOF_TWO(MAT_TYPE, TOTAL_MASS):
+def MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE):
     # Initialize model
     ops.wipe()
     ops.model('basic', '-ndm', 1, '-ndf', 1)
@@ -932,7 +932,7 @@ TOTAL_MASS = 5000.0   # [kg] Total Mass of Structure
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'PERIOD'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 (PERIOD_MIN_X, PERIOD_MAX_X) = DATA
 print('Structure First Period:  ', PERIOD_MIN_X)
 print('Structure Second Period: ', PERIOD_MAX_X) 
@@ -943,7 +943,7 @@ print('Structure Second Period: ', PERIOD_MAX_X)
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'STATIC'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 (reaction, disp, DI) = DATA
 
 #%%----------------------------------------------------
@@ -951,7 +951,7 @@ DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'PUSHOVER'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 (reaction_PUSH, disp_PUSH, DI_PUSH,
  ele_force_PUSH, node_displacements_PUSH,
  PERIOD_MIN_PUSH, PERIOD_MAX_PUSH) = DATA
@@ -1009,7 +1009,7 @@ plt.show()
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'CYCLIC_DISPLACEMENT'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 (reaction_CP, disp_CP, DI_CP,
  ele_force_CP, node_displacements_CP,
  PERIOD_MIN_CP, PERIOD_MAX_CP) = DATA
@@ -1066,7 +1066,7 @@ plt.show()
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'STATIC_EXTERNAL_TIME-DEPENDENT_LOADING'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 
 (reaction_ETDLS, disp_ETDLS, DI_ETDLS,
  ele_force_ETDLS, node_displacements_ETDLS,
@@ -1124,7 +1124,7 @@ plt.show()
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'DYNAMIC_EXTERNAL_TIME-DEPENDENT_LOADING'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 
 (time_ETDLD, reaction_ETDLD, disp_ETDLD, velo_ETDLD, acc_ETDLD,  DI_ETDLD,
  ele_force_ETDLD, node_displacements_ETDLD,
@@ -1177,7 +1177,7 @@ plt.show()
 # FREE-VIBRATION ANALYSIS (DYNAMIC TIME-HISTORY ANALYSIS)
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'FREE-VIBRATION'
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 
 (time_FV, reaction_FV, disp_FV, velo_FV, acc_FV, DI_FV,
  ele_force_FV, node_displacements_FV,
@@ -1229,7 +1229,7 @@ plt.show()
 MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 ANAL_TYPE = 'SEISMIC'
 
-DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS)
+DATA = MDOF_TWO(MAT_TYPE, TOTAL_MASS, ANAL_TYPE)
 
 (time_SEI, reaction_SEI, disp_SEI, velo_SEI, acc_SEI, DI_SEI,
  ele_force_SEI, node_displacements_SEI,
