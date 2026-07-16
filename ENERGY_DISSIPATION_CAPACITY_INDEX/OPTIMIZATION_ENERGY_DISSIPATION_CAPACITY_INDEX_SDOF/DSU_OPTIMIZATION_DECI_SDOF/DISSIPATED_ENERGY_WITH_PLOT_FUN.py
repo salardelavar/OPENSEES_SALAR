@@ -95,7 +95,7 @@ def DISSIPATED_ENERGY_FUN_WITH_PLOT(displacement, base_shear, method, title="Hys
 
 def ENERGY_DISSIPATION_CAPACITY_INDEX(dispX_SEI, reactionX_SEI, dispX_CP, reactionX_CP):
     Ed_SEI, fig_SEI = DISSIPATED_ENERGY_FUN_WITH_PLOT(
-        dispX_SEI, reactionX_SEI, method = 2, 
+        dispX_SEI, reactionX_SEI, method = 1, 
         title="Earthquake Response – Dissipated Energy (Convex Hull)"
     )
     fig_SEI.show()
@@ -103,7 +103,7 @@ def ENERGY_DISSIPATION_CAPACITY_INDEX(dispX_SEI, reactionX_SEI, dispX_CP, reacti
     print(f"Dissipated Energy from Earthquake= {Ed_SEI:.2f} N·m")
     
     Ed_CP, fig_CP = DISSIPATED_ENERGY_FUN_WITH_PLOT(
-        dispX_CP, reactionX_CP, method = 2,
+        dispX_CP, reactionX_CP, method = 1,
         title="Cyclic Loading – Dissipated Energy (Convex Hull)"
     )
     fig_CP.show()
