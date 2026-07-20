@@ -1514,10 +1514,10 @@ elif DECI > 90 and DECI <= 100:
 import FRAGILITY_FUN as FF
 
 damage_states = {
-    'Minor Damage Level': (20, 40),# Median DI=20%, β=40%
-    'Moderate Damage Level': (40, 40),
-    'Severe Damage Level': (60, 50),
-    'Failure Level': (100, 50)
+    'Minor Damage Level': (20, 5),# Median DI=20%, β=5%
+    'Moderate Damage Level': (40, 5),
+    'Severe Damage Level': (60, 5),
+    'Failure Level': (100, 5)
 }
 
 # Intensity Measure (IM) values from 0.0 to 100.0
