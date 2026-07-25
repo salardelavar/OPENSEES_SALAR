@@ -2,7 +2,7 @@ The equivalent viscous damping ratio is a linearization concept that quantifies 
  by a nonlinear damping or hysteretic mechanism as if it were produced by an ideal viscous damper,
  enabling simplified linear dynamic analysis. It is derived by equating the actual energy lost per
  cycle of steady-state harmonic motion—arising from sources like friction, material yielding, or
- aerodynamic drag—to the energy that a linear viscous damper would dissipate over the same cycle
+ aerodynamic drag to the energy that a linear viscous damper would dissipate over the same cycle
  at a given amplitude and frequency. This yields an amplitude- and frequency-dependent damping ratio (ζ_eq),
  often expressed as ζ_eq = (E_dissipated) / (4π E_stored) for a single-degree-of-freedom system.
  The resulting value allows engineers to approximate a nonlinear system's damping behavior within a
