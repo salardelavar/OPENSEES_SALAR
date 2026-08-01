@@ -1,4 +1,6 @@
-OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI)
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/COVER.png)
+
+# OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI)
 -----------------------------------------------------------------
 1. Problem Formulation – We invert the conventional design process:
    instead of checking a given ultimate displacement DSU, we find the 'minimum'
