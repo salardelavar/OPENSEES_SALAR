@@ -1,3 +1,5 @@
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/PENDULUM/MDF_PENDULUM/PENDULUM.png) 
+
 The equivalent viscous damping ratio is a linearization concept that quantifies the energy dissipated
  by a nonlinear damping or hysteretic mechanism as if it were produced by an ideal viscous damper,
  enabling simplified linear dynamic analysis. It is derived by equating the actual energy lost per
