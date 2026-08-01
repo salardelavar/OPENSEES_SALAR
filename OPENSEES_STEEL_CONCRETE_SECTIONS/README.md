@@ -1,3 +1,5 @@
-Different Shapes of Steel and Concrete Fiber OpenSees Sections
+# Different Shapes of Steel and Concrete Fiber OpenSees Sections
+
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/CONCRETE_FRAME_EXAMPLES/THERMAL_LOAD/THERMAL_LOAD_ALL_ELEMENTS_PERIOD/COVER.png)
 
 THIS PYTHON OR TCL SCRIPTS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
