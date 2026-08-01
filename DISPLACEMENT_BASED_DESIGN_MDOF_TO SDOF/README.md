@@ -1,5 +1,5 @@
 # EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED PUSHOVER ANALYSIS:
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/DISPLACEMENT_BASED_DESIGN_MDOF_TO%20SDOF/COVER.png) 
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/DISPLACEMENT_BASED_DESIGN_MDOF_TO%20SDOF/COVER_DISPLACEMENT_BASED_DESIGN_MDOF_TO%20SDOF.png) 
 
 Change MDOF to SDOF System with Displacement Based Design Concept.
 
