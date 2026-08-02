@@ -167,7 +167,7 @@ def SEISMIC_SDOF(SPRING_TYPE, N_STEPS, duration, dt):
     #ops.load(2, 1.0)
 
     TIME = np.arange(0, N_STEPS*dt, dt)
-    ACCEL = 9.81 * 0.01 * np.sin(2*np.pi*1.5*TIME) # 0.4g, 1.5 Hz
+    ACCEL = 9.81 * 0.01 * np.sin(2*np.pi*1.5*TIME) # 0.1g, 1.5 Hz
     ops.timeSeries('Path', 1, '-dt', dt, '-values', *ACCEL.tolist())
     ops.pattern('UniformExcitation', 1, 1, '-accel', 1)
     
