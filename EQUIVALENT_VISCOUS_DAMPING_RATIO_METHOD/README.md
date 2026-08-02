@@ -15,10 +15,14 @@ The equivalent viscous damping ratio is a linearization concept that quantifies 
 In Each OpenSees Project Script File, Five Analysis Protocols Are Implemented:    
 (1) [CYCLIC_DISPLACEMENT] : Symmetric cyclic displacement protocol capturing hysteresis,
  pinching behavior, and energy dissipation degradation
-(2) [STATIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Static Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt)  
-(3) [DYNAMIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Dynamic Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt)  
+ 
+(2) [STATIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Static Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt)
+
+(3) [DYNAMIC_EXTERNAL_TIME-DEPENDENT_LOADING] : Dynamic Analysis of External time-dependent loading P(t) = P0 sin(wt) or P(t) = P0 exp(-0.05wt) sin(wt) 
+
 (4) [FREE-VIBRATION] : Free-vibration with initial conditions extracting damping ratios
  via logarithmic decrement
+ 
 (5) [SEISMIC] : Multi-directional seismic excitation with Rayleigh damping (3% ratio)
 
 On This Page, There Are Python and OpenSees codes, which are written by Salar Delavar Ghashghaei (Qashqai).
