@@ -2,4 +2,7 @@
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/SDOF_COULOMB_DRY_FRICTION_SEISMIC/EXAMPLE_01/COVER.png) 
 
+# Equivalent viscous damping ratio - Seismic Hysteresis
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/SDOF_COULOMB_DRY_FRICTION_SEISMIC/EXAMPLE_01/COVER_02.png) 
+
 THIS PYTHON SCRIPT WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
