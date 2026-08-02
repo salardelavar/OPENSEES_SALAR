@@ -125,7 +125,7 @@ def DISSIPATED_ENERGY_FUN_WITH_PLOT(displacement, base_shear, method, title="Hys
         ax.legend(loc='lower right')
         fig.tight_layout()
     
-        return area, fig
+    return area, fig
 
 Ed_SEI, fig_SEI = DISSIPATED_ENERGY_FUN_WITH_PLOT(
     disp_SEI, reaction_SEI, method = 2, 
