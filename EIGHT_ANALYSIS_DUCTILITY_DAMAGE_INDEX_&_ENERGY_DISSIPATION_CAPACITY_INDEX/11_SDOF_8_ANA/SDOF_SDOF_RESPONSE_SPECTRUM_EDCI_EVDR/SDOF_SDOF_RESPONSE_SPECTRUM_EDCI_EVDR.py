@@ -1,7 +1,7 @@
 ###########################################################################################################
 #                    >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                     #
 #     FRAGILITY ANALYSIS BASED ON ACCELERATION, STRUCTURAL DUCTILITY DAMAGE INDEX, ENERGY DISSIPATION     #
-#         CAPACITY INDEX, EQULIVALENT VISCOUS DAMPING RATIO WITH NONLINEAR DYNAMIC ANALYSIS (IDA)         #
+#            CAPACITY INDEX, EQULIVALENT VISCOUS DAMPING RATIO WITH NONLINEAR DYNAMIC ANALYSIS            #
 #          OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM UTILIZING 30 GROUND MOTIONS IN OPENSEES            #
 #---------------------------------------------------------------------------------------------------------#
 #                                   INELASTIC RESPONSE SPECTRUM ANALYSIS                                  #
