@@ -4,6 +4,10 @@
 #             ELEMENTS STRUCTURE : AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION,         #
 #                               STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS                     #
 #---------------------------------------------------------------------------------------------------------#
+#                EQUIVALENT VISCOUS DAMPING RATIO: xi_eq = 100 * E_d / (4 * pi * E_s)                     #
+#---------------------------------------------------------------------------------------------------------#
+#          ENERGY DISSIPATION CAPACITY INDEX = 100 * E_d(earthquake) / E_d(cyclic displacement)           #
+#---------------------------------------------------------------------------------------------------------#
 #                                                  P(t) = P0 sin(wt)                                      #
 #                                           P(t) = P0 exp(-0.05wt) sin(wt)                                #
 #---------------------------------------------------------------------------------------------------------#
