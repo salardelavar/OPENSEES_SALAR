@@ -3,6 +3,10 @@
 #  COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF STEEL A SIMPLY SUPPORTED CABLE ELEMENT : AN OPENSEES     #
 #FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS #
 #---------------------------------------------------------------------------------------------------------#
+#                EQUIVALENT VISCOUS DAMPING RATIO: xi_eq = 100 * E_d / (4 * pi * E_s)                     #
+#---------------------------------------------------------------------------------------------------------#
+#          ENERGY DISSIPATION CAPACITY INDEX = 100 * E_d(earthquake) / E_d(cyclic displacement)           #
+#---------------------------------------------------------------------------------------------------------#
 #                                                 W(x,t) = W0 sin(wt)                                     #
 #                                          W(x,t) = W0 exp(-0.05wt) sin(wt)                               #
 #---------------------------------------------------------------------------------------------------------#
