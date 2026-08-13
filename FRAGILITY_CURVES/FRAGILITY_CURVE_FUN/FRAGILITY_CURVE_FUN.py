@@ -105,6 +105,6 @@ EDPs = edp_median * epsilon
 # Let's just use them directly; they will likely be exceeded for high IM.
 
 #%% ------------------------------------------------------------
-# 2. Call the fragility function (correct name and arguments)
+# 2. Call the fragility function
 
 FRAGILITY_CURVE_FUN(IMs, EDPs)
