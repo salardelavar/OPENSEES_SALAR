@@ -583,10 +583,10 @@ S01.HISROGRAM_BOXPLOT(max_zeta, HISTO_COLOR='yellow', LABEL='Equivalent viscous 
 # Define damage states per FEMA P-58
 # INFO LINK: https://www.fema.gov/sites/default/files/documents/fema_p-58-2-se_volume2_implementation.pdf
 damage_states = {
-'DS1_Slight': (0.15, 0.04),    # Median PGA=0.15g, β=0.05
-'DS2_Moderate': (0.30, 0.05),
-'DS3_Extensive': (0.60, 0.05),
-'DS4_Complete': (1.00, 0.05)
+'DS1_Slight': (0.15, 0.4),    # Median PGA=0.15g, β=0.4
+'DS2_Moderate': (0.30, 0.4),
+'DS3_Extensive': (0.60, 0.4),
+'DS4_Complete': (1.00, 0.4)
 }
 """
 im_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -615,10 +615,10 @@ S07.FRAGILITY_CURVE(im_values, damage_states, X_LABEL, SEMILOGY=False, PLOT_KIND
 #===========================================================
 # Define damage state parameters: {Damage State: (median_IM, beta)}
 damage_states = {
-    'Minor Damage Level': (20.0, 5.0),# Median DI=20, β=5
-    'Moderate Damage Level': (40.0, 5.0),
-    'Severe Damage Level': (60.0, 5.0),
-    'Failure Level': (100.0, 5.0)
+    'Minor Damage Level': (20.0, 0.4),# Median DI=20, β=0.4
+    'Moderate Damage Level': (40.0, 0.4),
+    'Severe Damage Level': (60.0, 0.4),
+    'Failure Level': (100.0, 0.4)
 }
 
 # Generate intensity measure (IM) values from 0.0 to 100.0
