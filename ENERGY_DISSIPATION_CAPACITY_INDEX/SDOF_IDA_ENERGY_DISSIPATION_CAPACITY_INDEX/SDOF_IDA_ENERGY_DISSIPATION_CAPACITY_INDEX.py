@@ -1244,10 +1244,10 @@ S077.FRAGILITY_CURVE(im_values, damage_states, X_LABEL, SEMILOGY=False, PLOT_KIN
 #===========================================================
 # Define damage state parameters: {Damage State: (median_IM, beta)}
 damage_states = {
-    'Minor Damage Level': (20.0, 5.0),# Median DI=20, β=5
-    'Moderate Damage Level': (40.0, 5.0),
-    'Severe Damage Level': (60.0, 5.0),
-    'Failure Level': (100.0, 5.0)
+    'Minor Damage Level': (20.0, 0.4),# Median DI=20, β=0.4
+    'Moderate Damage Level': (40.0, 0.4),
+    'Severe Damage Level': (60.0, 0.4),
+    'Failure Level': (100.0, 0.4)
 }
 
 # Generate intensity measure (IM) values from 0.0 to 100.0
