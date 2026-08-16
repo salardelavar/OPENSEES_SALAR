@@ -68,7 +68,7 @@ DUCT_OPTIMIZATION_DECI_SDOF:
 FY_OPTIMIZATION_DECI_SDOF:
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/FY_OPTIMIZATION_DECI_SDOF/COVER_FY.png)
 K_Damper_OPTIMIZATION_DECI_SDOF:
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/K_Damper_OPTIMIZATION_DECI_SDOF/COVER_Kd.pn)
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/K_Damper_OPTIMIZATION_DECI_SDOF/COVER_Kd.png)
 
 On This Page, There Are Python and OpenSees codes, which are written by Salar Delavar Ghashghaei (Qashqai).
 Please note that the content may not be entirely free of errors or inaccuracies.
