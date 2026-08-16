@@ -61,5 +61,14 @@
     overstrength factors – a move towards collapse‑prevention
     verification based on explicit energy balance.
 
+DSU_OPTIMIZATION_DECI_SDOF:
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/DSU_OPTIMIZATION_DECI_SDOF/COVER_DSU.png)
+DUCT_OPTIMIZATION_DECI_SDOF:
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/DUCT_OPTIMIZATION_DECI_SDOF/COVER-DUCT.png)
+FY_OPTIMIZATION_DECI_SDOF:
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/FY_OPTIMIZATION_DECI_SDOF/COVER_FY.png)
+K_Damper_OPTIMIZATION_DECI_SDOF:
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/K_Damper_OPTIMIZATION_DECI_SDOF/COVER_Kd.pn)
+
 On This Page, There Are Python and OpenSees codes, which are written by Salar Delavar Ghashghaei (Qashqai).
 Please note that the content may not be entirely free of errors or inaccuracies.
