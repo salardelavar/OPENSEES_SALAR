@@ -13,7 +13,7 @@
 #         ASSESSMENT OF DUCTILITY DAMAGE INDICES FOR STRUCTURAL ELEMENTS AND SYSTEMS AND EVALUATION       #
 #                                        OF ENERGY DISSIPATION CAPACITY INDEX                             #
 #---------------------------------------------------------------------------------------------------------#
-#                    THIS PYTHON IS SCRIPT WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                  #
+#                    THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                  #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
 ###########################################################################################################
 """
