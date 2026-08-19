@@ -4,7 +4,7 @@
 #          #               RUNNING MOMENT-CURVATURE, PUSHOVER AND DYNAMIC ANALYSIS FOR CALCULATE                #
 #          #                               OPTIMUM STRUCTURAL DUCTILIY DAMAGE INEX                              #
 #          #----------------------------------------------------------------------------------------------------#
-#          #                    THIS PROGRAM WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                      #
+#          #                  THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                     #
 #          #                               EMAIL: salar.d.ghashghaei@gmail.com                                  #
 #          ######################################################################################################
 """
