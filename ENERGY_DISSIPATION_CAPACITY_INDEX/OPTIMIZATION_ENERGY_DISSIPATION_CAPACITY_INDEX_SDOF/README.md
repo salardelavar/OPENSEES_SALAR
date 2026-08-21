@@ -1,6 +1,6 @@
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/ENERGY_DISSIPATION_CAPACITY_INDEX/OPTIMIZATION_ENERGY_DISSIPATION_CAPACITY_INDEX_SDOF/COVER_DISSIPATED_ENERGY_CAPACITY_INDEX.png)
 
-# OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI)
+# OPTIMIZATION PROBLEM FOR ENERGY DISSIPATION CAPACITY INDEX (EDCI) WITH AND WITHOUT PARALLEL COMPUTING 
 -----------------------------------------------------------------
 1. Problem Formulation: We invert the conventional design process:
    instead of checking a given yield strength Fy, we find the 'minimum'
