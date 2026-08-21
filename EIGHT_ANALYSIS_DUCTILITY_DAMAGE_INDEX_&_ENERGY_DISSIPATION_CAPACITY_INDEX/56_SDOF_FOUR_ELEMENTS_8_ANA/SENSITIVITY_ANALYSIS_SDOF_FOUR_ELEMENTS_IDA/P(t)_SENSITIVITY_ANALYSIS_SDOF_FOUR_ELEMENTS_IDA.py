@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------------------------------------#
 #                   EQUIVALENT VISCOUS DAMPING RATIO: xi_eq = 100 * E_d / (4 * pi * E_s)                    #
 #-----------------------------------------------------------------------------------------------------------#
-#                     THIS PYTHON SCRIPT WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                      #
+#                     THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                   #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                     #
 #############################################################################################################
 """
