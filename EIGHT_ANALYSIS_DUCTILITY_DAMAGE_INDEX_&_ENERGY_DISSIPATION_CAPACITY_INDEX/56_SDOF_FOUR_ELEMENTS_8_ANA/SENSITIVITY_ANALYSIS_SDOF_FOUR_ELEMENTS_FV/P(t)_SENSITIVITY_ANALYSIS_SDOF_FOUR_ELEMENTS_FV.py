@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------------------------------------#
 #                                 FREE VIBRATION ANALYSIS USING INITIAL DISPLACEMENT                        #
 #-----------------------------------------------------------------------------------------------------------#
-#                     THIS PYTHON SCRIPT WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                      #
+#                      THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)                  #
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                     #
 #############################################################################################################
 """
