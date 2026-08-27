@@ -125,7 +125,7 @@ def SDOF_FOUR_ELEMENTS(MAT_TYPE, TOTAL_MASS, ANAL_TYPE):
     # Define masses
     ops.mass(2, np.sum(MASS))
     
-    #%% FOUR DEGREES OF FREEDOM STRUCTURE, CALCULATE LATERAL STIFFNESS AND DAMPING 
+    #%% FOUR COLUMNS AND FOUR DEGREES OF FREEDOM STRUCTURE, CALCULATE LATERAL STIFFNESS AND DAMPING
     for II in range(0, 4):
         FY = 85000.0                                     # [N] Yield Force of Structure
         FU = 1.18 * FY                                   # [N] Ultimate Force of Structure
