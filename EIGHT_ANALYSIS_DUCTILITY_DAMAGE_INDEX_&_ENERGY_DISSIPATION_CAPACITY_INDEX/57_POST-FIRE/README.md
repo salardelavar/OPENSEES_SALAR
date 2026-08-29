@@ -1,6 +1,4 @@
-COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF MULTI-MODE POST-BUCKLING PHENOMENA IN A POST-FIRE STEEL COLUMN WITH SEMI-RIGID CONNECTIONS: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY, AND DYNAMIC TIME-HISTORY ANALYSES
-
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_01_COLUMN/COVER_FIRE.png) 
+# COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF MULTI-MODE POST-BUCKLING PHENOMENA IN A POST-FIRE STEEL COLUMN WITH SEMI-RIGID CONNECTIONS: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY, AND DYNAMIC TIME-HISTORY ANALYSES
 
 Assume we have a structure where, after a fire, certain regions of the structural members have lost their initial material properties (yield strength and modulus of elasticity), and the entire column member has undergone lateral buckling. Now, we assess the strength of this structure by performing eight different analyses.
 
@@ -26,3 +24,6 @@ In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:
 
 On This Page, There Are Python and OpenSees Python Scripts, which are written by Salar Delavar Ghashghaei (Qashqai).
 Please note that the content may not be entirely free of errors or inaccuracies.
+
+
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_01_COLUMN/COVER_FIRE.png)
