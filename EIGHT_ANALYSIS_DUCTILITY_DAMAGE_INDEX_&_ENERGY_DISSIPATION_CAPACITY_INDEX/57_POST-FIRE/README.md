@@ -27,5 +27,5 @@ Please note that the content may not be entirely free of errors or inaccuracies.
 
 # EXAMPLE_01_COLUMN:
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_01_COLUMN/COVER_FIRE.png)
-# EXAMPLE_03_COLUMN:
-![alt text]()
+# EXAMPLE_03_SDOF:
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_03_SDOF/COVER_FIRE.png)
