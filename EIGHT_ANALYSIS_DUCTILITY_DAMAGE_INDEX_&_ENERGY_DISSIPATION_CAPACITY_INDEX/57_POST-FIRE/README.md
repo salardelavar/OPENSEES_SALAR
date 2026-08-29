@@ -25,5 +25,7 @@ In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:
 On This Page, There Are Python and OpenSees Python Scripts, which are written by Salar Delavar Ghashghaei (Qashqai).
 Please note that the content may not be entirely free of errors or inaccuracies.
 
-
+# EXAMPLE_01_COLUMN:
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_01_COLUMN/COVER_FIRE.png)
+# EXAMPLE_03_COLUMN:
+![alt text]()
