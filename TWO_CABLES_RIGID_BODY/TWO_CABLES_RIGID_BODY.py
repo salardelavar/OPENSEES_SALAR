@@ -1,9 +1,8 @@
 ###################################################################
 #                   >> IN THE NAME OF ALLAH <<                    #
-#  PUSHOVER ANALYSIS OF CABLE SUBJECTED TO LATERAL DISPLACEMENT   #
-#           MATERIAL AND GEOMETRIC NONLINEARITIES EFFECT          #
-#          CHECKING THE ANALYSIS BY DISPLACEMENT CONTROL          #
-#                       VERIFIED BY OPENSEES                      #
+# PUSHOVER ANALYSIS OF CABLE SUBJECTED TO LATERAL DISPLACEMENT,   #
+# MATERIAL AND GEOMETRIC NONLINEARITY EFFECTS, AND DISPLACEMENT   #
+#           CONTROL VERIFICATION USING OPENSEES                   #
 #-----------------------------------------------------------------#
 #  THIS PROGRAM IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)  #
 #              E-MAIL: SALAR.D.GHASHGHAEI@GMAIL.COM               #
