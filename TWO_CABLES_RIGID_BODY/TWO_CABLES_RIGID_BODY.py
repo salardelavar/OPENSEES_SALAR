@@ -98,14 +98,14 @@ L_total = 1000.0                  # length of rigid bar (A to C)
 L1_0 = 500.0                      # initial length cable 1 (B-D)
 L2_0 = 500.0                      # initial length cable 2 (C-E)
 
-# Material parameters (same as OpenSees HystereticSM envelope)
-FY = 0.240
-FU = 1.1818 * FY
-Ke = 200.0
-DY = FY / Ke
-DSU = 0.36
-Ksh = (FU - FY) / (DSU - DY)
-b = Ksh / Ke
+# Material parameters (same as OpenSees HystereticSM envelope)                  
+FY = 0.240                       # [kN/mm^2] Yield strength of steel section
+FU = 1.1818 * FY                 # [kN/mm^2] Ultimate strength of steel section
+Ke = 200.0                       # [kN/mm^2] Modulus of elasticity of steel section
+DY = FY / Ke                     # [mm/mm] Yield steel strain
+DSU = 0.36                       # [mm/mm] Ultimate steel strain
+Ksh = (FU - FY) / (DSU - DY)     # [mm/mm] Yield steel strain
+b = Ksh / Ke                     # Strain hardening ratio
 
 # Positive envelope points (strain, stress)
 pos_strains = np.array([0.0, DY, DSU, 1.1*DSU, 1.25*DSU])
@@ -131,7 +131,7 @@ for i in range(Nsteps):
     up = D6 * i  # vertical displacement at node C (negative downward)
     
     # Compute rotation angle of rigid bar
-    sin_theta = up / L_total
+    sin_theta = up / (L_total)
     theta = np.arcsin(sin_theta)   # negative for downward
     cos_theta = np.cos(theta)
     
