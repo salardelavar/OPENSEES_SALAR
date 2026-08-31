@@ -1,5 +1,3 @@
-#OpenSees & Python, Analysis of Cable Structures Incorporating Material and Geometric Nonlinearities
-
 ###################################################################
 #                   >> IN THE NAME OF ALLAH <<                    #
 #  PUSHOVER ANALYSIS OF CABLE SUBJECTED TO LATERAL DISPLACEMENT   #
