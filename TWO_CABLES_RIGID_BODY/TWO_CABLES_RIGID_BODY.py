@@ -43,17 +43,6 @@ A2 = np.pi * (50**2) / 4     # [mm^2] Cross Section Area for Element 2
 
 Nsteps =  int(np.abs(D6max / D6))# Number of steps for calculation
 
-# Steel Section Properties
-fy = 0.240        # [kN/mm^2] Yield strength of steel section
-fu = 1.1818 * fy  # [kN/mm^2] Ultimate strength of steel section
-Es = 200.0        # [kN/mm^2] Modulus of elasticity of steel section
-ey = fy / Es      # [mm/mm] Yield steel strain
-esu = 0.35        # [mm/mm] Ultimate steel strain
-
-Esh = (fu - fy) / (esu - ey)  # Strain hardening modulus
-b = Esh / Es                  # Strain hardening ratio
-
-
 MAX_ITERATIONS = 10000     # convergence iteration for test
 MAX_TOLERANCE = 1.0e-6     # convergence tolerance for test
 
@@ -435,3 +424,4 @@ plt.title('Y-Displacement vs Y-Base Reaction')
 plt.grid(True)
 plt.legend()
 plt.show()
+
