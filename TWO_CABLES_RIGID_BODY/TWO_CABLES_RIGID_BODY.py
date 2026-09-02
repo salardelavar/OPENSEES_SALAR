@@ -104,7 +104,7 @@ FU = 1.1818 * FY                 # [kN/mm^2] Ultimate strength of steel section
 Ke = 200.0                       # [kN/mm^2] Modulus of elasticity of steel section
 DY = FY / Ke                     # [mm/mm] Yield steel strain
 DSU = 0.36                       # [mm/mm] Ultimate steel strain
-Ksh = (FU - FY) / (DSU - DY)     # [mm/mm] Yield steel strain
+Ksh = (FU - FY) / (DSU - DY)     # Hardening stiffness
 b = Ksh / Ke                     # Strain hardening ratio
 
 # Positive envelope points (strain, stress)
