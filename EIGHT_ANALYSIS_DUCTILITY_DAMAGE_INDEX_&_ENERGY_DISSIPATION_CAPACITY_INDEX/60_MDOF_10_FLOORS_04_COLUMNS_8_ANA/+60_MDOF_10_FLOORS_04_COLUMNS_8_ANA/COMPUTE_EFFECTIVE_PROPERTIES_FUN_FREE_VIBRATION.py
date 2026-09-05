@@ -2,7 +2,7 @@
 # Change MDOF to SDOF System with Displacement Based Design Concept
 # THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
 """
-This script implements a displacement-based pushover transformation,
+This script implements a displacement-based free-vibration transformation,
  converting a multi-degree-of-freedom (MDOF) system into an equivalent
  single-degree-of-freedom (SDOF) system for seismic assessment.
  It calculates effective modal properties—displacement, mass, and
