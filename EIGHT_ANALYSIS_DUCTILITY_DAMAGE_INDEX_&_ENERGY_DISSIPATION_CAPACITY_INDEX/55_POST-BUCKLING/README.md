@@ -15,7 +15,8 @@ In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:
  via logarithmic decrement
 (8) [SEISMIC] : Multi-directional seismic excitation with Rayleigh damping (3% ratio)
 
-![alt text]() 
+# EXAMPLE_01_AXIAL
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/55_POST-BUCKLING/EXAMPLE_01_AXIAL/COVER.png) 
 
 On This Page, There Are Python and OpenSees Python Scripts, which are written by Salar Delavar Ghashghaei (Qashqai).
 Please note that the content may not be entirely free of errors or inaccuracies.
