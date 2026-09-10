@@ -76,7 +76,7 @@ PERIOD ANALYSIS WITH NEWTON-RAPHSON OPTIMIZATION
 
 1. OBJECTIVE
 --------------------------------------------------------------------------------
-    Perform a seismic time-history analysis of a single-degree-of-freedom
+    Perform a Period analysis of a single-degree-of-freedom
     (SDOF) system and iteratively determine the optimum initial elastic
     stiffness required to achieve a target structural period.
 
