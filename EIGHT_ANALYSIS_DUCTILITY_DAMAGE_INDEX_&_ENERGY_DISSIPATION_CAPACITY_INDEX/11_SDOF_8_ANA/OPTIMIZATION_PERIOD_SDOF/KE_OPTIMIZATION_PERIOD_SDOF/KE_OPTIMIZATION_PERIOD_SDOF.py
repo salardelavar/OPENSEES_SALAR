@@ -954,6 +954,10 @@ MAT_TYPE = 'INELASTIC'   # 'ELASTIC' OR 'INELASTIC'
 # -------------------------------------------------------------------------------------
 # FIND THE OPTIMUM VALUE (NEWTON-RAPHSON SOLVER FOR OPTIMAL INITIAL ELASTIC STIFFNESS)
 # -------------------------------------------------------------------------------------
+# Determines the optimum initial elastic stiffness of an SDOF system via a
+# Newton-Raphson root-finding scheme, such that the maximum structural period
+# matches a prescribed target demand.
+
 import time as TI
 import numpy as np
  
