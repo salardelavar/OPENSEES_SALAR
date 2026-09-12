@@ -7,7 +7,7 @@
 1. OBJECTIVE
 --------------------------------------------------------------------------------
     Perform a Period analysis of a multi-degree-of-freedom
-    (SDOF) system and iteratively determine the optimum initial elastic
+    (MDOF) system and iteratively determine the optimum initial elastic
     stiffness required to achieve a target structural period.
 
     The material behaviour may be either elastic or inelastic, selected via
@@ -134,6 +134,7 @@
     DEMAND     : Target structural period
     TOLERANCE  : Convergence tolerance on DX
     ESP        : Finite-difference step
+
 THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
 
 
