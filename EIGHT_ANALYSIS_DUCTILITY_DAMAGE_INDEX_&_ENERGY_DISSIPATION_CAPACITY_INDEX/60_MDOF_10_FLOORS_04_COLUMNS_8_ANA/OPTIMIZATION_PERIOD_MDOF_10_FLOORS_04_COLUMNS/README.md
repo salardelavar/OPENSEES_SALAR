@@ -6,7 +6,7 @@
 --------------------------------------------------------------------------------
 1. OBJECTIVE
 --------------------------------------------------------------------------------
-    Perform a Period analysis of a single-degree-of-freedom
+    Perform a Period analysis of a multi-degree-of-freedom
     (SDOF) system and iteratively determine the optimum initial elastic
     stiffness required to achieve a target structural period.
 
