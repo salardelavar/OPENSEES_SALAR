@@ -4,7 +4,7 @@
 #          CAPACITY INDEX, EQULIVALENT VISCOUS DAMPING RATIO WITH NONLINEAR DYNAMIC ANALYSIS              #
 #           OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SYSTEM UTILIZING 200 GROUND MOTIONS IN OPENSEES           #
 #---------------------------------------------------------------------------------------------------------#
-#                            INELASTIC SEIMSIC ANALYSIS WITH 200 GROUND MOTIONS                           #
+#            INELASTIC SEIMSIC (NONLINEAR DYNAMIC TIME-HISTORY) ANALYSIS WITH 200 GROUND MOTIONS          #
 #---------------------------------------------------------------------------------------------------------#
 #                EQUIVALENT VISCOUS DAMPING RATIO: xi_eq = 100 * E_d / (4 * pi * E_s)                     #
 #---------------------------------------------------------------------------------------------------------#
