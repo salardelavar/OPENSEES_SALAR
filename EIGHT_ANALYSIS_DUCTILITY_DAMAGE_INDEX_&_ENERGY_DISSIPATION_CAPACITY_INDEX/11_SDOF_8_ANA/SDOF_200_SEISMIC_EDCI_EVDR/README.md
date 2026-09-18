@@ -1,6 +1,6 @@
 # FRAGILITY ANALYSIS BASED ON ACCELERATION, STRUCTURAL DUCTILITY DAMAGE INDEX, ENERGY DISSIPATION CAPACITY INDEX, EQULIVALENT VISCOUS DAMPING RATIO WITH NONLINEAR DYNAMIC ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM UTILIZING 200 GENERATED ARTIFICIAL GROUND MOTIONS IN OPENSEES
 
-# تحلیل دینامیکی غیرخطی تاریخچه زمانی سیستم‌های یک‌درجه‌آزادی با استفاده از ۲۰۰ شتاب نگاشت زلزله مصنوعی در اوپنسیس
+# تحلیل دینامیکی غیرخطی تاریخچه زمانی سیستم‌ یک‌درجه‌آزادی با استفاده از ۲۰۰ شتاب نگاشت زلزله مصنوعی در اوپنسیس
      
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/SDOF_200_SEISMIC_EDCI_EVDR/COVER.png)
 
