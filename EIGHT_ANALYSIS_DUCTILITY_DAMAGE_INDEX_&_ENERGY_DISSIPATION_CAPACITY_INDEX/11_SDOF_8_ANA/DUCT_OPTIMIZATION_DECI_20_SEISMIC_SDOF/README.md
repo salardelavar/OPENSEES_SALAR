@@ -38,7 +38,7 @@
     Residual function:
         F(X) = EDCI - DEMAND
 
-        where PERIOD_MAX is returned by the SDOF solver when called with
+        where EDCI is returned by the SDOF solver when called with
         ANAL_TYPE = 'SEISMIC'. The residual measures how far the maximum
         structural period is from the target. A value of zero indicates
         exact convergence.
