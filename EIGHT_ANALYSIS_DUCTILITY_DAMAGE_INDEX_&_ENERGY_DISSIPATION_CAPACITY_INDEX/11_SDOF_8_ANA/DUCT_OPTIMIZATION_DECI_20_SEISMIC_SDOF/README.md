@@ -6,7 +6,7 @@
 
 # Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis under twenty different ground motion records, and, by defining the amount of Energy Dissipation Capacity Index as the objective, we aim to optimize the ductility of the structure using the Newton–Raphson method. Therefore, with twenty different ground motion records, we calculate different ductility ratios, and finally, we evaluate the results.
 
-# فرض کنید که یک سازهٔ یک‌درجه‌آزادی تحت تحلیل دینامیکی غیرخطی با بیست رکورد مختلف حرکت زمین قرار می‌گیرد، و با تعریف مقدار شاخص ظرفیت اتلاف انرژی به‌عنوان هدف، قصد داریم شکل‌پذیری سازه را با استفاده از روش نیوتن–رافسون بهینه‌سازی کنیم. بنابراین، با بیست رکورد مختلف حرکت زمین، نسبت‌های شکل‌پذیری متفاوتی را محاسبه می‌کنیم و در نهایت، نتایج را ارزیابی می‌کنیم.
+# فرض کنید که یک سازهٔ یک‌درجه‌آزادی تحت تحلیل دینامیکی غیرخطی با بیست رکورد مختلف حرکت زمین قرار می‌گیرد، و با تعریف مقدار شاخص ظرفیت اتلاف انرژی به‌عنوان هدف، قصد داریم شکل‌پذیری سازه را با استفاده از روش نیوتن–رافسون بهینه‌سازی کنیم. بنابراین، با بیست رکورد مختلف شتاب نگاشت، نسبت‌های شکل‌پذیری متفاوتی را محاسبه می‌کنیم و در نهایت، نتایج را ارزیابی می‌کنیم.
 
  # SEISMIC ANALYSIS WITH NEWTON-RAPHSON OPTIMIZATION
 --------------------------------------------------------------------------------
