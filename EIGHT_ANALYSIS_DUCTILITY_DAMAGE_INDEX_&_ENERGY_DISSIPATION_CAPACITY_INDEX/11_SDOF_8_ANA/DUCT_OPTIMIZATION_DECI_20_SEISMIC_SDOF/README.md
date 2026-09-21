@@ -1,10 +1,12 @@
 # DETERMINATION OF OPTIMUM STRUCTURAL DUCTILITY RATIO FROM ENERGY DISSIPATION CAPACITY INDEX USING FINITE‑DIFFERENCE NEWTON ITERATION AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS 
+# تعیین نسبت شکل‌پذیری بهینه سازه بر اساس شاخص ظرفیت انرژی اتلاف شده، با استفاده از تکرار نیوتن و نرم‌افزار اوپنسیس تحت ۲۰ شتاب‌نگاشت زلزله
+
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/DUCT_OPTIMIZATION_DECI_20_SEISMIC_SDOF/COVER-DUCT.png) 
 
 # Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis under twenty different ground motion records, and, by defining the amount of Energy Dissipation Capacity Index as the objective, we aim to optimize the ductility of the structure using the Newton–Raphson method. Therefore, with twenty different ground motion records, we calculate different ductility ratios, and finally, we evaluate the results.
 
-
+# فرض کنید که یک سازهٔ یک‌درجه‌آزادی تحت تحلیل دینامیکی غیرخطی با بیست رکورد مختلف حرکت زمین قرار می‌گیرد، و با تعریف مقدار شاخص ظرفیت اتلاف انرژی به‌عنوان هدف، قصد داریم شکل‌پذیری سازه را با استفاده از روش نیوتن–رافسون بهینه‌سازی کنیم. بنابراین، با بیست رکورد مختلف حرکت زمین، نسبت‌های شکل‌پذیری متفاوتی را محاسبه می‌کنیم و در نهایت، نتایج را ارزیابی می‌کنیم.
 
  # SEISMIC ANALYSIS WITH NEWTON-RAPHSON OPTIMIZATION
 --------------------------------------------------------------------------------
