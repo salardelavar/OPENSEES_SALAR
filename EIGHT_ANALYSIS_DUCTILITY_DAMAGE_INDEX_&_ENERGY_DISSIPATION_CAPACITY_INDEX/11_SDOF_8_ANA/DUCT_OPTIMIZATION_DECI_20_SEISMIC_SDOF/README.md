@@ -72,7 +72,7 @@
 
 3. WORKFLOW SUMMARY
 --------------------------------------------------------------------------------
-    Step 1 : Initialize X (structural ductiliity ratio) and solver parameters.
+    Step 1 : Initialize X (structural ductility ratio) and solver parameters.
     Step 2 : Evaluate F(X)         via SDOF(ANAL_TYPE='PERIOD').
     Step 3 : Evaluate F(X - ESP)   via SDOF(ANAL_TYPE='PERIOD').
     Step 4 : Evaluate F(X + ESP)   via SDOF(ANAL_TYPE='PERIOD').
