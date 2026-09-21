@@ -29,7 +29,7 @@
     such that the maximum structural period matches a target demand.
 
     Target demand:
-        DEMAND = 20.0   [in the chosen EDCI units]
+        DEMAND = 20.0   [%]
 
     Residual function:
         F(X) = EDCI - DEMAND
