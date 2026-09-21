@@ -1,7 +1,14 @@
-<img width="11176" height="245" alt="image" src="https://github.com/user-attachments/assets/3ab67040-2989-4901-b38e-2bd93dcc0e14" /># DETERMINATION OF OPTIMUM STRUCTURAL DUCTILITY RATIO FROM ENERGY DISSIPATION CAPACITY INDEX USING FINITE‑DIFFERENCE NEWTON ITERATION AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS 
+# DETERMINATION OF OPTIMUM STRUCTURAL DUCTILITY RATIO FROM ENERGY DISSIPATION CAPACITY INDEX USING FINITE‑DIFFERENCE NEWTON ITERATION AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS 
+
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/DUCT_OPTIMIZATION_DECI_20_SEISMIC_SDOF/COVER-DUCT.png) 
+
+# Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis
+ under twenty different ground motion records, and, by defining the amount of Energy Dissipation
+ Capacity Index as the objective, we aim to optimize the ductility of the structure using the
+ Newton–Raphson method. Therefore, with twenty different ground motion records, we calculate 
+ different ductility ratios, and finally, we evaluate the results.
 
 
-![alt text]() 
 
  # SEISMIC ANALYSIS WITH NEWTON-RAPHSON OPTIMIZATION
 --------------------------------------------------------------------------------
