@@ -81,7 +81,7 @@
     Step 7 : Compute the residual RESIDUAL = |DX|.
     Step 8 : Update X <- X - DX and increment the iteration counter.
     Step 9 : Check termination (TOLERANCE or ITMAX).
-    Step 10: Report the optimum stiffness, iteration count, residual, and
+    Step 10: Report the optimum structural ductility rtaio, iteration count, residual, and
              total elapsed CPU time.
 
 4. INPUT PARAMETERS
@@ -98,7 +98,7 @@
 
 5. OUTPUT
 --------------------------------------------------------------------------------
-    - Optimum initial structural ductility ratio X                [m/m]
+    - Optimum structural ductility ratio X                [m/m]
     - Iteration count at convergence
     - Final convergence residual
     - Total elapsed CPU time in seconds
