@@ -1209,7 +1209,7 @@ S010.RANDOM_FOREST(df)
 S010.PLOT_HEATMAP(df)
 #%%------------------------------------------------------
 # MULTIPLE REGRESSION MODEL
-S010.MULTIPLE_REGRESSION(df) 
+#S010.MULTIPLE_REGRESSION(df) 
 #%%-------------------------------------------------------------------
 # Plots a heatmap of sensitivity coefficients (correlation or SRC) between inputs X and outputs Y.
 import SENSITIVITY_HEATMAP_FUN as S099
