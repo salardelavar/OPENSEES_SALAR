@@ -20,7 +20,7 @@
 #                                   EMAIL: salar.d.ghashghaei@gmail.com                                   #
 ###########################################################################################################
 """
-Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis
+Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic time-history analysis
  under twenty different ground motion records, and, by defining the amount of Energy Dissipation
  Capacity Index as the objective, we aim to optimize the ductility of the structure using the
  Newton–Raphson method. Therefore, with twenty different ground motion records, we calculate 
