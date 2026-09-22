@@ -987,7 +987,7 @@ DISP, VELO, ACC = [], [], []
 starttime = TI.process_time()
 
 for II in range(40, 60):                # RUN FOR 20 TIMES 'CYCLIC_DISPLACEMENT' AND 'SEISMIC' AND EVALUTE ENERGY DISSIPATION CAPACITY INDEX
-    X = 5.0                             # REFRESH INITIAL GUESS FOR RUNNING AGAIN
+    X = 5.0                             # REFRESH INITIAL GUESS OF STRUCTURAL DUCTILITY RATIO FOR RUNNING AGAIN
     RESIDUAL = 100                      # REFRESH ANALYSIS RESIDUAL FOR RUNNING AGAIN
     
     while (RESIDUAL > TOLERANCE):
