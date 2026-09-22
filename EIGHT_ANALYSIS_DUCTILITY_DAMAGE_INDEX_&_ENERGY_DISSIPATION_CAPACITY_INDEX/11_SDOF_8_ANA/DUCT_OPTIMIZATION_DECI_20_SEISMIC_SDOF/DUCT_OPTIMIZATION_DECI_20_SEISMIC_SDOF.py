@@ -973,7 +973,7 @@ TOLERANCE = 1e-6  # Convergence Tolerance
 RESIDUAL = 100    # Convergence Residual 
 IT = 0            # Intial Iteration
 ITMAX = 1000      # Max. Iteration
-DEMAND = 20.0     # [s] Target Value -> ENERGY  DISSIPACATION CAPAICTY INDEX
+DEMAND = 20.0     # [%] Target Value -> ENERGY  DISSIPACATION CAPAICTY INDEX
 
 OPT_DUCT_target = []     # COLLECT OPTIMUM STRU. DUCTILITY RATIO
 PERIOD_RATIO = []        # COLLECT PERIOD RATIO (SEISMIC DIVDED BY CYCLIC DISPLACEMENT)
