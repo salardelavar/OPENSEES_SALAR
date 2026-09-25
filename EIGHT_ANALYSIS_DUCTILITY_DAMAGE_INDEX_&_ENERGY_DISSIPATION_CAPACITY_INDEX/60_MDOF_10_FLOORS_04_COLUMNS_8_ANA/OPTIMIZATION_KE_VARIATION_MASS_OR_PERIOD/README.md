@@ -51,3 +51,8 @@ The optimization uses a **finite-difference Newton–Raphson** solver.
 ```bash
 cd OPTIMIZATION_KE_MASS_VARITIONS
 python OPTIMIZATION_KE_MASS_VARITIONS.py
+
+### 2. Constant Mass – Vary Period
+```bash
+cd OPTIMIZATION_KE_PERIOD_VARITIONS
+python OPTIMIZATION_KE_PERIOD_VARITIONS.py
