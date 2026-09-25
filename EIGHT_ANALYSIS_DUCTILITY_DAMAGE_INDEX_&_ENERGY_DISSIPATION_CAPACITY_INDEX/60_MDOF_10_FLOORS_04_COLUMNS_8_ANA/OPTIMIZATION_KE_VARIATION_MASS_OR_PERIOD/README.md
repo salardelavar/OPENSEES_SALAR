@@ -50,7 +50,9 @@ The optimization uses a **finite-difference Newton–Raphson** solver.
 1. Constant Period – Vary Mass
 -> OPTIMIZATION_KE_MASS_VARITIONS
 python OPTIMIZATION_KE_MASS_VARITIONS.py
+![Cover]()
 
-2. Constant Mass – Vary Period
+3. Constant Mass – Vary Period
 -> OPTIMIZATION_KE_PERIOD_VARITIONS
 python OPTIMIZATION_KE_PERIOD_VARITIONS.py
+![Cover]()
