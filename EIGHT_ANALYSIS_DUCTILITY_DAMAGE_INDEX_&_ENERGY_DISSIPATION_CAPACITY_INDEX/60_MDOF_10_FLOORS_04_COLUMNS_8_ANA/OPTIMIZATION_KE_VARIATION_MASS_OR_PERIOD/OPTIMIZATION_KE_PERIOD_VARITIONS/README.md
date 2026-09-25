@@ -6,7 +6,7 @@
 
 ## Overview
 
-This OpenSees (Python) example finds the **optimum initial elastic stiffness** (`Ke`) of the columns in a **10-story MDOF frame** (4 columns per floor) so that the structural period matches a target demand.
+This OpenSees (Python) example finds the **optimum elastic stiffness** (`Ke`) of the columns in a **10-story MDOF frame** (4 columns per floor) so that the structural period matches a target demand.
 
 - **Mass is kept constant**
 - **Target structural period is varied**
