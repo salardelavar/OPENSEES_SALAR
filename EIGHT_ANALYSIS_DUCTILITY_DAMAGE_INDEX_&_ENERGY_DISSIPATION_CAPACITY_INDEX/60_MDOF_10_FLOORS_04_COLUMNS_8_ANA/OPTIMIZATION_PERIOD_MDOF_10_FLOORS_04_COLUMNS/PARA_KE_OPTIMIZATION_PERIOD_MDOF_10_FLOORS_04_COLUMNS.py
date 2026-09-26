@@ -379,8 +379,8 @@ def MDOF(Ke, MAT_TYPE, TOTAL_MASS, ANAL_TYPE):
             if MAT_TYPE == 'INELASTIC':
                 S08.OPENSEEES_HYSTERETICSM_FORCE_DISP_FUN(MAT_TAG, DP, FP, DN, FN, PLOT = False, X_LABEL='Displacement (m)', Y_LABEL='Force [N]', TITLE='FORCE-DISPLACEMENT CURVE')
             if MAT_TYPE == 'ELASTIC':
-                #ops.uniaxialMaterial('Elastic', MAT_TAG, Ke)             # TESNSION AND COMPRESSION IS SAME VALUES
-                ops.uniaxialMaterial('Elastic', MAT_TAG, Ke ,0.0, 0.5*Ke) # TESNSION AND COMPRESSION IS NOT SAME VALUES
+                ops.uniaxialMaterial('Elastic', MAT_TAG, Ke)             # TESNSION AND COMPRESSION IS SAME VALUES
+                #ops.uniaxialMaterial('Elastic', MAT_TAG, Ke ,0.0, 0.5*Ke) # TESNSION AND COMPRESSION IS NOT SAME VALUES
                 # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/ElasticUni.html
             
             MAT_TAG_C = 2000 + (II * 4 + JJ) # SPRING DAMPER
