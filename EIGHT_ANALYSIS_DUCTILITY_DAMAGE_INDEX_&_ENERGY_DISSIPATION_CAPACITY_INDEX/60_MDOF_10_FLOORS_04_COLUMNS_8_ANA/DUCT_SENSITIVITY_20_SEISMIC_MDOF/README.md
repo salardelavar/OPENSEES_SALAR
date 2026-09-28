@@ -54,5 +54,3 @@ Assume that a multi-degree-of-freedom structure is subjected to nonlinear dynami
    performance-based seismic design.
 
 23. ML + correlation + ANOVA together rank which EDP (disp, vel or acc) drives damage.
-24. The whole file is the FORWARD problem of a PBEE workflow; the companion Newton-
-   Raphson script solves the INVERSE problem (find DUCT for target EDCI).
