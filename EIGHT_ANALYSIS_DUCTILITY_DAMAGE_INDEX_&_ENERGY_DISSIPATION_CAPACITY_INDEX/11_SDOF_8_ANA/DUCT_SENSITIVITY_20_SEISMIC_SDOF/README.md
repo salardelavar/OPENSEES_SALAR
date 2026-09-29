@@ -1,6 +1,6 @@
 # SENSITIVITY ANALYSIS OF STRUCTURE DUCTILITY RATIO  AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS
 
-![alt text]() 
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/DUCT_SENSITIVITY_20_SEISMIC_SDOF/COVER.png) 
 
 Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis under
  twenty different ground motion records. To investigate the influence of structure ductility on
