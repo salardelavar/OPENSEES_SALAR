@@ -1,5 +1,6 @@
 # SENSITIVITY ANALYSIS OF COLUMN DUCTILITY RATIO  AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS
-# تحلیل حساسیت نسبت شکل‌پذیری سازه و اوپنسیس از طریق ۲۰ حرکت زمین‌لرزه‌
+# تحلیل حساسیت نسبت شکل‌پذیری ستون و اوپنسیس از طریق ۲۰ حرکت زمین‌لرزه‌
+
 
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/DUCT_SENSITIVITY_20_SEISMIC_MDOF/COVER.png) 
