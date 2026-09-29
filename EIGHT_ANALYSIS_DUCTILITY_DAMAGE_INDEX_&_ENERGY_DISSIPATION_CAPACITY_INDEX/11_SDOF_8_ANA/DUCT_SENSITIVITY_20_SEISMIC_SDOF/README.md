@@ -5,7 +5,11 @@
 Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis under
  twenty different ground motion records. To investigate the influence of structure ductility on
  seismic performance, a sensitivity analysis is performed by systematically varying each column’s
- ductility ratio from 20 to 50 in 21 steps. For each ductility level, a pushover analysis provides a cyclic displacement analysis establishes a reference hysteretic energy, and twenty nonlinear time-history analyses are conducted using different ground motions. From these analyses, the Energy Dissipation Capacity Index (EDCI) and other response metrics such as maximum displacement, velocity, acceleration, damage index, over-strength factor, ductility ratio, and equivalent viscous damping ratio are computed.
+ ductility ratio from 5.0 to 15.0 in 21 steps. For each ductility level, a pushover analysis provides
+ a cyclic displacement analysis establishes a reference hysteretic energy, and twenty nonlinear
+ time-history analyses are conducted using different ground motions. From these analyses, the Energy
+ Dissipation Capacity Index (EDCI) and other response metrics such as maximum displacement, velocity, 
+ acceleration, damage index, over-strength factor, ductility ratio, and equivalent viscous damping ratio are computed.
  The median response over the twenty ground motions is then evaluated for each ductility level.
  Finally, the results are assessed through trend plots, 3D contour surfaces, correlation heatmaps,
  Random Forest regression, and ANOVA sensitivity analysis to identify the optimal column ductility
