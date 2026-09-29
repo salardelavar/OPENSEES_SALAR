@@ -12,7 +12,7 @@ Assume that a single-degree-of-freedom structure is subjected to nonlinear dynam
  ratio that maximizes energy dissipation capacity while maintaining structural safety.
 
 # SENSITIVITY ANALYSIS BY CHANGING STRUCTURE DUCTILITY RATIO
-1. Sets MAT_TYPE = 'INELASTIC' and sweeps the COLUMN DUCTILITY RATIO from 20.0 to 50.0
+1. Sets MAT_TYPE = 'INELASTIC' and sweeps the STRUCTURE DUCTILITY RATIO from 20.0 to 50.0
    in 21 linear steps (DUCT_MIN -> DUCT_MAX).  COL_DUCT stores each swept value.
 2. Declares ~20 accumulator lists: raw per-record responses, plus *_MED lists that
    will hold one MEDIAN value per ductility level.
