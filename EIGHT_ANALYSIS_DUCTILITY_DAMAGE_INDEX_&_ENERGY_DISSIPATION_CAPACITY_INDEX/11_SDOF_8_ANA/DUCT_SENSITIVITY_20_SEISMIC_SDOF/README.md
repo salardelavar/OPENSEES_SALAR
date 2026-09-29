@@ -1,28 +1,30 @@
-# SENSITIVITY ANALYSIS OF COLUMN DUCTILITY RATIO  AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS
+# SENSITIVITY ANALYSIS OF STRUCTURE DUCTILITY RATIO  AND OPENSEES VIA 20 SEISMIC GROUND MOTIONS
 
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/DUCT_SENSITIVITY_20_SEISMIC_MDOF/COVER.png) 
+![alt text]() 
 
-# EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED SEISMIC DESIGN PROCEDURE WITH PUSHOVER ANALYSIS
+Assume that a single-degree-of-freedom structure is subjected to nonlinear dynamic analysis under
+ twenty different ground motion records. To investigate the influence of structure ductility on
+ seismic performance, a sensitivity analysis is performed by systematically varying each column’s
+ ductility ratio from 20 to 50 in 21 steps. For each ductility level, a pushover analysis provides a cyclic displacement analysis establishes a reference hysteretic energy, and twenty nonlinear time-history analyses are conducted using different ground motions. From these analyses, the Energy Dissipation Capacity Index (EDCI) and other response metrics such as maximum displacement, velocity, acceleration, damage index, over-strength factor, ductility ratio, and equivalent viscous damping ratio are computed.
+ The median response over the twenty ground motions is then evaluated for each ductility level.
+ Finally, the results are assessed through trend plots, 3D contour surfaces, correlation heatmaps,
+ Random Forest regression, and ANOVA sensitivity analysis to identify the optimal column ductility
+ ratio that maximizes energy dissipation capacity while maintaining structural safety.
 
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/DUCT_SENSITIVITY_20_SEISMIC_MDOF/COVER_DISPLACEMENT_BASED_PUSHOVER.png) 
-
-Assume that a multi-degree-of-freedom structure is subjected to nonlinear dynamic analysis under twenty different ground motion records. To investigate the influence of column ductility on seismic performance, a sensitivity analysis is performed by systematically varying each column’s ductility ratio from 20 to 50 in 21 steps. For each ductility level, a pushover analysis provides the capacity curve and equivalent SDOF parameters, a cyclic displacement analysis establishes a reference hysteretic energy, and twenty nonlinear time-history analyses are conducted using different ground motions. From these analyses, the Energy Dissipation Capacity Index (EDCI) and other response metrics such as maximum displacement, velocity, acceleration, damage index, over-strength factor, ductility ratio, and equivalent viscous damping ratio are computed. The median response over the twenty ground motions is then evaluated for each ductility level. Finally, the results are assessed through trend plots, 3D contour surfaces, correlation heatmaps, Random Forest regression, and ANOVA sensitivity analysis to identify the optimal column ductility ratio that maximizes energy dissipation capacity while maintaining structural safety.
-
-# SENSITIVITY ANALYSIS BY CHANGING COLUMN DUCTILITY RATIO
+# SENSITIVITY ANALYSIS BY CHANGING STRUCTURE DUCTILITY RATIO
 1. Sets MAT_TYPE = 'INELASTIC' and sweeps the COLUMN DUCTILITY RATIO from 20.0 to 50.0
    in 21 linear steps (DUCT_MIN -> DUCT_MAX).  COL_DUCT stores each swept value.
 2. Declares ~20 accumulator lists: raw per-record responses, plus *_MED lists that
    will hold one MEDIAN value per ductility level.
 3. Starts a CPU timer.  Outer loop `for JJ in range(0, 21)` computes DUCT and resets
    the per-ductility raw accumulators (DISP, VELO, ACC, EDCI, DII, OMEGA, MU, RR, EDVR).
-4. STEP 1 -- PUSHOVER: MDOF(DUCT, MAT_TYPE, TOTAL_MASS, 'PUSHOVER', II) returns the
-   capacity curve (disp_PUSH, reaction_PUSH) and the equivalent-SDOF system
-   (mass, stiffness, period) via displacement-based pushover reduction.
+4. STEP 1 -- PUSHOVER: SDOF(DUCT, MAT_TYPE, TOTAL_MASS, 'PUSHOVER', II) returns the
+   capacity curve (disp_PUSH, reaction_PUSH).
 5. Stores SDOF_ef_* arrays and PERIOD_PUSH = max(PERIOD_MAX_PUSH)  (secant period).
 6. STEP 2 -- CYCLIC_DISPLACEMENT: benchmark constant-amplitude hysteresis loop.
    S055.EQULIVALENT_VISCOUS_DAMPING_RATIO_FUN returns zeta_CP (Jacobsen area method).
 7. STEP 3 -- SEISMIC LOOP `for II in range(40, 60)`: 20 nonlinear time-history runs.
-8. Each run unpacks time/reaction/disp/velo/acc/DI/stiffness/period arrays from MDOF().
+8. Each run unpacks time/reaction/disp/velo/acc/DI/stiffness/period arrays from SDOF().
 9. S12.DUCTILITY_DAMAGE_INDEX_FUN fits the pushover curve and returns Park-Ang style
    DIx, over-strength Omega_0, ductility mu, and behaviour coefficient R.
 10. S10.ENERGY_DISSIPATION_CAPACITY_INDEX compares seismic vs cyclic dissipated energy
