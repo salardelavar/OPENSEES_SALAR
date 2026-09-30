@@ -58,4 +58,5 @@ Assume that a multi-degree-of-freedom structure is subjected to nonlinear dynami
 
 23. ML + correlation + ANOVA together rank which EDP (disp, vel or acc) drives damage.
 
+# SEISMIC GROUND MOTION ANALYSIS
 ![alt text]()  
