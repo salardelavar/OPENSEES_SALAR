@@ -57,3 +57,5 @@ Assume that a multi-degree-of-freedom structure is subjected to nonlinear dynami
    performance-based seismic design.
 
 23. ML + correlation + ANOVA together rank which EDP (disp, vel or acc) drives damage.
+
+![alt text]()  
