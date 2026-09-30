@@ -17,11 +17,11 @@ This repository implements a complete performance-based earthquake engineering (
 
 The model captures the nonlinear moment–rotation behaviour of a semi-rigid joint through a multi-linear hysteretic material (with strength degradation) and evaluates two key performance indicators:
 
-| Index | Formula | Meaning |
-|-------|---------|---------|
-| **Ductility Damage Index (DI)** | \( DI = 100 \times \dfrac{\|\theta\| - \theta_y}{\theta_u - \theta_y} \) | Measures how far the connection has progressed toward its ultimate rotation capacity |
-| **Energy Dissipation Capacity Index (EDCI)** | \( EDCI = 100 \times \dfrac{E_d^{\text{seismic}}}{E_d^{\text{cyclic}}} \) | Ratio of hysteretic energy dissipated under earthquake loading to the maximum energy dissipation capacity obtained from a full cyclic protocol |
-| **Equivalent Viscous Damping Ratio** | \( \xi_{eq} = 100 \times \dfrac{E_d}{4\pi E_s} \) | Equivalent viscous damping extracted from the hysteresis loops |
+| Index | Meaning |
+|-------|---------|
+| **Ductility Damage Index (DI)** | Measures how far the connection has progressed toward its ultimate rotation capacity |
+| **Energy Dissipation Capacity Index (EDCI)** | Ratio of hysteretic energy dissipated under earthquake loading to the maximum energy dissipation capacity obtained from a full cyclic protocol |
+| **Equivalent Viscous Damping Ratio** | Equivalent viscous damping extracted from the hysteresis loops |
 
 Eight complementary analysis protocols are executed in a single consistent framework.
 
