@@ -104,8 +104,4 @@ A viscous damper is placed in parallel to represent inherent damping.
 
 ---
 
-## 6. How to Run
 
-### Requirements
-```bash
-pip install openseespy numpy matplotlib scipy pandas openpyxl
