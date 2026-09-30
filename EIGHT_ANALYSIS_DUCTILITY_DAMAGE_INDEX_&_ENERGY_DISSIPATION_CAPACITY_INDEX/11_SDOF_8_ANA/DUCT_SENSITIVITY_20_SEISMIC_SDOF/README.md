@@ -63,5 +63,5 @@ Assume that a single-degree-of-freedom structure is subjected to nonlinear dynam
 
 23. ML + correlation + ANOVA together rank which EDP (disp, vel or acc) drives damage.
 
-# SEISMIC GROUND MOTION ANALYSIS
-![alt text]()  
+# 200 SEISMIC GROUND MOTIONS ANALYSIS
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/DUCT_SENSITIVITY_20_SEISMIC_SDOF/SEISMIC_GROUND_MOTION_ANALYSIS.png)  
