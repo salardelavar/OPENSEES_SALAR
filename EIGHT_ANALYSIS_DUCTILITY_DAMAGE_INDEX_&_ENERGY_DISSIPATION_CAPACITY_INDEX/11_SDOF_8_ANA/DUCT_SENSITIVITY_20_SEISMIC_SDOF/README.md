@@ -62,3 +62,6 @@ Assume that a single-degree-of-freedom structure is subjected to nonlinear dynam
    performance-based seismic design.
 
 23. ML + correlation + ANOVA together rank which EDP (disp, vel or acc) drives damage.
+
+# SEISMIC GROUND MOTION ANALYSIS
+![alt text]()  
