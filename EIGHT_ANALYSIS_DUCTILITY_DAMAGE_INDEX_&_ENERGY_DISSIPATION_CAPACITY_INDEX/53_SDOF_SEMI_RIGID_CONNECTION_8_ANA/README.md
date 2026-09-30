@@ -80,5 +80,32 @@ A viscous damper is placed in parallel to represent inherent damping.
 - Markov-chain probability of failure (optional)
 
 ---
-
 ## 5. Repository Structure
+
+53_SDOF_SEMI_RIGID_CONNECTION_8_ANA/
+├── P(t)_SDOF_SEMI_RIGID_CONNECTION_8_ANA.py   ← Main driver script
+├── ANALYSIS_FUNCTION.py
+├── BILINEAR_CURVE.py
+├── DAMAGE_INDEX_FUN.py
+├── DAMPING_RATIO_FUN.py
+├── EIGENVALUE_ANALYSIS_FUN.py
+├── EQULIVALENT_VISCOUS_DAMPING_RATIO_FUN.py
+├── FRAGILITY_CURVE_FUN.py
+├── OPENSEEES_HYSTERETICSM_FORCE_DISP_FUN.py
+├── PERIOD_FUN.py
+├── PLOT_1D_SPRING.py
+├── RAYLEIGH_DAMPING_FUN.py
+├── Ground_Acceleration_X.txt
+├── Ground_Acceleration_Y.txt
+├── COVER_SEMI-RIGID_CONNECTION.png
+├── PDF_P(t)_SDOF_SEMI_RIGID_CONNECTION_8_ANA.pdf
+└── PPT_P(t)_SDOF_SEMI_RIGID_CONNECTION_8_ANA.pptx
+
+
+---
+
+## 6. How to Run
+
+### Requirements
+```bash
+pip install openseespy numpy matplotlib scipy pandas openpyxl
