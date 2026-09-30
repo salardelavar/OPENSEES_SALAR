@@ -1,4 +1,7 @@
-# COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF A SEMI-RIGID CONNECTION AS A SINGLE-DEGREE-OF-FREEDOM (SDOF) STRUCTURE: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS        
+# COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF A SEMI-RIGID CONNECTION AS A SINGLE-DEGREE-OF-FREEDOM (SDOF) STRUCTURE: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS       
+
+# ارزیابی جامع غیرخطی سازه یک درجه آزادی اتصالات نیمه صلب : چارچوبی مبتنی بر اوپنسیس در پایتون برای تحلیل پوش‌آور استاتیکی، تحلیل چرخه‌ای همراه با کاهش سختی، تحلیل تاریخچه زمانی استاتیکی و دینامیکی، با در نظر گرفتن شاخص‌های آسیب شکل‌پذیری در المان و سازه و ارزیابی شاخص ظرفیت انرژی اتلاف‌شده
+
 
 Evaluation of Structural Ductility Damage Index & Energy Dissipation Capacity Index
 
