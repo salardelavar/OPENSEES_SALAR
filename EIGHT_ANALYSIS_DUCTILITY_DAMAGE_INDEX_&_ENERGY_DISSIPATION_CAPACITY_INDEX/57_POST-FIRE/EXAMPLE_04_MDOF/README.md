@@ -7,3 +7,5 @@ These factors are critical for nonlinear thermo-mechanical analysis, enabling ac
 Implementation follows the tabulated values in the referenced paper, providing a simple yet experimentally grounded fire-response material model for structural steel. 
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_04_MDOF/COVER.png)
+
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_04_MDOF/COVER.png)
