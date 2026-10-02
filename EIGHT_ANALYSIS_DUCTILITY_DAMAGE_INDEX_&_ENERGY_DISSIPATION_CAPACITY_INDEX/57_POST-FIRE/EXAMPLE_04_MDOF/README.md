@@ -8,4 +8,4 @@ Implementation follows the tabulated values in the referenced paper, providing a
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_04_MDOF/COVER.png)
 
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/57_POST-FIRE/EXAMPLE_04_MDOF/COVER.png)
+![alt text]()
