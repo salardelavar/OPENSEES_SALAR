@@ -1,5 +1,11 @@
 # PUSHOVER ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM STRUCTURE VIA EVALUATION OF A MULTILINEAR FITTING CURVE
 # تحلیل پوش‌آور سازهٔ چنددرجه‌آزادی با ارزیابی منحنی برازش چندخطی
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/PUSHOVER_MDOF_10_FLOORS_04_COLUMNS/COVER.png)
+
+# EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED SEISMIC DESIGN PROCEDURE WITH PUSHOVER ANALYSIS
+
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/PUSHOVER_MDOF_10_FLOORS_04_COLUMNS/COVER_DISPLACEMENT_BASED_PUSHOVER.png)
+
 This Python script performs nonlinear pushover analysis of a 10-story MDOF
  building frame using OpenSeesPy to derive an equivalent SDOF system for
  displacement-based seismic design.
@@ -35,9 +41,3 @@ are defined per column, from which yield displacement, hardening ratio, and damp
 
 10. Fitting outputs include elastic stiffness, plastic stiffness, tangent stiffness, ductility ratio,
  and over-strength factor, plotted alongside the original pushover curve for comparison.
-
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/PUSHOVER_MDOF_10_FLOORS_04_COLUMNS/COVER.png)
-
-# EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED SEISMIC DESIGN PROCEDURE WITH PUSHOVER ANALYSIS
-
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/PUSHOVER_MDOF_10_FLOORS_04_COLUMNS/COVER_DISPLACEMENT_BASED_PUSHOVER.png)
