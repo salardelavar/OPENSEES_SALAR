@@ -35,7 +35,7 @@ are defined per column, from which yield displacement, hardening ratio, and damp
 8. A `PLOT_1D_SPRING` routine optionally renders a virtual 1D spring representation of the
  deformed structure.
 
-9. The pushover curve is then fitted with multilinear idealizations — bilinear, trilinear,
+9. The pushover curve is then fitted with multilinear idealizations bilinear, trilinear,
  quadrilinear, and pentalinear using an area-preserving piecewise-linear fitting algorithm
  (`MULTILINEAR_CURVE`).
 
