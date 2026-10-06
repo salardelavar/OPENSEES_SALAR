@@ -36,7 +36,7 @@ are defined per column, from which yield displacement, hardening ratio, and damp
  deformed structure.
 
 9. The pushover curve is then fitted with multilinear idealizations — bilinear, trilinear,
- quadrilinear, and pentalinear — using an area-preserving piecewise-linear fitting algorithm
+ quadrilinear, and pentalinear using an area-preserving piecewise-linear fitting algorithm
  (`MULTILINEAR_CURVE`).
 
 10. Fitting outputs include elastic stiffness, plastic stiffness, tangent stiffness, ductility ratio,
