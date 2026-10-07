@@ -1,6 +1,7 @@
 # SENSITIVITY ANALYSIS OF COLUMN YIELD STRENGTH, ELASTIC STIFFNESS, DUCTILITY RATIO, OVER-STRENGTH FACTOR AND OPENSEES VIA PUSHOVER ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM STRUCTURE AND EVALUATION OF A MULTILINEAR FITTING CURVE FOR STRUCTURAL ELASTIC STIFFNESS, PLASTIC STIFFNESS, DUCTILITY RATIO, AND OVER-STRENGTH FACTOR   
 
-# تحلیل حساسیت نسبت شکل‌پذیری ستون و نرم‌افزار اوپن‌سیس از طریق تحلیل پوش‌آور یک سازه چند درجه آزادی، همراه با ارزیابی منحنی برازش چندخطی برای سختی کشسان سازه، سختی خمیری، نسبت شکل‌پذیری و ضریب مقاومت افزون؛ ارزیابی جامع غیرخطی لرزه‌ای یک سازه چند درجه آزادی: چارچوبی در اوپن‌سیس برای تحلیل پوش‌آور استاتیکی، افت چرخه‌ای، تاریخچه زمانی استاتیکی و تحلیل تاریخچه زمانی دینامیکی.
+# تحلیل حساسیت مقاومت تسلیم ستون، سختی الاستیک، نسبت شکل‌پذیری، ضریب مقاومت افزون و نرم‌افزار OpenSees از طریق تحلیل پوش‌آور یک سازه چند درجه آزادی، و ارزیابی منحنی برازش چندخطی برای سختی الاستیک سازه، سختی پلاستیک، نسبت شکل‌پذیری و ضریب مقاومت
+
 
 ![alt text](COVER.png) 
 
