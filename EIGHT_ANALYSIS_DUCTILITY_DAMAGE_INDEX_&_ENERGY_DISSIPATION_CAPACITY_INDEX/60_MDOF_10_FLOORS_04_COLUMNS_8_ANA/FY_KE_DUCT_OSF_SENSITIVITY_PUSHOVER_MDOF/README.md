@@ -45,7 +45,7 @@ This repository implements a comprehensive **parametric sensitivity study** of a
    A 10-story shear building is constructed in OpenSeesPy. Each story consists of four parallel `zeroLength` elements representing the columns, connected to lumped masses.
 
 2. **Parametric Variation**  
-   Systematic variation of \( F_y \), \( K_e \), \( \mu \), and \( \Omega \) is performed. For each combination a full pushover analysis is executed.
+   Systematic variations such as  (Yield Strength, Elastic Stiffness, Structural Ductility Ratio, Structural Over Strength Factor) are performed. For each combination a full pushover analysis is executed.
 
 3. **Pushover Analysis**  
    Displacement-controlled static analysis generates the global base-shear vs. roof-displacement capacity curve. Plastic mechanism formation and story drifts are monitored.
@@ -55,10 +55,10 @@ This repository implements a comprehensive **parametric sensitivity study** of a
 
 5. **Multilinear Curve Fitting**  
    The pushover curve is idealized with a multilinear backbone (typically elastic–plastic or elastic–hardening–softening). Fitted parameters include:
-   - Structural elastic stiffness \( K_e^{struct} \)
-   - Plastic (post-yield) stiffness \( K_p \)
-   - System ductility \( \mu_{sys} \)
-   - System over-strength \( \Omega_{sys} \)
+   - Structural elastic stiffness (KE)
+   - Plastic (post-yield) stiffness (KP)
+   - System ductility 
+   - System over-strength 
 
 6. **Sensitivity Metrics & Visualization**
    - ANOVA-based sensitivity ranking
@@ -103,7 +103,7 @@ This repository implements a comprehensive **parametric sensitivity study** of a
 
 ## Key Features
 
-- Full parametric exploration of Yield Strength, Elstic Stiffness, Structural Ductility Ratio, Structural Over Stregth Factor
+- Full parametric exploration of Yield Strength, Elastic Stiffness, Structural Ductility Ratio, Structural Over Strength Factor
 - Automatic multilinear idealization of capacity curves
 - Equivalent SDOF derivation consistent with displacement-based design
 - Comprehensive sensitivity post-processing (ANOVA, heatmaps, contours)
