@@ -103,7 +103,7 @@ This repository implements a comprehensive **parametric sensitivity study** of a
 
 ## Key Features
 
-- Full parametric exploration of \( F_y \), \( K_e \), \( \mu \), \( \Omega \)
+- Full parametric exploration of Yield Strength, Elstic Stiffness, Structural Ductility Ratio, Structural Over Stregth Factor
 - Automatic multilinear idealization of capacity curves
 - Equivalent SDOF derivation consistent with displacement-based design
 - Comprehensive sensitivity post-processing (ANOVA, heatmaps, contours)
@@ -123,4 +123,11 @@ scipy
 matplotlib
 pandas          # recommended for result tables
 seaborn         # for advanced heatmaps (optional)
+
+##Usage
+# Clone the repository (or navigate to the folder)
+cd FY_KE_DUCT_OSF_SENSITIVITY_PUSHOVER_MDOF
+
+# Run the main sensitivity study
+python FY_KE_DUCT_OSF_SENSITIVITY_PUSHOVER_MDOF.py
 
