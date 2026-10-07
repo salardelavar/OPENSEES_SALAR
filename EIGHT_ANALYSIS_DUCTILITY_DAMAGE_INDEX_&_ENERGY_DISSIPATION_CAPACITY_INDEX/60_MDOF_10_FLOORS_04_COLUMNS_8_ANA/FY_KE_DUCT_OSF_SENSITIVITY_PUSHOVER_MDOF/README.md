@@ -124,7 +124,7 @@ matplotlib
 pandas          # recommended for result tables
 seaborn         # for advanced heatmaps (optional)
 
-##Usage
+#Usage
 # Clone the repository (or navigate to the folder)
 cd FY_KE_DUCT_OSF_SENSITIVITY_PUSHOVER_MDOF
 
