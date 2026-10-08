@@ -1404,7 +1404,7 @@ for XX in range(0, 6):                               # COLUMN YIELD STRENGTH [N]
                 print(f'\t\t\t STEP {STEP} DONE. \n\n')
 
 
-exit()
+#exit()
 # TIMER REPORT
 totaltime = TI.process_time() - starttime
 print(f'\nTotal time (s): {totaltime:.4f} \n\n')
