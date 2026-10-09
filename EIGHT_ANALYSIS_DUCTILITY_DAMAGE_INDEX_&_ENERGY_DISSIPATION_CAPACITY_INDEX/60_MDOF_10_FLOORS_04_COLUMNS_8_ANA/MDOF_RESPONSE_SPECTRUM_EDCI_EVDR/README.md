@@ -1,5 +1,6 @@
 # NONLINEAR DYNAMIC ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SYSTEM UTILIZING 50 GROUND MOTIONS IN OPENSEES AND EVALUATION OF SEISMIC RESPONSE SPECTRUM
 
+# تحلیل دینامیکی غیرخطی یک سیستم چنددرجه‌آزادی (MDOF) با استفاده از ۵۰ رکورد حرکت زمین در OpenSees و ارزیابی طیف پاسخ لرزه‌ای.
 ![alt text](COVER.png)
 
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
