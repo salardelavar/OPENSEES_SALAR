@@ -113,18 +113,7 @@ The framework can perform the following analyses (controlled by flags inside the
 
 ---
 
-## How to Run
-
-### Requirements
-
-```bash
-pip install openseespy numpy matplotlib pandas scipy openpyxl
-
-unrar x 200_SEISMIC_TIME_HISTORY.rar
-
-python MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py
-
-# Typical Output Quantities
+### Typical Output Quantities
 
 Peak floor displacements, velocities, and accelerations
 Inter-story drifts
@@ -136,3 +125,17 @@ EVDR for every ground motion
 Ductility demand and damage index
 Fragility curves (acceleration, ductility, EDCI, EVDR based)
 Modal periods and effective properties
+---
+## How to Run
+
+### Requirements
+
+```bash
+pip install openseespy numpy matplotlib pandas scipy openpyxl
+
+unrar x 200_SEISMIC_TIME_HISTORY.rar
+
+python MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py
+
+
+
