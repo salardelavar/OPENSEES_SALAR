@@ -19,7 +19,7 @@
 #---------------------------------------------------------------------------------------------------------#
 # Key Features:                                                                                           #
 # - Simulation of SDOF system using OpenSees.                                                             #
-# - Incremental scaling of ground motions for Nonlinear Dynamic Analysis.                                 #
+# - Scaling of ground motions for Nonlinear Dynamic Analysis.                                             #
 # - Probabilistic fragility assessment based on predefined damage states.                                 #
 # - Visualization of structural response and fragility curves.                                            #
 # - Export of results for further analysis.                                                               #
