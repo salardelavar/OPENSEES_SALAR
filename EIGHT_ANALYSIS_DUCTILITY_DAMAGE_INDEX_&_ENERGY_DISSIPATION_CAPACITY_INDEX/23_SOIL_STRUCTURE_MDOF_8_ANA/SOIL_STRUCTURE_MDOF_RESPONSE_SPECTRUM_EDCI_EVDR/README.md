@@ -7,7 +7,7 @@
 
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
 
-**Nonlinear Dynamic Analysis of a 10-Story, 4-Column Multi-Degree-of-Freedom (MDOF) System in OpenSees**  
+**Nonlinear Dynamic Analysis of a Multi-Degree-of-Freedom (MDOF) System in OpenSees**  
 **Seismic Response Spectra · Ductility Damage Index · Energy Dissipation Capacity Index · Equivalent Viscous Damping Ratio**
 
 ---
