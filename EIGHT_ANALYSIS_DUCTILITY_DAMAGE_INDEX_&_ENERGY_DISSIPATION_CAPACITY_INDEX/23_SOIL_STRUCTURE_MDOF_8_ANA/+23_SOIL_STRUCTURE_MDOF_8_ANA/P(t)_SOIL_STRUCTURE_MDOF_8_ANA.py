@@ -84,6 +84,12 @@ A displacement-based pushover transformation,
  for performance-based engineering. The visualizations effectively track the
  evolution of these equivalent parameters throughout the nonlinear analysis steps.
 """
+# BOOK: 
+'https://www.fema.gov/sites/default/files/documents/fema-p-2091-soil-structure-interaction.pdf'    
+# BOOK: Soil-Foundation-Structure Interaction
+'https://www.routledge.com/Soil-Foundation-Structure-Interaction/Orense-Chouw-Pender/p/book/9781138114128'
+# REPORT: Soil-Structure Interaction for Building Structures (NEHRP Consultants)
+'https://www.nehrp.gov/pdf/nistgcr12-917-21.pdf'    
 # BOOK: Dynamics of Structures in SI Units -  Anil Kumar Chopra
 'https://share.google/TDN5O4eWmw5pH8zUH'
 # BOOK: Differential Equations for Engineers-Wei-Chau Xie-CAMBRIDGE-2010
