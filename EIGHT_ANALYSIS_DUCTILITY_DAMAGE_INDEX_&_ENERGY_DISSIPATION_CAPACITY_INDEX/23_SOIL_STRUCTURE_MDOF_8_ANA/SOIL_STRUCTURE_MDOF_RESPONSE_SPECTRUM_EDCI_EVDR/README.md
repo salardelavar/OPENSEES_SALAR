@@ -34,7 +34,6 @@ The scripts implement both elastic and inelastic material models and support lar
 
 | Parameter                    | Description                                      |
 |-----------------------------|--------------------------------------------------|
-| Beam idealization           | Rigid (infinite flexural rigidity)               |
 | Material models             | Elastic or Inelastic (hysteretic)                |
 | Degrees of freedom          | Multi-degree-of-freedom (MDOF)                   |
 | Damping                     | Rayleigh damping (user-defined)                  |
