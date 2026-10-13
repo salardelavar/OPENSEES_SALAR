@@ -3,6 +3,8 @@
 # تحلیل دینامیکی غیرخطی یک سیستم چنددرجه‌آزادی (MDOF) با استفاده از ۵۰ رکورد حرکت زمین در OpenSees و ارزیابی طیف پاسخ لرزه‌ای.
 ![alt text](COVER.png)
 
+Since the structure was assumed to be inelastic and the response spectra were then plotted for the ductility damage index and the energy dissipation capacity index, this shows the natural period beyond which an increase in the structure’s period leads to a higher probability of failure.
+
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
 
 **Nonlinear Dynamic Analysis of a 10-Story, 4-Column Multi-Degree-of-Freedom (MDOF) System in OpenSees**  
