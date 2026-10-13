@@ -133,7 +133,7 @@ Modal periods and effective properties
 ### Requirements
 
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
-![alt text]()  
+![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)  
 
 
 
