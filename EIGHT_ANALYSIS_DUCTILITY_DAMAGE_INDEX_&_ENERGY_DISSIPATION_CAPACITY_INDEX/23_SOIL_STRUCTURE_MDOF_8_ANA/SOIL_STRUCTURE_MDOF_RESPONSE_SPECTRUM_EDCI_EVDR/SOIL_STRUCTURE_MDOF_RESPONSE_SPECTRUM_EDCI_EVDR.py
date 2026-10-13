@@ -143,6 +143,8 @@ Ensure the input is a complete, ordered hysteresis cycle, and use Method 2 to ca
 # BOOK: Nonlinear analysis in soil mechanics - WF Chen, WF Chen, E Mizuno - Elsevier Science Pub Co - 1990
 # BOOK: Limit analysis in soil mechanics - WF Chen, XL Liu - Elsevier - 2012
 # BOOK: Limit analysis and soil plasticity - WF Chen - Elsevier - 2013
+# BOOK: Dynamics of Structure and Foundation; A Unified Approach-1. Fundamentals-Indrajit Chowdhury-CRC Press-2009
+# BOOK: Dynamics of structure and foundation; A Uniﬁed Approach-2. Applications-Indrajit Chowdhury-CRC Press-2009
 # REPORT: A Practical Guide o Soil-Structure Interaction_FEMA P-2091 
 # PAPER: Displacement-based seismic design of buildings theory - M.S. Medhekar, D.J.L. Kennedy - 1999 Elsevier
 # YOUTUBE:
