@@ -132,6 +132,11 @@ Modal periods and effective properties
 
 ### Requirements
 
+# 200 SEISMIC GROUND MOTIONS ANALYSIS
+![alt text]()  
+
+
+
 ```bash
 pip install openseespy numpy matplotlib pandas scipy openpyxl
 
