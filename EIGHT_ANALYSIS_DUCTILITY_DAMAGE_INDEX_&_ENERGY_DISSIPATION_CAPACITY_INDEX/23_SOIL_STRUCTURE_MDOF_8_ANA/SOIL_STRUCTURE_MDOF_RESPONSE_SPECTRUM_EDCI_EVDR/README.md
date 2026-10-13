@@ -5,6 +5,8 @@
 
 ![alt text](COVER.png)
 
+Since the structure was assumed to be inelastic and the response spectra were then plotted for the ductility damage index and the energy dissipation capacity index, this shows the natural period beyond which an increase in the structure’s period leads to a higher probability of failure.
+
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
 
 **Nonlinear Dynamic Analysis of a Multi-Degree-of-Freedom (MDOF) System in OpenSees**  
