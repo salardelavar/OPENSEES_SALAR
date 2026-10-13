@@ -109,8 +109,9 @@ Compares the energy dissipated under seismic excitation with the maximum energy 
 - Robust convergence handling with adaptive algorithms
 
 ---
-
-## File Structure
+# How to Run
+cd EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_&_ENERGY_DISSIPATION_CAPACITY_INDEX/50_PEDESTRIAN_BRIDGE_VIERENDEEL_GIRDERS_8_ANA
+python "P(t)_PEDESTRIAN_BRIDGE_VIERENDEEL_GIRDERS_8_ANA.py"
 
 
 
