@@ -34,8 +34,6 @@ The scripts implement both elastic and inelastic material models and support lar
 
 | Parameter                    | Description                                      |
 |-----------------------------|--------------------------------------------------|
-| Number of stories           | 10                                               |
-| Columns per floor           | 4                                                |
 | Beam idealization           | Rigid (infinite flexural rigidity)               |
 | Material models             | Elastic or Inelastic (hysteretic)                |
 | Degrees of freedom          | Multi-degree-of-freedom (MDOF)                   |
