@@ -3,10 +3,6 @@
 #     NONLINEAR DYNAMIC ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SOIL STRUCTURE SYSTEM UTILIZING 50   # 
 #                      GROUND MOTIONS IN OPENSEES AND EVALUATION OF SEISMIC RESPONSE SPECTRUM             #
 #---------------------------------------------------------------------------------------------------------#
-#     FRAGILITY ANALYSIS BASED ON ACCELERATION, STRUCTURAL DUCTILITY DAMAGE INDEX, ENERGY DISSIPATION     #
-#          CAPACITY INDEX, EQULIVALENT VISCOUS DAMPING RATIO WITH NONLINEAR DYNAMIC ANALYSIS              #
-#    OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SOIL STRUCTURE SYSTEM UTILIZING 50 GROUND MOTIONS IN OPENSEES    #
-#---------------------------------------------------------------------------------------------------------#
 #                                   INELASTIC RESPONSE SPECTRUM ANALYSIS                                  #
 #---------------------------------------------------------------------------------------------------------#
 #                EQUIVALENT VISCOUS DAMPING RATIO: xi_eq = 100 * E_d / (4 * pi * E_s)                     #
