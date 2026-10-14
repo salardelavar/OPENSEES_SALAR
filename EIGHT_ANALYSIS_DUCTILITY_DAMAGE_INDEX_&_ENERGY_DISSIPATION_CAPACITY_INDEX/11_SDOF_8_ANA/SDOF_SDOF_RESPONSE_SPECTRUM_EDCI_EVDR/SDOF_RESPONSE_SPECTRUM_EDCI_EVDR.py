@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                    >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                     #
-#     NONLINEAR DYNAMIC ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SOIL STRUCTURE SYSTEM UTILIZING 30  # 
+#         NONLINEAR DYNAMIC ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEM UTILIZING 30             # 
 #                      GROUND MOTIONS IN OPENSEES AND EVALUATION OF SEISMIC RESPONSE SPECTRUM             #
 #---------------------------------------------------------------------------------------------------------#
 #                                   INELASTIC RESPONSE SPECTRUM ANALYSIS                                  #
