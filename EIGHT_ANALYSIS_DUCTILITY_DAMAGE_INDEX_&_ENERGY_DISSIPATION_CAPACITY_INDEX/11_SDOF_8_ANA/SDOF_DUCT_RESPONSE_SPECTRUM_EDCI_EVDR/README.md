@@ -53,6 +53,8 @@
      
 This OpenSees script performs a nonlinear SDOF ductility response-spectrum analysis that characterizes an oscillator’s hysteretic behavior, energy dissipation, and damage under earthquake excitation. It defines mass, stiffness, yield strength, ultimate displacement, and damping; applies a cyclic displacement protocol to establish baseline energy dissipation; then runs nonlinear time-history analyses with Newmark integration over a parametric sweep of periods. For each period, it extracts peak displacement, velocity, acceleration, and base reaction, and computes the Ductility Damage Index, Energy Dissipation Capacity Index, and Equivalent Viscous Damping Ratio. Finally, it statistically processes and plots displacement, velocity, acceleration, base-reaction, DDI, EDCI, and EVDR spectra, generates fragility information, and exports results for performance-based earthquake engineering and parametric studies.
 
+Since the structure was assumed to be inelastic and the response spectra were then plotted for the energy dissipation capacity index and the ductility damage index, this shows the natural period beyond which an increase in the structure’s period leads to a higher probability of damage, and as the ductility ratio of the structure increases, the level of damage decreases.
+
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
 
