@@ -4,7 +4,7 @@
 ![alt text](COVER.png) 
 
  # ANALYSIS STEPS — SDOF Ductility Response Spectrum with EDCI & EVDR
- # -------------------------------------------------------------------------
+
  1. Model initialization: define SDOF mass (150,000 kg), elastic stiffness
     (450 MN/m), yield force (8.5 MN), and ultimate displacement based on
     target ductility capacity.  Set Rayleigh damping ratio (3%) for the
