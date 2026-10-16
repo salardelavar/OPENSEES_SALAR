@@ -987,7 +987,9 @@ for i in range(NUM_SEISMIC):
             print("\n\tZONE 9: VERY SEVERE DAMAGE\n")
         elif DECI > 90 and DECI <= 100:
             print("\n\tZONE 10: FAILURE DAMAGE\n")
-            
+         
+        if DECI >= 100:   # SO ENERGY DISSIPATION CAPACITY INDEX IS IN FAILURE DAMAGE
+            DECI = 100.0    
         #%% END - Energy Dissipation Capacity Index
         #%% START - Equivalent viscous damping ratio
         XLABEL = "Displacement [m]"
