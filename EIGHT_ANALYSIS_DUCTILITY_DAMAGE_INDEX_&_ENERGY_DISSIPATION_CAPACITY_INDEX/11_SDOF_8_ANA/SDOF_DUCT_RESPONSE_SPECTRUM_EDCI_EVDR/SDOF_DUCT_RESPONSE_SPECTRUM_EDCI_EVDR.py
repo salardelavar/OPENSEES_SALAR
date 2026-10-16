@@ -75,7 +75,7 @@
      for parametric studies, sensitivity analyses, and machine-learning
      based damage prediction.
      
-The script performs a nonlinear SDOF ductility response-spectrum analysis that characterizes an oscillator’s hysteretic
+This OpenSees script performs a nonlinear SDOF ductility response-spectrum analysis that characterizes an oscillator’s hysteretic
 behavior, energy dissipation, and damage under earthquake excitation. It defines mass, stiffness, yield strength, ultimate 
 displacement, and damping; applies a cyclic displacement protocol to establish baseline energy dissipation; then runs 
 nonlinear time-history analyses with Newmark integration over a parametric sweep of periods. For each period, it extracts
