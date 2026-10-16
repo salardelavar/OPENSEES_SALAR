@@ -75,14 +75,14 @@
      for parametric studies, sensitivity analyses, and machine-learning
      based damage prediction.
      
-This Python/OpenSeesPy script performs a parametric nonlinear time-history analysis of single-degree-of-freedom (SDOF) 
-systems with constant yield strength and variable ductility capacity, first running a cyclic displacement protocol to 
-establish a baseline dissipated energy capacity, then subjecting the same system to a selected ground motion while 
-sweeping mass (and therefore period) to generate inelastic response spectra for displacement, velocity, acceleration,
-base reaction, ductility damage index, stiffness, damping ratio, energy dissipation capacity index, and equivalent
-viscous damping ratio; it computes damage and energy-based metrics, exports the peak response data to Excel, visualizes
-spectra with statistical summaries (mean, median, quartiles, standard deviation), so it is more accurately described
-as a parametric nonlinear seismic demand spectrum study with variable ductility capacity.
+The script performs a nonlinear SDOF ductility response-spectrum analysis that characterizes an oscillator’s hysteretic
+behavior, energy dissipation, and damage under earthquake excitation. It defines mass, stiffness, yield strength, ultimate 
+displacement, and damping; applies a cyclic displacement protocol to establish baseline energy dissipation; then runs 
+nonlinear time-history analyses with Newmark integration over a parametric sweep of periods. For each period, it extracts
+peak displacement, velocity, acceleration, and base reaction, and computes the Ductility Damage Index, Energy Dissipation
+Capacity Index, and Equivalent Viscous Damping Ratio. Finally, it statistically processes and plots displacement, velocity,
+acceleration, base-reaction, DDI, EDCI, and EVDR spectra, generates fragility information, and exports results for
+performance-based earthquake engineering and parametric studies.
 
 KEY ENGINEERING OBJECTIVES:
 1. Comparative assessment of hysteretic models for seismic response prediction
