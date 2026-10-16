@@ -84,6 +84,10 @@ Capacity Index, and Equivalent Viscous Damping Ratio. Finally, it statistically 
 acceleration, base-reaction, DDI, EDCI, and EVDR spectra, generates fragility information, and exports results for
 performance-based earthquake engineering and parametric studies.
 
+Since the structure was assumed to be inelastic and the response spectra were then plotted for the energy dissipation capacity index 
+and the ductility damage index, this shows the natural period beyond which an increase in the structure’s period leads to a higher
+probability of damage, and as the ductility ratio of the structure increases, the level of damage decreases.
+
 KEY ENGINEERING OBJECTIVES:
 1. Comparative assessment of hysteretic models for seismic response prediction
 2. Probabilistic seismic demand analysis using multiple ground motions
