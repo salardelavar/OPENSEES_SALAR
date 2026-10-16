@@ -975,7 +975,11 @@ for j in range(NUM_SEISMIC):
         elif DECI > 80 and DECI <= 90:
             print("\n\tZONE 9: VERY SEVERE DAMAGE\n")
         elif DECI > 90 and DECI <= 100:
-            print("\n\tZONE 10: FAILURE DAMAGE\n")
+            print("\n\tZONE 10: FAILURE DAMAGE\n") 
+         
+        if DECI >= 100:   # SO ENERGY DISSIPATION CAPACITY INDEX IS IN FAILURE DAMAGE
+            DECI = 100.0 
+         
        #%% END - Energy Dissipation Capacity Index
         
         # Calculate and store the max absolute values
