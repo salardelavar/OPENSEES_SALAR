@@ -205,6 +205,9 @@ import DAMAGE_INDEX_FUN as S066
 NUM_T = 30                                     # Total number for Structural Period in each simulation
 NUM_DUCT = 10                                  # Total number for structural ductility simulation
 
+DUCT_MIN = 4.0                                 # Minimum Structural Ductility Ratio [m/m]
+DUCT_MAX = 12.0                                # Maximum Structural Ductility Ratio [m/m]
+III = int(25)                                  # Select Seismic  Ground Motion Number 26 (II+1)
 
 TOTAL_MASS = 150000.0                          # [kg] Total Mass of Structure
 GMfact = 9.81                                  # [m/s^2] standard acceleration of gravity
@@ -943,10 +946,6 @@ def SDOF(DUCT, MAT_TYPE, TOTAL_MASS, ANAL_TYPE, i):
 #%%------------------------------------------------------
 # Analysis Durations:
 starttime = ti.process_time()
-
-DUCT_MIN = 4.0       # Minimum Structural Ductility Ratio [m/m]
-DUCT_MAX = 12.0      # Maximum Structural Ductility Ratio [m/m]
-III = int(25)        # Select Seismic  Ground Motion Number 26 (II+1)
 
 # Collect Data
 DATA = {
