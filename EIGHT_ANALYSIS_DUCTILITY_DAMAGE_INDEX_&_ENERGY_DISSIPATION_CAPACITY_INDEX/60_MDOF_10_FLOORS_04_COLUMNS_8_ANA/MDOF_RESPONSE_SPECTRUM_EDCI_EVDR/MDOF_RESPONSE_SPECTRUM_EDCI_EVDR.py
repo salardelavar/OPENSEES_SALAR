@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                    >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                     #
-#     NONLINEAR DYNAMIC ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SOIL STRUCTURE SYSTEM UTILIZING 50   # 
+#             NONLINEAR DYNAMIC ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SYSTEM UTILIZING 50          # 
 #                      GROUND MOTIONS IN OPENSEES AND EVALUATION OF SEISMIC RESPONSE SPECTRUM             #
 #---------------------------------------------------------------------------------------------------------#
 #                                   INELASTIC RESPONSE SPECTRUM ANALYSIS                                  #
