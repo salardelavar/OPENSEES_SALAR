@@ -1,5 +1,9 @@
 # PARAMETRIC NONLINEAR SEISMIC DEMAND SPECTRA OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SYSTEMS WITH VARIABLE DUCTILITY CAPACITY
 
+طیف‌های تقاضای لرزه‌ای غیرخطی پارامتریک سیستم‌های چنددرجه‌آزادی با ظرفیت شکل‌پذیری متغیر در اوپنسیس
+
+
+
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/60_MDOF_10_FLOORS_04_COLUMNS_8_ANA/MDOF_DUCT_RESPONSE_SPECTRUM_EDCI_EVDR/COVER.png)
 
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
