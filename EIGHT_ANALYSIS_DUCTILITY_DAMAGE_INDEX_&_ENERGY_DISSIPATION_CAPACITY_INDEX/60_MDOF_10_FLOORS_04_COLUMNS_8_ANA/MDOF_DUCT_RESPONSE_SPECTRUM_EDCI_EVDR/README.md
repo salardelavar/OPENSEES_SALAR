@@ -167,6 +167,9 @@ The main driver script (`MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py`) orchestrates the 
 
 ```bash
 pip install openseespy numpy matplotlib pandas scipy openpyxl
+
+unrar x 200_SEISMIC_TIME_HISTORY.rar
+
 python MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py
 
 
