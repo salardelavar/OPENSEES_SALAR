@@ -146,5 +146,6 @@ The main driver script (`MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py`) orchestrates the 
 
 ```bash
 pip install openseespy numpy matplotlib pandas scipy openpyxl
+python MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py
 
 
