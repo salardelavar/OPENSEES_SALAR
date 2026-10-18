@@ -161,6 +161,9 @@ The main driver script (`MDOF_RESPONSE_SPECTRUM_EDCI_EVDR.py`) orchestrates the 
 
 ---
 
+# 200 SEISMIC GROUND MOTIONS ANALYSIS
+![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)  
+
 ## How to Run
 
 ### 1. Requirements
