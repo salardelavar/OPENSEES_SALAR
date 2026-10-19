@@ -9,7 +9,7 @@ Since the structure was assumed to be inelastic and the response spectra were th
 
 
 
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/11_SDOF_8_ANA/SDOF_SDOF_RESPONSE_SPECTRUM_EDCI_EVDR/INELASTIC_RESPONSE_SPECTRUM_COVER.png) 
+![alt text](COVER.png) 
 
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
