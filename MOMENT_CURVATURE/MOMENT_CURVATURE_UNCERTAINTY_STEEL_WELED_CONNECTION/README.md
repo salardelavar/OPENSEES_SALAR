@@ -1,5 +1,7 @@
 # PROBABILISTIC MOMENT–CURVATURE ANALYSIS OF STEEL WELDED CONNECTIONS UNDER UNCERTAINTY
 
+![alt text](COVER.png)
+
 ### OpenSees | Python | Monte Carlo Simulation | Structural Reliability
 
 **Author:** Salar Delavar Ghashghaei (Qashqai)  
