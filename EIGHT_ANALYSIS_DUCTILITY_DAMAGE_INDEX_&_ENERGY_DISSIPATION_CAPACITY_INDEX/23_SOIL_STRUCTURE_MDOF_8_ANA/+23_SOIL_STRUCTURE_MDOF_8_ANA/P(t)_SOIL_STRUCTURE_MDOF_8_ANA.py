@@ -99,6 +99,7 @@ A displacement-based pushover transformation,
 # BOOK: Limit analysis and soil plasticity - WF Chen - Elsevier - 2013
 # BOOK: Dynamics of Structure and Foundation; A Unified Approach-1. Fundamentals-Indrajit Chowdhury-CRC Press-2009
 # BOOK: Dynamics of structure and foundation; A Uniﬁed Approach-2. Applications-Indrajit Chowdhury-CRC Press-2009
+# BOOK: Foundation Analysis and Design-Joseph-E.-Bowles-1996
 # REPORT: A Practical Guide o Soil-Structure Interaction_FEMA P-2091 
 # PAPER: Displacement-based seismic design of buildings theory - M.S. Medhekar, D.J.L. Kennedy - 1999 Elsevier
 # YOUTUBE:
