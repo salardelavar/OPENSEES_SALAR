@@ -1,14 +1,6 @@
-# SENSITIVITY ANALYSIS OF COLUMN DUCTILITY RATIO AND OPENSEES VIA PUSHOVER ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM STRUCTURE AND EVALUATION OF A MULTILINEAR FITTING CURVE FOR STRUCTURAL ELASTIC STIFFNESS, PLASTIC STIFFNESS, DUCTILITY RATIO, AND OVER-STRENGTH FACTOR COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF A MULTI-DEGREE-FREEDOM (MDOF) STRUCTURE: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS     
+SENSITIVITY ANALYSIS OF COLUMN DUCTILITY RATIO AND OPENSEES VIA PUSHOVER ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM STRUCTURE AND EVALUATION OF A MULTILINEAR FITTING CURVE FOR STRUCTURAL ELASTIC STIFFNESS, PLASTIC STIFFNESS, DUCTILITY RATIO, AND OVER-STRENGTH FACTOR COMPREHENSIVE NONLINEAR SEISMIC ASSESSMENT OF A MULTI-DEGREE-FREEDOM (MDOF) STRUCTURE: AN OPENSEES FRAMEWORK FOR STATIC PUSHOVER, CYCLIC DEGRADATION, STATIC TIME-HISTORY AND DYNAMIC TIME-HISTORY ANALYSIS     
 
-# تحلیل حساسیت نسبت شکل‌پذیری ستون و نرم‌افزار اوپن‌سیس از طریق تحلیل پوش‌آور یک سازه چند درجه آزادی، همراه با ارزیابی منحنی برازش چندخطی برای سختی کشسان سازه، سختی خمیری، نسبت شکل‌پذیری و ضریب مقاومت افزون؛ ارزیابی جامع غیرخطی لرزه‌ای یک سازه چند درجه آزادی: چارچوبی در اوپن‌سیس برای تحلیل پوش‌آور استاتیکی، افت چرخه‌ای، تاریخچه زمانی استاتیکی و تحلیل تاریخچه زمانی دینامیکی.
-
-![alt text](COVER.png) 
-
-# EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED SEISMIC DESIGN PROCEDURE WITH PUSHOVER ANALYSIS
-![alt text](COVER_DISPLACEMENT_BASED_PUSHOVER.png)
-
-
-# COLUMN DUCTILITY SENSITIVITY ANALYSIS OF A 10-STORY MDOF STRUCTURE
+ تحلیل حساسیت نسبت شکل‌پذیری ستون و نرم‌افزار اوپن‌سیس از طریق تحلیل پوش‌آور یک سازه چند درجه آزادی، همراه با ارزیابی منحنی برازش چندخطی برای سختی کشسان سازه، سختی خمیری، نسبت شکل‌پذیری و ضریب مقاومت افزون؛ ارزیابی جامع غیرخطی لرزه‌ای یک سازه چند درجه آزادی: چارچوبی در اوپن‌سیس برای تحلیل پوش‌آور استاتیکی، افت چرخه‌ای، تاریخچه زمانی استاتیکی و تحلیل تاریخچه زمانی دینامیکی.
 
 **OpenSeesPy | Nonlinear Pushover Analysis | Displacement-Based Seismic Assessment | Multilinear Capacity-Curve Idealization**
 
@@ -115,7 +107,7 @@ flowchart TD
     K --> B
 \`\`\`
 
-## 4. EQUIVALENT-SDOF TRANSFORMATION
+## 4. EQUIVALENT SDOF SYSTEM DERIVATION VIA DISPLACEMENT-BASED SEISMIC DESIGN PROCEDURE WITH PUSHOVER ANALYSIS
 
 ![Displacement-Based Pushover Transformation](COVER_DISPLACEMENT_BASED_PUSHOVER.png)
 
