@@ -1009,7 +1009,7 @@ for i in range(SEI_NUM_MIN, SEI_NUM_MAX+1):
         #%% START - Equivalent viscous damping ratio
         XLABEL = "Displacement [m]"
         YLABEL = "Base Reaction [N]"
-        TITLE = "Equivalent viscous damping ratio - Incremental Dynamic Analysis Hysteresis"
+        TITLE = "Equivalent viscous damping ratio - Dynamic Analysis Hysteresis"
         method = 1 # 
         zeta = S055.EQULIVALENT_VISCOUS_DAMPING_RATIO_FUN(disp_SEI, reaction_SEI, method, XLABEL, YLABEL, TITLE)
         print(f"Equivalent viscous damping ratio = {zeta:.4f}")
