@@ -43,3 +43,6 @@ are defined per column, from which yield displacement, hardening ratio, and damp
 
 10. Fitting outputs include elastic stiffness, plastic stiffness, tangent stiffness, ductility ratio,
  and over-strength factor, plotted alongside the original pushover curve for comparison.
+
+
+Please note that the content may not be entirely free of errors or inaccuracies.
