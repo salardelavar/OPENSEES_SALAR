@@ -58,4 +58,6 @@ Since the structure was assumed to be inelastic and the response spectra were th
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
 
+Please note that the content may not be entirely free of errors or inaccuracies.
+
 THIS PYTHON SCRIPTS ARE WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
