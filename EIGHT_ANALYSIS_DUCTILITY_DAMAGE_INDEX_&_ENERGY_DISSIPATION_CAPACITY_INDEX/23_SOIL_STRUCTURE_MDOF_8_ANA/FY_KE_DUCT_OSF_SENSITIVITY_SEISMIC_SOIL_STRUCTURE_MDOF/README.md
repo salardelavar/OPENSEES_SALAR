@@ -3,3 +3,5 @@
 # تحلیل حساسیت نسبت میرایی خاک، مقاومت تسلیم، سختی الاستیک، نسبت شکل‌پذیری و ضریب مقاومت افزون بر عملکرد لرزه‌ای سیستم‌های چنددرجه‌آزادی خاک–سازه با استفاده از OpenSees: تحلیل‌های جابجایی چرخه‌ای و تاریخچه زمانی لرزه‌ای همراه با ارزیابی طولانی‌شدن دوره تناوب، شاخص ظرفیت اتلاف انرژی، نسبت میرایی ویسکوز معادل، شاخص خسارت شکل‌پذیری و هزینه بازسازی
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/23_SOIL_STRUCTURE_MDOF_8_ANA/FY_KE_DUCT_OSF_SENSITIVITY_SEISMIC_SOIL_STRUCTURE_MDOF/COVER.png)
+
+Please note that the content may not be entirely free of errors or inaccuracies.
