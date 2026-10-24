@@ -1,95 +1,85 @@
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/23_SOIL_STRUCTURE_MDOF_8_ANA/FY_KE_DUCT_OSF_SENSITIVITY_SEISMIC_SOIL_STRUCTURE_MDOF/COVER.png)
+
 # SENSITIVITY ANALYSIS OF SOIL'S DAMPING RATIO, YIELD STRENGTH, ELASTIC STIFFNESS, DUCTILITY RATIO AND OVER-STRENGTH FACTOR ON THE SEISMIC PERFORMANCE OF SOIL–STRUCTURE MDOF SYSTEMS USING OPENSEES: CYCLIC DISPLACEMENT AND SEISMIC TIME-HISTORY ANALYSES WITH EVALUATION OF PERIOD ELONGATION,ENERGY DISSIPATION CAPACITY INDEX, EQUIVALENT VISCOUS DAMPING RATIO, DUCTILITY DAMAGE INDEX AND RECONSTRUCTION COST 
 
 # تحلیل حساسیت نسبت میرایی خاک، مقاومت تسلیم، سختی الاستیک، نسبت شکل‌پذیری و ضریب مقاومت افزون بر عملکرد لرزه‌ای سیستم‌های چنددرجه‌آزادی خاک–سازه با استفاده از OpenSees: تحلیل‌های جابجایی چرخه‌ای و تاریخچه زمانی لرزه‌ای همراه با ارزیابی طولانی‌شدن دوره تناوب، شاخص ظرفیت اتلاف انرژی، نسبت میرایی ویسکوز معادل، شاخص خسارت شکل‌پذیری و هزینه بازسازی
 
-This OpenSeesPy-based Python framework performs a comprehensive multi-parameter
- sensitivity analysis of a two-degree-of-freedom nonlinear soil–structure system subjected
- to both cyclic displacement protocols and selected ground-motion time histories.
- By systematically varying soil yield strength, elastic stiffness, ductility ratio,
- over-strength factor, and viscous damping ratios of both soil and structure across a
- discrete design space, the code assembles a high-fidelity hysteretic model using multi-linear
- OpenSees hysteretic materials and parallel viscous dampers, extracts instantaneous eigenvalue
- periods at every analysis step to quantify period elongation, and computes a suite of performance
- metrics—including peak displacement, velocity and acceleration demands, energy-dissipation capacity 
- index, equivalent viscous damping ratio from hysteresis loops, ductility-based damage index, and 
- reconstruction cost. Extensive post-processing then generates correlation scatter plots,
- three-dimensional response surfaces, Pearson sensitivity heatmaps, Random-Forest safety
- classification, and both main-effect and interaction ANOVA tables, thereby ranking the relative
- influence of each soil and structural parameter on seismic performance and providing a rigorous
- quantitative basis for performance-based design and risk assessment of soil–structure systems.
- 
-![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/23_SOIL_STRUCTURE_MDOF_8_ANA/FY_KE_DUCT_OSF_SENSITIVITY_SEISMIC_SOIL_STRUCTURE_MDOF/COVER.png)
 
-# 200 SEISMIC GROUND MOTIONS ANALYSIS
-![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
+**A Computational Framework for Evaluating Soil Damping, Yield Strength, Elastic Stiffness, Ductility Capacity, Overstrength, Period Elongation, Energy Dissipation, Structural Damage, and Reconstruction Cost**
 
-THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
+[![OpenSeesPy](https://img.shields.io/badge/Analysis-OpenSeesPy-orange.svg)](https://openseespydoc.readthedocs.io/)
+[![Engineering](https://img.shields.io/badge/Domain-Earthquake%20Engineering-darkred.svg)](https://github.com/salardelavar/OPENSEES_SALAR)
 
-Please note that the content may not be entirely free of errors or inaccuracies.
+## 1. Project Overview
 
+This project presents a Python-based computational framework for investigating the nonlinear seismic response of a multi-degree-of-freedom (MDOF) soil–structure interaction system using OpenSeesPy.
 
+The framework examines how variations in soil and structural parameters influence the dynamic characteristics, nonlinear deformation demands, energy-dissipation behavior, and damage-related response of the coupled system. The analysis incorporates cyclic displacement loading and earthquake ground-motion time histories, with the seismic analysis component identified as involving **200 ground motions**.
 
+The investigated parameters include soil damping ratio, yield strength, elastic stiffness, ductility capacity, and overstrength factor. Their effects are evaluated through numerical simulations and post-processing procedures designed to characterize changes in structural response and identify influential parameters.
 
+The computational workflow combines nonlinear structural analysis with response extraction, damage and energy-related calculations, visualization, and statistical sensitivity assessment. Depending on the implemented analysis configuration, the resulting dataset can be used to investigate individual parameter effects, interactions between parameters, and variations in response across earthquake records.
 
-# FY–KE–DUCT–OSF SENSITIVITY ANALYSIS OF A SEISMIC SOIL–STRUCTURE INTERACTION MDOF SYSTEM
+The project is part of the [`OPENSEES_SALAR`](https://github.com/salardelavar/OPENSEES_SALAR) repository, which provides Python-based computational examples and tools for structural engineering, nonlinear analysis, and earthquake engineering.
 
-**Nonlinear Seismic Analysis | Soil–Structure Interaction (SSI) | Parameter Sensitivity | OpenSeesPy | Python**
+![Soil–structure interaction MDOF model](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/23_SOIL_STRUCTURE_MDOF_8_ANA/FY_KE_DUCT_OSF_SENSITIVITY_SEISMIC_SOIL_STRUCTURE_MDOF/COVER.png)
 
-## 1. Overview
+## 2. Analysis Objectives
 
-This project focuses on the sensitivity analysis of a multi-degree-of-freedom (MDOF) soil–structure interaction system subjected to seismic excitation. The analysis investigates how variations in selected mechanical and structural parameters influence the nonlinear dynamic response of the coupled soil–structure system.
+The primary objectives are to:
 
-The investigated parameters are:
+1. Investigate the influence of soil damping on the dynamic response of the coupled soil–structure system.
+2. Evaluate the sensitivity of nonlinear response to variations in yield strength and elastic stiffness.
+3. Examine the effects of ductility capacity and overstrength on deformation demands and nonlinear behavior.
+4. Investigate changes in the system's dynamic characteristics, including period elongation.
+5. Evaluate hysteretic energy dissipation and equivalent viscous damping using the implemented calculation procedures.
+6. Quantify ductility-related damage indicators and reconstruction-cost measures.
+7. Compare responses obtained under different parameter combinations and earthquake ground motions.
+8. Apply statistical and machine-learning-based techniques, where implemented, to investigate parameter importance and response variability.
+9. Develop a reproducible computational workflow for nonlinear seismic sensitivity analysis.
 
-- **FY — Yield Strength:** Represents the yield-strength parameter assigned to the relevant nonlinear component or structural model.
-- **KE — Elastic Stiffness:** Represents the initial elastic stiffness of the modeled component or subsystem.
-- **DUCT — Ductility Capacity:** Represents the ductility parameter used to characterize deformation capacity.
-- **OSF — Overstrength Factor:** Represents the overstrength parameter used in the structural model.
+These objectives describe the scope of the computational investigation; the actual influence of each parameter must be established from the numerical results.
 
-By systematically varying these parameters and evaluating the resulting seismic responses, the framework can be used to identify influential modeling variables, investigate nonlinear response mechanisms, and examine the sensitivity of structural performance to parameter uncertainty.
+## 3. Investigated Parameters
 
-The project is part of the `OPENSEES_SALAR` repository, which contains Python-based computational tools and structural engineering analysis examples.
+| Parameter | Description | Engineering significance |
+|---|---|---|
+| Soil damping ratio | Viscous damping assigned to the soil subsystem | Influences energy dissipation and dynamic response |
+| Structural damping ratio | Viscous damping assigned to the structural subsystem | Influences the dynamic response and energy dissipation |
+| **FY** | Yield strength | Controls the onset of inelastic behavior and influences strength-dependent response |
+| **KE** | Elastic stiffness | Influences initial force–deformation behavior and dynamic characteristics |
+| **DUCT** | Ductility-capacity parameter | Defines a deformation-capacity parameter in the adopted nonlinear model |
+| **OSF** | Overstrength factor | Represents a strength-related parameter according to the model's definition |
 
-## 2. Project Objectives
+The precise mathematical relationships, units, parameter ranges, and dependencies must be taken from the corresponding Python implementation. In particular, changing yield strength or overstrength may also change other properties of the force–deformation relationship, depending on how the model is formulated.
 
-The primary objectives of this project are to:
+## 4. Theoretical Background
 
-1. Investigate the influence of yield strength on the seismic response of a soil–structure interaction system.
-2. Evaluate the sensitivity of nonlinear response to changes in elastic stiffness.
-3. Examine how ductility capacity affects deformation demand and structural response.
-4. Investigate the role of the overstrength factor in the modeled system.
-5. Compare the response obtained from different combinations of the investigated parameters.
-6. Identify parameter combinations associated with comparatively high or low response demands.
-7. Establish a computational framework for examining parameter sensitivity in nonlinear seismic analysis.
-8. Support the interpretation of coupled soil–structure behavior under earthquake excitation.
+### 4.1. Soil–Structure Interaction
 
-## 3. Theoretical Background
+Soil–structure interaction (SSI) describes the coupled behavior of a structure and its supporting soil. Soil flexibility and damping can modify the effective dynamic properties of the system compared with an idealized fixed-base structural model.
 
-### 3.1. Soil–Structure Interaction
+Potentially affected response quantities include:
 
-Soil–structure interaction describes the mutual influence between a structure and its supporting soil. Unlike a fixed-base structural model, an SSI model can account for the influence of soil flexibility and the mechanical characteristics of the foundation–soil system on structural response.
+- Natural periods and vibration characteristics.
+- Displacement and acceleration demands.
+- Internal forces and force redistribution.
+- Nonlinear deformation and yielding.
+- Energy transfer and dissipation.
+- Residual deformation and damage-related indicators.
 
-Depending on the adopted modeling assumptions, SSI can influence:
+The magnitude and direction of these effects depend on the soil and structural properties, foundation representation, boundary conditions, constitutive models, and earthquake excitation.
 
-- Natural periods and vibration modes.
-- Effective system stiffness.
-- Seismic displacement demands.
-- Acceleration and force distributions.
-- Nonlinear deformation demands.
-- Energy transfer and dissipation within the coupled system.
+### 4.2. Governing Dynamic Equilibrium
 
-The magnitude and direction of these effects depend on the soil properties, structural characteristics, foundation representation, excitation, and nonlinear constitutive assumptions.
-
-### 3.2. Multi-Degree-of-Freedom Formulation
-
-The dynamic equilibrium equation of a general MDOF system can be expressed as
+A general equation of motion for a nonlinear MDOF system subjected to ground acceleration is
 
 \[
 \mathbf{M}\ddot{\mathbf{u}}(t)
 +\mathbf{C}\dot{\mathbf{u}}(t)
 +\mathbf{f}_{\mathrm{int}}(\mathbf{u},\mathbf{z})
-=
--\mathbf{M}\mathbf{r}a_g(t)
+=-\mathbf{M}\mathbf{r}a_g(t)
 \]
 
 where:
@@ -97,216 +87,163 @@ where:
 - \(\mathbf{M}\) is the mass matrix.
 - \(\mathbf{C}\) is the damping matrix.
 - \(\mathbf{u}(t)\) is the displacement vector relative to the ground.
-- \(\dot{\mathbf{u}}(t)\) is the relative velocity vector.
-- \(\ddot{\mathbf{u}}(t)\) is the relative acceleration vector.
+- \(\dot{\mathbf{u}}(t)\) and \(\ddot{\mathbf{u}}(t)\) are the relative velocity and acceleration vectors.
 - \(\mathbf{f}_{\mathrm{int}}\) is the internal restoring-force vector.
-- \(\mathbf{z}\) represents internal variables associated with nonlinear material behavior.
-- \(\mathbf{r}\) is the influence vector for ground excitation.
-- \(a_g(t)\) is the imposed ground acceleration.
+- \(\mathbf{z}\) represents the internal variables associated with nonlinear material behavior.
+- \(\mathbf{r}\) is the ground-motion influence vector.
+- \(a_g(t)\) is the ground acceleration.
 
-For nonlinear systems, the restoring-force vector depends on the current deformation and the relevant constitutive history variables.
+This equation provides the general theoretical framework for nonlinear seismic analysis. The specific formulation is determined by the implemented model, including its degrees of freedom, soil representation, boundary conditions, and damping formulation.
 
-The exact formulation depends on the implemented structural model, soil representation, boundary conditions, and excitation method.
+### 4.3. Yield Strength and Elastic Stiffness
 
-### 3.3. Yield Strength (FY)
-
-Yield strength influences the onset of inelastic behavior in a nonlinear component.
-
-Changes in yield strength can affect:
-
-- The transition from elastic to inelastic response.
-- The magnitude and distribution of plastic deformation.
-- Residual deformation.
-- Force redistribution.
-- Hysteretic energy dissipation.
-
-The effect of FY cannot be interpreted independently of the adopted stiffness, deformation capacity, and constitutive law. In particular, changing FY while keeping other parameters fixed may also change the yield displacement or yield acceleration.
-
-### 3.4. Elastic Stiffness (KE)
-
-Elastic stiffness controls the initial force–deformation relationship of the modeled component.
-
-For a linear elastic range,
+For a component with an initial linear elastic range, the force–deformation relationship can be represented as
 
 \[
 F=K_Eu
 \]
 
-where \(F\) is the restoring force and \(u\) is the corresponding deformation.
+where \(K_E\) is the initial elastic stiffness and \(u\) is the corresponding deformation.
 
-Changes in KE can influence the system's natural periods, force distribution, and dynamic amplification. In a coupled soil–structure system, changes in component stiffness can also modify the interaction between the structural and soil subsystems.
+Yield strength determines the force level associated with the onset of yielding under the adopted constitutive model. Together, stiffness and strength influence the yield deformation, post-yield response, and distribution of inelastic deformation.
 
-The precise influence depends on whether KE represents structural stiffness, foundation stiffness, soil stiffness, or a specific nonlinear component's initial tangent stiffness.
+Consequently, parameter sensitivity should be interpreted in terms of the complete force–deformation relationship rather than treating strength and stiffness as entirely independent physical effects.
 
-### 3.5. Ductility Capacity (DUCT)
+### 4.4. Ductility Capacity and Overstrength
 
-Ductility describes the capacity of a component or structural system to sustain deformation beyond the onset of yielding.
-
-A conventional displacement ductility ratio is
-
-\[
-\mu=\frac{|u_{\max}|}{u_y}
-\]
-
-where \(u_{\max}\) is the maximum deformation and \(u_y\) is the yield deformation.
-
-This response measure should be distinguished from a prescribed ductility-capacity parameter. In this project, DUCT denotes the parameter used by the implemented model; its exact definition must be taken from the corresponding Python script.
-
-Increasing the prescribed ductility capacity does not necessarily reduce displacement demand. Its influence depends on the constitutive model, post-yield behavior, strength, stiffness, and earthquake record.
-
-### 3.6. Overstrength Factor (OSF)
-
-The overstrength factor characterizes the relationship between a reference strength level and a higher strength level defined by the adopted modeling convention.
-
-A general representation is
-
-\[
-\Omega=\frac{F_{\mathrm{reference}}^{*}}
-{F_{\mathrm{design}}}
-\]
-
-where the numerator and denominator must be defined consistently with the implementation.
-
-In this project, OSF refers to the model's overstrength parameter. Its exact mathematical relationship with FY and other strength parameters should be verified from the code before interpreting its effects.
-
-## 4. Sensitivity Analysis Framework
-
-The analysis considers four input parameters:
-
-| Parameter | Description | Primary area of investigation |
-|---|---|---|
-| FY | Yield strength | Strength-dependent nonlinear response |
-| KE | Elastic stiffness | Initial stiffness and dynamic characteristics |
-| DUCT | Ductility capacity | Deformation capacity and inelastic behavior |
-| OSF | Overstrength factor | Strength relationships and nonlinear response |
-
-A parameter sensitivity study typically involves the following procedure:
-
-1. Define the reference model and baseline parameter values.
-2. Establish the parameter ranges or discrete values to be investigated.
-3. Generate parameter combinations according to the adopted sampling strategy.
-4. Construct or update the soil–structure interaction model for each combination.
-5. Apply the selected earthquake ground-motion record or records.
-6. Perform nonlinear time-history analysis.
-7. Extract the response quantities required for comparison.
-8. Compare the response across the parameter combinations.
-9. Quantify sensitivity using an appropriate statistical or numerical method.
-10. Identify important trends, interactions, and potential limitations.
-
-The actual sampling strategy, number of simulations, and response quantities should be documented from the implemented script.
-
-## 5. Seismic Input and Nonlinear Dynamic Analysis
-
-Earthquake ground-motion analysis provides a means of investigating the dynamic behavior of the modeled system under time-varying excitation.
-
-For a reproducible study, the following information should be documented where applicable:
-
-- Ground-motion record identification and source.
-- Sampling interval and record duration.
-- Acceleration units and preprocessing.
-- Ground-motion scaling procedure.
-- Damping model and damping parameters.
-- Numerical integration algorithm.
-- Nonlinear solution algorithm and convergence tolerances.
-- Boundary conditions and support constraints.
-- Material models and component force–deformation relationships.
-- Treatment of soil and foundation flexibility.
-
-If multiple ground motions are used, the record-to-record variability should be distinguished from sensitivity caused by the four model parameters.
-
-## 6. Response Quantities and Performance Evaluation
-
-The sensitivity analysis can be evaluated using response quantities that are actually calculated and stored by the implementation.
-
-Potential quantities include:
-
-| Response quantity | Engineering interpretation |
-|---|---|
-| Maximum displacement | Peak deformation demand |
-| Interstory drift ratio | Relative deformation demand between adjacent floors |
-| Peak acceleration | Maximum absolute or relative acceleration, according to the output definition |
-| Base shear | Global lateral-force demand |
-| Residual displacement | Permanent deformation after excitation |
-| Ductility demand | Deformation relative to yield deformation |
-| Hysteretic energy | Energy dissipated through cyclic inelastic behavior |
-| Natural period | Dynamic characteristic of the modeled system |
-| Damage index | A model-specific measure of accumulated or deformation-related damage |
-
-These quantities are candidate evaluation metrics, not a claim that every metric is calculated by the current script.
-
-A meaningful comparison requires consistent units, response definitions, parameter bounds, and analysis settings.
-
-### 6.1. Damage and Energy-Based Measures
-
-If the implementation evaluates ductility-based damage or energy-dissipation indices, the corresponding definitions and normalization procedures should be documented explicitly.
-
-For example, a displacement-based ductility measure can be defined as
+A conventional displacement ductility demand is defined as
 
 \[
 \mu_d=\frac{|u_{\max}|}{u_y}
 \]
 
-where \(u_y\) must be defined consistently for the nonlinear component or system under investigation.
+where \(u_{\max}\) is the maximum displacement and \(u_y\) is the reference yield displacement.
 
-Energy-based measures require a clear definition of the energy quantity being evaluated. The area enclosed by a force–displacement hysteresis loop, the cumulative work of the restoring force, and the total energy dissipated by the complete damped system are different quantities and should not be treated as interchangeable.
+Ductility demand is distinct from a prescribed ductility-capacity parameter. The relationship between the two depends on the nonlinear model and the definitions adopted in the code.
 
-Any damage index should be interpreted according to its mathematical definition and calibration. A numerical damage index is not automatically equivalent to a probability of failure or a code-defined performance state.
+Similarly, the overstrength factor represents a ratio between strength levels defined by the adopted modeling convention. Its exact relationship with FY and other strength parameters must be verified from the implementation before interpreting its influence on seismic performance.
 
-## 7. Interpretation of Parameter Effects
+## 5. Analysis Methodology
 
-The four parameters may interact rather than produce independent effects.
+The overall computational workflow consists of model definition, parameter variation, nonlinear analysis, response extraction, and sensitivity assessment.
 
-Examples of questions that can be investigated include:
+1. **Model definition:** Establish the soil–structure system, material properties, masses, boundary conditions, and damping formulation.
+2. **Parameter specification:** Define the investigated values or ranges of soil damping, FY, KE, DUCT, and OSF.
+3. **Parameter combinations:** Generate the combinations required for the sensitivity study.
+4. **Cyclic displacement analysis:** Evaluate the force–deformation response under the cyclic displacement protocol used in the model.
+5. **Seismic time-history analysis:** Apply the selected earthquake ground motions to investigate dynamic response.
+6. **Response extraction:** Obtain the required displacement, velocity, acceleration, force, and other response histories.
+7. **Dynamic-characteristic evaluation:** Calculate period-related quantities using the implemented eigenvalue-analysis procedure.
+8. **Damage and energy assessment:** Evaluate the implemented energy-dissipation, equivalent-damping, ductility-damage, and reconstruction-cost measures.
+9. **Statistical post-processing:** Analyze relationships between model parameters and selected response quantities using the implemented statistical methods.
+10. **Visualization and comparison:** Generate plots and summary results for interpreting parameter sensitivity.
 
-- Does increasing FY delay yielding under a given earthquake record?
-- How does changing KE alter the dynamic characteristics and displacement response?
-- How does the prescribed ductility capacity affect the modeled nonlinear force–deformation relationship?
-- Does changing OSF modify the strength available to resist seismic demand?
-- Are parameter effects consistent across different ground motions?
-- Which parameters have the greatest influence on the selected response quantity?
-- Do combinations of parameters produce behavior that cannot be explained by one-factor-at-a-time comparisons?
+The number of parameter combinations, analysis steps, ground-motion records successfully completed, and treatment of failed simulations should be verified from the output data when reporting final results.
 
-These are research questions rather than predetermined conclusions. The direction and magnitude of each effect must be established from the computed results.
+## 6. Seismic Ground-Motion Analysis
 
-## 8. Recommended Statistical Analysis
+The seismic component of this project is identified as a **200-ground-motion analysis**.
 
-Where the simulation dataset supports it, several approaches can be used to quantify sensitivity.
+Using multiple ground motions allows the response to be examined under different excitation histories rather than relying on a single earthquake record. It can also help distinguish parameter-related response changes from record-to-record variability, provided that the statistical analysis treats the records appropriately.
 
-### 8.1. One-Factor-at-a-Time Analysis
+For reproducibility, the following information should be documented alongside the analysis results:
 
-Vary one parameter while holding the others at their reference values.
+- Ground-motion record identifiers and sources.
+- Sampling intervals, record durations, and acceleration units.
+- Record preprocessing and scaling procedures.
+- Soil and structural damping definitions.
+- Nonlinear material models and parameter values.
+- Numerical integration and solution algorithms.
+- Convergence criteria and handling of unsuccessful analyses.
+- The number of records successfully analyzed for each parameter combination.
 
-This approach is useful for preliminary investigation but does not capture interactions between parameters.
+The use of 200 ground motions does not, by itself, establish that the records are statistically representative of every seismic hazard or site condition. Their suitability depends on record selection, scaling, and the objectives of the study.
 
-### 8.2. Factorial Analysis
+![Seismic ground-motion analysis](SEISMIC_GROUND_MOTION_ANALYSIS.png)
 
-Use combinations of parameter levels to investigate main effects and interaction effects.
+## 7. Response Evaluation and Performance Indicators
 
-For example, an FY–KE interaction can indicate whether the influence of yield strength depends on the elastic stiffness level.
+The framework investigates several response and performance indicators. Their exact definitions should follow the relevant functions in the Python implementation.
 
-### 8.3. Analysis of Variance (ANOVA)
+| Indicator | Purpose |
+|---|---|
+| Displacement response | Characterizes deformation demand |
+| Velocity response | Describes the system's motion during excitation |
+| Acceleration response | Characterizes acceleration demand |
+| Base reaction or restoring force | Supports evaluation of global force response, subject to the recorded quantity's definition |
+| Period elongation | Examines changes in the calculated dynamic period |
+| Energy-dissipation capacity index (EDCI) | Represents an implemented energy-related performance measure |
+| Equivalent viscous damping ratio (EVDR) | Expresses hysteretic behavior through an equivalent damping measure |
+| Ductility damage index (DDI) | Represents a deformation-related damage indicator |
+| Reconstruction cost | Estimates a cost-related measure using the implemented cost function |
 
-ANOVA can be applied to investigate whether differences in a selected response are associated with categorical parameter levels or appropriately binned continuous parameters.
+These indicators are not interchangeable. Their engineering interpretation depends on their mathematical definitions, normalization, and calibration.
 
-The model specification should account for relevant interactions and, where appropriate, earthquake-record variability. Statistical significance alone does not establish engineering significance.
+### 7.1. Period Elongation
 
-### 8.4. Regression-Based Sensitivity
+Period elongation refers to an increase in the calculated vibration period relative to a defined reference condition. In nonlinear analysis, changes in effective stiffness can influence the system's dynamic characteristics.
 
-A regression model can approximate the relationship between the input parameters and a response quantity.
+The interpretation of period elongation depends on how the period is calculated, whether the analysis uses instantaneous or reference eigenvalues, and how changes in the modeled properties are handled. Comparisons should therefore use a consistent period definition and clearly stated reference state.
 
-Depending on the dataset, candidate models include linear regression, polynomial regression, and other response-surface methods.
+### 7.2. Energy Dissipation and Equivalent Viscous Damping
 
-Model quality should be evaluated using suitable diagnostics and validation procedures.
+Energy-based response measures require a clear distinction between different physical quantities.
 
-### 8.5. Global Sensitivity Analysis
+The area enclosed by a force–displacement hysteresis loop represents energy dissipated over that cycle under the relevant assumptions. Cumulative restoring-force work, hysteretic energy, and total energy dissipated by the complete damped system are not necessarily equivalent.
 
-Where parameter distributions and sampling are adequately defined, global methods such as variance-based sensitivity analysis can evaluate the contribution of input uncertainty to response variability.
+Likewise, equivalent viscous damping is a model-dependent representation of energy dissipation. The calculation should identify the relevant hysteresis loop, energy definition, and normalization procedure.
 
-The selected method should be consistent with the sample design, computational budget, and treatment of correlated inputs.
+### 7.3. Ductility Damage Index
 
-## 9. Computational Implementation
+A ductility-based indicator can be used to characterize deformation relative to a reference yield displacement or another specified deformation limit.
 
-The project is organized within the following repository directory:
+The interpretation of DDI depends on the exact implemented equation, its normalization, and whether it represents peak deformation, cumulative damage, or another response measure. It should not automatically be interpreted as a probability of failure or as a code-defined damage state.
+
+### 7.4. Reconstruction Cost
+
+The reconstruction-cost function provides a cost-related indicator based on the assumptions encoded in the implementation.
+
+Its engineering use requires documentation of the cost equation, reference deformation levels, normalization, and any limits imposed on the calculated value. Unless calibrated against appropriate economic or empirical data, the result should be interpreted as a model-based estimate rather than a validated prediction of actual repair expenditure.
+
+## 8. Statistical and Machine-Learning-Based Sensitivity Analysis
+
+Statistical post-processing can help identify relationships between the investigated parameters and the selected response quantities.
+
+The project description identifies the following analytical approaches.
+
+### 8.1. Correlation Analysis
+
+Correlation analysis can be used to investigate the direction and strength of statistical relationships between input parameters and response variables.
+
+Correlation alone does not establish causation and may fail to capture nonlinear relationships or parameter interactions.
+
+### 8.2. Three-Dimensional Response Surfaces
+
+Response surfaces can illustrate how a selected response varies with combinations of two input parameters while other parameters or conditions are held fixed or otherwise accounted for.
+
+Their interpretation depends on the available parameter combinations, the range of the plotted variables, and whether the displayed surface is based on actual simulations or an interpolated approximation.
+
+### 8.3. Pearson Correlation Heatmaps
+
+Pearson correlation heatmaps provide a visual summary of linear associations between variables. They can help identify preliminary trends but should be supplemented by other methods when relationships are nonlinear or influenced by interactions.
+
+### 8.4. Random-Forest Safety Classification
+
+A Random Forest classifier can be used to explore how model parameters relate to a defined safety or performance class.
+
+Such a classification requires an explicit target-label definition and a documented training and validation procedure. Model predictions should not be interpreted as validated safety probabilities unless the classification framework has been calibrated and independently evaluated for that purpose.
+
+### 8.5. Analysis of Variance (ANOVA)
+
+ANOVA can be used to examine the statistical significance of parameter effects and interactions when the dataset and model specification support the method.
+
+The analysis should document the response variable, factor definitions, binning of continuous predictors where applicable, interaction terms, and treatment of repeated earthquake records. Statistical significance should be distinguished from engineering significance.
+
+These techniques provide complementary perspectives. No single correlation, classifier, or statistical test is sufficient to establish a universal ranking of parameter importance across all soil–structure systems.
+
+## 9. Computational Environment
+
+The project is located in the following directory of the repository:
 
 ```text
 OPENSEES_SALAR/
@@ -315,84 +252,94 @@ OPENSEES_SALAR/
         └── FY_KE_DUCT_OSF_SENSITIVITY_SEISMIC_SOIL_STRUCTURE_MDOF/
 ```
 
-The directory name identifies the project as a parameter-sensitivity study involving a seismic soil–structure interaction MDOF model.
+The analysis is developed around Python-based computational workflows. The exact dependencies should be taken from the imports used in the scripts.
 
-The exact Python entry point, supporting modules, output filenames, and dependency versions should be listed here after checking the repository contents.
+Potential dependencies include:
 
-### Recommended Software
+- **Python** — scripting and workflow orchestration.
+- **OpenSeesPy** — nonlinear finite-element and structural analysis.
+- **NumPy** — numerical arrays and mathematical operations.
+- **Pandas** — tabular data processing.
+- **Matplotlib** — visualization of response histories and sensitivity results.
+- **SciPy** — numerical and statistical calculations, where required.
+- **Scikit-learn** — machine-learning methods, if used by the implementation.
 
-- **Python** for model orchestration, numerical processing, and data analysis.
-- **OpenSeesPy**, if used by the implementation, for finite-element-based structural analysis.
-- **NumPy** for numerical arrays and mathematical operations.
-- **Pandas** for tabular data management.
-- **Matplotlib** for response and sensitivity plots.
-- **SciPy** for additional numerical and statistical methods, where required.
+Install only the packages required by the actual scripts. The repository should also identify the main execution script, required input files, supporting modules, and expected output files to facilitate reproducibility.
 
-Only dependencies imported by the actual scripts need to be installed.
+## 10. Verification and Reproducibility
 
-## 10. Reproducibility and Numerical Verification
+Reliable sensitivity analysis requires consistent model definitions, numerical settings, and data processing.
 
-For reproducible computational experiments, the following practices are recommended:
+Recommended verification practices include:
 
-1. Record the baseline values and units of FY, KE, DUCT, and OSF.
-2. Document the parameter ranges and sampling method.
-3. Keep earthquake records and preprocessing procedures identifiable.
-4. Store the analysis configuration alongside the response data.
-5. Check nonlinear convergence and retain information about failed analyses.
-6. Verify that all parameter combinations satisfy the intended physical and constitutive constraints.
-7. Confirm that comparisons use consistent response definitions.
-8. Record software versions and random seeds when stochastic sampling is used.
-9. Distinguish numerical failures from genuine large-response or collapse outcomes.
-10. Validate selected cases against independent calculations or benchmark models where possible.
+1. Document the units, baseline values, and ranges of all investigated parameters.
+2. Verify the relationships between FY, KE, DUCT, and OSF in the nonlinear material model.
+3. Confirm that soil and structural damping are assigned as intended.
+4. Record ground-motion identifiers, preprocessing, and scaling factors.
+5. Check numerical convergence and retain information about unsuccessful analyses.
+6. Verify the definitions and units of all response quantities.
+7. Ensure that comparisons use consistent analysis settings and response definitions.
+8. Record software versions and random seeds where stochastic sampling is used.
+9. Distinguish numerical failures from physically meaningful high-response outcomes.
+10. Validate selected simulations against independent calculations, benchmark models, or established reference solutions where appropriate.
 
-A sensitivity study is only as reliable as its underlying model, numerical settings, and interpretation of the resulting data.
+A sensitivity ranking is meaningful only when the model, input parameters, response measures, and statistical procedures are sufficiently well defined.
 
-## 11. Limitations and Scope
+## 11. Scope and Limitations
 
-The conclusions of this analysis are conditional on the implemented model and its assumptions.
+The results of this project are conditional on the implemented soil–structure model, parameter ranges, constitutive assumptions, ground-motion dataset, and numerical procedures.
 
-Important considerations include:
+Important limitations to consider include:
 
-- The adopted representation of soil–structure interaction.
-- The calibration and limitations of the nonlinear constitutive models.
-- The selected ground-motion records and their scaling.
-- The ranges and physical relationships of the investigated parameters.
-- The numerical integration and convergence settings.
-- The definition of each response and damage metric.
-- The statistical treatment of record-to-record variability.
+- The adopted representation of soil and foundation flexibility.
+- The calibration and applicability of the nonlinear material models.
+- The physical consistency of the parameter combinations.
+- The selection and scaling of the earthquake records.
+- The treatment of damping and period calculations.
+- The definitions and calibration of damage and reconstruction-cost indicators.
+- The handling of numerical convergence failures.
+- The statistical treatment of record-to-record variability and parameter interactions.
 
-Parameter sensitivity should not be interpreted as proof of causality outside the adopted computational model. Likewise, conclusions obtained for one structural configuration or ground-motion dataset should not automatically be generalized to all soil–structure systems.
+The computed sensitivities should not be generalized automatically to different structural configurations, soil conditions, earthquake datasets, or modeling assumptions. Engineering conclusions should be supported by the underlying simulation results and independent verification.
 
 ## 12. Intended Applications
 
-This computational framework can support:
+This computational project may support:
 
-- Educational demonstrations of nonlinear seismic analysis.
-- Investigation of soil–structure interaction effects.
-- Parametric studies of strength and stiffness.
-- Exploration of deformation capacity and overstrength assumptions.
-- Comparison of nonlinear response across model configurations.
-- Development and testing of Python-based sensitivity-analysis tools.
-- Preliminary assessment of influential parameters for further investigation.
+- Investigation of nonlinear soil–structure interaction.
+- Parametric studies of strength, stiffness, ductility, and overstrength.
+- Evaluation of seismic response under multiple ground motions.
+- Exploration of period-related changes and hysteretic behavior.
+- Comparative analysis of energy- and ductility-related indicators.
+- Development of statistical and machine-learning-based sensitivity tools.
+- Educational demonstrations of Python and OpenSeesPy in earthquake engineering.
+- Further development of performance-based structural analysis workflows.
 
-It is a computational analysis example, not a substitute for project-specific structural assessment, geotechnical evaluation, or code-compliant engineering design.
+The framework is intended for computational study and educational or research use. It does not replace project-specific structural assessment, geotechnical investigation, independent model validation, or code-compliant engineering design.
 
 ## 13. Author and Repository
 
 **Author:** Salar Delavar Ghashghaei (Qashqai)
 
-**GitHub:** [salardelavar](https://github.com/salardelavar)
+**GitHub Profile:** [github.com/salardelavar](https://github.com/salardelavar)
 
-**Repository:** [OPENSEES_SALAR](https://github.com/salardelavar/OPENSEES_SALAR)
+**Main Repository:** [OPENSEES_SALAR](https://github.com/salardelavar/OPENSEES_SALAR)
 
-This project is intended to support the development, study, and educational use of computational methods in structural engineering, nonlinear analysis, and earthquake engineering.
+The repository shares computational examples and Python-based tools for structural engineering, nonlinear analysis, and earthquake engineering.
 
 ## 14. Disclaimer
 
-This repository provides computational examples for educational and research purposes. The scripts may contain errors, numerical limitations, or modeling assumptions that require independent verification.
+This project is provided for educational and research purposes. Although care has been taken in developing the computational procedures, the scripts may contain errors, numerical limitations, or modeling assumptions that require independent verification.
 
-Users should review the implementation, validate the numerical results, and confirm the suitability of the adopted models before applying the methods to engineering decisions. The author does not guarantee that the scripts are suitable for a specific design, assessment, or safety-critical application.
+Users are responsible for reviewing the implementation, validating the numerical results, and determining whether the adopted methods are appropriate for their intended applications. The author makes no guarantee that the scripts are suitable for a specific design, assessment, or safety-critical engineering decision.
 
----
+## Keywords
 
-**Keywords:** OpenSeesPy, Python, soil–structure interaction, SSI, MDOF system, nonlinear time-history analysis, seismic response, sensitivity analysis, yield strength, elastic stiffness, ductility capacity, overstrength factor, earthquake engineering, structural dynamics.
+OpenSeesPy, Python, soil–structure interaction, SSI, MDOF system, nonlinear structural analysis, earthquake engineering, seismic time-history analysis, ground-motion analysis, sensitivity analysis, yield strength, elastic stiffness, ductility capacity, overstrength factor, period elongation, energy dissipation, equivalent viscous damping, ductility damage index, reconstruction cost, ANOVA, Random Forest, structural performance.
+
+ 
+
+# 200 SEISMIC GROUND MOTIONS ANALYSIS
+![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
+
+
