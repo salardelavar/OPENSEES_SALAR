@@ -1,6 +1,6 @@
 ###########################################################################################################
 #                   >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                      #
-#              SENSITIVITY ANALYSIS OF SOIL DAMPING RATIO, YIELD STRENGTH, ELASTIC STIFFNESS,             #
+#            SENSITIVITY ANALYSIS OF SOIL'S DAMPING RATIO, YIELD STRENGTH, ELASTIC STIFFNESS,             #
 #                 DUCTILITY RATIO AND OVER-STRENGTH FACTOR ON THE SEISMIC PERFORMANCE OF                  #
 #                   SOIL–STRUCTURE MDOF SYSTEMS USING OPENSEES: CYCLIC DISPLACEMENT AND                   #
 #                    SEISMIC TIME-HISTORY ANALYSES WITH EVALUATION OF PERIOD ELONGATION,                  #
