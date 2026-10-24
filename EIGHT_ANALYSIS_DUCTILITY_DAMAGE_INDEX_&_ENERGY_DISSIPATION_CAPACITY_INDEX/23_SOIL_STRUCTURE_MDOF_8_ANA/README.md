@@ -12,6 +12,6 @@ NONLINEAR DYNAMIC ANALYSIS OF A MULTI-DEGREE-OF-FREEDOM (MDOF) SOIL STRUCTURE SY
  تحلیل دینامیکی غیرخطی سیستم چنددرجه‌آزادی (MDOF) اندرکنش سازه و خاک با استفاده از ۵۰ رکورد حرکت زمین در OpenSees و ارزیابی طیف پاسخ لرزه‌ای
 
 
-![alt text]()
+![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/23_SOIL_STRUCTURE_MDOF_8_ANA/SOIL_STRUCTURE_MDOF_RESPONSE_SPECTRUM_EDCI_EVDR/COVER.png)
 
 
