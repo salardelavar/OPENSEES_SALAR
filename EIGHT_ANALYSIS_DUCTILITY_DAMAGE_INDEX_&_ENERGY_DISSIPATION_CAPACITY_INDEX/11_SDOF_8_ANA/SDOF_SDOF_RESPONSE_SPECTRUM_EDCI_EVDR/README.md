@@ -14,4 +14,7 @@ Since the structure was assumed to be inelastic and the response spectra were th
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
 
+# RECONSTRUCTION COST SPECTRUM
+![alt text](RECONSTRUCTION_COST.png) 
+
 THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
