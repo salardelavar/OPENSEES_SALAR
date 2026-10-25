@@ -86,6 +86,10 @@ Typical parameters used in the examples:
 - Results exported to Excel
 
 ---
+## License & Disclaimer
+These scripts are provided for educational and research purposes.
+
+They may contain errors or approximations. Always verify results against independent calculations before using them for design or decision-making.
 
 ## Requirements
 
