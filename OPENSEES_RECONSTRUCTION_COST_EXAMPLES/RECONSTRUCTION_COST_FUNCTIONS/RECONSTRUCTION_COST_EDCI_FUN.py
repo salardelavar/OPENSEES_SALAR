@@ -44,7 +44,7 @@ def DISSIPATED_ENERGY_FUN_WITH_PLOT(displacement, base_shear, method,
         ax.fill(hull_pts[:, 0], hull_pts[:, 1], color='red', alpha=0.25, label="Hull Area (Energy)")
     
         # Labels and style
-        ax.set_title(f"{title} - (Convex Hull)")
+        ax.set_title(f"{TITLE} - (Convex Hull)")
         ax.set_xlabel(XLABEL)
         ax.set_ylabel(YLABEL)
         ax.grid(True, linestyle='--', alpha=0.5)
