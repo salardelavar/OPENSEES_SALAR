@@ -130,34 +130,34 @@ def RECONSTRUCTION_COST_EDCI_FUN(disp_SEI, reaction_SEI,
         rc = 0.0
         print("\n\tZONE 0: NO DAMAGE\n")
     elif DECI > 0 and DECI <= 10:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]
         print("\n\tZONE 1: VERY MINOR DAMAGE\n")
     elif DECI > 10 and DECI <= 20:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]
         print("\n\tZONE 2: MINOR DAMAGE\n")
     elif DECI > 20 and DECI <= 30:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 3: MODERATE–LOW DAMAGE\n")
     elif DECI > 30 and DECI <= 40:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 4: MODERATE DAMAGE\n")
     elif DECI > 40 and DECI <= 50:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 5: MODERATE–HIGH DAMAGE\n")
     elif DECI > 50 and DECI <= 60:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 6: SEVERE–LOW DAMAGE\n")
     elif DECI > 60 and DECI <= 70:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 7: SEVERE–MEDIUM DAMAGE\n")    
     elif DECI > 70 and DECI <= 80:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]        
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]        
         print("\n\tZONE 8: SEVERE–HIGH DAMAGE\n")
     elif DECI > 80 and DECI <= 90:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]          
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]          
         print("\n\tZONE 9: VERY SEVERE DAMAGE\n")
     elif DECI > 90 and DECI <= 100:
-        rc = int(RECONSTRUCTION_COST * DECI * 0.01) # [$]          
+        rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]          
         print("\n\tZONE 10: FAILURE DAMAGE\n")
         
     """    
@@ -177,4 +177,4 @@ DECI = RECONSTRUCTION_COST_EDCI_FUN(
 )
 
 print(f"DECI = {DECI:.3f} %")
-"""    
+"""      
