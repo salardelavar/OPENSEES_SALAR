@@ -102,6 +102,8 @@ A displacement-based pushover transformation,
 # BOOK: Foundation Analysis and Design-Joseph-E.-Bowles-1996
 # REPORT: A Practical Guide o Soil-Structure Interaction_FEMA P-2091 
 # PAPER: Displacement-based seismic design of buildings theory - M.S. Medhekar, D.J.L. Kennedy - 1999 Elsevier
+# PAPER: Modelling of soil-structure interaction in OpenSees: A practical approach for performance-based seismic design
+'https://www.sciencedirect.com/science/article/abs/pii/S2352012421000060?utm_source=chatgpt.com'
 # YOUTUBE:
 'https://www.youtube.com/watch?v=MZUhSHmIUdI'
 #%%----------------------------------------------------
