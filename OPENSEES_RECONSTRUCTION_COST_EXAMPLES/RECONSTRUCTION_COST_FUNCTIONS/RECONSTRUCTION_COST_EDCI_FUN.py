@@ -126,6 +126,9 @@ def RECONSTRUCTION_COST_EDCI_FUN(disp_SEI, reaction_SEI,
         print('\n\tCHECK THE CYCLIC DISPLACEMENT ANALYSIS AND IF IT IS POSSIBLE')
         print('\t\t\tINCREASE THE DISPLACEMENT.\n')
         
+    if DECI >= 100: # SO ENERGY DISSIPATION CAPACITY INDEX IS IN FAILURE DAMAGE
+        DECI = 100
+        
     if DECI <= 0:
         rc = 0.0
         print("\n\tZONE 0: NO DAMAGE\n")
@@ -159,11 +162,7 @@ def RECONSTRUCTION_COST_EDCI_FUN(disp_SEI, reaction_SEI,
     elif DECI > 90 and DECI <= 100:
         rc = RECONSTRUCTION_COST * DECI * 0.01 # [$]          
         print("\n\tZONE 10: FAILURE DAMAGE\n")
-        
-    """    
-    if DECI >= 100:   # SO ENERGY DISSIPATION CAPACITY INDEX IS IN FAILURE DAMAGE
-        DECI = 100.0    
-    """
+
     return  rc   
     
 """
@@ -177,4 +176,4 @@ DECI = RECONSTRUCTION_COST_EDCI_FUN(
 )
 
 print(f"DECI = {DECI:.3f} %")
-"""      
+"""    
