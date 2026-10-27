@@ -1,3 +1,4 @@
 # The OPENSEES_VERIFICATION_VALIDATION_EXAMPLES repository is intended to provide a structured collection of examples for verifying and validating structural analysis models developed using OpenSees. It focuses on assessing the reliability, numerical accuracy, and consistency of computational results by comparing analytical solutions, established theoretical formulations, benchmark problems, and numerical simulations where applicable. Such examples can help structural and earthquake engineers evaluate element formulations, material models, boundary conditions, loading procedures, and analysis algorithms before applying them to more complex structural systems. By documenting verification and validation procedures in Python, the repository supports reproducible computational research, improves confidence in nonlinear structural analysis, and provides a practical educational resource for engineers and researchers developing and testing OpenSees-based simulation tools.
 
-#
+# Please note that the content may not be entirely free of errors or inaccuracies.
+
