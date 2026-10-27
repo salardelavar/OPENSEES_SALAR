@@ -1655,7 +1655,7 @@ YLABEL = 'Base-Axial Reaction [N]'
 LEGEND01 = 'Curve'
 LEGEND02 = 'Bilinear Fitted'
 LEGEND03 = 'Undefined'
-TITLE = f'Last Data of Base Shear-Displacement Analysis - Ductility Ratio: {X[2]/X[1]:.4f} - Over Strength Factor: {Y[2]/Y[1]:.4f}'
+TITLE = f'Base Shear-Displacement Analysis - Ductility Ratio: {X[2]/X[1]:.4f} - Over Strength Factor: {Y[2]/Y[1]:.4f}'
 COLOR = 'black'
 PLOT_2D(np.abs(disp_mid_PUSH), np.abs(reactionY_PUSH), X, Y, X, Y, XLABEL, YLABEL, TITLE, LEGEND01, LEGEND02, LEGEND03, COLOR='black', Z=2) 
 #print(f'\t\t Ductility Ratio: {Y[2]/Y[1]:.4f}')
