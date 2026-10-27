@@ -17,4 +17,7 @@ Since the structure was assumed to be inelastic and the response spectra were th
 # RECONSTRUCTION COST SPECTRUM
 ![alt text](RECONSTRUCTION_COST.png) 
 
+Please note that the content may not be entirely free of errors or inaccuracies.
+
+
 THIS PYTHON SCRIPT IS WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
