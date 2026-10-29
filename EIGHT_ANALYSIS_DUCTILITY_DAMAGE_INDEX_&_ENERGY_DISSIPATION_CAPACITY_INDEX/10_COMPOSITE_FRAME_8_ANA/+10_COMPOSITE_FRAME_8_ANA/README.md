@@ -165,21 +165,10 @@ where \(E_D\) is the area of the hysteresis loop and \(E_S\) is the maximum reco
 5. **Verify** equilibrium, convergence, energy balance, and time-step sensitivity.
 6. **Extend** the model for parametric studies (material strengths, confinement ratios, connection stiffness, mass distribution, ground-motion intensity, etc.).
 
----
-
-## 9. Numerical Reliability & Verification Checklist
-
-- [ ] Global and local equilibrium (reactions vs. applied loads)
-- [ ] Convergence of force/displacement residuals at every step
-- [ ] Time-step and algorithm sensitivity (especially for dynamic analyses)
-- [ ] Energy balance (external work ≈ kinetic + recoverable strain + dissipated energy)
-- [ ] Fiber discretization density and section integration accuracy
-- [ ] Comparison with analytical solutions or published benchmark results where available
-- [ ] Full reproducibility (OpenSeesPy version, Python packages, exact input parameters)
 
 ---
 
-## 10. Software Requirements
+## 9. Software Requirements
 
 ```bash
 Python ≥ 3.8
