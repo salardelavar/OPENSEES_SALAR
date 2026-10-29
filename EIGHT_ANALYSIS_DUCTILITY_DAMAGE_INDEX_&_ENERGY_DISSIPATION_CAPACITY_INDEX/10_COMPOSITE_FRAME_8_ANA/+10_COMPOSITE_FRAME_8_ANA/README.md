@@ -155,11 +155,6 @@ Equivalent viscous damping is obtained from:
 where \(E_D\) is the area of the hysteresis loop and \(E_S\) is the maximum recoverable strain energy (definition must match the script implementation).
 
 ---
-and time-step sensitivity.
-6. **Extend** the model for parametric studies (material strengths, confinement ratios, connection stiffness, mass distribution, ground-motion intensity, etc.).
-
-
----
 
 ## 8. Software Requirements
 
