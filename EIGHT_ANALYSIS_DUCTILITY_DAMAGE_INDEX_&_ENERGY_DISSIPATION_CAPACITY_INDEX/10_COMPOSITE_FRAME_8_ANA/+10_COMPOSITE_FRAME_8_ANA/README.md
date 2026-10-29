@@ -5,7 +5,10 @@
 
 ![alt text](https://github.com/salardelavar/OPENSEES_SALAR/blob/main/EIGHT_ANALYSIS_DUCTILITY_DAMAGE_INDEX_%26_ENERGY_DISSIPATION_CAPACITY_INDEX/10_COMPOSITE_FRAME_8_ANA/+10_COMPOSITE_FRAME_8_ANA/COVER.png) 
 
-
+![alt text]() 
+![alt text]() 
+![alt text]() 
+![alt text]() 
 
 ## 1. Overview
 
