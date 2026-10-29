@@ -1683,10 +1683,10 @@ print(f'Structural Ductility Damage Index in Y Direction: {100*DIy:.4f} (%)')
 import FRAGILITY_FUN as FF
 
 damage_states = {
-    'Minor Damage Level': (20, 40),# Median DI=20%, β=40%
-    'Moderate Damage Level': (40, 40),
-    'Severe Damage Level': (60, 50),
-    'Failure Level': (100, 50)
+    'Minor Damage Level': (20, 0.4),# Median DI=20%, β=0.4
+    'Moderate Damage Level': (40, 0.4),
+    'Severe Damage Level': (60, 0.4),
+    'Failure Level': (100, 0.4)
 }
 
 # Intensity Measure (IM) values from 0.0 to 100.0
@@ -1703,8 +1703,8 @@ TITLE = 'Structural Ductility Damage Index (%)  [IM]'
 FF.FRAGILITY_ANALYSIS(damage_states, im_values, TITLE, SCATTER='True', SEMI_LOG='False')
 
 # Add interpretation
-results = FF.INTERPRET_FRAGILITY(damage_states, im_values)
-print(f"\nProbability of Failure at max displacement: {results['probabilities']['Failure Level']*100:.1f}%")
+#results = FF.INTERPRET_FRAGILITY(damage_states, im_values)
+#print(f"\nProbability of Failure at max displacement: {results['probabilities']['Failure Level']*100:.1f}%")
 #%%----------------------------------------------------
 # EVALUATION OF DISSIPATED ENERGY CAPACITY INDEX
 def DISSIPATED_ENERGY_FUN_WITH_PLOT(displacement, base_shear, method, title="Hysteresis Curve"):
