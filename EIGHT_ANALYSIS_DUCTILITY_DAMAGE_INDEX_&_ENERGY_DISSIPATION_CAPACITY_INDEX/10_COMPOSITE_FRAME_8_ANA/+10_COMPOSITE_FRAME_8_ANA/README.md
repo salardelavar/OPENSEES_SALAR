@@ -155,20 +155,13 @@ Equivalent viscous damping is obtained from:
 where \(E_D\) is the area of the hysteresis loop and \(E_S\) is the maximum recoverable strain energy (definition must match the script implementation).
 
 ---
-
-## 8. Recommended Workflow
-
-1. **Inspect / customize** the composite section generators for your geometry and material properties.
-2. **Run the main driver** `P(t)_COMPOSITE_SECTION_FRAME_8_ANA.py` (or the specific analysis module you need).
-3. **Examine** period results, gravity state, pushover curve, and cyclic hysteresis.
-4. **Post-process** ductility demands and energy quantities using the provided utility functions.
-5. **Verify** equilibrium, convergence, energy balance, and time-step sensitivity.
+and time-step sensitivity.
 6. **Extend** the model for parametric studies (material strengths, confinement ratios, connection stiffness, mass distribution, ground-motion intensity, etc.).
 
 
 ---
 
-## 9. Software Requirements
+## 8. Software Requirements
 
 ```bash
 Python ≥ 3.8
