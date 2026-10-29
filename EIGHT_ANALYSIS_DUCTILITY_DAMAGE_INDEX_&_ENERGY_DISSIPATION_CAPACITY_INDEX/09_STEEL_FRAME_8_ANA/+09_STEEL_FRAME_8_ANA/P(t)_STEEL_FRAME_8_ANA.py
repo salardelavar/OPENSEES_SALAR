@@ -1844,8 +1844,8 @@ TITLE = 'Structural Ductility Damage Index (%)  [IM]'
 FF.FRAGILITY_ANALYSIS(damage_states, im_values, TITLE, SCATTER='True', SEMI_LOG='False')
 
 # Add interpretation
-results = FF.INTERPRET_FRAGILITY(damage_states, im_values)
-print(f"\nProbability of Failure at max displacement: {results['probabilities']['Failure Level']*100:.1f}%")
+#results = FF.INTERPRET_FRAGILITY(damage_states, im_values)
+#print(f"\nProbability of Failure at max displacement: {results['probabilities']['Failure Level']*100:.1f}%")
 #%%----------------------------------------------------
 # EXCEL OUTPUT
 import pandas as pd
