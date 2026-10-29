@@ -3,6 +3,6 @@
 # ارزیابی جامع غیرخطی سازه فلزی : چارچوبی مبتنی بر اوپنسیس در پایتون برای تحلیل پوش‌آور استاتیکی، تحلیل چرخه‌ای همراه با کاهش سختی، تحلیل تاریخچه زمانی استاتیکی و دینامیکی، با در نظر گرفتن شاخص‌های آسیب شکل‌پذیری در المان و سازه و ارزیابی شاخص ظرفیت انرژی اتلاف‌شده
 # CROSS_SHAPED_STEEL_SECTION_DIFF_WIDTH_HEIGHT_FUN_EXTRA
 ![alt text](CROSS_SHAPED_STEEL_SECTION_DIFF_WIDTH_HEIGHT_FUN_EXTRA.png) 
+# DOUBLE_I_STEEL_SECTION_DIFF_WIDTH_HEIGHT_FUN_EXTRA
+![alt text](DOUBLE_I_STEEL_SECTION_DIFF_WIDTH_HEIGHT_FUN_EXTRA.png)
 ![alt text](COVER.png)
-![alt text](COVER.png)
-A
