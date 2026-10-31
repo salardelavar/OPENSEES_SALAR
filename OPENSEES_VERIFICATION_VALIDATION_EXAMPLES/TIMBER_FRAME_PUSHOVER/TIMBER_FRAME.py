@@ -35,6 +35,10 @@ This Python script develops a nonlinear finite-element model of a one-bay, one-s
  global pushover capacity curve. Finally, the `PLOT_2D_FRAME` function is called to visualize the undeformed and deformed
  frame configurations. Overall, this model provides a computational framework for investigating the nonlinear lateral response,
  hysteretic connection behavior, and global seismic capacity of a one-bay, one-story timber frame with semi-rigid or rigid connection assumptions.
+ 
+All information has been extracted from the article:
+Seismic performance of glulam timber post and beam structures with and without light frame timber shear wall infill
+'https://www.sciencedirect.com/science/article/abs/pii/S2352710222009767'
 """
 # PAPER: Seismic performance of glulam timber post and beam structures with and without light frame timber shear wall infill 
 'https://www.sciencedirect.com/science/article/abs/pii/S2352710222009767'    
@@ -632,7 +636,7 @@ plt.axvline(0, color="gray", linewidth=0.8)
 
 plt.xlabel("Displacement (mm)")
 plt.ylabel("Load (N)")
-plt.title("NUMERICAL AND EXPERIMENAL DATA")
+plt.title("NUMERICAL AND EXPERIMENTAL DATA")
 
 plt.grid(True, alpha=0.3)
 plt.legend()
