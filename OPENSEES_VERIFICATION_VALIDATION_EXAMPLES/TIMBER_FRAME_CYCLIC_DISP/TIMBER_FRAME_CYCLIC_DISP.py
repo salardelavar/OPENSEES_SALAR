@@ -21,7 +21,7 @@
 
 """
 This OpenSeesPy script performs a nonlinear static cyclic (hysteresis) analysis of a one-bay,
- one-story glulam timber frame with semi-rigid or rigid beam-to-column connections. It builds
+ one-story timber frame with semi-rigid or rigid beam-to-column connections. It builds
  a 2-D frame model whose elastic timber columns and beams are connected by zero-length elements 
  whose rotational behavior is governed by calibrated Pinching4 materials
  (representing the hysteretic pinching, strength/stiffness degradation of the joints and base
