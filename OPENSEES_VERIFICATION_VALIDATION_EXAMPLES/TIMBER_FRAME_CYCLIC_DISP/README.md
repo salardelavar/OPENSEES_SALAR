@@ -11,5 +11,5 @@ Seismic performance of glulam timber post and beam structures with and without l
 
 Special thanks to Dr. Kashif Salman, Ph.D. for his valuable cooperation.
  
-
+![alt text](COVER.png)
 
