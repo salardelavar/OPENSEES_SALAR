@@ -20,21 +20,15 @@
 ########################################################################################################### 
 
 """
-This Python script develops a nonlinear finite-element model of a one-bay, one-story (1B1S) timber frame with
- hysteretic beam-to-column and column-to-foundation connections using OpenSeesPy. The frame has a single 4,100
- mm bay and a story height of 2,740 mm, with elastic beam and column members connected through zero-length elements
- representing nonlinear rotational behavior. The connection response is defined using the `Pinching4` uniaxial material
- model, which captures pinching effects, stiffness and strength degradation, and energy-based deterioration under cyclic
- loading. Alternatively, the beam-to-column connections can be assigned rigid elastic behavior by changing `BCJType` to 
- `"Rigid"`. The model uses elastic material properties for the timber structural members and highly stiff elastic materials
- to represent shear constraints at the connections. After defining the nodal coordinates, elements, boundary conditions, and
- connection properties, the script establishes nodal recorders to capture roof displacement and base reactions.
- A displacement-controlled nonlinear static hystersis analysis is then performed by incrementally increasing the horizontal
- displacement of the roof control node up to 260 mm, with a displacement increment of 1 mm per analysis step.
- The resulting roof displacement and accumulated base shear are extracted from the recorder files and used to generate the
- global hystersis capacity curve. Finally, the `PLOT_2D_FRAME` function is called to visualize the undeformed and deformed
- frame configurations. Overall, this model provides a computational framework for investigating the nonlinear lateral response,
- hysteretic connection behavior, and global seismic capacity of a one-bay, one-story timber frame with semi-rigid or rigid connection assumptions.
+This OpenSeesPy script performs a nonlinear static cyclic (hysteresis) analysis of a one-bay,
+ one-story glulam timber frame with semi-rigid or rigid beam-to-column connections. It builds
+ a 2-D frame model whose elastic timber columns and beams are connected by zero-length elements 
+ whose rotational behavior is governed by calibrated Pinching4 materials
+ (representing the hysteretic pinching, strength/stiffness degradation of the joints and base
+  connections). After an initial dummy static analysis, a displacement-controlled cyclic protocol
+ is applied at the roof node; roof displacement and base reactions are recorded, and the resulting
+ numerical hysteresis curve is plotted against experimental data extracted from an Excel file,
+ together with a visualization of the deformed frame.
  
 All information has been extracted from the article:
 Seismic performance of glulam timber post and beam structures with and without light frame timber shear wall infill
@@ -586,6 +580,16 @@ LOAD = df["Load (kN)"] * 1000                  # kN → N
 print(df.head())
 print(f"Number of points: {len(df)}")
 
+#%% PLOT DISPLACEMENT STEPS
+plt.figure(figsize=(12, 8))
+plt.plot(disp_protocol, color='black', linewidth=5, label='Displacement Steps')
+plt.xlabel("Displacement Steps")
+plt.ylabel("Displacement (m)")
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show() 
+
 ops.analysis('Static')
 STEP = 1
 for target_disp in disp_protocol:
@@ -597,8 +601,9 @@ for target_disp in disp_protocol:
     print(f'STEP {STEP} DONE')
     STEP += 1 
 
-
 print("Cyclic Displacement analysis completed.")
+
+
 
 #%% ------------------------------------------
 # Plot results
