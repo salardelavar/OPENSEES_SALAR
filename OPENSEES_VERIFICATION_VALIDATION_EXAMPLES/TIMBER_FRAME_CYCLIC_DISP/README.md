@@ -9,7 +9,7 @@ All information has been extracted from the article:
 Seismic performance of glulam timber post and beam structures with and without light frame timber shear wall infill
 'https://www.sciencedirect.com/science/article/abs/pii/S2352710222009767'
 
-Special thanks to Dr. Kashif Salman, Ph.D. for his valuable cooperation.
+Special thanks to Kashif Salman, Ph.D. for his valuable cooperation.
  
 ![alt text](COVER.png)
 
