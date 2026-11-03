@@ -8,3 +8,5 @@ This OpenSeesPy script performs a monotonic displacement-controlled pushover ana
 
 # Multilinear Fitting of Monotonic Pushover Curve
 ![alt text](Multilinear_Fitting_of_Monotonic_Pushover_Curve.png)
+
+Please note that the content may not be entirely free of errors or inaccuracies.
