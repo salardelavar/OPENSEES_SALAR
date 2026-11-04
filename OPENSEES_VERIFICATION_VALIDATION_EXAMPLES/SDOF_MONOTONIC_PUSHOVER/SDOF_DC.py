@@ -1,6 +1,6 @@
 ###################################################################################################
 #                >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
-#      MONOTONIC PUSHOVER ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) NONLINEAR SPRING WITH     #
+#     MONOTONIC PUSHOVER ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) NONLINEAR SPRINGS WITH     #
 #                                         DISPLACEMENT CONTROL                                    #
 #-------------------------------------------------------------------------------------------------#
 #                  FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS                   #
