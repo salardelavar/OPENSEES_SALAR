@@ -314,7 +314,7 @@ print(f'Max relative error  : {err_rel:.6e}')
 print('----------------------------------------------')
 
 #%% ---------------------------------------
-plt.figure(figsize=(12, 8))
+plt.figure(1, figsize=(12, 8))
 plt.plot(abs(U_os), abs(F_os), color='red',  linestyle='--', linewidth=2, label='OpenSeesPy Inelastic')
 plt.plot(abs(U_el), abs(F_el), color='black', linestyle=':',linewidth=2.5, label='OpenSeesPy Elastic')
 plt.grid(True)
@@ -323,7 +323,16 @@ plt.ylabel('Base Reaction')
 plt.title('Base Reaction–Displacement — OpenSeesPy Pushover', color='b')
 plt.legend(); plt.tight_layout(); plt.show()
 
-plt.figure(figsize=(12, 8))
+plt.figure(2, figsize=(12, 8))
+plt.plot(abs(D1), abs(F1), color='black', linewidth=2, label='Analytical - Inelastic')
+plt.plot(abs(U_os), abs(F_os),  color='red',  linewidth=2, linestyle='--', label='OpenSeesPy - Inelastic')
+plt.grid(True)
+plt.xlabel('Displacement')
+plt.ylabel('Base Reaction')
+plt.title('Base Reaction–Displacement — Inelastic Pushover', color='b')
+plt.legend(); plt.tight_layout(); plt.show()
+
+plt.figure(3, figsize=(12, 8))
 plt.plot(abs(D1), abs(F1), color='black', linewidth=2, label='Analytical - Inelastic')
 plt.plot(abs(D2), abs(F2), color='blue', linestyle='--', linewidth=2, label='Analytical - Elastic')
 plt.plot(abs(U_os), abs(F_os),  color='purple',  linewidth=2, label='OpenSeesPy - Inelastic')
@@ -337,9 +346,9 @@ plt.tight_layout()
 plt.show()
 
 #%% ---------------------------------------
-# -------------------------------------------
-#  Plot Base Reaction-Displacement Analysis 
-# -------------------------------------------
+# ---------------------------------------------
+#  Plot Base Reaction - Displacement Analysis 
+# ---------------------------------------------
 
 #%% Core fitting functions
 def _area_under_curve(Cur, Mom):
