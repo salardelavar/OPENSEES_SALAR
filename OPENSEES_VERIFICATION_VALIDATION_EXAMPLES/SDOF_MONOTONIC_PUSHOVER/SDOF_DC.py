@@ -37,7 +37,7 @@ MAX_TOLERANCE = 1.0e-6   # Convergence tolerance for test
 u = 0.0
 
 #%% ---------------- Spring properties ----------------
-# UNIT: Free
+# FREE UNITS
 Force        = np.array([2000.0, 3000.0, 500.0, 200.0])
 Displacement = np.array([0.01, 0.1, 0.12, 0.15])
 Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])
@@ -292,26 +292,6 @@ U_el, F_el = SDOF_OPENSEES(ANA_STEPS, MAT_TYPE) # RUN THE FUNCTION
 
 U_el = np.array(U_el)
 F_el = np.array(F_el)
-
-
-
-
-U_an = np.linspace(0.0, Dmax, ANA_STEPS + 1)
-F_an = np.array([np.sum(Coff * F_normalized(u)) for u in U_an])
-
-K_lin = float(np.sum(Coff * Rk1))
-F_lin = K_lin * U_an
-
-# Interpolate OpenSees results onto the analytical grid
-F_os_i = np.interp(U_an, U_os, F_os)
-err_abs = np.abs(F_os_i - F_an)
-mask    = np.abs(F_an) > 1e-6
-err_rel = np.max(err_abs[mask] / np.abs(F_an[mask]))
-
-print('----------------------------------------------')
-print(f'Max absolute error  : {err_abs.max():.6e}')
-print(f'Max relative error  : {err_rel:.6e}')
-print('----------------------------------------------')
 
 #%% ---------------------------------------
 plt.figure(1, figsize=(12, 8))
