@@ -40,7 +40,6 @@ u = 0.0
 # UNIT: Free
 Force        = np.array([2000.0, 3000.0, 500.0, 200.0])
 Displacement = np.array([0.01, 0.1, 0.12, 0.15])
-#Coff         = np.array([0.5, 0.8, 1.0, 0.8, 0.5])
 Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])
 
 S01.PLOT_FORCE_DISP_FUN(Displacement, Force)
