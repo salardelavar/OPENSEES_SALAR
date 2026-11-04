@@ -80,7 +80,7 @@ f = np.zeros(5)
 last_i = 0
 
 for i in range(1, ANA_STEPS + 1):
-    u = u_inc * i                      # ← imposed displacement
+    u = u_inc * i                      # Imposed Displacement
 
     it = 0
     residual = 100.0
