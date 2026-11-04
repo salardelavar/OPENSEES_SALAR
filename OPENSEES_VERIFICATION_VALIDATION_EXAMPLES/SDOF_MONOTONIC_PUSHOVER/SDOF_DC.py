@@ -76,7 +76,7 @@ for i in range(1, ANA_STEPS + 1):
         Kt = np.zeros(nSprings)
         a  = abs(u)
         # Evaluate Kt (secant stiffness) from the current |u|
-        for j in range(5):
+        for j in range(nSprings):
             if a <= Displacement[0]:
                 Kt[j] = Coff[j] * Rk1
             elif a <= Displacement[1]:
