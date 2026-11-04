@@ -326,9 +326,7 @@ plt.tight_layout()
 plt.show()
 
 #%% ---------------------------------------
-# ---------------------------------------------
-#  Plot Base Reaction - Displacement Analysis 
-# ---------------------------------------------
+# Plot Base Reaction - Displacement Analysis with Multilinear Fitting 
 
 #%% Core fitting functions
 def _area_under_curve(Cur, Mom):
