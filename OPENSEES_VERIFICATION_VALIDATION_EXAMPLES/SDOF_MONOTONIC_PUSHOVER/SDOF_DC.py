@@ -33,7 +33,7 @@ import ANALYSIS_FUNCTION as S02
 ANA_STEPS = 10000        # Number of Displacement Increments for my own Finite Element Coding
 MAX_ITERATIONS = 500     # Convergence iteration for test
 MAX_TOLERANCE = 1.0e-6   # Convergence tolerance for test
-u = 0.0
+u = 0.0                  # Initial Displacement
 
 #%% ---------------- Spring properties ----------------
 # FREE UNITS
@@ -53,7 +53,7 @@ Rk3 = (Force[2] - Force[1])  / (Displacement[2] - Displacement[1])
 Rk4 = (Force[3] - Force[2])  / (Displacement[3] - Displacement[2])
 
 #%% ---------------- Normalized force on multilinear curve ----------------
-def F_normalized(u_val):
+def F_NORMALIZED(u_val):
     """Force on the normalized (unit-coefficient) multilinear curve at u_val."""
     a = abs(u_val)
     s = np.sign(u_val) if u_val != 0.0 else 1.0
@@ -80,7 +80,7 @@ f = np.zeros(nSprings)
 last_i = 0
 
 for i in range(1, ANA_STEPS + 1):
-    u = u_inc * i                      # ← imposed displacement
+    u = u_inc * i                      # Imposed Displacement
 
     it = 0
     residual = 100.0
