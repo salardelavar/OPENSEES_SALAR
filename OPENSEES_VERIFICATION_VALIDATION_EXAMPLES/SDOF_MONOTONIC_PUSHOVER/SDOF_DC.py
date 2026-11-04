@@ -30,8 +30,7 @@ import matplotlib.pyplot as plt
 import PLOT_FORCE_DISP_FUN as S01
 import ANALYSIS_FUNCTION as S02
 #%% ---------------- Parameters ----------------
-ANA_STEPS = 10000        # number of displacement increments
-
+ANA_STEPS = 10000        # Number of Displacement Increments for my own Finite Element Coding
 MAX_ITERATIONS = 500     # Convergence iteration for test
 MAX_TOLERANCE = 1.0e-6   # Convergence tolerance for test
 u = 0.0
@@ -46,7 +45,7 @@ S01.PLOT_FORCE_DISP_FUN(Displacement, Force)
 
 Dmax  = float(np.max(Displacement))
 u_inc = Dmax / ANA_STEPS            # imposed displacement increment
-
+nSprings = len(Coff)
 #%% ---------------- Segment slopes ----------------
 Rk1 = (Force[0] - 0.0)       / (Displacement[0] - 0.0)
 Rk2 = (Force[1] - Force[0])  / (Displacement[1] - Displacement[0])
@@ -90,8 +89,9 @@ for i in range(1, ANA_STEPS + 1):
     # determined by u; the loop below is kept for structural
     # similarity and converges in one iteration.
     while residual > MAX_TOLERANCE and it < MAX_ITERATIONS:
-        Kt = np.zeros(5)
+        Kt = np.zeros(nSprings)
         a  = abs(u)
+        # Evaluate Kt (secant stiffness) from the current |u|
         for j in range(5):
             if a <= Displacement[0]:
                 Kt[j] = Coff[j] * Rk1
@@ -116,11 +116,11 @@ for i in range(1, ANA_STEPS + 1):
 
     F_total = float(np.sum(f))         # ← total reaction force
 
-    F1i.append(F_total)
-    U1.append(u)
-    DU1.append(residual)
-    I1.append(i)
-    IT1.append(it)
+    F1i.append(F_total)  # BASE SHEAR
+    U1.append(u)         # DISPLACEMENT
+    DU1.append(residual) # RESIDUAL
+    I1.append(i)         # INCREMENT
+    IT1.append(it)       # ITERATION
     last_i = i
 
     if abs(u) >= Dmax:
@@ -204,13 +204,14 @@ Displacement = np.array([0.01, 0.1, 0.12, 0.15])
 Coff         = np.array([0.5, 0.8, 1.0, 0.8, 0.5])
 """
 
-ANA_STEPS    = 500
-Dmax  = float(np.max(Displacement))
+ANA_STEPS    = 500 # Number of Displacement Increments for OpenSeespy Coding
+#Dmax  = float(np.max(Displacement))
 u_inc = Dmax / ANA_STEPS
-nSprings = len(Coff)
+#nSprings = len(Coff)
 
 def SDOF_OPENSEES(ANA_STEPS, MAT_TYPE):
     #%% ---------------- Model ----------------
+    # Reset model
     ops.wipe()
     ops.model('basic', '-ndm', 1, '-ndf', 1)
 
@@ -268,16 +269,16 @@ def SDOF_OPENSEES(ANA_STEPS, MAT_TYPE):
 
         u = ops.nodeDisp(2, 1)
         ops.reactions()
-        Ftot = ops.nodeReaction(1, 1)       # reaction at fixed node
+        Ftot = ops.nodeReaction(1, 1)       
 
-        U_os.append(u)
-        F_os.append(Ftot)
+        U_os.append(u)                      # DISPLACEMENT 
+        F_os.append(Ftot)                   # REACTION
 
         print(f'(+) Step {i:>6d}  u = {u:8.5f}  F_total = {Ftot:10.5f}')
         
     return U_os, F_os
 
-# RUN OPENSEES INELASTIC ANALYSIS
+#%% RUN OPENSEES INELASTIC ANALYSIS
 MAT_TYPE = 'INELASTIC'    
 U_os, F_os = SDOF_OPENSEES(ANA_STEPS, MAT_TYPE) # RUN THE FUNCTION
 
@@ -286,13 +287,14 @@ F_os = np.array(F_os)
 
 print(f'## Analysis finished at u = {U_os[-1]:.5f}, F = {F_os[-1]:.5f}')
 
-# RUN OPENSEES ELASTIC ANALYSIS
+#%% RUN OPENSEES ELASTIC ANALYSIS
 MAT_TYPE = 'ELASTIC'    
 U_el, F_el = SDOF_OPENSEES(ANA_STEPS, MAT_TYPE) # RUN THE FUNCTION
 
 U_el = np.array(U_el)
 F_el = np.array(F_el)
 
+print(f'## Analysis finished at u = {U_el[-1]:.5f}, F = {F_el[-1]:.5f}')
 #%% ---------------------------------------
 plt.figure(1, figsize=(12, 8))
 plt.plot(abs(U_os), abs(F_os), color='red',  linestyle='--', linewidth=2, label='OpenSeesPy Inelastic')
@@ -437,10 +439,11 @@ def PENTALINEAR_CURVE(Cur, Mom, SLOPE_NODE, NODE2, NODE3, NODE4):
     return MULTILINEAR_CURVE(Cur, Mom, SLOPE_NODE, [NODE2, NODE3, NODE4])
 
 
-SLOPE_NODE = 1
-
 # Choose breakpoint indices from the original curve
 # %%
+
+SLOPE_NODE = 1 # BILINEAR CURVE SLOPE NODE
+
 TRI_NODE = int(0.65 * len(U_os))
 
 QUAD_NODES = (int(0.65 * (len(U_os))),
