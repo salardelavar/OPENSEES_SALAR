@@ -37,15 +37,15 @@ u = 0.0
 
 #%% ---------------- Spring properties ----------------
 # FREE UNITS
-Force        = np.array([2000.0, 3000.0, 500.0, 200.0])
-Displacement = np.array([0.01, 0.1, 0.12, 0.15])
-Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])
+Force        = np.array([2000.0, 3000.0, 500.0, 200.0])  # FORCES RELATION OF SPRING
+Displacement = np.array([0.01, 0.1, 0.12, 0.15])         # DISPLACEMENTS RELATION OF SPRING
+Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])       # STIFFNESS COEFFICIENTS
 
 S01.PLOT_FORCE_DISP_FUN(Displacement, Force)
 
-Dmax  = float(np.max(Displacement))
-u_inc = Dmax / ANA_STEPS            # imposed displacement increment
-nSprings = len(Coff)
+Dmax  = float(np.max(Displacement)) # Max. Displacement
+u_inc = Dmax / ANA_STEPS            # Imposed Displacement Increment
+nSprings = len(Coff)                # Number of Elements
 #%% ---------------- Segment slopes ----------------
 Rk1 = (Force[0] - 0.0)       / (Displacement[0] - 0.0)
 Rk2 = (Force[1] - Force[0])  / (Displacement[1] - Displacement[0])
@@ -76,11 +76,11 @@ print('#################################################')
 
 #%% ---------------- Nonlinear springs analysis ----------------
 F1i, U1, DU1, I1, IT1 = [], [], [], [], []
-f = np.zeros(5)
+f = np.zeros(nSprings)
 last_i = 0
 
 for i in range(1, ANA_STEPS + 1):
-    u = u_inc * i                      # Imposed Displacement
+    u = u_inc * i                      # ← imposed displacement
 
     it = 0
     residual = 100.0
