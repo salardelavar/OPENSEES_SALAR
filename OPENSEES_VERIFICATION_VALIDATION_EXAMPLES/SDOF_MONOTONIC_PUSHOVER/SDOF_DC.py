@@ -1,6 +1,6 @@
 ###################################################################################################
 #                >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
-#     MONOTONIC PUSHOVER ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) NONLINEAR SPRINGS WITH     #
+#      MONOTONIC PUSHOVER ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) NONLINEAR SPRING WITH     #
 #                                         DISPLACEMENT CONTROL                                    #
 #-------------------------------------------------------------------------------------------------#
 #                  FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS                   #
@@ -37,9 +37,15 @@ u = 0.0                  # Initial Displacement
 
 #%% ---------------- Spring properties ----------------
 # FREE UNITS
-Force        = np.array([2000.0, 3000.0, 500.0, 200.0])  # FORCES RELATION OF SPRING
-Displacement = np.array([0.01, 0.1, 0.12, 0.15])         # DISPLACEMENTS RELATION OF SPRING
-Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])       # STIFFNESS COEFFICIENTS
+FY, DY = 2000.0, 0.01                 # Yield force & displacement
+FU, DU = 1.2 * FY, DY * 10            # Ultimate (peak) force & displacement
+
+FR1, DR1 = FY / 4,  DY * 12           # 1st residual / post-peak point
+FR2, DR2 = FY / 10, DY * 15           # 2nd residual / post-peak point
+
+Force        = np.array([FY, FU, FR1, FR2])
+Displacement = np.array([DY, DU, DR1, DR2])
+Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])   # STIFFNESS COEFFICIENTS
 
 S01.PLOT_FORCE_DISP_FUN(Displacement, Force)
 
@@ -98,9 +104,9 @@ for i in range(1, ANA_STEPS + 1):
     else:
         print(f'(+)Increment {i:.0f}: converged in {it} iteration(s)')
 
-    F_total = float(np.sum(f))         # ← total reaction force
+    F_total = float(np.sum(f))         # total reaction force
 
-    F1i.append(F_total)  # BASE SHEAR
+    F1i.append(F_total)  # REACTION
     U1.append(u)         # DISPLACEMENT
     DU1.append(residual) # RESIDUAL
     I1.append(i)         # INCREMENT
@@ -313,7 +319,15 @@ plt.show()
 
 #%% ---------------------------------------
 # Plot Base Reaction - Displacement Analysis with Multilinear Fitting 
-
+"""
+These codes fits multilinear approximations (bilinear, trilinear, quadrilinear, and pentalinear)
+ to an original pushover curve of base reaction versus displacement while preserving the area
+ under the curve. It first computes the initial elastic stiffness from a chosen slope node, then
+ solves for the yield point so the piecewise-linear segments match the total energy (area) of the
+ original data, using user-specified intermediate breakpoints for the higher-order models.
+ The fitted curves and key structural properties (elastic/plastic stiffness, ductility ratio,
+ overstrength factor) are printed and plotted against the original response for comparison.
+"""
 #%% Core fitting functions
 def _area_under_curve(Cur, Mom):
     Cur = np.asarray(Cur, dtype=float)
