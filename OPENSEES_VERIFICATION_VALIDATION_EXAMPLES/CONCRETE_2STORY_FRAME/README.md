@@ -5,6 +5,31 @@ The main reason VecTor5 is generally more suitable for shear-critical reinforced
 
 VecTor5 was specifically developed to address this limitation using the Modified Compression Field Theory (MCFT) and subsequent refinements associated with the Disturbed Stress Field Model (DSFM). These approaches account for the behavior of cracked concrete under combined stress conditions, making it possible to simulate shear degradation, shear deformation, and interactions between different failure mechanisms. Güner and Vecchio's 2010 verification study applied their procedure to 33 previously tested specimens, approximately two-thirds of which were shear-critical, and reported good agreement with experimental strengths, stiffnesses, ductilities, and failure modes.
 
-All information has been extracted from the phd thesis:
-PERFORMANCE ASSESSMENT OF SHEAR-CRITICAL REINFORCED CONCRETE PLANE FRAMES - Serhan Güner - University of Toronto - 2008
+
+# All information has been extracted from the PhD Thesis:
+"PERFORMANCE ASSESSMENT OF SHEAR-CRITICAL REINFORCED CONCRETE PLANE FRAMES - Serhan Güner - University of Toronto - 2008"
+
+ PhD Thesis, Department of Civil Engineering, University of Toronto, 2008. Current analysis methods for new
+ reinforced concrete structures rely primarily on linear-elastic principles. In many practical situations,
+ however, a more accurate prediction of structural behaviour is required. Nonlinear analysis procedures can
+ provide this accuracy, but the specialized software needed for such analyses is limited, and most existing
+ programs fail to capture shear-related mechanisms adequately. As a result, they often significantly overestimate
+ both strength and ductility in shear-critical structures.This study develops and verifies an analytical procedure
+ for the nonlinear analysis of frame structures that accounts for shear effects together with flexural and axial behaviour.
+ The work builds on the existing program VecTor5, originally developed at the University of Toronto in the early 1980s.
+ VecTor5 is based on the Modified Compression Field Theory (MCFT) and was previously capable of nonlinear frame analysis
+ under temperature and monotonic loading. Although it produced generally satisfactory results, several deficiencies remained
+ in its computational algorithms.
+ The research comprises three main parts:
+ Improvement of the original analysis procedure for monotonic loading,
+ Extension of the procedure to general loading conditions, including cyclic and reversed-cyclic loading, and
+ Further development for dynamic loading, covering time-varying base accelerations, impulse, impact and blast
+ forces, initial mass velocities, and constant mass accelerations.
+ Each part is supported by extensive verification studies using a large and diverse set of previously tested structures
+ reported in the literature. Practical considerations for nonlinear modelling are also discussed, providing guidance for
+ general applications.Analyses of 63 previously tested structures (approximately half of which were shear-critical)
+ demonstrate that the developed procedure successfully reproduces experimental behaviour. Key response parameters—including
+ load–deflection curves, reinforcement strains, crack widths, failure mode, failure displacement, total energy dissipation,
+ displacement ductility, and post-peak vibrational characteristics—are captured with a high degree of accuracy.
+ 
 'https://collectionscanada.gc.ca/obj/thesescanada/vol2/002/NR58000.PDF'
