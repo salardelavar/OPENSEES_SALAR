@@ -420,7 +420,6 @@ def _postprocess(X, Y):
     print(f' Structure Plastic Stiffness :     {Plastic_ST:.2f}')
     print(f' Structure Tangent Stiffness :     {np.array2string(Tangent_ST, precision=2)}')
     print(f' Structure Ductility Ratio :       {Ductility_Rito:.2f}')
-    print(f' Structure Over Strength Factor:   {Over_Strength_Factor:.2f}')
     print('+----------------------------------------------------+')
 
     return X, Y, Elastic_ST, Plastic_ST, Tangent_ST, Ductility_Rito, Over_Strength_Factor
