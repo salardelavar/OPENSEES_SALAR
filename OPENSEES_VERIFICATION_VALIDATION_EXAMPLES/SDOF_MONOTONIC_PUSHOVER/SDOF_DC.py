@@ -33,7 +33,6 @@ import ANALYSIS_FUNCTION as S02
 ANA_STEPS = 10000        # Number of Displacement Increments for my own Finite Element Coding
 MAX_ITERATIONS = 500     # Convergence iteration for test
 MAX_TOLERANCE = 1.0e-6   # Convergence tolerance for test
-u = 0.0                  # Initial Displacement
 
 #%% ---------------- Spring properties ----------------
 # FREE UNITS
@@ -45,6 +44,17 @@ FR2, DR2 = FY / 10, DY * 15           # 2nd residual / post-peak point
 
 Force        = np.array([FY, FU, FR1, FR2])
 Displacement = np.array([DY, DU, DR1, DR2])
+
+"""
+Coff is an array of stiffness scaling coefficients (one per parallel spring).
+ Each value multiplies the shared multilinear force–displacement backbone,
+ so the springs can have different initial stiffnesses and force capacities
+ while keeping the same shape of the nonlinear curve. In the analytical solution
+ the coefficients scale the segment stiffnesses; in OpenSeesPy they scale the
+ material points of each zeroLength spring. When all entries equal 1.0 the springs
+ are identical; different values produce a set of parallel springs with proportional
+ strength and stiffness.
+"""
 Coff         = np.array([1.0, 1.0, 1.0, 1.0, 1.0])   # STIFFNESS COEFFICIENTS
 
 S01.PLOT_FORCE_DISP_FUN(Displacement, Force)
