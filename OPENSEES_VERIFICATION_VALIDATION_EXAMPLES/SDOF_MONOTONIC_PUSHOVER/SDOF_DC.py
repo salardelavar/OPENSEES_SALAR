@@ -89,6 +89,7 @@ for i in range(1, ANA_STEPS + 1):
     # determined by u; the loop below is kept for structural
     # similarity and converges in one iteration.
     while residual > MAX_TOLERANCE and it < MAX_ITERATIONS:
+        # This block evaluates the force in each spring directly from the imposed displacement.
         Kt = np.zeros(nSprings)
         a  = abs(u)
         # Evaluate Kt (secant stiffness) from the current |u|
@@ -104,9 +105,10 @@ for i in range(1, ANA_STEPS + 1):
             else:
                 Kt[j] = 0.0
 
-        f_new = Kt * u
+        f_new = Kt * u # Force update and residual
+        # The residual is the largest change in any spring’s force between the last two evaluations. Then f is overwritten and the iteration counter increases.
         residual = float(np.max(np.abs(f_new - f)))
-        f = f_new
+        f = f_new # 
         it += 1
 
     if it >= MAX_ITERATIONS:
@@ -287,6 +289,11 @@ F_os = np.array(F_os)
 
 print(f'## Analysis finished at u = {U_os[-1]:.5f}, F = {F_os[-1]:.5f}')
 
+
+F_an_i = np.interp(U_os, D1, F1)
+abs_err = np.abs(F_os - F_an_i)
+rel_err = abs_err[1:] / np.maximum(np.abs(F_an_i[1:]), 1e-12)
+print(f"max abs err = {abs_err.max():.3e}, max rel err = {rel_err.max():.3e}")
 #%% RUN OPENSEES ELASTIC ANALYSIS
 MAT_TYPE = 'ELASTIC'    
 U_el, F_el = SDOF_OPENSEES(ANA_STEPS, MAT_TYPE) # RUN THE FUNCTION
