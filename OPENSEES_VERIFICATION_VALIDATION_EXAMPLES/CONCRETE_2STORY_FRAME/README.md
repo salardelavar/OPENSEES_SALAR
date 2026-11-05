@@ -5,6 +5,6 @@ The main reason VecTor5 is generally more suitable for shear-critical reinforced
 
 VecTor5 was specifically developed to address this limitation using the Modified Compression Field Theory (MCFT) and subsequent refinements associated with the Disturbed Stress Field Model (DSFM). These approaches account for the behavior of cracked concrete under combined stress conditions, making it possible to simulate shear degradation, shear deformation, and interactions between different failure mechanisms. Güner and Vecchio's 2010 verification study applied their procedure to 33 previously tested specimens, approximately two-thirds of which were shear-critical, and reported good agreement with experimental strengths, stiffnesses, ductilities, and failure modes.
 
-All information has been extracted from the article:
+All information has been extracted from the phd thesis:
 PERFORMANCE ASSESSMENT OF SHEAR-CRITICAL REINFORCED CONCRETE PLANE FRAMES - Serhan Güner - University of Toronto - 2008
 'https://collectionscanada.gc.ca/obj/thesescanada/vol2/002/NR58000.PDF'
