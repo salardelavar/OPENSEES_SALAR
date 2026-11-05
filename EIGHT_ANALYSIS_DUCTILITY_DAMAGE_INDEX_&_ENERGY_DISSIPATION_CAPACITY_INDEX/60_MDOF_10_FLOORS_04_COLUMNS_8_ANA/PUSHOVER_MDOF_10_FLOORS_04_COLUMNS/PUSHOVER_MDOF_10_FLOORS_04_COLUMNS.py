@@ -1025,10 +1025,18 @@ plt.show()
 
 S01.PLOT_1D_SPRING(deformed_scale=1.0, virtual_spring_length=1.0, virtual_spring_angle=0.0)
 #%%----------------------------------------------------
-# --------------------------------------
-#  Plot BaseAxial-Displacement Analysis 
-# --------------------------------------
-
+# ----------------------------------------------------------------
+#  Plot BaseAxial-Displacement Analysis with Multilinear Fitting  
+# ----------------------------------------------------------------
+"""
+These codes fits multilinear approximations (bilinear, trilinear, quadrilinear, and pentalinear)
+ to an original pushover curve of base reaction versus displacement while preserving the area
+ under the curve. It first computes the initial elastic stiffness from a chosen slope node, then
+ solves for the yield point so the piecewise-linear segments match the total energy (area) of the
+ original data, using user-specified intermediate breakpoints for the higher-order models.
+ The fitted curves and key structural properties (elastic/plastic stiffness, ductility ratio,
+ overstrength factor) are printed and plotted against the original response for comparison.
+"""
 #%% Core fitting functions
 def _area_under_curve(Cur, Mom):
     Cur = np.asarray(Cur, dtype=float)
@@ -1138,10 +1146,13 @@ def PENTALINEAR_CURVE(Cur, Mom, SLOPE_NODE, NODE2, NODE3, NODE4):
     return MULTILINEAR_CURVE(Cur, Mom, SLOPE_NODE, [NODE2, NODE3, NODE4])
 
 
-SLOPE_NODE = 1
 
 # Choose breakpoint indices from the original curve
 # %%
+# CHECK THESE COEFFICIENTS FOR BETTER FITTING 
+
+SLOPE_NODE = 1 # BILINEAR CURVE SLOPE NODE
+
 TRI_NODE = int(0.6 * len(disp_PUSH))
 
 QUAD_NODES = (int(0.6 * (len(disp_PUSH))),
