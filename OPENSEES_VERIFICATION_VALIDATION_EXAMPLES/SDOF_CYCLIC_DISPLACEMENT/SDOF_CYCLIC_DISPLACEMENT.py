@@ -1,6 +1,6 @@
 ###################################################################################################
 #                >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
-#   CYCLIC DISPLACEMENT-CONTROLLED NEWTON-RAPHSON PUSHOVER OF A PARALLEL NONLINEAR SDOF SPRING    #
+#   CYCLIC DISPLACEMENT-CONTROLLED NEWTON-RAPHSON PUSHOVER OF PARALLEL NONLINEAR SDOF SPRINGS     #
 #-------------------------------------------------------------------------------------------------#
 #                  FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS                   #
 #-------------------------------------------------------------------------------------------------#
