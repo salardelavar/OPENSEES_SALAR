@@ -78,7 +78,7 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
         # Pure function: committed state + trial u -> (force, tangent, trial state)
         """
         SPRING(u, st):
-        Given a trial displacement $u$ and the committed hysteresis state st,
+        Given a trial displacement u and the committed hysteresis state st,
         detects reversals, mirrors the problem so motion is always treated as
         positive, selects the appropriate branch (backbone, unloading on k_0,
         or reloading toward the previous peak), updates peaks and state, and
