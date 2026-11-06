@@ -23,109 +23,94 @@ DISPLACEMENT-CONTROLLED NEWTON-RAPHSON MONOTONIC PUSHOVER OF PARALLEL NONLINEAR 
  reported, and the curves are plotted.
 
 ----------------------------------------------------------------------
-In the function  SDOF_NUMERICAL_PUSHOVER_NEWTON()
-Unknowns          : displacement u of the control DOF and load factor lambda
-Equilibrium       : R(u, lambda) = lambda * P_ref - F_int(u)          (unbalanced force)
-Internal force    : F_int(u) = sum_j  Coff_j * sign(u) * Fb(|u|)       (Fb = backbone)
-Tangent stiffness : K_T(u)   = sum_j  Coff_j * dFb/d|u|                (segment slope)
-Constraint        : u_(n+1) = u_n + dU                                 (imposed increment)
-
-Per increment
-  1. PREDICTOR : d_lambda = K_T(u_n) * dU / P_ref   -> u = u_n + dU,  lambda = lambda_n + d_lambda
-  2. Update spring states at the trial u, compute  R = lambda*P_ref - F_int(u)
-  3. CORRECTOR (Newton) : solve  K_T*du_R = R  and  K_T*du_P = P_ref, then choose
-        d_lambda = -du_R / du_P   so that the control DOF does not move  (du_R + d_lambda*du_P = 0)
-     K_T cancels in the ratio, so d_lambda = -R / P_ref (valid even when K_T <= 0, i.e. softening)
-  4. Check  |R| / F_ref <= TOL ; repeat 3-4 otherwise
-
-Because there is only ONE controlled DOF, the corrector removes the unbalance in a single
-iteration. A residual appears only where the predictor tangent differs from the true
-secant path, i.e. when a step crosses a backbone kink (change of segment).
+In the function  SDOF_NUMERICAL_PUSHOVER_NEWTON():   
+This function pushes a spring system sideways in small, equal displacement steps and
+ records the force needed at each step. It first builds the backbone curve (adding the origin)
+ and combines all parallel springs into one by summing `Coff`. Then, for each step, it 'predicts'
+ the new force by moving along the current tangent stiffness, 'checks the residual'
+ (the gap between that predicted force and the true backbone force at the new displacement),
+ and 'corrects' the force by subtracting the residual until the gap falls below the tolerance.
+ If a step converges, it 'commits' the new displacement, force, and tangent as the starting 
+ point for the next step; if not, the analysis stops. The result is the force-displacement history,
+ plus diagnostics (residual before and after correction, iteration counts, and convergence flags)
+ for each increment. The residual is nonzero only when a step crosses a kink in the backbone,
+ because the predictor then uses the old segment's slope for part of a step that belongs to
+ the next segment.
 """
 #%% ---------------------------------------
 import matplotlib.pyplot as plt
 import numpy as np
 
-def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITERATIONS, TOL, Dmax=None):
-    """
-    Returns
-    -------
-    U, F        : displacement and base reaction histories (including the origin)
-    R_init      : normalised unbalance right after the predictor, per increment
-    R_final     : normalised unbalance after the corrector, per increment
-    ITER        : number of corrector iterations per increment
-    CONVERGED   : bool array, one flag per increment
-    """
-    import numpy as np
-    
-    D_bb = np.concatenate(([0.0], np.asarray(Displacement, dtype=float)))
-    F_bb = np.concatenate(([0.0], np.asarray(Force, dtype=float)))
-    Coff = np.asarray(Coff, dtype=float)
+def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS,
+                                   MAX_ITERATIONS, TOL, Dmax=None):
+    # Backbone including the origin
+    D = np.concatenate(([0.0], Displacement))
+    F = np.concatenate(([0.0], Force))
+    slopes = np.diff(F) / np.diff(D)          # tangent of each segment
 
-    slopes = np.diff(F_bb) / np.diff(D_bb)          # TANGENT of each segment (not secant)
-    Dmax = D_bb[-1] if Dmax is None else float(Dmax)
-    u_inc = Dmax / ANA_STEPS
-    P_ref = 1.0
-    F_ref = Coff.sum() * F_bb.max()                  # force scale for the normalised residual
+    Csum  = np.sum(Coff)                      # parallel springs -> one scaled spring
+    Dmax  = D[-1] if Dmax is None else Dmax
+    dU    = Dmax / ANA_STEPS
+    F_ref = Csum * F.max()                    # force scale for the residual
 
-    def SPRING_STATE(u):
-        # Force vector and tangent vector of all springs at displacement u
-        a = abs(u)
-        f = np.sign(u) * Coff * np.interp(a, D_bb, F_bb)       # flat beyond the last node
-        seg = np.searchsorted(D_bb, a, side='right') - 1       # segment ahead of |u|
-        k = Coff * (slopes[seg] if seg < len(slopes) else 0.0)
-        return f, k
+    def INTERNAL_FORCE(u):
+        """
+        INTERNAL_FORCE(u): Returns the total spring force at displacement u by
+        linearly interpolating the backbone curve (D, F) and multiplying by Csum
+        to account for all parallel springs, holding the force constant beyond the
+        last backbone point.
+        """
+        return Csum * np.interp(u, D, F)      # flat after the last point
+    def TANGENT(u):
+        """
+        TANGENT(u): Returns the current stiffness (slope) at u by finding which backbone
+        segment u lies in (searchsorted), taking that segment’s slope, and scaling it by
+        Csum, or returning 0 if u is past the last point where the curve is flat.
+        """
+        if u >= D[-1]:
+            return 0.0
+        seg = np.searchsorted(D, u, side='right') - 1
+        return Csum * slopes[seg]
 
-    # committed state
+    # Initial state
     u, lam = 0.0, 0.0
-    f, k = SPRING_STATE(u)
-    Kt = k.sum()
-
-    U, F = [0.0], [0.0]
+    Kt = TANGENT(u)
+    U, Fb = [0.0], [0.0]
     R_init, R_final, ITER, CONVERGED = [], [], [], []
 
     for i in range(1, ANA_STEPS + 1):
-        u_target = Dmax if i == ANA_STEPS else u_inc * i     # no floating-point overshoot
-        dU = u_target - u
+        u_new = dU * i
 
-        # 1. predictor with the committed tangent
-        lam_t = lam + Kt * dU / P_ref
-        u_t = u + dU
+        # 1) Predictor: committed tangent
+        lam_new = lam + Kt * (u_new - u)
 
-        # 2. state update and unbalanced force
-        f, k = SPRING_STATE(u_t)
-        R = lam_t * P_ref - f.sum()
+        # 2) Residual (unbalanced force)
+        R = lam_new - INTERNAL_FORCE(u_new)
         R_init.append(abs(R) / F_ref)
 
-        # 3. Newton corrector at fixed control displacement
+        # 3) Newton corrector at fixed displacement
         it = 0
         while abs(R) / F_ref > TOL and it < MAX_ITERATIONS:
-            d_lam = -R / P_ref                    # K_T cancels (see header)
-            lam_t += d_lam
-            f, k = SPRING_STATE(u_t)              # u_t is unchanged by the constraint
-            R = lam_t * P_ref - f.sum()
+            lam_new -= R                       # K_T cancels: d_lam = -R / P_ref
+            R = lam_new - INTERNAL_FORCE(u_new)
             it += 1
 
         ok = abs(R) / F_ref <= TOL
         R_final.append(abs(R) / F_ref)
         ITER.append(it)
         CONVERGED.append(ok)
-        
-        if ok:
-            print(f'(+) Increment {i:.0f}: converged in {it} iteration(s)')
 
         if not ok:
-            print(f'(-) Increment {i}: NOT converged, |R|/Fref = {abs(R)/F_ref:.3e}. '
-                  f'Analysis stopped, state not committed.')
+            print(f'(-) Increment {i}: NOT converged, |R|/Fref = {abs(R)/F_ref:.3e}')
             break
 
-        # commit
-        u, lam, Kt = u_t, lam_t, k.sum()
+        # 4) Commit
+        u, lam, Kt = u_new, lam_new, TANGENT(u_new)
         U.append(u)
-        F.append(lam * P_ref)                     # base reaction = lambda * P_ref
+        Fb.append(lam)
 
-    return (np.array(U), np.array(F), np.array(R_init), np.array(R_final),
-            np.array(ITER), np.array(CONVERGED))
+    return (np.array(U), np.array(Fb), np.array(R_init),
+            np.array(R_final), np.array(ITER), np.array(CONVERGED))
 
 #%% ---------------------------------------
  # OPENSEESPY 
