@@ -1,5 +1,8 @@
 # DISPLACEMENT-CONTROLLED NEWTON-RAPHSON MONOTONIC PUSHOVER OF PARALLEL NONLINEAR SPRINGS (FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS)
-# تحلیل پوش‌اور یکنواخت یک سیستم فنر غیرخطی یک‌درجه آزادی (SDOF) با کنترل جابه‌جایی (روش المان محدود در پایتون و صحت‌سنجی با OpenSeesPy)
+# تحلیل پوش‌اور یکنواخت کنترل‌شده با جابجایی به روش نیوتن-رافسون برای فنرهای غیرخطی موازی (صحت‌سنجی روش المان محدود در پایتون و OpenSeesPy)
+
+
+
 FILE NAME: SDOF_NEWTON_METHOD.py
 
 This Python script implements and verifies a displacement-controlled Newton-Raphson monotonic pushover analysis of a single-degree-of-freedom system composed of parallel nonlinear springs. It defines a custom numerical solver (`SDOF_NUMERICAL_PUSHOVER_NEWTON`) that applies incremental displacements, predicts the load factor from the current tangent stiffness, updates internal forces from a multilinear backbone curve scaled by coefficients `Coff`, and applies a single-step Newton corrector (which simplifies to adjusting the load factor by the residual) until equilibrium is satisfied within a tight tolerance. The same problem is then solved with OpenSeesPy using zeroLength elements and HystereticSM (or Elastic) materials under DisplacementControl, after which the resulting force-displacement curves from both approaches are compared for accuracy, residual statistics are reported, and the curves are plotted.
@@ -7,6 +10,7 @@ This Python script implements and verifies a displacement-controlled Newton-Raph
 ![alt text](SDOF_NEWTON_METHOD.jpg)
 
 # MONOTONIC PUSHOVER ANALYSIS OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) NONLINEAR SPRINGS WITH DISPLACEMENT CONTROL (FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS)
+# تحلیل پوش‌اور یکنواخت یک سیستم فنر غیرخطی یک‌درجه آزادی (SDOF) با کنترل جابه‌جایی (روش المان محدود در پایتون و صحت‌سنجی با OpenSeesPy)
 
 FILE NAME: SDOF_DC.py
 
