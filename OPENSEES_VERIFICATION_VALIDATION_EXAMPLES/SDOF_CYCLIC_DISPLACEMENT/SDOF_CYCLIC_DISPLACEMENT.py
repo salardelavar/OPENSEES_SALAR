@@ -63,13 +63,27 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
     F_ref = Csum * F.max()
 
     def BACKBONE(x):                              # x >= 0, flat after last point
+        """
+        BACKBONE(x):
+        For a non-negative displacement $x$, returns the force and tangent stiffness
+        from the multilinear backbone curve (interpolating between points or returning
+        the last force with zero stiffness if x exceeds the ultimate displacement).
+        """
         if x >= D[-1]:
             return F[-1], 0.0
         seg = np.searchsorted(D, x, side='right') - 1
         return np.interp(x, D, F), slopes[seg]
 
     def SPRING(u, st):
-        """Pure function: committed state + trial u -> (force, tangent, trial state)."""
+        # Pure function: committed state + trial u -> (force, tangent, trial state)
+        """
+        SPRING(u, st):
+        Given a trial displacement $u$ and the committed hysteresis state st,
+        detects reversals, mirrors the problem so motion is always treated as
+        positive, selects the appropriate branch (backbone, unloading on k_0,
+        or reloading toward the previous peak), updates peaks and state, and
+        returns the scaled force, tangent, and new trial state.
+        """
         st = dict(st)
         du = u - st['u']
         if du != 0 and np.sign(du) != st['d']:    # reversal: remember where it happened
@@ -111,28 +125,33 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
 
         it = 0
         # 3) corrector
-        while abs(R) / F_ref > TOL and it < MAX_ITERATIONS: 
-            lam_new -= R
-            f, k, trial = SPRING(u_new, state)
-            R = lam_new - f
-            it += 1
+        while abs(R) / F_ref > TOL and it < MAX_ITERATIONS:
+            # This is the iterative correction step that drives the residual to zero
+            lam_new -= R                        # Correct the predicted force by subtracting the residual
+            f, k, trial = SPRING(u_new, state)  # Re-evaluate the spring at the fixed target displacement u_new with the (still uncommitted) state, obtaining the true force f, tangent k, and trial state.
+            R = lam_new - f                     # Recompute the residual
+            it += 1                             # Increment the iteration counter
 
-        ok = abs(R) / F_ref <= TOL
-        R_final.append(abs(R) / F_ref)
+        ok = abs(R) / F_ref <= TOL              # Sets a Boolean flag that is True only when the final normalized residual is smaller than (or equal to) the prescribed tolerance, i.e. the step has converged.
+        R_final.append(abs(R) / F_ref)          # Stores the magnitude of that final residual (normalized by the reference force) so you can later inspect how well each displacement step satisfied equilibrium.
         ITER.append(it)
         CONVERGED.append(ok)
+        
         if not ok:
             print(f'(-) Step {i}: NOT converged, |R|/Fref = {abs(R)/F_ref:.3e}')
             break
         
         # 4) commit
+        # After a successful convergence, this single line permanently updates the solution state for the next displacement increment:
         state, u, lam, Kt = trial, u_new, lam_new, k   
         
         U.append(u)                                     # DISPLACEMENT
         Fb.append(-lam)                                  # REACTION
-
-    return (np.array(U), np.array(Fb), np.array(R_init),
-            np.array(R_final), np.array(ITER), np.array(CONVERGED))
+        
+        DATA = (np.array(U), np.array(Fb), np.array(R_init),
+                np.array(R_final), np.array(ITER), np.array(CONVERGED))
+        
+    return DATA
 
 #%% ---------------------------------------------------------------
 # OPENSEES: Varying displacement increment each step
@@ -190,7 +209,9 @@ def SDOF_OPENSEES_CYCLIC(MAT_TYPE, Displacement, Force, Coff, U_target,
         U_os.append(ops.nodeDisp(2, 1))                        # DISPLACEMENT
         F_os.append(ops.nodeReaction(1, 1))                    # REACTION
         
-    return np.array(U_os), np.array(F_os)
+    DATA = (np.array(U_os), np.array(F_os))  
+    
+    return DATA
 
 #%% ---------------------------------------------------------------
 # MAIN
