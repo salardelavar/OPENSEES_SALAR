@@ -23,6 +23,7 @@ DISPLACEMENT-CONTROLLED NEWTON-RAPHSON MONOTONIC PUSHOVER OF PARALLEL NONLINEAR 
  reported, and the curves are plotted.
 
 ----------------------------------------------------------------------
+In the function  SDOF_NUMERICAL_PUSHOVER_NEWTON()
 Unknowns          : displacement u of the control DOF and load factor lambda
 Equilibrium       : R(u, lambda) = lambda * P_ref - F_int(u)          (unbalanced force)
 Internal force    : F_int(u) = sum_j  Coff_j * sign(u) * Fb(|u|)       (Fb = backbone)
@@ -42,6 +43,7 @@ iteration. A residual appears only where the predictor tangent differs from the 
 secant path, i.e. when a step crosses a backbone kink (change of segment).
 """
 #%% ---------------------------------------
+import matplotlib.pyplot as plt
 import numpy as np
 
 def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITERATIONS, TOL, Dmax=None):
@@ -54,6 +56,8 @@ def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITE
     ITER        : number of corrector iterations per increment
     CONVERGED   : bool array, one flag per increment
     """
+    import numpy as np
+    
     D_bb = np.concatenate(([0.0], np.asarray(Displacement, dtype=float)))
     F_bb = np.concatenate(([0.0], np.asarray(Force, dtype=float)))
     Coff = np.asarray(Coff, dtype=float)
@@ -64,8 +68,8 @@ def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITE
     P_ref = 1.0
     F_ref = Coff.sum() * F_bb.max()                  # force scale for the normalised residual
 
-    def spring_state(u):
-        """Force vector and tangent vector of all springs at displacement u."""
+    def SPRING_STATE(u):
+        # Force vector and tangent vector of all springs at displacement u
         a = abs(u)
         f = np.sign(u) * Coff * np.interp(a, D_bb, F_bb)       # flat beyond the last node
         seg = np.searchsorted(D_bb, a, side='right') - 1       # segment ahead of |u|
@@ -74,7 +78,7 @@ def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITE
 
     # committed state
     u, lam = 0.0, 0.0
-    f, k = spring_state(u)
+    f, k = SPRING_STATE(u)
     Kt = k.sum()
 
     U, F = [0.0], [0.0]
@@ -84,21 +88,21 @@ def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITE
         u_target = Dmax if i == ANA_STEPS else u_inc * i     # no floating-point overshoot
         dU = u_target - u
 
-        # ---- 1. predictor with the committed tangent ----
+        # 1. predictor with the committed tangent
         lam_t = lam + Kt * dU / P_ref
         u_t = u + dU
 
-        # ---- 2. state update and unbalanced force ----
-        f, k = spring_state(u_t)
+        # 2. state update and unbalanced force
+        f, k = SPRING_STATE(u_t)
         R = lam_t * P_ref - f.sum()
         R_init.append(abs(R) / F_ref)
 
-        # ---- 3. Newton corrector at fixed control displacement ----
+        # 3. Newton corrector at fixed control displacement
         it = 0
         while abs(R) / F_ref > TOL and it < MAX_ITERATIONS:
             d_lam = -R / P_ref                    # K_T cancels (see header)
             lam_t += d_lam
-            f, k = spring_state(u_t)              # u_t is unchanged by the constraint
+            f, k = SPRING_STATE(u_t)              # u_t is unchanged by the constraint
             R = lam_t * P_ref - f.sum()
             it += 1
 
@@ -106,13 +110,16 @@ def SDOF_NUMERICAL_PUSHOVER_NEWTON(Displacement, Force, Coff, ANA_STEPS, MAX_ITE
         R_final.append(abs(R) / F_ref)
         ITER.append(it)
         CONVERGED.append(ok)
+        
+        if ok:
+            print(f'(+) Increment {i:.0f}: converged in {it} iteration(s)')
 
         if not ok:
             print(f'(-) Increment {i}: NOT converged, |R|/Fref = {abs(R)/F_ref:.3e}. '
                   f'Analysis stopped, state not committed.')
             break
 
-        # ---- commit ----
+        # commit
         u, lam, Kt = u_t, lam_t, k.sum()
         U.append(u)
         F.append(lam * P_ref)                     # base reaction = lambda * P_ref
@@ -148,7 +155,6 @@ def SDOF_OPENSEES(MAT_TYPE):
     
     MAX_ITERATIONS = 500     # Convergence iteration for test
     MAX_TOLERANCE = 1.0e-6   # Convergence tolerance for test
-    #%% ---------------- Segment slopes ----------------
     #%% ---------------- Model ----------------
     # Reset model
     ops.wipe()
@@ -221,8 +227,6 @@ def SDOF_OPENSEES(MAT_TYPE):
 # MAIN
 
 if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-    
     # FREE UNITS
     FY, DY = 2000.0, 0.01                 # Yield force & displacement
     FU, DU = 1.2 * FY, DY * 10            # Ultimate (peak) force & displacement
