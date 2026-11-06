@@ -9,5 +9,6 @@ This example is recommended for friends interested in learning the basics of non
 ![alt text](SDOF_DC.jpg)
 
 # DISPLACEMENT-CONTROLLED NEWTON-RAPHSON MONOTONIC PUSHOVER OF PARALLEL NONLINEAR SPRINGS
+This Python script implements and verifies a displacement-controlled Newton-Raphson monotonic pushover analysis of a single-degree-of-freedom system composed of parallel nonlinear springs. It defines a custom numerical solver (`SDOF_NUMERICAL_PUSHOVER_NEWTON`) that applies incremental displacements, predicts the load factor from the current tangent stiffness, updates internal forces from a multilinear backbone curve scaled by coefficients `Coff`, and applies a single-step Newton corrector (which simplifies to adjusting the load factor by the residual) until equilibrium is satisfied within a tight tolerance. The same problem is then solved with OpenSeesPy using zeroLength elements and HystereticSM (or Elastic) materials under DisplacementControl, after which the resulting force-displacement curves from both approaches are compared for accuracy, residual statistics are reported, and the curves are plotted.
 
 ![alt text](SDOF_NEWTON_METHOD.jpg)
