@@ -7,3 +7,7 @@ This script performs a displacement-controlled monotonic pushover analysis of a 
 This example is recommended for friends interested in learning the basics of nonlinear finite element methods.
 
 ![alt text](SDOF_DC.jpg)
+
+# DISPLACEMENT-CONTROLLED NEWTON-RAPHSON MONOTONIC PUSHOVER OF PARALLEL NONLINEAR SPRINGS
+
+![alt text](SDOF_NEWTON_METHOD.jpg)
