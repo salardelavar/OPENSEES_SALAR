@@ -131,7 +131,7 @@ ops.load(3, 1.0, 0.0, 0.0)
 dU = D_target / (N_POINTS - 1)
 
 ops.constraints('Transformation')
-ops.numberer('RCM')
+ops.numberer('Plain')
 ops.system('BandGeneral')
 ops.test('NormDispIncr', MAX_TOLERANCE, MAX_ITERATIONS, 0) # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/normDispIncr.html
 ops.algorithm('Newton')                                    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/algorithm.html
@@ -143,10 +143,10 @@ def record():
     # base shear from the elastic column element (local y = shear for a vertical member)
     V = abs(ops.eleResponse(3, 'localForce')[1])
     # zeroLength 'force' = spring moment, 'deformation' = spring rotation (2D: dir 3 = rotation)
-    Mb = ops.eleResponse(1, 'force')[5]
-    Mt = ops.eleResponse(2, 'force')[5]
-    rb = ops.eleResponse(1, 'deformation')[0]
-    rt = ops.eleResponse(2, 'deformation')[0]
+    Mb = ops.eleResponse(1, 'force')[5]          # BOTTOM MOMENT
+    Mt = ops.eleResponse(2, 'force')[5]          # TOP MOMENT
+    rb = ops.eleResponse(1, 'deformation')[0]    # BOTTOM ROTATION
+    rt = ops.eleResponse(2, 'deformation')[0]    # TOP ROTATION
     Mb, Mt = abs(Mb), abs(Mt)
     tpb = max(abs(rb) - Mb / K_spring, 0.0)
     tpt = max(abs(rt) - Mt / K_spring, 0.0)
