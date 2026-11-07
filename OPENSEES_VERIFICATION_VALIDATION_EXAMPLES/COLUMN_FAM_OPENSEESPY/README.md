@@ -11,3 +11,6 @@ using the Force Analogy Method (FAM).
 5. Three subplots are generated: Pushover Curve, Moment Evolution, and Plastic Rotation Evolution.
 
 ![alt text](COVER.png)
+
+# COMPOSITE_ELASTIC_SECTION_ANALYSIS_FUN
+![alt text](COMPOSITE_ELASTIC_SECTION_ANALYSIS_FUN.png)
