@@ -145,7 +145,7 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
         # After a successful convergence, this single line permanently updates the solution state for the next displacement increment:
         state, u, lam, Kt = trial, u_new, lam_new, k   
         
-        U.append(u)                                     # DISPLACEMENT
+        U.append(u)                                      # DISPLACEMENT
         Fb.append(-lam)                                  # REACTION
         
         DATA = (np.array(U), np.array(Fb), np.array(R_init),
@@ -175,7 +175,7 @@ def SDOF_OPENSEES_CYCLIC(MAT_TYPE, Displacement, Force, Coff, U_target,
         tag = 1 + j
         if MAT_TYPE == 'ELASTIC':
             ops.uniaxialMaterial('Elastic', tag, Coff[j] * Force[0] / Displacement[0])
-        else:
+        if MAT_TYPE == 'INELASTIC':
             pos, neg = [], []
             for f, d in zip(Force, Displacement):
                 pos.extend([Coff[j] * f, d]); neg.extend([-Coff[j] * f, -d])
