@@ -45,8 +45,8 @@ Mp_base = 150e6           # [N.mm]
 Mp_top = 250e6            # [N.mm]
 D_target = 5.0            # [mm]
 N_POINTS = 50             # FAM Numerical Increments
-
-#%% FAM reference solution
+#%% ---------------------------------------------------------------
+# FAM reference solution
 def FAM(d):
     """
     FAM with proper hinge-sequence logic: candidate yield sets (none / base / top / both) are tested
@@ -75,7 +75,8 @@ def FAM(d):
 # RUN FORCE ANALOGY METHOD
 disp_steps = np.linspace(0, D_target, N_POINTS)
 fam = np.array([FAM(d) for d in disp_steps])    # np.array() is used for running faster      
-#%% OpenSeesPy model
+#%% ---------------------------------------------------------------
+# OpenSeesPy model
 """
 Model (2D, ndm=2, ndf=3):
   - Fixed base, top node: rotation fixed + vertical fixed, horizontal displacement-controlled
@@ -164,7 +165,8 @@ ops_res = np.array(ops_res)
 m = len(ops_res)
 d_ops = ops_res[:, 5]
 
-#%% Error summary
+#%% ---------------------------------------------------------------
+# Error summary
 V_fam = fam[:m, 0]
 err = np.abs(ops_res[:, 0] - V_fam)
 rel = err[1:] / np.maximum(np.abs(V_fam[1:]), 1e-12) * 100
@@ -179,7 +181,8 @@ print(f'Final theta_p base  FAM / OPS: {fam[m-1,3]:.6e} / {ops_res[-1,3]:.6e} ra
 print(f'Final theta_p top   FAM / OPS: {fam[m-1,4]:.6e} / {ops_res[-1,4]:.6e} rad')
 print('=' * 60)
 
-#%% Plots the Results
+#%% ---------------------------------------------------------------
+# Plots the Results
 fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 5.5))
 
 ax1.plot(disp_steps, fam[:, 0], color='red', lw=3, label='FAM')
