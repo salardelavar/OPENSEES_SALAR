@@ -205,7 +205,8 @@ def SDOF_OPENSEES_CYCLIC(MAT_TYPE, Displacement, Force, Coff, U_target,
         du = U_target[i] - ops.nodeDisp(2, 1)                  # increment to reach the target
         ops.integrator('DisplacementControl', 2, 1, du)        # re-issue every step
         OK = ops.analyze(1)
-        S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+        if OK != 0:
+            S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
         ops.reactions()
         U_os.append(ops.nodeDisp(2, 1))                        # DISPLACEMENT
         F_os.append(ops.nodeReaction(1, 1))                    # REACTION
