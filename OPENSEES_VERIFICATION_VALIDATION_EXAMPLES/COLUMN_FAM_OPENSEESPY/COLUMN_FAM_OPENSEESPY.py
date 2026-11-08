@@ -25,15 +25,15 @@ using the Force Analogy Method (FAM).
 import numpy as np
 import matplotlib.pyplot as plt
 import openseespy.opensees as ops
-import STEEL_ELASTIC_SECTION_ANALYSIS_FUN as S01
-import ANALYSIS_FUNCTION as S02
+import ANALYSIS_FUNCTION as S01
+import STEEL_ELASTIC_SECTION_ANALYSIS_FUN as S02
 import CONCRETE_ELASTIC_SECTION_ANALYSIS_FUN as S03
 import COMPOSITE_ELASTIC_SECTION_ANALYSIS_FUN as S04
 #%% Input Parameters (Units: N, mm)
 # STEEL SECTION
-#x_c, y_c, A_total, Ix_total, Iy_total = S01.STEEL_ELASTIC_SECTION_ANALYSIS_FUN()
+#x_c, y_c, A_total, Ix_total, Iy_total = S02.STEEL_ELASTIC_SECTION_ANALYSIS_FUN()
 # CONCRETE SECTION
-#x_c, y_c, A_total, Ix_total, Iy_total = S02.CONCRETE_ELASTIC_SECTION_ANALYSIS_FUN()
+#x_c, y_c, A_total, Ix_total, Iy_total = S03.CONCRETE_ELASTIC_SECTION_ANALYSIS_FUN()
 # COMPOSITE SECTION
 x_el, y_el, A_trans_total, Ix_trans_total, Iy_trans_total, E_ref = S04.COMPOSITE_ELASTIC_SECTION_ANALYSIS_FUN()
 
@@ -157,7 +157,7 @@ ops_res = [(0.0, 0.0, 0.0, 0.0, 0.0, 0.0)]
 
 for step in range(1, N_POINTS):
     OK = ops.analyze(1)
-    S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+    S01.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
     ops_res.append(record())
     print(f'STEP: {step+1} - DISP.: {ops_res[-1][5]:.3f} mm - REACTION: {ops_res[-1][0]:.3f}')
 
