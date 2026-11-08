@@ -265,7 +265,8 @@ def MDOF_OPENSEES_CYCLIC(MAT_TYPE, Displacement, Force, STORY_COFF, P_ref, U_tar
         du = U_target[i] - ops.nodeDisp(N, 1)
         ops.integrator('DisplacementControl', N, 1, du)
         OK = ops.analyze(1)
-        S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+        if OK != 0:
+            S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
         ops.reactions()
         U_os.append([ops.nodeDisp(n, 1) for n in range(1, N + 1)])   # FLOOR DISPLACEMENTS
         F_os.append(ops.nodeReaction(0, 1))                          # BASE REACTION
