@@ -60,7 +60,7 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
     slopes = np.diff(F) / np.diff(D)
     k0 = slopes[0]                                # unloading stiffness (beta = 0)
     Csum = np.sum(Coff)                           # parallel springs -> one scaled spring
-    F_ref = Csum * F.max()
+    F_ref = Csum * F.max()                        # reference force used only for normalizing residuals during the Newton–Raphson iterations
 
     def BACKBONE(x):                              # x >= 0, flat after last point
         """
@@ -71,8 +71,8 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
         """
         if x >= D[-1]:
             return F[-1], 0.0
-        seg = np.searchsorted(D, x, side='right') - 1
-        return np.interp(x, D, F), slopes[seg]
+        seg = np.searchsorted(D, x, side='right') - 1 # finds the index of the segment of the multilinear backbone that contains the displacement x
+        return np.interp(x, D, F), slopes[seg]        # this pair is later used by the Newton–Raphson solver as the current force and the current tangent stiffness of the spring when it is on the backbone branch
 
     def SPRING(u, st):
         # Pure function: committed state + trial u -> (force, tangent, trial state)
@@ -111,6 +111,7 @@ def SDOF_NUMERICAL_CYCLIC_NEWTON(Displacement, Force, Coff, U_target, MAX_ITERAT
     # committed state (initial peaks = yield point, as in OpenSees Hysteretic)
     state = dict(u=0.0, f=0.0, d=1, u_rev=0.0, f_rev=0.0,
                  umax=D[1], fmax=F[1], umin=-D[1], fmin=-F[1])
+    
     u, lam, Kt = 0.0, 0.0, Csum * k0
     U, Fb = [0.0], [0.0]
     R_init, R_final, ITER, CONVERGED = [], [], [], []
