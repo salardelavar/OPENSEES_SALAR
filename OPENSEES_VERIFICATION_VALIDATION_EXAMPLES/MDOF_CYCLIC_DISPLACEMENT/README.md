@@ -1,4 +1,4 @@
-# CYCLIC DISPLACEMENT-CONTROLLED NEWTON-RAPHSON PUSHOVER OF A MULTI-STORY NONLINEAR SHEAR BUILDING
+# CYCLIC DISPLACEMENT-CONTROLLED NEWTON-RAPHSON PUSHOVER OF A MULTI-STORY NONLINEAR SHEAR BUILDING (FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS)
 
  This python script drives the same parallel-spring MDOF system through a back-and-forth displacement
  history (0 → +a → −a → 0 at growing amplitudes) using two independent approaches and compares them.
