@@ -20,4 +20,4 @@ In Each OpenSees Project Script File, Eight Analysis Protocols Are Implemented:
  
 (8) [SEISMIC] : Multi-directional seismic excitation with Rayleigh damping (3% ratio)
 
-Please note that the content may not be entirely free of errors or inaccuracies.
+Please note that the content may not be entirely free of errors or inaccuracies. Constructive criticism helps improve the material for me.
