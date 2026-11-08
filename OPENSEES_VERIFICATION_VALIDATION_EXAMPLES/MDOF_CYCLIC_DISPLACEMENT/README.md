@@ -8,7 +8,7 @@
  the SPRING function remembers the last reversal point and the largest peaks on each side.
  It then decides the branch: follow the backbone when pushing past the previous peak, unload along 
  the initial stiffness after a reversal, or reload in a straight line toward the previous peak on the
- opposite side. SDOF_OPENSEES_CYCLIC builds the equivalent model with HystereticSM springs and re-issues
+ opposite side. MDOF_OPENSEES_CYCLIC builds the equivalent model with HystereticSM springs and re-issues
  the DisplacementControl increment at every step so the node lands exactly on each target displacement.
  Finally, the main block runs both, prints the maximum absolute and relative error, and plots the two hysteresis
  loops together with the displacement history, so you can check that the hand-written hysteresis rule reproduces OpenSees.
