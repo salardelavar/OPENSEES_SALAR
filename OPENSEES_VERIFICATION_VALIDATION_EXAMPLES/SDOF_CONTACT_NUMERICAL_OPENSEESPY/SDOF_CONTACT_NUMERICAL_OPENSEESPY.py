@@ -291,7 +291,7 @@ if __name__ == '__main__':
     R_ph = NUMERICAL_MONOTONIC_PUSHOVER('NUMERICAL')
 
     print('\n================  NEWTON-RAPHSON SUMMARY  ================')
-    for name, R in [('OPENSEES-equivalent', R_os), ('PHYSICAL gap', R_ph)]:
+    for name, R in [('OPENSEES-equivalent', R_os), ('NUMERICAL', R_ph)]:
         print(f'\n[{name}]')
         print(f'  Max NR iterations / step        : {R["iters"].max()}')
         print(f'  Max |u_inverse - u| (force NR)  : {R["inv_err"].max():.3e} m')
