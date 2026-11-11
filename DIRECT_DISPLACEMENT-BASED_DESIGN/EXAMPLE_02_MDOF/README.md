@@ -1,4 +1,6 @@
 # DIRECT DISPLACEMENT-BASED DESIGN (DDBD) OF A MDOF SHEAR BUILDING WITH NONLINEAR TIME-HISTORY IN OPENSEES
+# طراحی مستقیم مبتنی بر جابجایی یک ساختمان برشی چند درجه آزادی با تحلیل تاریخچه زمانی غیرخطی در نرم‌افزار اوپنسیس
+
 
 This Python script implements Direct Displacement-Based Design (DDBD) for a multi-degee-of-freedom (MDOF) system and
  verifies it with nonlinear dynamic time-history analysis in OpenSeesPy. It begins by defining a target displacement,
