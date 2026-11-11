@@ -31,3 +31,6 @@ SIMPLIFICATIONS (flagged, change them if your code requires it)
     (using xi_eq in the THA would count the damping twice)
 
  ![alt text](COVER_MDOF_DIRECT_DISPLACEMENT-BASED_DESIGN.jpg) 
+
+ Complete Code Explanation and All Formulas (MDOF Example) in PDF File:
+ PDF_MDOF_DDBD_Code_and_Formulas_Explanation.pdf
