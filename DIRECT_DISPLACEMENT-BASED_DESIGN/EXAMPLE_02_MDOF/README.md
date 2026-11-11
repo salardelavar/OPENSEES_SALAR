@@ -28,4 +28,4 @@ SIMPLIFICATIONS (flagged, change them if your code requires it)
   - Rayleigh damping in the THA is the ELASTIC 5 % only; the hysteretic energy is already in the spring
     (using xi_eq in the THA would count the damping twice)
 
- 
+ ![alt text](MDOF_DIRECT_DISPLACEMENT-BASED_DESIGN.jpg) 
