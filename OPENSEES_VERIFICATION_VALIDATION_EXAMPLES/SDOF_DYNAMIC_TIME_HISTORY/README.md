@@ -6,5 +6,5 @@ This script runs a nonlinear time-history analysis of a single-degree-of-freedom
 
 ![alt text](COVER_SDOF_DYNAMIC_TIME_HISTORY.jpg)
 # FLOWCHART DOCUMENT: PDF_SDOF_DYNAMIC_TIME_HISTORY_Flowcharts.pdf
-[📄 View PDF](https://github.com/USERNAME/REPO/blob/main/docs/my-document.pdf)
+[📄 View PDF](https://github.com/USERNAME/REPO/blob/main/docs/https://github.com/salardelavar/OPENSEES_SALAR/blob/main/OPENSEES_VERIFICATION_VALIDATION_EXAMPLES/SDOF_DYNAMIC_TIME_HISTORY/PDF_SDOF_DYNAMIC_TIME_HISTORY_Flowchart.pdf)
 
