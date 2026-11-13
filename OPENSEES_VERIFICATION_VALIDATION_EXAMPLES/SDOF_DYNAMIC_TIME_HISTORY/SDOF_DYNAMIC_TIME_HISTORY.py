@@ -331,11 +331,11 @@ if __name__ == '__main__':
     
     #%% RUN NUMERICAL METHOD
     t1, U1, V1, A1, F1, IT, RES = SDOF_NUMERICAL_DYNAMIC_NEWMARK(
-        Displacement, Force, Coff, ag, DT, MASS, XI, MAX_ITERATIONS=50, TOL=1.0e-10)
+        Displacement, Force, Coff, ag, DT, MASS, XI, MAX_ITERATIONS, MAX_TOLERANCE)
 
     #%% RUN OPENSEES
     t_os, U_os, F_os = SDOF_OPENSEES_DYNAMIC('INELASTIC', Displacement, Force, Coff,
-                                             ag_raw, DT, MASS, XI, GM_FACTOR)
+                                             ag_raw, DT, MASS, XI, GM_FACTOR, MAX_ITERATIONS, MAX_TOLERANCE)
 
     n = min(len(U1), len(U_os))
     errU = np.abs(U_os[:n] - U1[:n]); errF = np.abs(F_os[:n] - F1[:n])
