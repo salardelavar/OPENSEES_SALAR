@@ -1,14 +1,15 @@
+###################################################################################################
+#                >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
+#NONLINEAR DYNAMIC (TIME-HISTORY) ANALYSIS OF A MULTI-STORY NONLINEAR SHEAR BUILDING SUBJECTED TO #
+#BASE EXCITATION u''g(t)= A sin(ωt) (FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS)#
+#-------------------------------------------------------------------------------------------------#
+#   ORIGINAL TCL EXAMPLE:                                                                         #
+#   https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample                           #
+#   created : NM (nmitra@u.washington.edu) dated: Dec. 2002                                       #
+#   Rewritted by Salar Delavar Ghashghaei (salar.d.ghashghaei@gmail.com) dated: Dec. 2026         #     
+#   UNITS: N, mm                                                                                  #                                        
+###################################################################################################
 """
-=====================================================================
-   NONLINEAR CYCLIC ANALYSIS OF A REINFORCED CONCRETE
-   BEAM-COLUMN JOINT SUB-ASSEMBLAGE USING OPENSEESPY
-   (PARK-RUITONG UNIT 1 - PINCHING4 SHEAR PANEL AND BAR-SLIP SPRINGS)
-=====================================================================
-   ORIGINAL TCL EXAMPLE:
-   https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample
-   UNITS: N, MM, MPA
-=====================================================================
-
  This script is an OpenSeesPy version of the OpenSees wiki example BeamColumnJointExample
  (https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample). The original is written 
  in Tcl as `PR1.tcl`, `procMKPC.tcl`, `procUniaxialPinching.tcl` and `procRC.tcl`.
@@ -39,6 +40,7 @@ import time as TI
 import numpy as np
 import matplotlib.pyplot as plt
 import openseespy.opensees as ops
+import opsvis as opsv
 import PLOT_2D as S01
 import ANALYSIS_FUNCTION as S02
 # ---------------------------------------------
@@ -46,12 +48,18 @@ import ANALYSIS_FUNCTION as S02
 'https://peer.berkeley.edu/sites/default/files/0310_l._lowes_n._mitra_a._altoontash.pdf'  
 # PhD Thesis: An analytical study of reinforced concrete beam-column joint behavior under seismic loading
 'https://faculty.washington.edu/lowes/lowes/studentTheses/2007_NilanjanMitra_PHDthesis.pdf'  
+
 # ---------------------------------------------
 #%% Modified Kent-Park confined concrete envelope
 # --------------------------
 def MKPC_FUN(CUnconfFc, CUnconfEc, Y, Z, Cov, TSspace, TSlength, TSFy, TSarea,
               Strfactor, Lenfactor):
-    # Returns [Fc, Ec, Fcu, Ecu (unconfined), Fc, Ec, Fcu, Ecu (confined)] in MPa (N/mm2).
+    """
+    MKPC_FUN: Computes Modified Kent–Park confined and unconfined concrete envelope
+    parameters (peak and ultimate stress and strain) from the section geometry and
+    hoop reinforcement, converting to psi and inches internally and returning MPa and mm/mm.
+    """
+    
     CUnconfEcu = -0.004
 
     SecWid = Lenfactor * Z
@@ -86,6 +94,8 @@ def MKPC_FUN(CUnconfFc, CUnconfEc, Y, Z, Cov, TSspace, TSlength, TSFy, TSarea,
     CFc = -K * UFc / Strfactor                             # [MPa] Confined peak stress
     CFcu = 0.2 * CFc                                       # [MPa] Confined residual stress
     Cecu = -(0.8 / Zc - Ce0)                               # [mm/mm] Confined ultimate strain
+    
+    # Returns [Fc, Ec, Fcu, Ecu (unconfined), Fc, Ec, Fcu, Ecu (confined)] in MPa (N/mm2).
     DATA = [CUnconfFc, CUnconfEc, UFcu, CUnconfEcu, CFc, Ce0, CFcu, Cecu]
     return DATA
 
@@ -94,6 +104,10 @@ def MKPC_FUN(CUnconfFc, CUnconfEc, Y, Z, Cov, TSspace, TSlength, TSFy, TSarea,
 def FUN_uniaxial_pinching(tag, pEnvStress, nEnvStress, pEnvStrain, nEnvStrain,
                            rDisp, rForce, uForce, gammaK, gammaD, gammaF, gammaE,
                            damage):
+    """
+    FUN_uniaxial_pinching: Wraps the OpenSees Pinching4 command, packing the envelope,
+    pinching, and damage arguments into one call to define the joint shear-panel material.
+    """
     args = []
     for i in range(4):
         args += [pEnvStress[i], pEnvStrain[i]]
@@ -102,13 +116,18 @@ def FUN_uniaxial_pinching(tag, pEnvStress, nEnvStress, pEnvStrain, nEnvStrain,
     args += [rDisp[0], rForce[0], uForce[0], rDisp[1], rForce[1], uForce[1]]
     args += list(gammaK) + list(gammaD) + list(gammaF) + [gammaE, damage]
     ops.uniaxialMaterial("Pinching4", tag, *args)
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/Pinching4.html
 
 
 
 #%% Model
 # --------------------------
-def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
-    
+def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTIONS = True):
+    """
+    MODEL_FUN: Builds the whole beam-column joint model (nodes, materials, fiber sections,
+    elements, bar-slip springs, shear panel, supports), then runs the gravity step and the
+    displacement-controlled reversed-cyclic analysis.
+    """
     MAX_ITERATIONS = 500    # Maximum number of iterations
     MAX_TOLERANCE = 1.0e-6  # Specified tolerance for convergence
     
@@ -119,10 +138,10 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
     Strfactor = 145.0
     Lenfactor = 1 / 25.4
 
-    # Geometry (mm)
-    colY, colZ = 406.0, 305.0
-    bmY, bmZ = 457.0, 229.0
-    colCov = 43.0
+    # Geometry for Columns 
+    colY, colZ, colCov = 406.0, 305.0, 43.0 # [mm] Column Depth, Width, Cover
+    # Geometry for Beams  (mm)
+    bmY, bmZ = 457.0, 229.0                 # [mm] Bolumn Depth, Width
     bmCov1, bmCov2 = 42.0, 33.0
     bmCov = bmCov1
 
@@ -187,10 +206,11 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
     ops.uniaxialMaterial("Concrete01", 40, CUnconfFc, CUnconfEc, CUnconfFcu, CUnconfEcu)
     ops.uniaxialMaterial("Concrete01", 50, CConfFc, CConfEc, CConfFcu, CConfEcu)
     ops.uniaxialMaterial("Steel02", 60, CFy, CEs, CsHratio, 18.5, 0.925, 0.15, 0.0, 0.4, 0.0, 0.5)
-
-    # Fiber section: column (tag 1)
+    COL_TAG, BE_TAG = 1, 2
+    """
+    # Fiber section: column (tag COL_TAG)
     z, y = colZ / 2.0, colY / 2.0
-    ops.section("Fiber", 1)
+    ops.section("Fiber", COL_TAG)
     ops.patch("rect", 50, 8, 1, colCov - y, colCov - z, y - colCov, z - colCov)   # core
     ops.patch("rect", 40, 2, 1, -y, colCov - z, colCov - y, z - colCov)           # cover
     ops.patch("rect", 40, 2, 1, y - colCov, colCov - z, y, z - colCov)
@@ -200,7 +220,7 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
     ops.layer("straight", 60, 2, CAs, 0.0, colCov - z, 0.0, z - colCov)
     ops.layer("straight", 60, 3, CAs, colCov - y, colCov - z, colCov - y, z - colCov)
 
-    # Fiber section: beam (tag 2)
+    # Fiber section: beam (tag BE_TAG)
     z, y = bmZ / 2.0, bmY / 2.0
     ops.section("Fiber", 2)
     ops.patch("rect", 20, 8, 1, bmCov1 - y, bmCov1 - z, y - bmCov1, z - bmCov1)
@@ -211,7 +231,74 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
     ops.layer("straight", 30, 3, BAs, y - bmCov1, bmCov1 - z, y - bmCov1, z - bmCov1)
     ops.layer("straight", 30, 2, BAs, y - bmCov1 - bmCov2, bmCov1 - z, y - bmCov1 - bmCov2, z - bmCov1)
     ops.layer("straight", 30, 2, BAs, bmCov1 - y, bmCov1 - z, bmCov1 - y, z - bmCov1)
-
+    """
+    # Fiber sections defined as opsvis lists
+    # ---------------------------------------
+    # Column section (tag COL_TAG)
+    z, y = colZ / 2.0, colY / 2.0
+    col_sec = [
+        ['section', 'Fiber', COL_TAG, '-Gj', 1e6],
+        # core (confined)
+        ['patch', 'rect', 50, 8, 1, colCov - y, colCov - z, y - colCov, z - colCov],
+        # cover (unconfined)
+        ['patch', 'rect', 40, 2, 1, -y, colCov - z, colCov - y, z - colCov],
+        ['patch', 'rect', 40, 2, 1, y - colCov, colCov - z, y, z - colCov],
+        ['patch', 'rect', 40, 8, 1, -y, -z, y, colCov - z],
+        ['patch', 'rect', 40, 8, 1, -y, z - colCov, y, z],
+        # reinforcement
+        ['layer', 'straight', 60, 3, CAs, y - colCov, colCov - z, y - colCov, z - colCov],
+        ['layer', 'straight', 60, 2, CAs, 0.0, colCov - z, 0.0, z - colCov],
+        ['layer', 'straight', 60, 3, CAs, colCov - y, colCov - z, colCov - y, z - colCov],
+    ]
+    
+    # Beam section (tag BE_TAG)
+    z, y = bmZ / 2.0, bmY / 2.0
+    beam_sec = [
+        ['section', 'Fiber', BE_TAG, '-Gj', 1e6],
+        # core (confined)
+        ['patch', 'rect', 20, 8, 1, bmCov1 - y, bmCov1 - z, y - bmCov1, z - bmCov1],
+        # cover (unconfined)
+        ['patch', 'rect', 10, 2, 1, -y, bmCov1 - z, bmCov1 - y, z - bmCov1],
+        ['patch', 'rect', 10, 2, 1, y - bmCov1, bmCov1 - z, y, z - bmCov1],
+        ['patch', 'rect', 10, 8, 1, -y, -z, y, bmCov1 - z],
+        ['patch', 'rect', 10, 8, 1, -y, z - bmCov1, y, z],
+        # reinforcement
+        ['layer', 'straight', 30, 3, BAs, y - bmCov1, bmCov1 - z, y - bmCov1, z - bmCov1],
+        ['layer', 'straight', 30, 2, BAs, y - bmCov1 - bmCov2, bmCov1 - z, y - bmCov1 - bmCov2, z - bmCov1],
+        ['layer', 'straight', 30, 2, BAs, bmCov1 - y, bmCov1 - z, bmCov1 - y, z - bmCov1],
+    ]
+    
+    # Create the sections in OpenSees from the lists
+    opsv.fib_sec_list_to_cmds(col_sec)
+    opsv.fib_sec_list_to_cmds(beam_sec)
+    
+    #%% Optional plotting
+    # ----------------------------------
+    if PLOT_SECTIONS:
+        # plot_fiber_section picks colors by (matTag - 1), so remap the
+        # model tags (10, 20, 30...) to 1 = cover, 2 = core, 3 = steel
+        def _plot_copy(sec, cover, core, steel):
+            tagmap = {cover: 1, core: 2, steel: 3}
+            out = []
+            for item in sec:
+                item = list(item)
+                if item[0] in ('patch', 'layer'):
+                    item[2] = tagmap[item[2]]
+                out.append(item)
+            return out
+    
+        mcolors = ['lightgrey', 'tan', 'k']   # cover, core, steel
+    
+        opsv.plot_fiber_section(_plot_copy(col_sec, 40, 50, 60), matcolor=mcolors)
+        plt.title('Column section (mm)')
+        plt.axis('equal')
+    
+        opsv.plot_fiber_section(_plot_copy(beam_sec, 10, 20, 30), matcolor=mcolors)
+        plt.title('Beam section (mm)')
+        plt.axis('equal')
+    
+        plt.show()
+    
     # Geometric transformations and beam-column elements
     ops.geomTransf("Linear", 1)
     ops.geomTransf("Linear", 2)
@@ -258,9 +345,10 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
         gammaF=[1.11, 0.0, 0.319, 0.0, 0.125],
         gammaE=10.0, damage="energy")
 
-    # Beam-column joint element (anticlockwise nodes 2,6,9,5; 12 springs + shear panel) ----
+    # Beam-column joint element (anticlockwise nodes 2,6,9,5; 12 springs + shear panel)
     ops.element("beamColumnJoint", 7, 2, 6, 9, 5,
                 41, 42, 1, 21, 31, 1, 43, 44, 1, 22, 32, 1, 5)
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/beamColumnJoint.html
 
     # Boundary conditions
     ops.fix(1, 1, 1, 0)
@@ -285,13 +373,16 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
     ops.constraints("Plain")
     GRAVITY_DLAMBDA = 0.0 
     ops.integrator("LoadControl", GRAVITY_DLAMBDA, 1, 0.0, 0.0)
-    ops.test("NormDispIncr", 1e-8, 150)
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/loadControl.html
+    ops.test("NormDispIncr", MAX_TOLERANCE, MAX_ITERATIONS)
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/normDispIncr.html
     ops.algorithm("Newton")
     ops.numberer("RCM")
     ops.analysis("Static")
     ops.analyze(1)
+    
     ops.loadConst("-time", 0.0)
-
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/loadConst.html
     ops.timeSeries("Linear", 1)
     ops.pattern("Plain", 1, 1)
     ops.load(10, 1.0, 0.0, 0.0)
@@ -325,7 +416,7 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
             ops.integrator("ArcLength", dU0, 1.0)
             ops.analyze(1)
             ops.test("NormDispIncr", MAX_TOLERANCE, MAX_ITERATIONS, 0)
-        record_step(rec, node, dof, record_springs)
+        record_step(rec, node, dof, RECORD_SPRINGS)
         return ok
 
     ops.integrator("DisplacementControl", node, dof, dU, 1, dU, dU)
@@ -336,7 +427,7 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, record_springs=True):
         ops.integrator("DisplacementControl", node, dof, sign * dU, 1, sign * dU, sign * dU)
         for _ in range(n):
             ops.analyze(1)
-            record_step(rec, node, dof, record_springs)
+            record_step(rec, node, dof, RECORD_SPRINGS)
 
     # remaining peaks
     for y in peakpts[1:]:
@@ -364,7 +455,10 @@ SLIP_RESPONSES = ["node2_Bar_Slip_Bot", "node2_Bar_Slip_Top",
 SLIP_RESPONSES = ["node2BarSlipB", "node2BarSlipT", "node4BarSlipB", "node4BarSlipT",
                   "node1BarSlipL", "node1BarSlipR", "node3BarSlipL", "node3BarSlipR"]
 def new_record():
-    # Empty results container (plain dict).
+    """
+    new_record: Returns an empty results dictionary for the load-displacement, shear-panel,
+    and bar-slip histories.
+    """
     DATA = {"top": [],                                 # [load_factor, disp]  (N, mm)
             "panel": [],                               # [shear panel moment, rotation]  (N.mm, rad)
             "slip": {k: [] for k in SLIP_RESPONSES}}   # [stress MPa, strain]
@@ -372,6 +466,10 @@ def new_record():
 
 
 def record_step(rec, node, dof, record_springs=True):
+    """
+    record_step: Appends the current load factor and top displacement, plus the shear-panel
+    and bar-slip responses if enabled, to the results dictionary.
+    """
     rec["top"].append([ops.getLoadFactor(1), ops.nodeDisp(node, dof)])
     if record_springs:
         rec["panel"].append(ops.eleResponse(7, "shearpanel", "stressStrain"))
@@ -381,6 +479,9 @@ def record_step(rec, node, dof, record_springs=True):
 
 
 def save_record(rec, prefix="PR1", folder="."):
+    """
+    save_record: Writes the recorded histories to .txt files with np.savetxt.
+    """
     np.savetxt(os.path.join(folder, prefix + ".txt"), np.array(rec["top"]))
     np.savetxt(os.path.join(folder, prefix + "_Sp.txt"), np.array(rec["panel"]))
     for k, v in rec["slip"].items():
@@ -390,6 +491,10 @@ def save_record(rec, prefix="PR1", folder="."):
 # Plots (N, mm, MPa)
 # --------------------------
 def PLOTS_FUN(rec, outdir="."):
+    """
+    PLOTS_FUN: Plots and saves the load-displacement, shear-panel, and bar-slip hysteresis
+    curves, then displays them.
+    """
     top = np.array(rec["top"])
     d, F = top[:, 1], top[:, 0]
 
@@ -435,6 +540,10 @@ def PLOTS_FUN(rec, outdir="."):
 #%% Main Function
 # --------------------------
 def main():
+    """
+    main: Parses the command-line options, runs MODEL_FUN, saves the results,
+    plots them, and prints the peak loads.
+    """
     ap = argparse.ArgumentParser()
     ap.add_argument("--increment", type=int, default=10,
                     help="steps in the first 0.1 mm peak; dU = 0.1/increment mm")
@@ -449,7 +558,9 @@ def main():
     rec = new_record()
     t0 = TI.time()
     
-    MODEL_FUN(a.increment, 10, 1, a.peaks, rec, record_springs=not a.no_springs)
+    RECORD_SPRINGS = True
+    PLOT_SECTIONS = True
+    MODEL_FUN(a.increment, 10, 1, a.peaks, rec, RECORD_SPRINGS, PLOT_SECTIONS)
     print(f"analysis time: {TI.time() - t0:.1f} s, steps recorded: {len(rec['top'])}")
 
     save_record(rec, "PR1", a.outdir)
