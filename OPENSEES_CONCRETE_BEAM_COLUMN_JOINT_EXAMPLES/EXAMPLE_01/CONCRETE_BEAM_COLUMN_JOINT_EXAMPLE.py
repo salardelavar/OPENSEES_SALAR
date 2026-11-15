@@ -140,7 +140,7 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTI
     # Geometry for Columns 
     colY, colZ, colCov = 406.0, 305.0, 43.0 # [mm] Column Depth, Width, Cover
     # Geometry for Beams  (mm)
-    bmY, bmZ = 457.0, 229.0                 # [mm] Bolumn Depth, Width
+    bmY, bmZ = 457.0, 229.0                 # [mm] Beam Depth, Width
     bmCov1, bmCov2 = 42.0, 33.0
     bmCov = bmCov1
 
