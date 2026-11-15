@@ -145,43 +145,43 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTI
     bmCov1, bmCov2 = 42.0, 33.0
     bmCov = bmCov1
 
-    JointWidth, JointHeight, JointDepth = colY, bmY, colZ
-    BeamLengthIn, BeamLengthOut, ColumnLengthClear = 645.0, 1271.0, 1008.0
-    JointVolume = JointWidth * JointHeight * JointDepth
+    JointWidth, JointHeight, JointDepth = colY, bmY, colZ # Joint size: width = column depth, height = beam depth, depth (out of plane) = column width.
+    BeamLengthIn, BeamLengthOut, ColumnLengthClear = 645.0, 1271.0, 1008.0 # Beam length near the joint (inner), beam length beyond it (outer), and clear column length, all in mm.
+    JointVolume = JointWidth * JointHeight * JointDepth   # Joint volume (mm³), used later to convert shear-panel stresses into moments.
 
     # Column section materials
-    CUnconfFc, CUnconfEc = -45.9, -0.002   # Stress, Strain
-    CTSspace, CTSlength, CTSFy, CTSarea = 60.0, 1853.53, 282.0, 28.3
-    CFy, CEs, CsHratio, CAs = 498.0, 196600.0, 0.004216, 201.06
+    CUnconfFc, CUnconfEc = -45.9, -0.002   # Unconfined concrete peak stress (MPa, negative = compression) and its strain.
+    CTSspace, CTSlength, CTSFy, CTSarea = 60.0, 1853.53, 282.0, 28.3 # Column hoop data: spacing, length of one hoop, yield stress, and bar area.
+    CFy, CEs, CsHratio, CAs = 498.0, 196600.0, 0.004216, 201.06 # Column longitudinal steel: yield stress, elastic modulus, strain-hardening ratio, and area per bar.
     cp = MKPC_FUN(CUnconfFc, CUnconfEc, colY, colZ, colCov,
-                   CTSspace, CTSlength, CTSFy, CTSarea, Strfactor, Lenfactor)
-    CUnconfFcu, CUnconfEcu = cp[2], cp[3]
-    CConfFc, CConfEc, CConfFcu, CConfEcu = cp[4], cp[5], cp[6], cp[7]
+                   CTSspace, CTSlength, CTSFy, CTSarea, Strfactor, Lenfactor) # Runs the Modified Kent–Park model to get the column’s confined and unconfined concrete parameters.
+    CUnconfFcu, CUnconfEcu = cp[2], cp[3] # Unconfined crushing stress and ultimate strain from the result list.
+    CConfFc, CConfEc, CConfFcu, CConfEcu = cp[4], cp[5], cp[6], cp[7] # Confined peak stress and strain, plus residual stress and ultimate strain.
 
     # Beam section materials
-    BUnconfFc, BUnconfEc = -45.9, -0.002  # Stress, Strain
-    BTSspace, BTSlength, BTSFy, BTSarea = 80.0, 1036.0, 282.0, 28.3
-    BFy, BEs, BAs, BsHratio = 294.0, 210400.0, 201.06, 0.002322
+    BUnconfFc, BUnconfEc = -45.9, -0.002  # Beam unconfined concrete peak stress and strain (same values as the column).
+    BTSspace, BTSlength, BTSFy, BTSarea = 80.0, 1036.0, 282.0, 28.3 # Beam stirrup data: spacing, length of one stirrup, yield stress, and bar area.
+    BFy, BEs, BAs, BsHratio = 294.0, 210400.0, 201.06, 0.002322     # Beam stirrup data: spacing, length of one stirrup, yield stress, and bar area.
     bp = MKPC_FUN(BUnconfFc, BUnconfEc, bmY, bmZ, bmCov,
-                   BTSspace, BTSlength, BTSFy, BTSarea, Strfactor, Lenfactor)
-    BUnconfFcu, BUnconfEcu = bp[2], bp[3]
-    BConfFc, BConfEc, BConfFcu, BConfEcu = bp[4], bp[5], bp[6], bp[7]
+                   BTSspace, BTSlength, BTSFy, BTSarea, Strfactor, Lenfactor) # Runs the Modified Kent–Park model for the beam section.
+    BUnconfFcu, BUnconfEcu = bp[2], bp[3] # Beam unconfined crushing stress and ultimate strain.
+    BConfFc, BConfEc, BConfFcu, BConfEcu = bp[4], bp[5], bp[6], bp[7] # Beam confined peak stress and strain, plus residual stress and ultimate strain.
 
     # Bar-slip data
-    bs_fc, bs_fs, bs_es, bs_fsu, bs_dbar = -BUnconfFc, BFy, BEs, 434.0, 16.0
-    bs_esh = BsHratio * BEs
-    bs_wid, bs_dep = colZ, bmY
-    bsT_nbars, bsB_nbars = 5, 2
-    bs_ljoint = colY
+    bs_fc, bs_fs, bs_es, bs_fsu, bs_dbar = -BUnconfFc, BFy, BEs, 434.0, 16.0 # Beam bar-slip inputs: concrete strength (made positive), bar yield stress, elastic modulus, ultimate stress (434 MPa), and bar diameter (16 mm).
+    bs_esh = BsHratio * BEs            # Beam bar strain-hardening modulus (ratio × elastic modulus).
+    bs_wid, bs_dep = colZ, bmY         # Width and depth of the member the beam bars are anchored in: the joint width (column width) and the beam depth.
+    bsT_nbars, bsB_nbars = 5, 2        # Number of top and bottom beam bars.
+    bs_ljoint = colY                   # Anchorage length of the beam bars through the joint, which is the column depth.
 
-    cs_fc, cs_fs, cs_es, cs_fsu, cs_dbar = -CUnconfFc, CFy, CEs, 660.0, 16.0
-    cs_esh = CsHratio * CEs
-    cs_wid, cs_dep = colZ, colY
-    cs_nbars = 3
-    cs_ljoint = bmY
+    cs_fc, cs_fs, cs_es, cs_fsu, cs_dbar = -CUnconfFc, CFy, CEs, 660.0, 16.0 # Column bar-slip inputs: concrete strength (positive), bar yield stress, elastic modulus, ultimate stress (660 MPa), and bar diameter (16 mm).
+    cs_esh = CsHratio * CEs            # Column bar strain-hardening modulus.
+    cs_wid, cs_dep = colZ, colY        # Column width and depth, used as the section dimensions for the column bar-slip springs.
+    cs_nbars = 3                       # Number of column bars on each side that slip.
+    cs_ljoint = bmY                    # Anchorage length of the column bars through the joint, which is the beam depth.
 
     # Nodes
-    yb = ColumnLengthClear + JointHeight / 2
+    yb = ColumnLengthClear + JointHeight / 2 # Height of the beam centerline above the base: the clear column length plus half the joint height (beam depth), used as the y-coordinate of nodes 3 to 8.
     ops.node(1, 0.0, 0.0)
     ops.node(2, 0.0, ColumnLengthClear)
     ops.node(3, -BeamLengthOut - BeamLengthIn - JointWidth / 2, yb)
@@ -307,12 +307,14 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTI
     # nonlinearBeamColumn (tag, iNode, jNode, nIP, secTag, transfTag) -> Lobatto force-based
     ops.beamIntegration("Lobatto", 1, 1, 5)
     ops.beamIntegration("Lobatto", 2, 2, 3)
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/Lobatto.html
     ops.element("forceBeamColumn", 1, 1, 2, 2, 1)     # column lower
     ops.element("forceBeamColumn", 2, 9, 10, 2, 1)    # column upper
     ops.element("forceBeamColumn", 3, 3, 4, 1, 2)     # beam left outer
     ops.element("forceBeamColumn", 4, 4, 5, 1, 2)     # beam left inner
     ops.element("forceBeamColumn", 5, 6, 7, 1, 2)     # beam right inner
     ops.element("forceBeamColumn", 6, 7, 8, 1, 2)     # beam right outer
+    # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/ForceBeamColumn.html
 
     # Bar-slip materials (12 springs of the joint element)
     def beam_slip(tag, nbars, kind):
