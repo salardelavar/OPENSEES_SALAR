@@ -28,10 +28,10 @@ The second part of `MODEL_FUN` runs the analysis. It applies the gravity pattern
  adds a unit lateral load at node 10 and drives the column top through the reversed-cyclic displacement
  history in `peakpts`, using displacement control. If a step fails, it tries KrylovNewton, NewtonLineSearch
  and Newton in turn, and uses ArcLength only as a last resort. All fallbacks use the same tolerance of
- 1e-6 with 500 iterations, so the `tol` values in the list are unused. `new_record`, `record_step` and
- `save_record` store the load, displacement, shear-panel and bar-slip histories and write them to `.txt` files.
- `PLOTS_FUN` saves and shows the load–displacement, shear-panel and bar-slip plots in N and mm, and `main()`
- reads the command-line options and runs everything.
+ 1e-6 with 500 iterations. `new_record`, `record_step` and `save_record` store the load, displacement,
+ shear-panel and bar-slip histories and write them to `.txt` files. `PLOTS_FUN` saves and shows the
+ load–displacement, shear-panel and bar-slip plots in N and mm, and `main()` reads the command-line
+ options and runs everything.
 """
 
 import argparse
@@ -559,7 +559,7 @@ def main():
     MODEL_FUN(a.increment, 10, 1, a.peaks, rec, RECORD_SPRINGS, PLOT_SECTIONS)
     print(f"analysis time: {TI.time() - t0:.1f} s, steps recorded: {len(rec['top'])}")
 
-    save_record(rec, "PR1", a.outdir)
+    save_record(rec, "SALAR", a.outdir)
     PLOTS_FUN(rec, a.outdir)
     top = np.array(rec["top"])
     print(f"peak +load {top[:,0].max():.0f} N at {top[top[:,0].argmax(),1]:.2f} mm ; "
