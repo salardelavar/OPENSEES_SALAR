@@ -446,12 +446,6 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTI
     
 #%% Result recorder
 # --------------------------
-"""
-SLIP_RESPONSES = ["node2_Bar_Slip_Bot", "node2_Bar_Slip_Top",
-                  "node4_Bar_Slip_Bot", "node4_Bar_Slip_Top",
-                  "node1_Bar_Slip_Left", "node1_Bar Slip_Right", 
-                  "node3_Bar_Slip_Left", "node3_Bar_Slip_Right"]
-"""
 SLIP_RESPONSES = ["node2BarSlipB", "node2BarSlipT", "node4BarSlipB", "node4BarSlipT",
                   "node1BarSlipL", "node1BarSlipR", "node3BarSlipL", "node3BarSlipR"]
 def new_record():
