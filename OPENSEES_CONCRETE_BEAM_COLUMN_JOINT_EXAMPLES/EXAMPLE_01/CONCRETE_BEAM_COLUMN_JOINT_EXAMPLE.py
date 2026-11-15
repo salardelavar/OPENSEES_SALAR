@@ -20,8 +20,7 @@
  psi and inches internally and returns MPa and mm/mm. `FUN_uniaxial_pinching` wraps the `Pinching4` command,
  which is used for the joint shear panel. `MODEL_FUN` builds the whole model in N, mm and MPa. This includes
  the nodes, the concrete and steel materials, the column and beam fiber sections, the force-based elements,
- the 8 bar-slip materials, the shear-panel material and the supports. The code references the PEER report by
- Lowes, Mitra and Altoontash and Mitra's PhD thesis as the theory behind the joint element.
+ the 8 bar-slip materials, the shear-panel material and the supports.
 
 The second part of `MODEL_FUN` runs the analysis. It applies the gravity pattern, but the load increment
  `GRAVITY_DLAMBDA` is 0.0, so the 55 kN loads are never actually applied, exactly as in the Tcl. It then
