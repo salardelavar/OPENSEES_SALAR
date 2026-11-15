@@ -413,7 +413,7 @@ def MODEL_FUN(incre, node, dof, peakpts, rec, RECORD_SPRINGS = True , PLOT_SECTI
         if ok != 0:
             print("Displacement control failed ..... trying Arc-Length control")
             print("Current Displacement is", ops.nodeDisp(node, dof))
-            ops.test("NormDispIncr", 1e-6, numTimes, 0)
+            ops.test("NormDispIncr", MAX_TOLERANCE, MAX_ITERATIONS, 0)
             ops.integrator("ArcLength", dU0, 1.0)
             ops.analyze(1)
             ops.test("NormDispIncr", MAX_TOLERANCE, MAX_ITERATIONS, 0)
@@ -487,7 +487,7 @@ def save_record(rec, prefix="PR1", folder="."):
 # --------------------------
 def PLOTS_FUN(rec, outdir="."):
     """
-    PLOTS_FUN: Plots and saves the load-displacement, shear-panel, and bar-slip hysteresis
+    PLOTS_FUN: Plots and saves the Base reaction-displacement, shear-panel, and bar-slip hysteresis
     curves, then displays them.
     """
     top = np.array(rec["top"])
@@ -498,11 +498,11 @@ def PLOTS_FUN(rec, outdir="."):
     ax.axhline(0, color="k", lw=0.5)
     ax.axvline(0, color="k", lw=0.5)
     ax.set_xlabel("Column-top displacement [mm]")
-    ax.set_ylabel("Applied lateral load [N]")
-    ax.set_title("Lateral load vs top displacement (N, mm)")
+    ax.set_ylabel("Base Reaction [N]")
+    ax.set_title("Base Reaction vs top displacement (N, mm)")
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(os.path.join(outdir, "Load_displacement_N.png"), dpi=200)
+    fig.savefig(os.path.join(outdir, "BaseReaction_displacement_N.png"), dpi=200)
 
     sp = np.array(rec["panel"])
     if sp.size:
