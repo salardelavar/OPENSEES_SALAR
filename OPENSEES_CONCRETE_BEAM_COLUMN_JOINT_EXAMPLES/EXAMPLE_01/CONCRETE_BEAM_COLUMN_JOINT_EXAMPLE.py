@@ -1,14 +1,13 @@
-###################################################################################################
-#                >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
-#NONLINEAR DYNAMIC (TIME-HISTORY) ANALYSIS OF A MULTI-STORY NONLINEAR SHEAR BUILDING SUBJECTED TO #
-#BASE EXCITATION u''g(t)= A sin(ωt) (FINITE ELEMENT METHOD IN PYTHON AND OPENSEESPY VERIFICATIONS)#
-#-------------------------------------------------------------------------------------------------#
-#   ORIGINAL TCL EXAMPLE:                                                                         #
-#   https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample                           #
-#   created : NM (nmitra@u.washington.edu) dated: Dec. 2002                                       #
-#   Rewritted by Salar Delavar Ghashghaei (salar.d.ghashghaei@gmail.com) dated: Dec. 2026         #     
-#   UNITS: N, mm                                                                                  #                                        
-###################################################################################################
+#######################################################################################################
+#                    >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                 #
+# NONLINEAR CYCLIC ANALYSIS OF A REINFORCED CONCRETE BEAM-COLUMN JOINT SUB-ASSEMBLAGE USING OPENSEESPY#
+#-----------------------------------------------------------------------------------------------------#
+#   ORIGINAL TCL EXAMPLE:                                                                             #
+#   https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample                               #
+#   created : NM (nmitra@u.washington.edu) dated: Dec. 2002                                           #
+#   Rewritted by Salar Delavar Ghashghaei (salar.d.ghashghaei@gmail.com) dated: Dec. 2026             #     
+#   UNITS: N, mm                                                                                      #                                        
+#######################################################################################################
 """
  This script is an OpenSeesPy version of the OpenSees wiki example BeamColumnJointExample
  (https://opensees.berkeley.edu/wiki/index.php/BeamColumnJointExample). The original is written 
