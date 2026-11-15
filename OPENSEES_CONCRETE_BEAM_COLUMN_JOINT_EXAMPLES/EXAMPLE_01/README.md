@@ -7,7 +7,6 @@ This script is an OpenSeesPy version of the OpenSees wiki example BeamColumnJoin
 
 The second part of `MODEL_FUN` runs the analysis. It applies the gravity pattern, but the load increment `GRAVITY_DLAMBDA` is 0.0, so the 55 kN loads are never actually applied, exactly as in the Tcl. It then adds a unit lateral load at node 10 and drives the column top through the reversed-cyclic displacement history in `peakpts`, using displacement control. If a step fails, it tries KrylovNewton, NewtonLineSearch and Newton in turn, and uses ArcLength only as a last resort. All fallbacks use the same tolerance of 1e-6 with 500 iterations, so the `tol` values in the list are unused. `new_record`, `record_step` and `save_record` store the load, displacement, shear-panel and bar-slip histories and write them to `.txt` files. `PLOTS_FUN` saves and shows the load–displacement, shear-panel and bar-slip plots in N and mm, and `main()` reads the command-line options and runs everything.
 
-Before you run it, note that `PLOT_2D` and `ANALYSIS_FUNCTION` are imported but never used. The script fails with an import error unless those files are next to it, so delete those two lines if you don't have them.
 
 
 
