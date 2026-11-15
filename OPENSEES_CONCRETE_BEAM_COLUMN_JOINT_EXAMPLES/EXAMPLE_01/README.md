@@ -4,3 +4,6 @@ The second part of `MODEL_FUN` runs the analysis. It applies the gravity pattern
 
 Before you run it, note that `PLOT_2D` and `ANALYSIS_FUNCTION` are imported but never used. The script fails with an import error unless those files are next to it, so delete those two lines if you don't have them.
 
+![alt text](COVER.png)
+
+
