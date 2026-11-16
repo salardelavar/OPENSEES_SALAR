@@ -487,7 +487,7 @@ def save_record(rec, prefix="PR1", folder="."):
 # --------------------------
 def PLOTS_FUN(rec, outdir="."):
     """
-    PLOTS_FUN: Plots and saves the Base reaction-displacement, shear-panel, and bar-slip hysteresis
+    PLOTS_FUN: Plots and saves the Lateral load-displacement, shear-panel, and bar-slip hysteresis
     curves, then displays them.
     """
     top = np.array(rec["top"])
@@ -498,8 +498,8 @@ def PLOTS_FUN(rec, outdir="."):
     ax.axhline(0, color="k", lw=0.5)
     ax.axvline(0, color="k", lw=0.5)
     ax.set_xlabel("Column-top displacement [mm]")
-    ax.set_ylabel("Base Reaction [N]")
-    ax.set_title("Base Reaction vs top displacement (N, mm)")
+    ax.set_ylabel("Applied lateral load [N]")
+    ax.set_title("Lateral load  vs top displacement (N, mm)")
     ax.grid(alpha=0.3)
     fig.tight_layout()
     fig.savefig(os.path.join(outdir, "BaseReaction_displacement_N.png"), dpi=200)
