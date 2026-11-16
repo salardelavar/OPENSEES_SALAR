@@ -1,6 +1,6 @@
 ############################################################################################################
 #                    >> IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL <<                      #
-#                       CYCLIC ANALYSIS OF CONCRETE SHEAR-WALL USING MVLEM IN OPENSEESPY                   #
+#                CYCLIC ANALYSIS OF CONCRETE SHEAR-WALL USING MVLEM ELEMENT IN OPENSEESPY                  #
 #----------------------------------------------------------------------------------------------------------#
 #   ORIGINAL TCL EXAMPLE: MVLEM - Multiple-Vertical-Line-Element-Model for RC Walls                        #
 #   https://opensees.berkeley.edu/wiki/index.php/MVLEM_-_Multiple-Vertical-Line-Element-Model_for_RC_Walls #
