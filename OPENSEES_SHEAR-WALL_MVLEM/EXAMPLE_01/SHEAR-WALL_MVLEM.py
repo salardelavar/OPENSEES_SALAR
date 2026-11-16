@@ -22,6 +22,10 @@
  the stress and strain of a boundary fiber. At the end it plots the hysteresis loops,
  the loading protocol, the peak envelope, the curvature, and the steel and concrete
  stress-strain curves.
+ 
+ A short version of the source sentence, if you want it separate: “The model data
+ were taken from the OpenSees MVLEM wiki example (Kolozvari, 2015, Tcl) and converted
+ to OpenSeesPy in N-mm-MPa units.”
 """
 # PEER REPORT: Analytical Modeling of Reinforced Concrete Walls for Predicting Flexural and Coupled–Shear-Flexural Responses
 'https://peer.berkeley.edu/sites/default/files/web_peer607_k._orakcal_l._massone_j._wallace_.pdf'
@@ -368,7 +372,7 @@ def save_out(rec):
 #%% MAIN
 # ---------------------------------------
 """
-The #%% MAIN block at the bottom is not a function. It parses --save-out and --no-show,
+The MAIN block at the bottom is not a function. It parses --save-out and --no-show,
  builds the model, applies gravity, runs the cycles and plots the results.
 """
 if __name__ == "__main__":
