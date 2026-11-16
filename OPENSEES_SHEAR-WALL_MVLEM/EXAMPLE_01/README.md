@@ -7,6 +7,7 @@ This script simulates a real RC wall test (specimen RW2, Thomsen & Wallace, 1995
  A short version of the source sentence, if you want it separate: “The model data were taken from the OpenSees MVLEM wiki example (Kolozvari, 2015, Tcl) and converted to OpenSeesPy in N-mm-MPa units.”
  
 ORIGINAL TCL EXAMPLE: MVLEM - Multiple-Vertical-Line-Element-Model for RC Walls: 
+
 https://opensees.berkeley.edu/wiki/index.php/MVLEM_-_Multiple-Vertical-Line-Element-Model_for_RC_Walls 
 
 
