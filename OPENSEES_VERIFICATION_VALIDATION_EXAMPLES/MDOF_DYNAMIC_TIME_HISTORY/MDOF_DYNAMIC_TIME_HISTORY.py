@@ -366,8 +366,8 @@ def MDOF_OPENSEES_DYNAMIC(MAT_TYPE, Displacement, Force, STORY_COFF, MASS, ag_ra
         ops.reactions()
         t_os.append(ops.getTime())
         U_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)])   # FLOOR DISPLACEMENTS
-        Ve_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)])  # FLOOR VELOCITIES
-        Acc_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)]) # FLOOR ACCELERATIONS
+        Ve_os.append([ops.nodeVel(n_, 1) for n_ in range(1, N + 1)])   # FLOOR VELOCITIES
+        Acc_os.append([ops.nodeAccel(n_, 1) for n_ in range(1, N + 1)])# FLOOR ACCELERATIONS
         F_os.append(ops.nodeReaction(0, 1))                            # BASE REACTION
         V_os.append([-ops.eleResponse(j, 'force')[0] for j in range(1, N + 1)])  # STORY SHEARS
 
@@ -489,12 +489,14 @@ if __name__ == '__main__':
     plt.savefig('MDOF_DYNAMIC_TIME_HISTORY.png', dpi=150)
     plt.show()
     
+    RE = OS['base_reaction']
     dispp = OS['U_floor'][:, -1]
     velo = OS['Ve_floor'][:, -1]
     acce = OS['Ac_floor'][:, -1]
+
     
     plt.figure(1, figsize=(12, 8))
-    plt.plot(dispp, velo, 'o', color='black')
+    plt.plot(dispp, velo, color='black')
     plt.xlabel('Displacement [m]')
     plt.ylabel('Velocity [m/s]')
     plt.title('Displacement & Velocity During the Analysis')
@@ -502,9 +504,25 @@ if __name__ == '__main__':
     plt.show()
     
     plt.figure(2, figsize=(12, 8))
-    plt.plot(dispp, acce, 'o', color='purple')
+    plt.plot(dispp, acce, color='red')
     plt.xlabel('Displacement [m]')
     plt.ylabel('Acceleration [m/s^2]')
     plt.title('Displacement & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(3, figsize=(12, 8))
+    plt.plot(velo, RE, color='green')
+    plt.ylabel('Base Reaction [N]')
+    plt.xlabel('Velocity [m/s]')
+    plt.title('Base Reaction & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(4, figsize=(12, 8))
+    plt.plot(acce, RE, color='blue')
+    plt.ylabel('Base Reaction [N]')
+    plt.xlabel('Acceleration [m/s^2]')
+    plt.title('Base Reaction & Acceleration During the Analysis')
     plt.grid(True, alpha=0.4)
     plt.show()
