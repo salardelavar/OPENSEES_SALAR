@@ -358,7 +358,7 @@ def MDOF_OPENSEES_DYNAMIC(MAT_TYPE, Displacement, Force, STORY_COFF, MASS, ag_ra
     ops.integrator('Newmark', gamma, beta) # INFO LINK: https://opensees.github.io/OpenSeesDocumentation/user/manual/analysis/integrator/Newmark.html
     ops.analysis('Transient')              # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/analysis.html
 
-    t_os, U_os, F_os, V_os = [0.0], [np.zeros(N)], [0.0], [np.zeros(N)]
+    t_os, U_os, Ve_os, Acc_os, F_os, V_os = [0.0],  [np.zeros(N)], [np.zeros(N)], [np.zeros(N)], [0.0], [np.zeros(N)]
     for i in range(1, len(ag_raw)):
         OK = ops.analyze(1, dt)
         if OK != 0:
@@ -366,13 +366,17 @@ def MDOF_OPENSEES_DYNAMIC(MAT_TYPE, Displacement, Force, STORY_COFF, MASS, ag_ra
         ops.reactions()
         t_os.append(ops.getTime())
         U_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)])   # FLOOR DISPLACEMENTS
+        Ve_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)])  # FLOOR VELOCITIES
+        Acc_os.append([ops.nodeDisp(n_, 1) for n_ in range(1, N + 1)]) # FLOOR ACCELERATIONS
         F_os.append(ops.nodeReaction(0, 1))                            # BASE REACTION
         V_os.append([-ops.eleResponse(j, 'force')[0] for j in range(1, N + 1)])  # STORY SHEARS
 
     U_floor = np.array(U_os)
+    Ve_floor = np.array(Ve_os)
+    Ac_floor = np.array(Acc_os)
     drift = np.diff(np.hstack((np.zeros((len(U_floor), 1)), U_floor)), axis=1)
     
-    DATA = dict(t=np.array(t_os), U_floor=U_floor, drift=drift, base_reaction=np.array(F_os), V_story=np.array(V_os))
+    DATA = dict(t=np.array(t_os), U_floor=U_floor, Ve_floor=Ve_floor , Ac_floor=Ac_floor ,drift=drift, base_reaction=np.array(F_os), V_story=np.array(V_os))
     
     return DATA
 
@@ -483,4 +487,24 @@ if __name__ == '__main__':
     for a_ in ax.ravel(): a_.grid(True)
     plt.tight_layout()
     plt.savefig('MDOF_DYNAMIC_TIME_HISTORY.png', dpi=150)
+    plt.show()
+    
+    dispp = OS['U_floor'][:, -1]
+    velo = OS['Ve_floor'][:, -1]
+    acce = OS['Ac_floor'][:, -1]
+    
+    plt.figure(1, figsize=(12, 8))
+    plt.plot(dispp, velo, 'o', color='black')
+    plt.xlabel('Displacement [m]')
+    plt.ylabel('Velocity [m/s]')
+    plt.title('Displacement & Velocity During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(2, figsize=(12, 8))
+    plt.plot(dispp, acce, 'o', color='purple')
+    plt.xlabel('Displacement [m]')
+    plt.ylabel('Acceleration [m/s^2]')
+    plt.title('Displacement & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
     plt.show()
