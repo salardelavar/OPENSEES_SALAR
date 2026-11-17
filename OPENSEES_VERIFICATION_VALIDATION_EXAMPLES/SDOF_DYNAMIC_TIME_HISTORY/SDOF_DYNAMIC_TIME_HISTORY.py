@@ -265,7 +265,7 @@ def SDOF_OPENSEES_DYNAMIC(MAT_TYPE, Displacement, Force, Coff, ag, dt, mass, xi,
     ops.integrator('Newmark', 0.5, 0.25) # INFO LINK: https://opensees.github.io/OpenSeesDocumentation/user/manual/analysis/integrator/Newmark.html
     ops.analysis('Transient')            # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/analysis.html
 
-    t_os, U_os, F_os = [0.0], [0.0], [0.0]
+    t_os, U_os, Ve_os, Acc_os, F_os = [0.0], [0.0], [0.0], [0.0], [0.0]
     for i in range(1, len(ag)):
         OK = ops.analyze(1, dt)
         if OK != 0:
@@ -273,9 +273,11 @@ def SDOF_OPENSEES_DYNAMIC(MAT_TYPE, Displacement, Force, Coff, ag, dt, mass, xi,
         ops.reactions()
         t_os.append(ops.getTime())
         U_os.append(ops.nodeDisp(2, 1))                        # DISPLACEMENT
+        Ve_os.append(ops.nodeVel(2, 1))                        # VELOCITY
+        Acc_os.append(ops.nodeAccel(2, 1))                     # ACCELERATION
         F_os.append(ops.nodeReaction(1, 1))                    # REACTION
 
-    DATA = (np.array(t_os), np.array(U_os), np.array(F_os))
+    DATA = (np.array(t_os), np.array(U_os), np.array(Ve_os), np.array(Acc_os), np.array(F_os))
     
     return DATA
 
@@ -334,9 +336,10 @@ if __name__ == '__main__':
         Displacement, Force, Coff, ag, DT, MASS, XI, MAX_ITERATIONS, MAX_TOLERANCE)
 
     #%% RUN OPENSEES
-    t_os, U_os, F_os = SDOF_OPENSEES_DYNAMIC('INELASTIC', Displacement, Force, Coff,
+    DATA = SDOF_OPENSEES_DYNAMIC('INELASTIC', Displacement, Force, Coff,
                                              ag_raw, DT, MASS, XI, GM_FACTOR, MAX_ITERATIONS, MAX_TOLERANCE)
-
+    t_os, U_os, Ve_os, Acc_os, F_os = DATA
+    
     n = min(len(U1), len(U_os))
     errU = np.abs(U_os[:n] - U1[:n]); errF = np.abs(F_os[:n] - F1[:n])
     print(f'max |U| = {np.abs(U1).max():.4e}   max |Fs| = {np.abs(F1).max():.4e}')
@@ -368,4 +371,36 @@ if __name__ == '__main__':
     for a_ in ax.ravel(): a_.grid(True)
     plt.tight_layout()
     plt.savefig('SDOF_DYNAMIC_TIME_HISTORY.png', dpi=150)
+    plt.show()
+    
+    plt.figure(1, figsize=(12, 8))
+    plt.plot(U_os, Ve_os, color='black')
+    plt.xlabel('Displacement [m]')
+    plt.ylabel('Velocity [m/s]')
+    plt.title('Displacement & Velocity During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(2, figsize=(12, 8))
+    plt.plot(U_os, Acc_os, color='red')
+    plt.xlabel('Displacement [m]')
+    plt.ylabel('Acceleration [m/s^2]')
+    plt.title('Displacement & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(3, figsize=(12, 8))
+    plt.plot(U_os, F_os, color='green')
+    plt.ylabel('Base Reaction [N]')
+    plt.xlabel('Velocity [m/s]')
+    plt.title('Base Reaction & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
+    plt.show()
+    
+    plt.figure(4, figsize=(12, 8))
+    plt.plot(Acc_os, F_os, color='blue')
+    plt.ylabel('Base Reaction [N]')
+    plt.xlabel('Acceleration [m/s^2]')
+    plt.title('Base Reaction & Acceleration During the Analysis')
+    plt.grid(True, alpha=0.4)
     plt.show()
