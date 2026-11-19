@@ -593,7 +593,7 @@ plt.show()
 ops.analysis('Static')
 STEP = 1
 for target_disp in disp_protocol:
-    current_disp = ops.nodeDisp(IDctrlNode, 1) # DISPALCEMENT APPLIED IN NODE IN Y DIR.
+    current_disp = ops.nodeDisp(IDctrlNode, 1) # DISPALCEMENT APPLIED IN NODE IN X DIR.
     dU = target_disp - current_disp
     ops.integrator('DisplacementControl', IDctrlNode, IDctrlDOF, dU)
     OK = ops.analyze(1)
