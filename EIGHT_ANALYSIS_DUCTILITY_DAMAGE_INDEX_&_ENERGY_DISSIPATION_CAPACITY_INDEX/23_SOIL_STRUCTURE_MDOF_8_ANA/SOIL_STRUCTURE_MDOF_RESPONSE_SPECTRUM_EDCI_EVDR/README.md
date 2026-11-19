@@ -5,6 +5,16 @@
 
 ![alt text](COVER.png)
 
+This Python script is the main driver for a comprehensive OpenSeesPy framework that performs nonlinear dynamic (time-history) analysis of a multi-degree-of-freedom (MDOF) soil-structure 
+interaction system under a suite of 50 seismic ground motions. 
+
+It constructs the structural model (typically a multi-story frame with soil springs or interaction elements), runs inelastic response-spectrum-style analyses across varying intensity levels, and evaluates key performance metrics including the Ductility Damage Index (DDI), Energy Dissipation Capacity Index (EDCI = 100 × Ed_earthquake / Ed_cyclic), and Equivalent Viscous Damping Ratio 
+(EVDR = 100 × Ed / (4π Es)). 
+
+Supporting functions handle eigenvalue analysis, Rayleigh damping, hysteretic material definitions, bilinear idealization of capacity curves, free-vibration and pushover analyses for effective properties, fragility curves, and extensive post-processing (plots, Excel/PDF/PPT reports). 
+
+The overall goal is probabilistic seismic performance assessment that accounts for soil-structure interaction and ground-motion uncertainty.
+
 Since the structure was assumed to be inelastic and the response spectra were then plotted for the ductility damage index and the energy dissipation capacity index, this shows the natural period beyond which an increase in the structure’s period leads to a higher probability of failure.
 
 # MDOF Response Spectrum Analysis with Energy Dissipation Capacity Index (EDCI) & Equivalent Viscous Damping Ratio (EVDR)
