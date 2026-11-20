@@ -30,6 +30,14 @@
 
 Units: N, m, kg, s
 """
+# BOOK: Dynamics of Structures in SI Units -  Anil Kumar Chopra
+'https://share.google/TDN5O4eWmw5pH8zUH'
+# BOOK: Differential Equations for Engineers-Wei-Chau Xie-CAMBRIDGE-2010
+# BOOK: Structural dynamics THEORY AND COMPUTATION MARIO BAZ-5 EDITION
+# PAPER: Displacement-based seismic design of buildings theory - M.S. Medhekar, D.J.L. Kennedy - 1999 Elsevier
+# YOUTUBE:
+'https://www.youtube.com/watch?v=MZUhSHmIUdI'
+
 import numpy as np
 import matplotlib.pyplot as plt
 import openseespy.opensees as ops
