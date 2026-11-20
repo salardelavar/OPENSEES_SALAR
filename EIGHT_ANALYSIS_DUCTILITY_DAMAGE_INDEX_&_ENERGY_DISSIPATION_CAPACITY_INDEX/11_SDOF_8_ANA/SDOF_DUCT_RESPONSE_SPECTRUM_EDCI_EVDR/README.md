@@ -1,6 +1,15 @@
 # PARAMETRIC NONLINEAR SEISMIC DEMAND SPECTRA OF A SINGLE-DEGREE-OF-FREEDOM (SDOF) SYSTEMS WITH VARIABLE DUCTILITY CAPACITY IN OPENSEES
 # طیف‌های تقاضای لرزه‌ای غیرخطی پارامتریک سیستم‌های یک‌درجه‌آزادی با ظرفیت شکل‌پذیری متغیر در اوپنسیس
 
+This OpenSees script performs a nonlinear SDOF ductility response-spectrum analysis that characterizes an oscillator’s hysteretic
+behavior, energy dissipation, and damage under earthquake excitation. It defines mass, stiffness, yield strength, ultimate 
+displacement, and damping; applies a cyclic displacement protocol to establish baseline energy dissipation; then runs 
+nonlinear time-history analyses with Newmark integration over a parametric sweep of periods. For each period, it extracts
+peak displacement, velocity, acceleration, and base reaction, and computes the Ductility Damage Index, Energy Dissipation
+Capacity Index, and Equivalent Viscous Damping Ratio. Finally, it statistically processes and plots displacement, velocity,
+acceleration, base-reaction, DDI, EDCI, and EVDR spectra, generates fragility information, and exports results for
+performance-based earthquake engineering and parametric studies.
+
 ![alt text](COVER.png) 
 
  # ANALYSIS STEPS — SDOF Ductility Response Spectrum with EDCI & EVDR
