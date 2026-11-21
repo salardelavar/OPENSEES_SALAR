@@ -11,7 +11,7 @@ This Python script implements Direct Displacement-Based Design (DDBD) for a mult
  that is subjected to transient analysis; the resulting displacement history, hysteresis loops, and design spectrum are
  finally plotted to compare the achieved peak displacement against the DDBD target.
  
-DDBD of an N-storey shear building (Priestley, Calvi & Kowalsky 2007) verified by nonlinear time-history.
+DDBD of an N-story shear building (Priestley, Calvi & Kowalsky 2007) verified by nonlinear time-history.
 
 PROCEDURE
   1. Design displacement profile  Delta_i  (inelastic shape + higher-mode drift reduction omega_theta)
