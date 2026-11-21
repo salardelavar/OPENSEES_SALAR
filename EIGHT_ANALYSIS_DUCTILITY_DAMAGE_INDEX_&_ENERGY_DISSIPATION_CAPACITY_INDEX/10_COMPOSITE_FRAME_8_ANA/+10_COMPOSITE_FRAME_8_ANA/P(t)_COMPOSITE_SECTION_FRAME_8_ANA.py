@@ -280,20 +280,40 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
     ENM = TOTAL_MASS / tag    # EACH NODE MASS
     #%% LOAD & MASS & ANALYSIS
     center_node = 1
+    w_N_per_mm = 0.0003 # [N/mm] Uniformly-distributed load
+    # --- model, mass (tonne), gravity ---
     TS_TAG = 1
     PATT_TAG = 1
-    ops.timeSeries('Linear', TS_TAG)
+    ops.timeSeries('Constant', TS_TAG)
     ops.pattern('Plain', PATT_TAG, TS_TAG)
-    for ii in range(1, tag):
-        ops.load(ii, 0.0, -ENW, 0.0)   # [N] downward
-        ops.mass(ii, ENM, ENM, 0.0)
-        
+    for n in range(1, 8):
+        ops.load(n, 0.0, -ENW, 0.0)
+        ops.mass(n, ENM, ENM, 0.0)
+    for ii in range(1, 7):
+        ops.eleLoad('-ele', ii,'-type', '-beamUniform', -w_N_per_mm, 0.0) # [N/mm] Uniformly-distributed load  
+        # INFO LINK: https://openseespydoc.readthedocs.io/en/latest/src/eleload.html
+    
+    ops.constraints('Plain')
+    ops.numberer('RCM')
+    ops.system('UmfPack')
+    ops.test('NormDispIncr', 1e-6, 50)
+    ops.algorithm('Newton')
+    ops.integrator('LoadControl', 0.1)
+    ops.analysis('Static')
+    OKG = ops.analyze(10)
+    # assert ops.analyze(10) == 0
+    if OKG != 0:
+        # raise AssertionError
+        raise RuntimeError("Gravity analysis failed to converge")
+    
+    
+    ops.loadConst('-time', 0.0)             # freeze gravity
+    
+    # --- then lateral pattern ---
     TS_TAG = 2
     PATT_TAG = 2
     ops.timeSeries('Linear', TS_TAG)
-    ops.pattern('Plain', PATT_TAG, TS_TAG)       
-    for ii in range(1, tag-1):
-        ops.eleLoad('-ele', ii,'-type', '-beamUniform', -0.0003, 0.0) # [N/mm] Uniformly-distributed load  
+    ops.pattern('Plain', PATT_TAG, TS_TAG)    
     ops.load(center_node, 1.0, 0.0, 0.0)
         
     ops.constraints('Plain')
@@ -304,6 +324,7 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         ops.algorithm('Linear')
     if ELE_TYPE == 'INELASTIC':
         ops.algorithm('Newton')
+ 
         
     time = []
     dispX, dispY = [], []
@@ -433,7 +454,8 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         ops.integrator('LoadControl', 1.0)
         ops.analysis('Static')
         OK = ops.analyze(1)
-        S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+        if OK != 0: # CHECK THE ANALYSIS
+            S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
         ops.reactions()
         reactionX.append(ops.nodeReaction(8, 1)+ops.nodeReaction(14, 1))     # BASE REACTION IN X
         reactionY.append(ops.nodeReaction(8, 2)+ops.nodeReaction(14, 2))     # BASE REACTION IN Y
@@ -468,8 +490,8 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         Nsteps =  int(np.abs(DMAX/ DINCR)) 
         STEP = 0.0
         for step in range(Nsteps):
-            OK = ops.analyze(1)
-            S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+            if OK != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             ops.reactions()
             reactionX.append(ops.nodeReaction(8, 1)+ops.nodeReaction(14, 1))     # BASE REACTION IN X
             reactionY.append(ops.nodeReaction(8, 2)+ops.nodeReaction(14, 2))     # BASE REACTION IN Y
@@ -557,7 +579,8 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
             dU = target_disp - current_disp
             ops.integrator('DisplacementControl', center_node, IDctrlDOF, dU)
             OK = ops.analyze(1)
-            S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+            if OK != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(OK, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             ops.reactions()
             reactionX.append(ops.nodeReaction(8, 1)+ops.nodeReaction(14, 1))     # BASE REACTION IN X
             reactionY.append(ops.nodeReaction(8, 2)+ops.nodeReaction(14, 2))     # BASE REACTION IN Y
@@ -693,7 +716,8 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         
         for JJ in range(time_steps):
             stable = ops.analyze(1)
-            S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS)
+            if stable != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             ops.reactions()
             reactionX.append(ops.nodeReaction(8, 1)+ops.nodeReaction(14, 1))     # BASE REACTION IN X
             reactionY.append(ops.nodeReaction(8, 2)+ops.nodeReaction(14, 2))     # BASE REACTION IN Y
@@ -833,8 +857,9 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         current_time = 0.0
         
         while stable == 0 and current_time < duration:
-            ops.analyze(1, dt)
-            S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS) # CHECK THE ANALYSIS
+            stable = ops.analyze(1, dt)
+            if stable != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             current_time = ops.getTime()
             time.append(current_time)
             ops.reactions()
@@ -942,8 +967,9 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         stable = 0
         current_time = 0.0
         while stable == 0 and current_time < duration:
-            ops.analyze(1, dt)
-            S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS) # CHECK THE ANALYSIS
+            stable = ops.analyze(1, dt)
+            if stable != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             current_time = ops.getTime()
             time.append(current_time)
             ops.reactions()
@@ -1064,8 +1090,9 @@ def COMPOSITE_FRAME(LENGTH, HEIGHT, MAT_TYPE, ELE_TYPE, ANAL_TYPE, TOTAL_MASS):
         stable = 0
         current_time = 0.0
         while stable == 0 and current_time < duration:
-            ops.analyze(1, dt)
-            S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS) # CHECK THE ANALYSIS
+            stable = ops.analyze(1, dt)
+            if stable != 0: # CHECK THE ANALYSIS
+                S02.ANALYSIS(stable, 1, MAX_TOLERANCE, MAX_ITERATIONS)
             current_time = ops.getTime()
             time.append(current_time)
             ops.reactions()
