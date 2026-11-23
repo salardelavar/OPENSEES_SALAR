@@ -144,7 +144,7 @@ def MDOF(MAT_TYPE, TOTAL_MASS, ANAL_TYPE):
 
     # Define masses
     for JJ in range(1, 5):
-        ops.mass(JJ, MASS[JJ-1])
+        ops.mass(JJ+1, MASS[JJ-1])
         #print(MASS[JJ-1])
     
     #%% FOUR DEGREES OF FREEDOM STRUCTURE, CALCULATE LATERAL STIFFNESS AND DAMPING 
