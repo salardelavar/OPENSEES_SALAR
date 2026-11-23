@@ -181,7 +181,7 @@ def MDOF(MAT_TYPE, TOTAL_MASS, ANAL_TYPE):
     # Define masses
     for JJ in range(1, NUM_FLOOR+1):
         ops.node(JJ+1, 0.0)
-        ops.mass(JJ, MASS[JJ-1])
+        ops.mass(JJ+1, MASS[JJ-1])
     
     #%% FOUR COLUMNS AND FOUR DEGREES OF FREEDOM STRUCTURE, CALCULATE LATERAL STIFFNESS AND DAMPING
     ele_tags = []
