@@ -33,3 +33,10 @@ EDCI   = 100 * Ed(earthquake) / Ed(cyclic displacement protocol)   (computed sep
 EVDR   = 100 * Ed / (4*pi*Es),  Es = 0.5*Fmax*umax
 
 DI     = (Dd - Dy) / (Du - Dy)
+
+# 200 SEISMIC GROUND MOTIONS ANALYSIS
+![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
+
+Please note that the content may not be entirely free of errors or inaccuracies.
+
+THESE PYTHON SCRIPTS ARE WRITTEN BY SALAR DELAVAR GHASHGHAEI (QASHQAI)
