@@ -1,6 +1,6 @@
 # PARAMETRIC NONLINEAR SEISMIC DEMAND SPECTRA OF A 2-DOF (X & Y SPRINGS) SYSTEM UNDER 2 GROUND MOTIONS WITH VARIABLE DUCTILITY CAPACITY 
 
- طیف‌های تقاضای لرزه‌ای غیرخطی پارامتریک یک سیستم دو درجه آزادی (با فنرهای X و Y) تحت دو شتاب‌نگاشت زلزله با ظرفیت نسبت میرایی متغیر
+#  طیف‌های تقاضای لرزه‌ای غیرخطی پارامتریک یک سیستم دو درجه آزادی (با فنرهای X و Y) تحت دو شتاب‌نگاشت زلزله با ظرفیت شکل پذیری متغیر
 
 ![alt text](COVER.jpg)
 
