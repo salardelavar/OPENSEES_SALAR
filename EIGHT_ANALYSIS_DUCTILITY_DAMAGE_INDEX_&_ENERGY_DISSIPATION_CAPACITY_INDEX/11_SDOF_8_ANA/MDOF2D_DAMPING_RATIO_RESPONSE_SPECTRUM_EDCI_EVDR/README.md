@@ -23,7 +23,9 @@ PER-DIRECTION OUTPUTS (X and Y):
     stiffness, energy dissipation capacity index (EDCI) and equivalent viscous damping ratio (EVDR).
 
 EDCI   = 100 * Ed(earthquake) / Ed(cyclic displacement protocol)   (computed separately for X and Y)
+
 EVDR   = 100 * Ed / (4*pi*Es),  Es = 0.5*Fmax*umax
+
 DI     = (Dd - Dy) / (Du - Dy)
 
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
