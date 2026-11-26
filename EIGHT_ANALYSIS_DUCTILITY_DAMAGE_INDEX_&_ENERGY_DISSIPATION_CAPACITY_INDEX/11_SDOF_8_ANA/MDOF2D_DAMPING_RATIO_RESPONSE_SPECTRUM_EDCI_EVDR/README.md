@@ -28,6 +28,8 @@ EVDR   = 100 * Ed / (4*pi*Es),  Es = 0.5*Fmax*umax
 
 DI     = (Dd - Dy) / (Du - Dy)
 
+# FLOWCHART DOCUMENT: PDF_FLOWCHART_2DOF_Seismic_Analysis.pdf
+
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
 
