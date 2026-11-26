@@ -35,7 +35,7 @@ EVDR   = 100 * Ed / (4*pi*Es),  Es = 0.5*Fmax*umax
 
 DI     = (Dd - Dy) / (Du - Dy)
 
-# FLOWCHART DOCUMENT:
+# FLOWCHART DOCUMENT: PDF_FLOWCHART_20GM_ConstantDuctility_Flowchart.pdf
 
 # 200 SEISMIC GROUND MOTIONS ANALYSIS
 ![alt text](SEISMIC_GROUND_MOTION_ANALYSIS.png)
