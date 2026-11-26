@@ -27,7 +27,7 @@
  The 20 curves are plotted against period with mean, median, quartile and ± standard-deviation bands, and everything is
  exported to Excel. All points from all records and masses are pooled for histograms, fragility curves, scatter and cluster
  plots, random forest, a correlation heatmap and multiple regression, separately for X and Y. The script ends with hysteresis
- loops, time histories and an X-Y displacement orbit for the last run only. The header and some comments still say 20 records and `_20.txt`, but `NUM_GM` is 20.
+ loops, time histories and an X-Y displacement orbit for the last run only.
  
 MODEL (OpenSeesPy):
     ops.model('basic', '-ndm', 2, '-ndf', 2)
