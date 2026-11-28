@@ -24,6 +24,20 @@
  load because of steel hardening, shows a ductile flexural-type failure. Finally it plots three panels: load against deflection
  with the two capacity lines, member forces against deflection, and the original and deformed truss geometry.
 """
+# PAPER: Design of Deep Beam (Transfer Girder) Using Strut-and-Tie Model (ACI 318-11)
+'https://structurepoint.org/publication/pdf/Design-of-Deep-Beam-(Transfer-Girder)-Using-Strut-and-Tie-Method-(ACI-318-11)-%2003-23-2021.pdf'
+# PAPER: Design of Reinforced Concrete Deep Beams
+'https://www.istructe.org/journal/volumes/volume-66-(published-in-1988)/issue-2/design-of-reinforced-concrete-deep-beams/'
+# YOUTUBE: Concrete Strut and Tie Design Example
+'https://www.youtube.com/watch?v=dgW3q9P_6Bo'
+# YOUTUBE: Strut and Tie Modeling as per AASHTO LRFD 9th Edition (Bridge Wall)
+'https://www.youtube.com/watch?v=IW6DYcJ8uMg&list=PLHbE6jBjdbXzonsi_luXC2o51qzZSHGXP'
+# YOUTUBE: Strut And Tie Modeling l Designing For Optimal Force Flow In Concrete Structures
+'https://www.youtube.com/watch?v=0vjz0U06WRQ'
+# YOUTUBE: 11 - Adv. RC Design Lectures - Strut-and-Tie Method (updated 8/3/20)
+'https://www.youtube.com/watch?v=9ywGx5y7r_U'
+#%% -----------------------------------------------------------
+
 import numpy as np
 import matplotlib.pyplot as plt
 import openseespy.opensees as ops
